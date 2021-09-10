@@ -19,6 +19,9 @@
         .auto-style1 {
             margin-left: 0;
         }
+        .auto-style2 {
+            height: -42px;
+        }
     </style>
 
 </head>
@@ -40,18 +43,19 @@
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <asp:Button ID="Button3" runat="server" BackColor="#666699" BorderColor="#666699" CssClass="auto-style1" ForeColor="White" OnClick="Button1_Click" Text="Login" Width="86px" />
+                        <asp:Button ID="Button4" runat="server" BackColor="#0000CC" BorderColor="#0000CC" ForeColor="White" OnClick="Button2_Click" Text="Signup" Width="90px" />
+                        
+
                     </ul>
                 </div>
-                    <a class="navbar-brand" runat="server" href="~/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Button1" runat="server" BackColor="#666699" BorderColor="#666699" CssClass="auto-style1" ForeColor="White" OnClick="Button1_Click" Text="Login" Width="86px" />
-                <asp:Button ID="Button2" runat="server" BackColor="#0000CC" BorderColor="#0000CC" ForeColor="White" OnClick="Button2_Click" Text="Signup" Width="90px" />
-                </a>
             </div>
         </div>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
+            <hr class="auto-style2" />
             <footer>
                 <p>&nbsp;</p>
             </footer>
