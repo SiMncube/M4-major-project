@@ -1,21 +1,17 @@
 ﻿<%@ Page Title="Find Us" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="M4_major_project.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    
 
-    
     <p>&nbsp;</p>
     <br />
     <br />
     <br />
     <br />
+
+    <p style="padding: 0px; margin: 0px; font-size: x-large; color: #000000; background-color: #3333FF; width: 483px; font-style: normal;">&nbsp;&nbsp;&nbsp;<br /> &nbsp;&nbsp; Find Us:</p>
     
 
-    
-    <p style="padding: 0px; margin: 0px; font-size: x-large; color: #000000; background-color: #CC6600; width: 483px; font-style: normal;">&nbsp;&nbsp;&nbsp;<br /> &nbsp;&nbsp; Find Us:</p>
-    
-
-    <p style="font-size: medium; color: #000000; background-color: #CC6600; width: 484px; height: 201px;"><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 94 Mountview Road<br />
+    <p style="font-size: medium; color: #000000; background-color: #3333FF; width: 484px; height: 201px;"><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 94 Mountview Road<br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         Glenwood <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
