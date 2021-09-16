@@ -1,17 +1,19 @@
-﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="M4_major_project.Contact" %>
+﻿<%@ Page Title="Find Us" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="M4_major_project.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
-    <h3>Your contact page.</h3>
-    <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
-    </address>
+    <h2><%: Title %></h2>
+    <p>&nbsp;</p>
+    <p style="font-size: medium; color: #000000">Physical address:</p>
+    <address style="height: 94px">
+        94 Mountview Road<br />
+        Glenwood<br />
+        Durban<br />
+        4001</address>
 
+    <address style="color: #000000; font-size: medium">
+    </address>
     <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        Email address:   Sonya@gmail.com<br />
+        Phone no.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 067 245 4478<a href="mailto:Marketing@example.com"><span class="text-primary">&nbsp; </span></a>
     </address>
 </asp:Content>
