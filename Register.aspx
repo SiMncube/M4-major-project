@@ -7,7 +7,7 @@
     <title></title>
     <style type="text/css">
         .auto-style1 {
-            width: 73%;
+            width: 49%;
             height: 62px;
         }
         .auto-style2 {
@@ -56,7 +56,7 @@
             text-align: center;
         }
         .auto-style13 {
-            width: 66%;
+            width: 49%;
             height: 315px;
         }
         .auto-style14 {
@@ -64,10 +64,17 @@
             width: 1350px;
             margin-right: 45px;
         }
+        .auto-style15 {
+            width: 148px;
+            text-align: center;
+        }
     </style>
 </head>
 <body style="width: 1014px; height: 547px">
     <form id="form1" runat="server" style="background-image: url('Images/wallpaperflare.com_wallpaper.jpg')" class="auto-style14">
+        <br />
+        <br />
+        <br />
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <table class="auto-style1" align="center">
@@ -79,7 +86,7 @@
         </table>
         
         <table class="auto-style13" align="center" style="background-color: #3333FF">
-            <tr>
+            
                 <td class="auto-style2">First name</td>
                 <td class="auto-style5">
                     <asp:TextBox ID="TextBox1" runat="server" Width="156px"></asp:TextBox>
@@ -172,17 +179,12 @@
             </tr>
             <tr>
                 <td class="auto-style11">&nbsp;</td>
-                <td class="auto-style5">
-                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Register" Width="118px" />
+                <td class="auto-style15">
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Register" Width="176px" BackColor="White" ForeColor="Blue" Height="33px" />
                 </td>
                 <td class="auto-style10">&nbsp;</td>
             </tr>
-            <tr>
-                <td class="auto-style11">&nbsp;</td>
-                <td class="auto-style5">&nbsp;</td>
-                <td class="auto-style10">&nbsp;</td>
-            </tr>
-        </table>
+            </table>
     </form>
 </body>
 </html>
