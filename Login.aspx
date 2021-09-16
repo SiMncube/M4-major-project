@@ -42,8 +42,7 @@
         .auto-style16 {
             height: 635px;
             width: 1356px;
-            margin-left: 0px;
-            margin-top: 0px;
+           
         }
         .auto-style17 {
             height: 181px;
@@ -60,7 +59,7 @@
             <br />
             <br />
             <br />
-            <br />
+            
             <table class="auto-style15" align="center">
                 <tr>
                     <td class="auto-style12" style="background-color: #3333FF; color: #000000; font-size: large;">

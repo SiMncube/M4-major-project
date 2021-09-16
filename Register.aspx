@@ -7,7 +7,8 @@
     <title></title>
     <style type="text/css">
         .auto-style1 {
-            width: 100%;
+            width: 73%;
+            height: 62px;
         }
         .auto-style2 {
             text-align: right;
@@ -54,23 +55,25 @@
         .auto-style12 {
             text-align: center;
         }
+        .auto-style13 {
+            width: 68%;
+            height: 269px;
+        }
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" style="background-image: url('Images/wallpaperflare.com_wallpaper.jpg')">
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <table class="auto-style1">
+        <table class="auto-style1" align="center">
             <tr>
-                <td class="auto-style12">
-                    <asp:Label ID="Label1" runat="server" ForeColor="Blue" Text="CREATE AN ACCOUNT"></asp:Label>
+                <td class="auto-style12" style="background-color: #3333FF; color: #000000;">
+                    <asp:Label ID="Label1" runat="server" ForeColor="Black" Text="CREATE AN ACCOUNT" BackColor="#3333FF"></asp:Label>
                 </td>
             </tr>
         </table>
-        <br />
-        <br />
-        <br />
-        <table class="auto-style1">
+        
+        <table class="auto-style13" align="center" style="background-color: #3333FF">
             <tr>
                 <td class="auto-style2">First name</td>
                 <td class="auto-style5">
