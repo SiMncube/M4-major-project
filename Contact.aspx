@@ -8,19 +8,18 @@
     
 
     
-    <p style="font-size: x-large; color: #000000; background-color: #FFFFFF; width: 129px;">Find Us:</p>
+    <p style="font-size: x-large; color: #000000; background-color: #FF9966; width: 129px;">Find Us:</p>
     <p>&nbsp;</p>
-    <p style="font-size: medium; color: #000000; background-color: #FFFFFF; width: 129px;">Physical address:</p>
-    <address style="height: 94px; background-color: #FFFFFF; width: 224px;">
+    <p style="font-size: medium; color: #000000; background-color: #FF9966; width: 129px;">Physical address:</p>
+    <address style="height: 94px; background-color: #FF9966; width: 224px; color: #000000;">
         94 Mountview Road<br />
         Glenwood<br />
         Durban<br />
         4001</address>
 
-    <address style="color: #000000; font-size: medium; width: 66px; background-color: #FFFFFF;">
+    <address style="color: #000000; font-size: medium; width: 66px; background-color: #FF9966;">
         Contact:</address>
-    <address style="background-color: #FFFFFF; width: 224px;">
+    <address style="background-color: #FF9966; width: 224px; color: #000000;">
         Email address:   Sonya@gmail.com<br />
-        Phone no.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 067 245 4478<a href="mailto:Marketing@example.com"><span class="text-primary">&nbsp; </span></a>
-    </address>
+        Phone no.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 067 245 4478</address>
 </asp:Content>
