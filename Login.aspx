@@ -48,6 +48,10 @@
             height: 181px;
             width: 554px;
         }
+        .auto-style18 {
+            width: 200px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -73,7 +77,7 @@
                 
                     <td class="auto-style14" style="background-color: #3333FF">Username</td>
                     <td class="auto-style13">
-                        <asp:TextBox ID="TextBox3" runat="server" Width="191px"></asp:TextBox>
+                        <asp:TextBox ID="TextBox3" runat="server" Width="191px" Height="21px"></asp:TextBox>
                     </td>
                     <td class="auto-style3">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox3" ErrorMessage="Username required" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -84,7 +88,7 @@
                 <tr>
                     <td class="auto-style4">Password</td>
                     <td class="auto-style8">
-                        <asp:TextBox ID="TextBox2" runat="server" Width="193px"></asp:TextBox>
+                        <asp:TextBox ID="TextBox2" runat="server" Width="193px" Height="18px"></asp:TextBox>
                     </td>
                     <td class="auto-style2">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="Password required" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -92,17 +96,12 @@
                 </tr>
                 <tr>
                     <td class="auto-style14">&nbsp;</td>
-                    <td class="auto-style13">
-                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Login" Width="112px" BackColor="Blue" BorderColor="#0000CC" ForeColor="White" />
+                    <td class="auto-style18">
+                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Login" Width="176px" BackColor="Blue" BorderColor="#0000CC" ForeColor="White" Height="46px" />
                     </td>
                     <td class="auto-style3">&nbsp;</td>
                 </tr>
-                <tr>
-                    <td class="auto-style14">&nbsp;</td>
-                    <td class="auto-style13">&nbsp;</td>
-                    <td class="auto-style3">&nbsp;</td>
-                </tr>
-            </table>
+                </table>
             <br />
         </div>
     </form>

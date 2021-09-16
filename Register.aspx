@@ -51,13 +51,14 @@
         }
         .auto-style11 {
             width: 365px;
+            height: 37px;
         }
         .auto-style12 {
             text-align: center;
         }
         .auto-style13 {
             width: 49%;
-            height: 315px;
+            height: 353px;
         }
         .auto-style14 {
             height: 651px;
@@ -67,6 +68,11 @@
         .auto-style15 {
             width: 148px;
             text-align: center;
+            height: 37px;
+        }
+        .auto-style16 {
+            width: 283px;
+            height: 37px;
         }
     </style>
 </head>
@@ -178,11 +184,13 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style11">&nbsp;</td>
+                <td class="auto-style11"></td>
                 <td class="auto-style15">
-                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Register" Width="176px" BackColor="White" ForeColor="Blue" Height="33px" />
+                    <br />
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Register" Width="162px" BackColor="White" ForeColor="Blue" Height="25px" BorderColor="White" />
+                    <br />
                 </td>
-                <td class="auto-style10">&nbsp;</td>
+                <td class="auto-style16"></td>
             </tr>
             </table>
     </form>
