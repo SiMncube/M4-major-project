@@ -56,13 +56,18 @@
             text-align: center;
         }
         .auto-style13 {
-            width: 68%;
-            height: 269px;
+            width: 66%;
+            height: 315px;
+        }
+        .auto-style14 {
+            height: 651px;
+            width: 1350px;
+            margin-right: 45px;
         }
     </style>
 </head>
-<body>
-    <form id="form1" runat="server" style="background-image: url('Images/wallpaperflare.com_wallpaper.jpg')">
+<body style="width: 1014px; height: 547px">
+    <form id="form1" runat="server" style="background-image: url('Images/wallpaperflare.com_wallpaper.jpg')" class="auto-style14">
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <table class="auto-style1" align="center">
@@ -178,8 +183,6 @@
                 <td class="auto-style10">&nbsp;</td>
             </tr>
         </table>
-        <div>
-        </div>
     </form>
 </body>
 </html>
