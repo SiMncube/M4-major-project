@@ -11,7 +11,7 @@
         4001</address>
 
     <address style="color: #000000; font-size: medium">
-    </address>
+        Contact:</address>
     <address>
         Email address:   Sonya@gmail.com<br />
         Phone no.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 067 245 4478<a href="mailto:Marketing@example.com"><span class="text-primary">&nbsp; </span></a>
