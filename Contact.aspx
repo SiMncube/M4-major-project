@@ -1,7 +1,14 @@
 ﻿<%@ Page Title="Find Us" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="M4_major_project.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %></h2>
+    
+
+    
+    <p>&nbsp;</p>
+    
+
+    
+    <p style="font-size: x-large; color: #000000; background-color: #FFFFFF; width: 129px;">Find Us:</p>
     <p>&nbsp;</p>
     <p style="font-size: medium; color: #000000; background-color: #FFFFFF; width: 129px;">Physical address:</p>
     <address style="height: 94px; background-color: #FFFFFF; width: 224px;">
