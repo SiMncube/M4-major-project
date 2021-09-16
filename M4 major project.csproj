@@ -125,6 +125,9 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Images\istockphoto-535353855-612x612.jpg" />
+    <Content Include="Images\Screenshot %28164%29.png" />
+    <Content Include="Images\wallpaperflare.com_wallpaper.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\bootstrap.js" />
