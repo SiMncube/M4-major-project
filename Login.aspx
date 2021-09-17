@@ -69,8 +69,6 @@
                 
                     <td class="auto-style12" style="background-color: #3333FF; color: #000000; font-size: large;">
                         <asp:Label ID="Label1" runat="server" ForeColor="Black" Text="LOGIN TO YOUR ACCOUNT"></asp:Label>
-                        <br />
-                        <asp:Image ID="Image1" runat="server" Height="143px" ImageUrl="~/Images/blue.jpg" Width="181px" />
                     </td>
                 
             </table>
