@@ -32,7 +32,7 @@ namespace M4_major_project
                 string password = "";
                 if (passwordCom.ExecuteScalar() == null)
                 {
-                    Response.Write("Your login was unsuccessful");
+                    Response.Write("Your login was unssuccessful");
                     Label2.Visible = true;
                 }
                 else
