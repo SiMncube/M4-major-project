@@ -94,6 +94,8 @@
                     </td>
                     <td class="auto-style2">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="Password required" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <br />
+                        <asp:Label ID="Label2" runat="server" BackColor="#3333FF" ForeColor="Red" Text="Incorrect Password" Visible="False"></asp:Label>
                     </td>
                 </tr>
                 <tr>
