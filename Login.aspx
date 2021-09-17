@@ -7,7 +7,7 @@
     <title></title>
     <style type="text/css">
         .auto-style2 {
-            height:  23px;
+            height: 23px;
             text-align: left;
             width: 300px;
         }
