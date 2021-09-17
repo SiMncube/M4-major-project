@@ -32,7 +32,6 @@ namespace M4_major_project
                 string password = "";
                 if (passwordCom.ExecuteScalar() == null)
                 {
-                    Response.Redirect("/Default");
                     Response.Write("Your login was unsuccessful");
                     
                 }
