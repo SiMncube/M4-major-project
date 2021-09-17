@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace M4_major_project
@@ -15,6 +16,7 @@ namespace M4_major_project
         {
 
         }
+        
 
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -41,12 +43,19 @@ namespace M4_major_project
                 }
                 if (password.Equals(TextBox2.Text))
                 {
-                    
-                    Response.Redirect("/Default");
-                    Session["New"] = TextBox3.Text;
                     Response.Write("Your login was successful");
+                   
+                    //HtmlGenericControl li1 = (HtmlGenericControl)Master.FindControl("MakeBooking");
+                    //li1.Visible = true;
+                    //HtmlGenericControl li2 = (HtmlGenericControl)Master.FindControl("CancelBooking");
+                    //li2.Visible = true;
+                    //HtmlGenericControl li3 = (HtmlGenericControl)Master.FindControl("CancelBooking");
+                   // li3.Visible = true;
+                    Page.Master.FindControl("MakeBooking").Visible = true;
+                    Response.Redirect("/Default");
 
                 }
+
 
 
             }
@@ -55,7 +64,7 @@ namespace M4_major_project
                 Response.Write("Your login was unsuccessful");
                 Label2.Visible = true;
             }
-            
+           
         }
     }
 }
