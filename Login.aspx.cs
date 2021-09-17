@@ -32,9 +32,8 @@ namespace M4_major_project
                 string password = "";
                 if (passwordCom.ExecuteScalar() == null)
                 {
-                    Response.Redirect("/Default");
-                    Response.Write("Your login was unsuccessful");
-                    
+                    Response.Write("Your login was unssuccessful");
+                    Label2.Visible = true;
                 }
                 else
                 {
@@ -42,6 +41,7 @@ namespace M4_major_project
                 }
                 if (password.Equals(TextBox2.Text))
                 {
+                    
                     Response.Redirect("/Default");
                     Session["New"] = TextBox3.Text;
                     Response.Write("Your login was successful");
@@ -53,6 +53,7 @@ namespace M4_major_project
             else
             {
                 Response.Write("Your login was unsuccessful");
+                Label2.Visible = true;
             }
             
         }
