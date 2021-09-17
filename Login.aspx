@@ -21,8 +21,8 @@
                 <label>Password</label>
             </div>
             <div class="pass">Forgot Password</div>
-            <input type="submit" value="Login" />
-            <div class="signup_link">
+            <input type="submit" value="Login" id="loginButton" runat="server"/>
+            <div class="signup_link" id="signUpLink" runat="server">
                 Don't have an account? <a href="#">Signup</a>
             </div>
         </form>
