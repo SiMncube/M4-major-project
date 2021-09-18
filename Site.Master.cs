@@ -15,7 +15,8 @@ namespace M4_major_project
         {
             if (Context.User.Identity.IsAuthenticated)
             {
-               //MakeBooking.Visible = true;
+                
+                // Master.FindControl("MakeBooking").Visible = true;
             }
         }
 

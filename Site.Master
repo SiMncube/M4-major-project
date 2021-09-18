@@ -35,16 +35,17 @@
                     </button>
                     <a class="navbar-brand" runat="server" href="~/">The Cottage</a>
                 </div>
-                <div class="navbar-collapse collapse" >
+                <div class="navbar-collapse collapse" staticselectedstyle-verticalpadding="10px">
                     <ul class="nav navbar-nav" runat="server">
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <li><a runat="server" href="~/Login">Login</a></li>
-                        <li><a runat="server" href="~/Register">Register</a></li>
-                        <li><a runat="server" href="~/MakeBooking" visible= false  >MakeBooking</a></li>
-                        <li><a runat="server" href="~/ModifyBooking" visible= false >ModifyBooking</a></li>
-                        <li><a runat="server" href="~/CancelBooking"  visible= false>CancelBooking</a></li>
+                        <li><a runat="server" href="~/MakeBooking" visible ="false"  >MakeBooking</a></li>
+                        <li><a runat="server" href="~/ModifyBooking" visible ="false"  >ModifyBooking</a></li>
+                        <li><a runat="server" href="~/CancelBooking"  visible ="false" >CancelBooking</a></li>
+                        <li><a runat="server" style ="float: right;" href="~/Login">Login</a></li>
+                        <li><a runat="server" style ="float: right;" href="~/Register">Register</a></li>
+                       
                     </ul>
 
                 </div>

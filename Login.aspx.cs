@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Claims;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -20,7 +22,7 @@ namespace M4_major_project
         {
             SqlConnection conn = new SqlConnection("Server=146.230.177.46\\ist3;database=group7;User ID=group7;Password=6d52h");
             conn.Open();
-            string checkUser = "select count(*) from Customer where emailID='" + TextBox3.Text + "'";
+            string checkUser = "select count(*) from Customer where emailID='" + TextBox1.Text + "'";
             SqlCommand com = new SqlCommand(checkUser, conn);
             int temp = Convert.ToInt32(com.ExecuteScalar().ToString());
             conn.Close();
@@ -33,7 +35,8 @@ namespace M4_major_project
                 if (passwordCom.ExecuteScalar() == null)
                 {
                     Response.Write("Your login was unsuccessful");
-                    Label2.Visible = true;
+                    //Label2.Visible = true;
+                    
                 }
                 else
                 {
@@ -41,10 +44,13 @@ namespace M4_major_project
                 }
                 if (password.Equals(TextBox2.Text))
                 {
+                    var userIdentity = new ClaimsIdentity("Custom");
+                    FormsAuthentication.SetAuthCookie(checkUser, true);
                     
                     Response.Redirect("/Default");
-                    Session["New"] = TextBox3.Text;
-                    Response.Write("Your login was successful");
+                   // Session["New"] = TextBox1.Text;
+                  //  Response.Write("Your login was successful");
+                    
 
                 }
 
@@ -53,7 +59,7 @@ namespace M4_major_project
             else
             {
                 Response.Write("Your login was unsuccessful");
-                Label2.Visible = true;
+                //Label2.Visible = true;
             }
             
         }
