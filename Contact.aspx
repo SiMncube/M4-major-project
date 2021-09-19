@@ -10,6 +10,8 @@
         .auto-style2 {
             width: 1350px;
             height: 651px;
+            margin-left: 0px;
+            margin-top: 0px;
         }
         .auto-style3 {
             width: 464px;
@@ -17,7 +19,9 @@
         }
     </style>
 </head>
-<div style="background-image: url('https://localhost:44301/Images/wallpaperflare.com_wallpaper.jpg')" class="auto-style2">
+
+<body style="margin-left: 0px; margin-top: 0px">
+<div  style="background-image: url('https://localhost:44301/Images/wallpaperflare.com_wallpaper.jpg')" class="auto-style2" >
     <p>&nbsp;</p>
     <br />
     <br />
@@ -42,4 +46,5 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         Phone no.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 067 245 4478<br />
     </div>
-    </asp:Content>
+</body>
+</asp:Content>

@@ -13,7 +13,7 @@
         }
     </style>
 </head>
-<body>
+<body style="margin-left: 0px; margin-top: 0px">
     <form id="form1" runat="server">
         <div class="auto-style1" style="background-image: url('Images/wallpaperflare.com_wallpaper.jpg')">
         </div>
