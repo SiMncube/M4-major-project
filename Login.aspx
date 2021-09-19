@@ -53,6 +53,7 @@
             text-align: center;
         }
     </style>
+    <link rel="stylesheet" href="loginStyle.css" />
 </head>
 <body style="margin-left: 0px; margin-top: 0px">
     <form id="form1" runat="server">
@@ -81,7 +82,9 @@
                 
                     <td class="auto-style14" style="background-color: #808080">Username</td>
                     <td class="auto-style13">
-                        <asp:TextBox ID="TextBox1" runat="server" Width="191px" Height="21px"></asp:TextBox>
+                        <div class="txt_field">
+                            <asp:TextBox ID="TextBox1" runat="server" Width="191px" Height="21px"></asp:TextBox>
+                        </div>
                     </td>
                     <td class="auto-style3">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="Username required" ForeColor="Red"></asp:RequiredFieldValidator>
