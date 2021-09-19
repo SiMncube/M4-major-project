@@ -129,7 +129,7 @@
                 </tr>
             </table>
         
-        <table class="nav-justified">
+        <table class="auto-style10">
             <tr>
                 <td class="auto-style3">
                     <asp:Image ID="Image1" runat="server" Height="248px" ImageUrl="~/Images/1d0635eb-a70d-49a6-89d1-9f20f008f7c5.jpg" Width="381px" />
