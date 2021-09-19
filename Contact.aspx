@@ -5,7 +5,7 @@
 <head runat="server">
     <style type="text/css">
         .auto-style1 {
-            width: 464px;
+            width: 760px;
             height: 198px;
         }
         .auto-style2 {
@@ -15,7 +15,7 @@
             margin-top: 0px;
         }
         .auto-style3 {
-            width: 464px;
+            width: 740px;
             height: 52px;
         }
     </style>
@@ -31,8 +31,10 @@
         <br />
         <br />
 
-        <p style="padding: 10px; margin: 0px; font-size: xx-large; color: #000000; background-color: #808080; font-style: normal;" class="auto-style3">&nbsp;&nbsp; &nbsp; Find Us:</p>
-        <p style="padding: 10px; font-size: large; color: #000000; background-color: #808080; " class="auto-style1"><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 94 Mountview Road<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <p style="border-style: groove; padding: 10px; margin: 0px; font-size: xx-large; color: #000000; background-color: #FFFFFF; font-style: normal;" class="auto-style3">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Find Us:</p>
+        <p style="border-style: groove; font-size: large; color: #000000; background-color: #FFFFFF; font-family: 'Times New Roman', Times, serif;" class="auto-style1"><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 94 Mountview Road<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             Glenwood <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
