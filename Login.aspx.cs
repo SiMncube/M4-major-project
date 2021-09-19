@@ -13,6 +13,7 @@ namespace M4_major_project
 {
     public partial class Login : System.Web.UI.Page
     {
+        public static int check = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -44,10 +45,9 @@ namespace M4_major_project
                 }
                 if (password.Equals(TextBox2.Text))
                 {
-                    var userIdentity = new ClaimsIdentity("Custom");
-                    FormsAuthentication.SetAuthCookie(checkUser, true);
-                    
+                    check++;
                     Response.Redirect("/Default");
+                    
                    // Session["New"] = TextBox1.Text;
                   //  Response.Write("Your login was successful");
                     

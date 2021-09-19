@@ -9,14 +9,23 @@ using System.Web.UI.WebControls;
 
 namespace M4_major_project
 {
+
     public partial class SiteMaster : MasterPage
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Context.User.Identity.IsAuthenticated)
+          
+            if (Login.check == 1)
             {
-                
+                Button btn1 = (Button)FindControl("MakeBooking");
+                btn1.Visible = true;
+                Button btn2 = (Button)FindControl("ModifyBooking");
+                btn2.Visible = true;
+                Button btn3 = (Button)FindControl("CancelBooking");
+                btn3.Visible = true;
                 // Master.FindControl("MakeBooking").Visible = true;
+                Login.check = 0;
             }
         }
 
