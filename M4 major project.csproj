@@ -124,8 +124,6 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Private\MakeBooking.aspx" />
-    <Content Include="Private\Web.config" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Images\istockphoto-535353855-612x612.jpg" />
     <Content Include="Images\Screenshot %28164%29.png" />
@@ -133,6 +131,7 @@
     <Content Include="Images\WhatsApp Image 2021-08-25 at 11.57.29.jpeg" />
     <Content Include="Login.aspx" />
     <Content Include="loginStyle.css" />
+    <Content Include="MakeBooking.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -202,6 +201,13 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MakeBooking.aspx.cs">
+      <DependentUpon>MakeBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MakeBooking.aspx.designer.cs">
+      <DependentUpon>MakeBooking.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -230,13 +236,6 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Private\MakeBooking.aspx.cs">
-      <DependentUpon>MakeBooking.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Private\MakeBooking.aspx.designer.cs">
-      <DependentUpon>MakeBooking.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

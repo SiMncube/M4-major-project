@@ -7,12 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-
-namespace M4_major_project
-{
-    public partial class MakeBooking
-    {
-
+namespace M4_major_project {
+    
+    
+    public partial class MakeBooking {
+        
         /// <summary>
         /// form1 control.
         /// </summary>

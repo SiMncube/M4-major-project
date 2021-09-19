@@ -19,15 +19,15 @@ namespace M4_major_project
           
             if (Login.check == 1)
             {
-                HtmlAnchor btn1 = (HtmlAnchor)FindControl("MakeBooking");
+                HtmlAnchor btn1 = (HtmlAnchor)FindControl("MakeBooking1");
                 btn1.Visible = true;
-                HtmlAnchor btn2 = (HtmlAnchor)FindControl("ModifyBooking");
+                HtmlAnchor btn2 = (HtmlAnchor)FindControl("ModifyBooking1");
                 btn2.Visible = true;
-                HtmlAnchor btn3 = (HtmlAnchor)FindControl("CancelBooking");
+                HtmlAnchor btn3 = (HtmlAnchor)FindControl("CancelBooking1");
                 btn3.Visible = true;
-                HtmlAnchor btn4 = (HtmlAnchor)FindControl("Login");
+                HtmlAnchor btn4 = (HtmlAnchor)FindControl("Login1");
                 btn4.Visible = false;
-                HtmlAnchor btn5 = (HtmlAnchor)FindControl("Register");
+                HtmlAnchor btn5 = (HtmlAnchor)FindControl("Register1");
                 btn5.Visible = false;
 
             }

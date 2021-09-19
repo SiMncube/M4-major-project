@@ -24,49 +24,49 @@ namespace M4_major_project
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Panel;
 
         /// <summary>
-        /// Login control.
+        /// Login1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor Login;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor Login1;
 
         /// <summary>
-        /// Register control.
+        /// Register1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor Register;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor Register1;
 
         /// <summary>
-        /// MakeBooking control.
+        /// MakeBooking1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor MakeBooking;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor MakeBooking1;
 
         /// <summary>
-        /// CancelBooking control.
+        /// CancelBooking1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor CancelBooking;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor CancelBooking1;
 
         /// <summary>
-        /// ModifyBooking control.
+        /// ModifyBooking1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor ModifyBooking;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor ModifyBooking1;
 
         /// <summary>
         /// MainContent control.
