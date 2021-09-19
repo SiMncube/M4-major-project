@@ -43,10 +43,11 @@
                         
                         <li><a runat="server"  href="~/Login">Login</a></li>
                         <li><a runat="server"  href="~/Register">Register</a></li>
+                        <li><a runat="server" id ="MakeBooking" visible ="false" href="~/MakeBooking">MakeBooking</a></li>
+                        <li><a runat="server" id ="CancelBooking" visible ="false" href="~/CancelBooking">CancelBooking</a></li>
+                        <li><a runat="server" id ="ModifyBooking" visible ="false" href="~/ModifyBooking">ModifyBooking</a></li>
+                      
                        
-                        <asp:Button ID="MakeBooking" runat="server" Text="Make Booking"  Visible="False" />
-                        <asp:Button ID="ModifyBooking" runat="server" Text="Modify Booking"  Visible="False" />
-                        <asp:Button ID="CancelBooking" runat="server" Text="Cancel Booking"  Visible="False" />
                     </ul>
 
                 </div>

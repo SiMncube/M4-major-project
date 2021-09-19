@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 
@@ -18,14 +19,15 @@ namespace M4_major_project
           
             if (Login.check == 1)
             {
-                Button btn1 = (Button)FindControl("MakeBooking");
+                HtmlAnchor btn1 = (HtmlAnchor)FindControl("MakeBooking");
                 btn1.Visible = true;
-                Button btn2 = (Button)FindControl("ModifyBooking");
+                HtmlAnchor btn2 = (HtmlAnchor)FindControl("ModifyBooking");
                 btn2.Visible = true;
-                Button btn3 = (Button)FindControl("CancelBooking");
+                HtmlAnchor btn3 = (HtmlAnchor)FindControl("CancelBooking");
                 btn3.Visible = true;
-                // Master.FindControl("MakeBooking").Visible = true;
-                Login.check = 0;
+
+               
+               
             }
         }
 

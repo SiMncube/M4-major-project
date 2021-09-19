@@ -30,16 +30,7 @@ namespace M4_major_project
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button MakeBooking;
-
-        /// <summary>
-        /// ModifyBooking control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ModifyBooking;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor MakeBooking;
 
         /// <summary>
         /// CancelBooking control.
@@ -48,7 +39,16 @@ namespace M4_major_project
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CancelBooking;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor CancelBooking;
+
+        /// <summary>
+        /// ModifyBooking control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor ModifyBooking;
 
         /// <summary>
         /// MainContent control.
