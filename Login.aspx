@@ -69,10 +69,10 @@
             
             <table class="auto-style15" align="center">
                 
-                    <td class="auto-style12" style="background-color: #808080; color: #000000; font-size: large;">
-                        <asp:Label ID="Label1" runat="server" ForeColor="Black" Text="LOGIN TO YOUR ACCOUNT"></asp:Label>
+                    <td class="auto-style12" style="padding: 10px 0px 10px 0px; background-color: #808080; color: #000000; font-size: large;">
+                        <asp:Label ID="Label1" runat="server" ForeColor="Black" Text="LOGIN TO YOUR ACCOUNT" Font-Size="X-Large"></asp:Label>
                         <br />
-                        <asp:Image ID="Image1" runat="server" Height="89px" ImageUrl="~/Images/unnamed.jpg" Width="162px" />
+                        <asp:Image ID="Image1" runat="server" Height="89px" ImageUrl="~/Images/unnamed.jpg" Width="203px" />
                     </td>
                 
             </table>

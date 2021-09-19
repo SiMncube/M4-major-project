@@ -55,7 +55,7 @@ namespace M4_major_project
             {
                 sum += numberOfSingle * 450;
             }
-            else if(numberOfDouble > 0)
+            if(numberOfDouble > 0)
             {
                 sum += numberOfDouble * 800;
             }
