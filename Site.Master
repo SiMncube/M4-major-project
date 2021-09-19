@@ -35,6 +35,10 @@
         .auto-style7 {
             margin-bottom: 0px;
         }
+        .auto-style8 {
+            width: 89%;
+            margin-right: 0px;
+        }
     </style>
 
     </head>
@@ -80,12 +84,17 @@
             <br />
         </asp:ContentPlaceHolder>
 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
-&nbsp;&nbsp;&nbsp;
-        <asp:Label ID="Label1" runat="server" ForeColor="Black" Font-Size ="XX-Large" Text="Gallery"></asp:Label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+            <table class="auto-style8">
+                <tr>
+                    <td style="background-color: #808080">
+        <asp:Label ID="Label2" runat="server" ForeColor="Black" Font-Size ="XX-Large" Text="Gallery"></asp:Label>
+                    </td>
+                </tr>
+            </table>
         <br />
         <br />
-        <asp:Table ID="Table1" runat="server" BackColor="Gray" ForeColor="Gray" Height="45px" Width="1210px">
+        <asp:Table ID="Table1" runat="server" BackColor="Gray" ForeColor="Gray" Height="45px" Width="1202px">
         </asp:Table>
       <br />
         <table class="nav-justified">
@@ -97,14 +106,12 @@
                     <asp:Image ID="Image2" runat="server" Height="248px" ImageUrl="~/Images/4ec0b423-f222-48e3-be7d-869433c98184.jpg" Width="415px" />
                 </td>
                 <td class="auto-style2">
-                    <asp:Image ID="Image3" runat="server" CssClass="auto-style7" Height="248px" ImageUrl="~/Images/53d5ce15-ec62-474c-9077-85be09e8e4ce.jpg" Width="410px" />
+                    <asp:Image ID="Image3" runat="server" CssClass="auto-style7" Height="248px" ImageUrl="~/Images/53d5ce15-ec62-474c-9077-85be09e8e4ce.jpg" Width="406px" />
                 </td>
             </tr>
-           
-                <br />
         </table>
             <br />
-            <asp:Table ID="Table2" runat="server" BackColor="Gray" ForeColor="Gray" Height="45px" Width="1210px">
+            <asp:Table ID="Table2" runat="server" BackColor="Gray" ForeColor="Gray" Height="45px" Width="1203px">
         </asp:Table>
 
         </div>
