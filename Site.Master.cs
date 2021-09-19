@@ -25,9 +25,11 @@ namespace M4_major_project
                 btn2.Visible = true;
                 HtmlAnchor btn3 = (HtmlAnchor)FindControl("CancelBooking");
                 btn3.Visible = true;
+                HtmlAnchor btn4 = (HtmlAnchor)FindControl("Login");
+                btn4.Visible = false;
+                HtmlAnchor btn5 = (HtmlAnchor)FindControl("Register");
+                btn5.Visible = false;
 
-               
-               
             }
         }
 

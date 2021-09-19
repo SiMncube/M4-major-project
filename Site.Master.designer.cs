@@ -24,6 +24,24 @@ namespace M4_major_project
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl Panel;
 
         /// <summary>
+        /// Login control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor Login;
+
+        /// <summary>
+        /// Register control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor Register;
+
+        /// <summary>
         /// MakeBooking control.
         /// </summary>
         /// <remarks>
