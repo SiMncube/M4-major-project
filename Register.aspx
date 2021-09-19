@@ -51,10 +51,11 @@
         }
         .auto-style11 {
             width: 365px;
-            height: 37px;
+            height: 62px;
         }
         .auto-style12 {
             text-align: center;
+            width: 633px;
         }
         .auto-style13 {
             width: 49%;
@@ -67,11 +68,11 @@
         }
         .auto-style15 {
             width: 148px;
-            height: 37px;
+            height: 62px;
         }
         .auto-style16 {
             width: 283px;
-            height: 37px;
+            height: 62px;
         }
         .auto-style17 {
             text-align: right;
@@ -110,11 +111,11 @@
         <br />
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <table class="auto-style1" align="center">
+        <table class="auto-style1" align="center" style="padding: 0px; border-style: groove;">
             <tr>
-                <td class="auto-style12" style="border-style: groove; background-color: #FFFFFF; color: #000000; font-size: x-large; font-family: 'Times New Roman', Times, serif;">
+                <td class="auto-style12" style="border-style: none; background-color: #FFFFFF; color: #000000; font-size: x-large; font-family: 'Times New Roman', Times, serif;">
                     <br />
-                    <asp:Label ID="Label1" runat="server" ForeColor="Black" Text="Sign Up" BackColor="White"></asp:Label>
+                    <asp:Label ID="Label1" runat="server" ForeColor="Lime" Text="Sign Up" BackColor="White"></asp:Label>
                     <br />
                     <br />
                 </td>

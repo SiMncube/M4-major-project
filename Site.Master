@@ -36,7 +36,7 @@
             margin-bottom: 0px;
         }
         .auto-style8 {
-            width: 89%;
+            width: 100%;
             margin-right: 0px;
         }
         .auto-style9 {
@@ -47,16 +47,16 @@
             width: 89%;
         }
         .auto-style13 {
-            width: 611px;
+            width: 690px;
             text-align: right;
-            height: 42px;
+            height: 40px;
         }
         .auto-style14 {
-            height: 42px;
+            height: 40px;
             text-align: left;
         }
         .auto-style15 {
-            width: 611px;
+            width: 690px;
             text-align: right;
             height: 36px;
         }
@@ -65,7 +65,7 @@
             text-align: left;
         }
         .auto-style17 {
-            width: 611px;
+            width: 690px;
             text-align: right;
             height: 38px;
         }
@@ -76,6 +76,9 @@
         .auto-style19 {
             width: 100%;
             height: 143px;
+        }
+        .auto-style20 {
+            margin-left: 40;
         }
     </style>
 
@@ -122,9 +125,9 @@
             <br />
         </asp:ContentPlaceHolder>
             
-            <table class="auto-style8">
+            <table class="auto-style8" style="border-style: groove">
                 <tr>
-                    <td class="auto-style9" style="border-style: groove; background-color: #808080">&nbsp;<asp:Label ID="Label2" runat="server" ForeColor="Black" Font-Size ="XX-Large" Text="Gallery"></asp:Label>
+                    <td class="auto-style9" style="border-style: groove; background-color: #FFFFFF">&nbsp;&nbsp;&nbsp; <asp:Label ID="Label2" runat="server" ForeColor="Black" Font-Size ="XX-Large" Text="Gallery"></asp:Label>
        </td>
                 </tr>
             </table>
@@ -132,43 +135,43 @@
         <table class="auto-style10">
             <tr>
                 <td class="auto-style3">
-                    <asp:Image ID="Image1" runat="server" Height="248px" ImageUrl="~/Images/1d0635eb-a70d-49a6-89d1-9f20f008f7c5.jpg" Width="381px" BorderStyle="Groove" />
+                    <asp:Image ID="Image1" runat="server" Height="248px" ImageUrl="~/Images/1d0635eb-a70d-49a6-89d1-9f20f008f7c5.jpg" Width="432px" BorderStyle="Groove" />
                 </td>
                 <td class="auto-style5">
-                    <asp:Image ID="Image2" runat="server" Height="248px" ImageUrl="~/Images/4ec0b423-f222-48e3-be7d-869433c98184.jpg" Width="420px" BorderStyle="Groove" />
+                    <asp:Image ID="Image2" runat="server" Height="248px" ImageUrl="~/Images/4ec0b423-f222-48e3-be7d-869433c98184.jpg" Width="493px" BorderStyle="Groove" />
                 </td>
                 <td class="auto-style2">
-                    <asp:Image ID="Image3" runat="server" CssClass="auto-style7" Height="248px" ImageUrl="~/Images/53d5ce15-ec62-474c-9077-85be09e8e4ce.jpg" Width="401px" BorderStyle="Groove" />
+                    <asp:Image ID="Image3" runat="server" CssClass="auto-style7" Height="248px" ImageUrl="~/Images/53d5ce15-ec62-474c-9077-85be09e8e4ce.jpg" Width="421px" BorderStyle="Groove" />
                 </td>
             </tr>
         </table>
-            <asp:Table ID="Table2" runat="server" BackColor="Gray" ForeColor="Gray" Height="45px" Width="1203px" BorderStyle="Groove">
+            <asp:Table ID="Table2" runat="server" BackColor="White" ForeColor="Gray" Height="45px" Width="1349px" BorderStyle="Groove">
         </asp:Table>
 
             <br />
 
-            <table class="auto-style10">
+            <table class="nav-justified">
                 <tr>
-                    <td class="text-center" style="border-style: groove; background-color: #808080; color: #000000">&nbsp;<asp:Label ID="Label3" runat="server" Font-Size="XX-Large" Text="Get Quote" ></asp:Label>
-                        <table class="auto-style19" style="border-style: groove; color: #000000; font-size: large; font-family: 'Times New Roman', Times, serif">
+                    <td class="text-center" style="border-style: groove; background-color: #FFFFFF; color: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="Label3" runat="server" Font-Size="XX-Large" Text="Get Quote" ></asp:Label>
+                        <table class="auto-style19" style="border-style: groove; color: #000000; font-size: large; font-family: 'Times New Roman', Times, serif; background-color: #FFFFFF;">
                             <tr>
                                 <td class="auto-style13">Number of single rooms&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                                 <td class="auto-style14">
-                                    <asp:TextBox ID="TextBox1" runat="server" Height="25px" Width="160px"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox1" runat="server" Height="25px" Width="160px" BorderStyle="Groove" CssClass="auto-style20"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="auto-style15">Number of double rooms&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                                 <td class="auto-style16">
-                                    <asp:TextBox ID="TextBox2" runat="server" Height="25px" Width="160px"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox2" runat="server" Height="25px" Width="160px" BorderStyle="Groove"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="auto-style17">
-                                    <asp:Button ID="Button1" runat="server" Height="34px" OnClick="Button1_Click1" Text="Calculate" Width="149px" BackColor="Lime" BorderColor="Lime" BorderStyle="Groove" ForeColor="White" />
+                                    <asp:Button ID="Button1" runat="server" Height="34px" OnClick="Button1_Click1" Text="Calculate" Width="160px" BackColor="Lime" BorderColor="Lime" BorderStyle="Groove" ForeColor="White" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                                 <td class="auto-style18">
-                                    <asp:TextBox ID="TextBox3" runat="server" Height="25px" ReadOnly="True" Width="160px"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox3" runat="server" Height="25px" ReadOnly="True" Width="160px" BorderStyle="Groove"></asp:TextBox>
                                 </td>
                             </tr>
                         </table>
