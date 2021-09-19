@@ -36,11 +36,46 @@
             margin-bottom: 0px;
         }
         .auto-style8 {
-            width: 8%;
+            width: 89%;
             margin-right: 0px;
         }
         .auto-style9 {
             margin-left: 40px;
+            text-align: center;
+        }
+        .auto-style10 {
+            width: 89%;
+        }
+        .auto-style13 {
+            width: 611px;
+            text-align: right;
+            height: 42px;
+        }
+        .auto-style14 {
+            height: 42px;
+            text-align: left;
+        }
+        .auto-style15 {
+            width: 611px;
+            text-align: right;
+            height: 36px;
+        }
+        .auto-style16 {
+            height: 36px;
+            text-align: left;
+        }
+        .auto-style17 {
+            width: 611px;
+            text-align: right;
+            height: 38px;
+        }
+        .auto-style18 {
+            height: 38px;
+            text-align: left;
+        }
+        .auto-style19 {
+            width: 100%;
+            height: 143px;
         }
     </style>
 
@@ -71,7 +106,7 @@
                         <li><a runat="server" id ="MakeBooking1" visible ="false" href="~/MakeBooking">MakeBooking</a></li>
                         <li><a runat="server" id ="CancelBooking1" visible ="false" href="~/CancelBooking">CancelBooking</a></li>
                         <li><a runat="server" id ="ModifyBooking1" visible ="false" href="~/ModifyBooking">ModifyBooking</a></li>
-                      
+                        
                        
                     </ul>
 
@@ -86,35 +121,60 @@
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             <br />
         </asp:ContentPlaceHolder>
-
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+            
             <table class="auto-style8">
                 <tr>
                     <td class="auto-style9" style="background-color: #808080">&nbsp;<asp:Label ID="Label2" runat="server" ForeColor="Black" Font-Size ="XX-Large" Text="Gallery"></asp:Label>
        </td>
                 </tr>
             </table>
-        <br />
-        <br />
-        <asp:Table ID="Table1" runat="server" BackColor="Gray" ForeColor="Gray" Height="45px" Width="1202px">
-        </asp:Table>
-      <br />
+        
         <table class="nav-justified">
             <tr>
                 <td class="auto-style3">
-                    <asp:Image ID="Image1" runat="server" Height="245px" ImageUrl="~/Images/1d0635eb-a70d-49a6-89d1-9f20f008f7c5.jpg" Width="378px" />
+                    <asp:Image ID="Image1" runat="server" Height="248px" ImageUrl="~/Images/1d0635eb-a70d-49a6-89d1-9f20f008f7c5.jpg" Width="381px" />
                 </td>
                 <td class="auto-style5">
-                    <asp:Image ID="Image2" runat="server" Height="248px" ImageUrl="~/Images/4ec0b423-f222-48e3-be7d-869433c98184.jpg" Width="415px" />
+                    <asp:Image ID="Image2" runat="server" Height="248px" ImageUrl="~/Images/4ec0b423-f222-48e3-be7d-869433c98184.jpg" Width="420px" />
                 </td>
                 <td class="auto-style2">
-                    <asp:Image ID="Image3" runat="server" CssClass="auto-style7" Height="248px" ImageUrl="~/Images/53d5ce15-ec62-474c-9077-85be09e8e4ce.jpg" Width="406px" />
+                    <asp:Image ID="Image3" runat="server" CssClass="auto-style7" Height="248px" ImageUrl="~/Images/53d5ce15-ec62-474c-9077-85be09e8e4ce.jpg" Width="401px" />
                 </td>
             </tr>
         </table>
-            <br />
             <asp:Table ID="Table2" runat="server" BackColor="Gray" ForeColor="Gray" Height="45px" Width="1203px">
         </asp:Table>
+
+            <br />
+
+            <table class="auto-style10">
+                <tr>
+                    <td class="text-center" style="background-color: #808080; color: #000000">&nbsp;<asp:Label ID="Label3" runat="server" Font-Size="XX-Large" Text="Get Quote"></asp:Label>
+                        <table class="auto-style19">
+                            <tr>
+                                <td class="auto-style13">Number of single rooms&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                                <td class="auto-style14">
+                                    <asp:TextBox ID="TextBox1" runat="server" Height="27px"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style15">Number of double rooms&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                                <td class="auto-style16">
+                                    <asp:TextBox ID="TextBox2" runat="server" Height="24px"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style17">
+                                    <asp:Button ID="Button1" runat="server" Height="37px" OnClick="Button1_Click1" Text="Calculate" Width="130px" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                                <td class="auto-style18">
+                                    <asp:TextBox ID="TextBox3" runat="server" Height="24px" ReadOnly="True"></asp:TextBox>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
 
         </div>
 

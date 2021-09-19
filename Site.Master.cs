@@ -45,5 +45,22 @@ namespace M4_major_project
             Page.ClientScript.RegisterStartupScript(
             this.GetType(), "OpenWindow", "window.open('https://localhost:44301/Register.aspx','_newtab');", true);
         }
+
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+            int numberOfSingle = Convert.ToInt32(TextBox1.Text);
+            int numberOfDouble = Convert.ToInt32(TextBox2.Text);
+            Double sum = 0;
+            if(numberOfSingle > 0)
+            {
+                sum += numberOfSingle * 450;
+            }
+            else if(numberOfDouble > 0)
+            {
+                sum += numberOfDouble * 800;
+            }
+
+            TextBox3.Text = "R" + sum.ToString();
+        }
     }
 }
