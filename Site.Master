@@ -132,13 +132,13 @@
         <table class="auto-style10">
             <tr>
                 <td class="auto-style3">
-                    <asp:Image ID="Image1" runat="server" Height="248px" ImageUrl="~/Images/1d0635eb-a70d-49a6-89d1-9f20f008f7c5.jpg" Width="381px" />
+                    <asp:Image ID="Image1" runat="server" Height="248px" ImageUrl="~/Images/1d0635eb-a70d-49a6-89d1-9f20f008f7c5.jpg" Width="381px" BorderStyle="Groove" />
                 </td>
                 <td class="auto-style5">
-                    <asp:Image ID="Image2" runat="server" Height="248px" ImageUrl="~/Images/4ec0b423-f222-48e3-be7d-869433c98184.jpg" Width="420px" />
+                    <asp:Image ID="Image2" runat="server" Height="248px" ImageUrl="~/Images/4ec0b423-f222-48e3-be7d-869433c98184.jpg" Width="420px" BorderStyle="Groove" />
                 </td>
                 <td class="auto-style2">
-                    <asp:Image ID="Image3" runat="server" CssClass="auto-style7" Height="248px" ImageUrl="~/Images/53d5ce15-ec62-474c-9077-85be09e8e4ce.jpg" Width="401px" />
+                    <asp:Image ID="Image3" runat="server" CssClass="auto-style7" Height="248px" ImageUrl="~/Images/53d5ce15-ec62-474c-9077-85be09e8e4ce.jpg" Width="401px" BorderStyle="Groove" />
                 </td>
             </tr>
         </table>
