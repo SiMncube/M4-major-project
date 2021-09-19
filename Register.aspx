@@ -8,7 +8,7 @@
     <style type="text/css">
         .auto-style1 {
             width: 49%;
-            height: 62px;
+            height: 99px;
         }
         .auto-style2 {
             text-align: right;
@@ -98,16 +98,16 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <table class="auto-style1" align="center">
             <tr>
-                <td class="auto-style12" style="background-color: #808080; color: #000000; font-size: x-large;">
+                <td class="auto-style12" style="border-style: groove; background-color: #FFFFFF; color: #000000; font-size: x-large; font-family: 'Times New Roman', Times, serif;">
                     <br />
-                    <asp:Label ID="Label1" runat="server" ForeColor="Black" Text="CREATE AN ACCOUNT" BackColor="Gray"></asp:Label>
+                    <asp:Label ID="Label1" runat="server" ForeColor="Black" Text="Sign Up" BackColor="White"></asp:Label>
                     <br />
                     <br />
                 </td>
             </tr>
         </table>
         
-        <table class="auto-style13" align="center" style="background-color: #808080">
+        <table class="auto-style13" align="center" style="border-style: groove; background-color: #FFFFFF; font-family: 'Times New Roman'; color: #000000;">
             
                 <td class="auto-style2">First name</td>
                 <td class="auto-style5">
