@@ -36,7 +36,7 @@ namespace M4_major_project
                 if (passwordCom.ExecuteScalar() == null)
                 {
                     Response.Write("Your login was unsuccessful");
-                    //Label2.Visible = true;
+                    Label2.Visible = true;
                     
                 }
                 else
@@ -59,7 +59,7 @@ namespace M4_major_project
             else
             {
                 Response.Write("Your login was unsuccessful");
-                //Label2.Visible = true;
+                Label2.Visible = true;
             }
             
         }

@@ -85,13 +85,13 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <table class="auto-style1" align="center">
             <tr>
-                <td class="auto-style12" style="background-color: #3333FF; color: #000000;">
-                    <asp:Label ID="Label1" runat="server" ForeColor="Black" Text="CREATE AN ACCOUNT" BackColor="#3333FF"></asp:Label>
+                <td class="auto-style12" style="background-color: #808080; color: #000000;">
+                    <asp:Label ID="Label1" runat="server" ForeColor="Black" Text="CREATE AN ACCOUNT" BackColor="Gray"></asp:Label>
                 </td>
             </tr>
         </table>
         
-        <table class="auto-style13" align="center" style="background-color: #3333FF">
+        <table class="auto-style13" align="center" style="background-color: #808080">
             
                 <td class="auto-style2">First name</td>
                 <td class="auto-style5">
@@ -187,7 +187,7 @@
                 <td class="auto-style11"></td>
                 <td class="auto-style15">
                     <br />
-                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Register" Width="162px" BackColor="White" ForeColor="Blue" Height="25px" BorderColor="White" />
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Register" Width="181px" BackColor="White" ForeColor="Blue" Height="40px" BorderColor="White" />
                     <br />
                 </td>
                 <td class="auto-style16"></td>

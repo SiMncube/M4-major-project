@@ -67,15 +67,15 @@
             
             <table class="auto-style15" align="center">
                 
-                    <td class="auto-style12" style="background-color: #3333FF; color: #000000; font-size: large;">
+                    <td class="auto-style12" style="background-color: #808080; color: #000000; font-size: large;">
                         <asp:Label ID="Label1" runat="server" ForeColor="Black" Text="LOGIN TO YOUR ACCOUNT"></asp:Label>
                     </td>
                 
             </table>
             
-            <table class="auto-style17" align="center" style="background-color: #3333FF">
+            <table class="auto-style17" align="center" style="background-color: #808080">
                 
-                    <td class="auto-style14" style="background-color: #3333FF">Username</td>
+                    <td class="auto-style14" style="background-color: #808080">Username</td>
                     <td class="auto-style13">
                         <asp:TextBox ID="TextBox1" runat="server" Width="191px" Height="21px"></asp:TextBox>
                     </td>
@@ -92,6 +92,8 @@
                     </td>
                     <td class="auto-style2">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="Password required" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <br />
+                        <asp:Label ID="Label2" runat="server" ForeColor="Red" Text="Incorrect Password" Visible="False"></asp:Label>
                     </td>
                 </tr>
                 <tr>
