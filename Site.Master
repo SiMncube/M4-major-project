@@ -17,13 +17,31 @@
 
     <style type="text/css">
         .auto-style1 {
-            height: 655px;
+            height: 654px;
+            width: 1351px;
+        }
+        .auto-style2 {
+            height: 20px;
+            width: 625px;
+        }
+        .auto-style3 {
+            height: 20px;
+            width: 381px;
+        }
+        .auto-style5 {
+            height: 20px;
+            width: 419px;
+        }
+        .auto-style7 {
+            margin-bottom: 0px;
         }
     </style>
 
     </head>
 <body>
-    <form runat="server" class="auto-style1" style="background-image: url('/Images/wallpaperflare.com_wallpaper.jpg')">
+    <form runat="server" class="auto-style1" style="background-image: url('/Images/wallpaperflare.com_wallpaper.jpg'); background-color: #0000FF; color: #000000;">
+
+        <div class="text-left">
 
         <div class="navbar navbar-inverse navbar-fixed-top" id="Panel" runat="server">
             <div class="container">
@@ -62,7 +80,34 @@
             <br />
         </asp:ContentPlaceHolder>
 
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label1" runat="server" ForeColor="Black" Font-Size ="XX-Large" Text="Gallery"></asp:Label>
+        <br />
+        <br />
+        <asp:Table ID="Table1" runat="server" BackColor="Gray" ForeColor="Gray" Height="45px" Width="1210px">
+        </asp:Table>
+      <br />
+        <table class="nav-justified">
+            <tr>
+                <td class="auto-style3">
+                    <asp:Image ID="Image1" runat="server" Height="245px" ImageUrl="~/Images/1d0635eb-a70d-49a6-89d1-9f20f008f7c5.jpg" Width="378px" />
+                </td>
+                <td class="auto-style5">
+                    <asp:Image ID="Image2" runat="server" Height="248px" ImageUrl="~/Images/4ec0b423-f222-48e3-be7d-869433c98184.jpg" Width="415px" />
+                </td>
+                <td class="auto-style2">
+                    <asp:Image ID="Image3" runat="server" CssClass="auto-style7" Height="248px" ImageUrl="~/Images/53d5ce15-ec62-474c-9077-85be09e8e4ce.jpg" Width="410px" />
+                </td>
+            </tr>
+           
+                <br />
+        </table>
+            <br />
+            <asp:Table ID="Table2" runat="server" BackColor="Gray" ForeColor="Gray" Height="45px" Width="1210px">
+        </asp:Table>
+
+        </div>
 
     </form>
 </body>
