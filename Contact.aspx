@@ -21,6 +21,7 @@
 </head>
 
 <body style="margin-left: 0px; margin-top: 0px">
+    <form id="form1" runat="server">
 <div  style="background-image: url('https://localhost:44301/Images/wallpaperflare.com_wallpaper.jpg')" class="auto-style2" >
     <p>&nbsp;</p>
     <br />
@@ -46,5 +47,6 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         Phone no.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: 067 245 4478<br />
     </div>
+</form>
 </body>
-</asp:Content>
+

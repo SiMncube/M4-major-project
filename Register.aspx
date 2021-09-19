@@ -76,7 +76,7 @@
         }
     </style>
 </head>
-<body style="width: 1014px; height: 547px"; "margin-left: 0px; margin-top: 0px">
+<body style="width: 1014px; height: 547px; margin-left: 0px; margin-top: 0px;"; "margin-left: 0px; margin-top: 0px">
     <form id="form1" runat="server" style="background-image: url('Images/wallpaperflare.com_wallpaper.jpg')" class="auto-style14">
         <br />
         <br />
