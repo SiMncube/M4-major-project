@@ -34,16 +34,16 @@
         }
         .auto-style7 {
             text-align: right;
-            height: 26px;
+            height: 34px;
             width: 365px;
         }
         .auto-style8 {
             width: 148px;
-            height: 26px;
+            height: 34px;
             text-align: left;
         }
         .auto-style9 {
-            height: 26px;
+            height: 34px;
             width: 283px;
         }
         .auto-style10 {
@@ -67,7 +67,6 @@
         }
         .auto-style15 {
             width: 148px;
-            text-align: center;
             height: 37px;
         }
         .auto-style16 {
@@ -85,8 +84,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <table class="auto-style1" align="center">
             <tr>
-                <td class="auto-style12" style="background-color: #808080; color: #000000;">
+                <td class="auto-style12" style="background-color: #808080; color: #000000; font-size: x-large;">
+                    <br />
                     <asp:Label ID="Label1" runat="server" ForeColor="Black" Text="CREATE AN ACCOUNT" BackColor="Gray"></asp:Label>
+                    <br />
+                    <br />
                 </td>
             </tr>
         </table>
@@ -186,9 +188,9 @@
             <tr>
                 <td class="auto-style11"></td>
                 <td class="auto-style15">
-                    <br />
-                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Register" Width="181px" BackColor="White" ForeColor="Blue" Height="40px" BorderColor="White" />
-                    <br />
+                    
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Register" Width="181px" BackColor="Lime" ForeColor="White" Height="41px" BorderColor="White" />
+                    
                 </td>
                 <td class="auto-style16"></td>
             </tr>

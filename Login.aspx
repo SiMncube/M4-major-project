@@ -18,7 +18,7 @@
         .auto-style4 {
             height: 23px;
             text-align: right;
-            width: 333px;
+            width: 313px;
         }
         .auto-style8 {
             height: 23px;
@@ -33,7 +33,7 @@
         }
         .auto-style14 {
             text-align: right;
-            width: 333px;
+            width: 313px;
         }
         .auto-style15 {
             width: 41%;
@@ -70,9 +70,11 @@
             <table class="auto-style15" align="center">
                 
                     <td class="auto-style12" style="padding: 10px 0px 10px 0px; background-color: #808080; color: #000000; font-size: large;">
+                        <br />
                         <asp:Label ID="Label1" runat="server" ForeColor="Black" Text="LOGIN TO YOUR ACCOUNT" Font-Size="X-Large"></asp:Label>
                         <br />
-                        <asp:Image ID="Image1" runat="server" Height="89px" ImageUrl="~/Images/unnamed.jpg" Width="203px" />
+                        <br />
+                        <asp:Image ID="Image1" runat="server" Height="91px" ImageUrl="~/Images/png-clipart-login-computer-icons-avatar-icon-monochrome-black.png" Width="205px" />
                     </td>
                 
             </table>
