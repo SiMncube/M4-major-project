@@ -70,7 +70,7 @@
             
             <table class="auto-style15" align="center">
                 
-                    <td class="auto-style12" style="padding: 10px 0px 10px 0px; background-color: #808080; color: #000000; font-size: large;">
+                    <td class="auto-style12" style="border-style: groove; padding: 10px 0px 10px 0px; background-color: #808080; color: #000000; font-size: large;">
                         <br />
                         <asp:Label ID="Label1" runat="server" ForeColor="Black" Text="LOGIN TO YOUR ACCOUNT" Font-Size="X-Large"></asp:Label>
                         <br />
@@ -80,7 +80,7 @@
                 
             </table>
             
-            <table class="auto-style17" align="center" style="background-color: #808080">
+            <table class="auto-style17" align="center" style="border-style: groove; background-color: #808080">
                 
                     <td class="auto-style14" style="background-color: #808080">Username</td>
                     <td class="auto-style13">
@@ -108,7 +108,7 @@
                 <tr>
                     <td class="auto-style14">&nbsp;</td>
                     <td class="auto-style18">
-                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Login" Width="176px" BackColor="Blue" BorderColor="#0000CC" ForeColor="White" Height="46px" />
+                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Login" Width="176px" BackColor="Blue" BorderColor="#0000CC" ForeColor="White" Height="46px" BorderStyle="Groove" />
                     </td>
                     <td class="auto-style3">&nbsp;</td>
                 </tr>
