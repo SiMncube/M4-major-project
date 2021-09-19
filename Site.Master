@@ -149,26 +149,26 @@
 
             <table class="auto-style10">
                 <tr>
-                    <td class="text-center" style="background-color: #808080; color: #000000">&nbsp;<asp:Label ID="Label3" runat="server" Font-Size="XX-Large" Text="Get Quote"></asp:Label>
-                        <table class="auto-style19">
+                    <td class="text-center" style="background-color: #808080; color: #000000">&nbsp;<asp:Label ID="Label3" runat="server" Font-Size="XX-Large" Text="Get Quote" ></asp:Label>
+                        <table class="auto-style19" style="color: #000000; font-size: large; font-family: 'Times New Roman', Times, serif">
                             <tr>
                                 <td class="auto-style13">Number of single rooms&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                                 <td class="auto-style14">
-                                    <asp:TextBox ID="TextBox1" runat="server" Height="27px"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox1" runat="server" Height="27px" Width="160px"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="auto-style15">Number of double rooms&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                                 <td class="auto-style16">
-                                    <asp:TextBox ID="TextBox2" runat="server" Height="24px"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox2" runat="server" Height="24px" Width="160px"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="auto-style17">
-                                    <asp:Button ID="Button1" runat="server" Height="37px" OnClick="Button1_Click1" Text="Calculate" Width="130px" />
+                                    <asp:Button ID="Button1" runat="server" Height="34px" OnClick="Button1_Click1" Text="Calculate" Width="149px" BackColor="Lime" BorderColor="Lime" BorderStyle="Groove" ForeColor="White" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                                 <td class="auto-style18">
-                                    <asp:TextBox ID="TextBox3" runat="server" Height="24px" ReadOnly="True"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox3" runat="server" Height="20px" ReadOnly="True" Width="160px"></asp:TextBox>
                                 </td>
                             </tr>
                         </table>
