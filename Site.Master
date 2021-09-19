@@ -54,6 +54,7 @@
         .auto-style14 {
             height: 40px;
             text-align: left;
+            width: 645px;
         }
         .auto-style15 {
             width: 690px;
@@ -63,6 +64,7 @@
         .auto-style16 {
             height: 36px;
             text-align: left;
+            width: 645px;
         }
         .auto-style17 {
             width: 690px;
@@ -72,6 +74,7 @@
         .auto-style18 {
             height: 38px;
             text-align: left;
+            width: 645px;
         }
         .auto-style19 {
             width: 100%;
@@ -150,10 +153,10 @@
 
             <br />
 
-            <table class="nav-justified">
+            <table class="nav-justified" style="border-style: groove">
                 <tr>
                     <td class="text-center" style="border-style: groove; background-color: #FFFFFF; color: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="Label3" runat="server" Font-Size="XX-Large" Text="Get Quote" ></asp:Label>
-                        <table class="auto-style19" style="border-style: groove; color: #000000; font-size: large; font-family: 'Times New Roman', Times, serif; background-color: #FFFFFF;">
+                        <table class="auto-style19" style="color: #000000; font-size: large; font-family: 'Times New Roman', Times, serif; background-color: #FFFFFF;">
                             <tr>
                                 <td class="auto-style13">Number of single rooms&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                                 <td class="auto-style14">
