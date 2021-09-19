@@ -36,8 +36,11 @@
             margin-bottom: 0px;
         }
         .auto-style8 {
-            width: 89%;
+            width: 8%;
             margin-right: 0px;
+        }
+        .auto-style9 {
+            margin-left: 40px;
         }
     </style>
 
@@ -87,9 +90,8 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
             <table class="auto-style8">
                 <tr>
-                    <td style="background-color: #808080">
-        <asp:Label ID="Label2" runat="server" ForeColor="Black" Font-Size ="XX-Large" Text="Gallery"></asp:Label>
-                    </td>
+                    <td class="auto-style9" style="background-color: #808080">&nbsp;<asp:Label ID="Label2" runat="server" ForeColor="Black" Font-Size ="XX-Large" Text="Gallery"></asp:Label>
+       </td>
                 </tr>
             </table>
         <br />
