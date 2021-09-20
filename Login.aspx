@@ -24,7 +24,7 @@
             </div>
             <div class="txt_field">
                 <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
-                <asp:TextBox ID="TextBox2" runat="server" required="" OnTextChanged="TextBox2_TextChanged" ></asp:TextBox>
+                <asp:TextBox ID="TextBox2" runat="server" required="" OnTextChanged="TextBox2_TextChanged" TextMode="Password" ></asp:TextBox>
             </div>
             <div class="pass">
                 <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Forgot password?</asp:LinkButton>
