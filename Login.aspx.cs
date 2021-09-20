@@ -22,7 +22,10 @@ namespace M4_major_project
         protected void Button1_Click(object sender, EventArgs e)
         {
             if (loginValid())
+            {
+                ViewState["CurrentUserEmail"] = TextBox1.Text;
                 Response.Redirect("/Default");
+            }
             else
                 Label3.Visible = true;
         }
@@ -30,7 +33,7 @@ namespace M4_major_project
         {
             FullDataSet fullDs = new FullDataSet();
             FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
-            taCustomer.Fill(fullDs.Customer);
+            taCustomer.Fill(fullDs.Customer);           
             for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
             {
                 if (fullDs.Customer[i].emailID.Equals(TextBox1.Text, StringComparison.OrdinalIgnoreCase))
