@@ -38,9 +38,7 @@ namespace M4_major_project
             for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
             {
                 if (fullDs.Customer[i].emailID.Equals(TextBox1.Text, StringComparison.OrdinalIgnoreCase))
-                {
                     return true;
-                }
             }
             return false;
         }
