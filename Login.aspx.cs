@@ -74,7 +74,7 @@ namespace M4_major_project
 
         protected void TextBox2_TextChanged(object sender, EventArgs e)
         {
-            Label3.Visible = false;
+            Label3.Visible= false;
         }
     }
 }
