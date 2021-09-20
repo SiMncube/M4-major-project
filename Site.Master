@@ -38,6 +38,8 @@
         .auto-style8 {
             width: 100%;
             margin-right: 0px;
+            height: 38px;
+            margin-top: 0px;
         }
         .auto-style9 {
             margin-left: 40px;
@@ -82,6 +84,9 @@
         }
         .auto-style20 {
             margin-left: 40;
+        }
+        .auto-style21 {
+            margin-top: 0px;
         }
     </style>
 
@@ -144,11 +149,11 @@
                     <asp:Image ID="Image2" runat="server" Height="248px" ImageUrl="~/Images/4ec0b423-f222-48e3-be7d-869433c98184.jpg" Width="493px" BorderStyle="Groove" />
                 </td>
                 <td class="auto-style2">
-                    <asp:Image ID="Image3" runat="server" CssClass="auto-style7" Height="248px" ImageUrl="~/Images/53d5ce15-ec62-474c-9077-85be09e8e4ce.jpg" Width="421px" BorderStyle="Groove" />
+                    <asp:Image ID="Image3" runat="server" CssClass="auto-style7" Height="248px" ImageUrl="~/Images/53d5ce15-ec62-474c-9077-85be09e8e4ce.jpg" Width="421px" BorderColor="White" BorderStyle="Groove" />
                 </td>
             </tr>
         </table>
-            <asp:Table ID="Table2" runat="server" BackColor="White" ForeColor="Gray" Height="45px" Width="1349px" BorderStyle="Groove">
+            <asp:Table ID="Table2" runat="server" BackColor="White" ForeColor="Gray" Height="45px" Width="1349px" BorderColor="Black" BorderStyle="Groove" CssClass="auto-style21">
         </asp:Table>
 
             <br />

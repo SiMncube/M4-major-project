@@ -102,6 +102,9 @@
             height: 25px;
             width: 283px;
         }
+        .auto-style23 {
+            border-radius = 15px;
+        }
     </style>
 </head>
 <body style="width: 1014px; height: 547px; margin-left: 0px; margin-top: 0px;"; "margin-left: 0px; margin-top: 0px">
@@ -218,7 +221,7 @@
                 <td class="auto-style11"></td>
                 <td class="auto-style15">
                     
-                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Register" Width="181px" BackColor="Lime" ForeColor="White" Height="41px" BorderColor="Lime" BorderStyle="Groove" Font-Size="Medium" />
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Register" Width="181px" BackColor="Lime" ForeColor="White" Height="41px"  BorderColor="Lime" BorderStyle="Groove" Font-Size="Medium" CssClass="auto-style23" />
                     
                 </td>
                 <td class="auto-style16"></td>

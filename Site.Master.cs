@@ -59,6 +59,7 @@ namespace M4_major_project
             {
                 sum += numberOfDouble * 800;
             }
+            
 
             TextBox3.Text = "R" + sum.ToString();
         }

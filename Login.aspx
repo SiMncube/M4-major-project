@@ -89,14 +89,14 @@
                         
                         <br />
                         
-                        <asp:Label ID="Label1" runat="server" ForeColor="Blue" Text="LOGIN TO YOUR ACCOUNT" Font-Size="X-Large"></asp:Label>
+                        <asp:Label ID="Label1" runat="server" ForeColor="Blue" Text="LOGIN" Font-Size="X-Large"></asp:Label>
                         
        
                         <br />
                         <br />
                         
        
-                        <asp:Image ID="Image1" runat="server" Height="91px" ImageUrl="~/Images/png-clipart-login-computer-icons-avatar-icon-monochrome-black.png" Width="155px" />
+                        <asp:ImageButton ID="ImageButton1" runat="server" Height="109px" ImageUrl="~/Images/png-clipart-login-computer-icons-avatar-icon-monochrome-black.png" Width="204px" />
                     </td>
                 
             </table>
@@ -129,7 +129,7 @@
                 <tr>
                     <td class="auto-style14"></td>
                     <td class="auto-style18">
-                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Login" Width="176px" BackColor="#000099" BorderColor="#000066" ForeColor="White" Height="45px" BorderStyle="Groove" Font-Size="Medium" />
+                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Login" Width="176px" BackColor="Blue" BorderColor="#000066" ForeColor="White" Height="45px" BorderStyle="Groove" Font-Size="Medium" />
                     </td>
                     <td class="auto-style3"></td>
                 </tr>
