@@ -11,6 +11,12 @@
             font-size: medium;
             font-weight: 700;
         }
+        .auto-style2 {
+            font-size: medium;
+        }
+        .auto-style3 {
+            font-size: medium;
+        }
     </style>
 </head>
 <body>
@@ -19,12 +25,12 @@
         <h1>Login</h1>
             <asp:Label Visible="false" ID="Label3" runat="server" Text="Invalid login, please try again" CssClass="auto-style1" ForeColor="Red"></asp:Label>
             <div class="txt_field">               
-                <asp:Label ID="Label1" runat="server" Text="Username"></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text="Username" CssClass="auto-style2"></asp:Label>
                 <asp:TextBox ID="TextBox1" runat="server" required="" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
             </div>
             <div class="txt_field">
-                <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
-                <asp:TextBox ID="TextBox2" runat="server" required="" OnTextChanged="TextBox2_TextChanged" TextMode="Password" ></asp:TextBox>
+                <asp:Label ID="Label2" runat="server" Text="Password" CssClass="auto-style3"></asp:Label>
+                <asp:TextBox ID="TextBox2" runat="server" required="" Font-Bold="True" OnTextChanged="TextBox2_TextChanged" TextMode="Password" ></asp:TextBox>
             </div>
             <div class="pass">
                 <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Forgot password?</asp:LinkButton>
