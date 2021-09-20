@@ -8,6 +8,18 @@
     <link rel="stylesheet" href="loginStyle.css" />
 </head>
 <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" id="Panel" runat="server">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">The Cottage</a>
+                </div>
+            </div>
+        </div>
     <div class="center">
         <form method="post" runat="server">
         <h1>Login</h1>
