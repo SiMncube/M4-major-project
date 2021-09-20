@@ -47,6 +47,7 @@
         .auto-style23 {
             height: 56px;
             width: 200px;
+            border-radius: 49px;
         }
         .auto-style24 {
             height: 56px;

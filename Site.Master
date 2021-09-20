@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %>- My ASP.NET Application</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -44,6 +44,7 @@
         .auto-style9 {
             margin-left: 40px;
             text-align: center;
+            height: 25px;
         }
         .auto-style10 {
             width: 89%;
@@ -80,7 +81,7 @@
         }
         .auto-style19 {
             width: 100%;
-            height: 143px;
+            height: 102px;
         }
         .auto-style20 {
             margin-left: 40;
@@ -89,6 +90,7 @@
             margin-top: 0px;
         }
     </style>
+    <link rel = "stylesheet" href="registerStyle.css "/>
 
     </head>
 <body>
@@ -135,7 +137,7 @@
             
             <table class="auto-style8" style="border-style: groove">
                 <tr>
-                    <td class="auto-style9" style="border-style: groove; background-color: #FFFFFF">&nbsp;&nbsp;&nbsp; <asp:Label ID="Label2" runat="server" ForeColor="Black" Font-Size ="XX-Large" Text="Gallery"></asp:Label>
+                    <td class="auto-style9" style="border-style: groove; background-color: #FFFFFF">&nbsp;&nbsp;&nbsp; <asp:Label ID="Label2" runat="server" ForeColor="Black" Font-Size ="XX-Large" Text="The Cottage"></asp:Label>
        </td>
                 </tr>
             </table>
@@ -153,7 +155,7 @@
                 </td>
             </tr>
         </table>
-            <asp:Table ID="Table2" runat="server" BackColor="White" ForeColor="Gray" Height="45px" Width="1349px" BorderColor="Black" BorderStyle="Groove" CssClass="auto-style21">
+            <asp:Table ID="Table2" runat="server" BackColor="White" ForeColor="Gray" Height="16px" Width="1349px" BorderColor="Black" BorderStyle="Groove" CssClass="auto-style21">
         </asp:Table>
 
             <br />
@@ -176,7 +178,7 @@
                             </tr>
                             <tr>
                                 <td class="auto-style17">
-                                    <asp:Button ID="Button1" runat="server" Height="34px" OnClick="Button1_Click1" Text="Calculate" Width="160px" BackColor="Lime" BorderColor="Lime" BorderStyle="Groove" ForeColor="White" />
+                                    <asp:Button ID="Button3" runat="server" Height="34px" OnClick="Button1_Click1" Text="Calculate" Width="160px" BackColor="Lime" BorderColor="Lime" BorderStyle="Groove" ForeColor="White" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                                 <td class="auto-style18">
                                     <asp:TextBox ID="TextBox3" runat="server" Height="25px" ReadOnly="True" Width="160px" BorderStyle="Groove"></asp:TextBox>
