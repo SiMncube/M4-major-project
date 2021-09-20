@@ -16,15 +16,15 @@ namespace M4_major_project
         public static int check = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if(loginValid())
+            if (loginValid())
                 Response.Redirect("/Default");
             else
-                Response.Write("Your login was unsuccessful");
+                Label3.Visible = true;
         }
         private bool userNameIsCorrect()
         {
@@ -65,6 +65,16 @@ namespace M4_major_project
         protected void LinkButton2_Click(object sender, EventArgs e)
         {
             Response.Redirect("ForgotPassword");
+        }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            Label3.Visible = false;
+        }
+
+        protected void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+            Label3.Visible = false;
         }
     }
 }

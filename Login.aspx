@@ -6,18 +6,25 @@
     <title></title>
     <link href="Content/bootstrap.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="loginStyle.css" />
+    <style type="text/css">
+        .auto-style1 {
+            font-size: medium;
+            font-weight: 700;
+        }
+    </style>
 </head>
 <body>
     <div class="center">
-        <h1>Login</h1>
         <form method="post" runat="server">
-            <div class="txt_field">
+        <h1>Login</h1>
+            <asp:Label Visible="false" ID="Label3" runat="server" Text="Invalid login, please try again" CssClass="auto-style1" ForeColor="Red"></asp:Label>
+            <div class="txt_field">               
                 <asp:Label ID="Label1" runat="server" Text="Username"></asp:Label>
-                <asp:TextBox ID="TextBox1" runat="server" required=""></asp:TextBox>
+                <asp:TextBox ID="TextBox1" runat="server" required="" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
             </div>
             <div class="txt_field">
                 <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
-                <asp:TextBox ID="TextBox2" runat="server" required="" ></asp:TextBox>
+                <asp:TextBox ID="TextBox2" runat="server" required="" OnTextChanged="TextBox2_TextChanged" ></asp:TextBox>
             </div>
             <div class="pass">
                 <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Forgot password?</asp:LinkButton>
@@ -31,8 +38,7 @@
             </div>
         </form>
     </div>
-    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
-</body>
+    </body>
 </html>
 
 
