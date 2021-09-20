@@ -31,6 +31,7 @@
             </div>
         </form>
     </div>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
 </body>
 </html>
 
