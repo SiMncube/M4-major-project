@@ -157,6 +157,7 @@
     <Content Include="MakeBooking.aspx" />
     <Content Include="ModifyBooking.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="registerStyle.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

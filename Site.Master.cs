@@ -48,20 +48,7 @@ namespace M4_major_project
 
         protected void Button1_Click1(object sender, EventArgs e)
         {
-            int numberOfSingle = Convert.ToInt32(TextBox1.Text);
-            int numberOfDouble = Convert.ToInt32(TextBox2.Text);
-            Double sum = 0;
-            if(numberOfSingle > 0)
-            {
-                sum += numberOfSingle * 450;
-            }
-            if(numberOfDouble > 0)
-            {
-                sum += numberOfDouble * 800;
-            }
-            
-
-            TextBox3.Text = "R" + sum.ToString();
+          
         }
     }
 }
