@@ -21,7 +21,40 @@ namespace M4_major_project
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
+            if(loginValid())
+                Response.Redirect("/Default");
+            else
+                Response.Write("Your login was unsuccessful");
+        }
+        private bool userNameIsCorrect()
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
+            taCustomer.Fill(fullDs.Customer);
+            for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
+            {
+                if (fullDs.Customer[i].emailID.Equals(TextBox1.Text, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        private bool userPasswordIsCorrect()
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
+            taCustomer.Fill(fullDs.Customer);
+            for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
+            {
+                if (fullDs.Customer[i].password == TextBox2.Text && fullDs.Customer[i].emailID.Equals(TextBox1.Text, StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+            return false;
+        }
+        private bool loginValid()
+        {
+            return userNameIsCorrect() && userPasswordIsCorrect();
         }
     }
 }
