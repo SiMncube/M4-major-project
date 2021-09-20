@@ -6,18 +6,6 @@
     <title></title>
     <link href="Content/bootstrap.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="loginStyle.css" />
-    <style type="text/css">
-        .auto-style1 {
-            font-size: medium;
-            font-weight: 700;
-        }
-        .auto-style2 {
-            font-size: medium;
-        }
-        .auto-style3 {
-            font-size: medium;
-        }
-    </style>
 </head>
 <body>
     <div class="center">
