@@ -56,5 +56,15 @@ namespace M4_major_project
         {
             return userNameIsCorrect() && userPasswordIsCorrect();
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Register");
+        }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ForgotPassword");
+        }
     }
 }
