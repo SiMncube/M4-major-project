@@ -18,5 +18,10 @@ namespace M4_major_project
         {
             
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

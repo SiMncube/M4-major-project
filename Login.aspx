@@ -23,7 +23,7 @@
                 <asp:LinkButton ID="LinkButton2" runat="server">Forgot password?</asp:LinkButton>
             </div>
             <div id="loginButton">
-                <asp:Button ID="Button1" runat="server" Text="Login" Height="50px" Width="100%" BackColor="#3399FF" ForeColor="White" />
+                <asp:Button ID="Button1" runat="server" Text="Login" Height="50px" Width="100%" BackColor="#3399FF" ForeColor="White" OnClick="Button1_Click" />
             </div>
             <div class="signup_link">
                 Don&#39;t have an account?
