@@ -29,7 +29,6 @@ namespace M4_major_project
                 btn4.Visible = false;
                 HtmlAnchor btn5 = (HtmlAnchor)FindControl("Register1");
                 btn5.Visible = false;
-
             }
         }
 

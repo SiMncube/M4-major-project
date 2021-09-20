@@ -10,9 +10,9 @@
 .center {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 51%;
     transform: translate(-50%, -50%);
-    width: 400px;
+    width: 472px;
     background: white;
     border-radius: 10px;
 }
