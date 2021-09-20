@@ -23,6 +23,7 @@ namespace M4_major_project
         {
             if (loginValid())
             {
+                check = 1;
                 ViewState["CurrentUserEmail"] = TextBox1.Text;
                 Response.Redirect("/Default");
             }
