@@ -43,7 +43,7 @@
             <asp:Label ID="Label11" runat="server" Text="Confirm password"></asp:Label>
             <asp:TextBox ID="confirmTextBox" runat="server"></asp:TextBox>
             <br />
-            <asp:Button ID="signUpButton" runat="server" Text="Register" />
+            <asp:Button ID="signUpButton" runat="server" Text="Register" OnClick="signUpButton_Click" />
         </form>
     </div>
 </body>

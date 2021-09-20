@@ -18,5 +18,20 @@ namespace M4_major_project
         {
             Response.Write("You have successfully registered your account");
         }
+
+        protected void signUpButton_Click(object sender, EventArgs e)
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
+            taCustomer.Fill(fullDs.Customer);
+            if(signUpValid())
+            {
+                taCustomer.Insert(emailTextBox.Text,nameTextBox.Text,surnameTextBox.Text,idTextBox.Text,cellTextBox.Text,passwordTextBox.Text,streetTextBox.Text,surbubNameTextBox.Text,cityTextBox.Text,postalTextBox.Text);
+            }
+        }
+        private bool signUpValid()
+        {
+            return false;
+        }
     }
 }
