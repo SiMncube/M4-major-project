@@ -4,9 +4,11 @@
     <div class="forgot">
         <h1>Forgot Password</h1>
         <br />
+        <asp:Label ID="Label2" Visible="false" runat="server" Text="Invalid email, please try again" CssClass="auto-style1" ForeColor="Red"></asp:Label>
+        <br />
         <asp:Label ID="Label1" runat="server" Text="Email"></asp:Label>
         <br />
-        <asp:TextBox ID="emailTextBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="emailTextBox" runat="server" required=""></asp:TextBox>
         <br />
         <asp:Button ID="Button1" runat="server" Text="Reset password" OnClick="Button1_Click" />
         <br />

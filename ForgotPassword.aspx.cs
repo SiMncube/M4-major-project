@@ -16,9 +16,23 @@ namespace M4_major_project
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
+            if (userExist())
+                Response.Redirect("~/ChangePassword");
+            else
+                Label2.Visible = true;
         }
-
+        private bool userExist()
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
+            taCustomer.Fill(fullDs.Customer);
+            for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
+            {
+                if (fullDs.Customer[i].emailID.Equals(emailTextBox.Text, StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+            return false;
+        }
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Register");
