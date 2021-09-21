@@ -155,6 +155,7 @@
     <Content Include="Login.aspx" />
     <Content Include="loginStyle.css" />
     <Content Include="MakeBooking.aspx" />
+    <Content Include="MasterStyle.css" />
     <Content Include="ModifyBooking.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="registerStyle.css" />

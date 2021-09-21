@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="registerStyle.css" />
 </head>
 <body>
+    <h1>Web page is still under construction</h1>
     <div class="center">
         <form method="post" runat="server">
             <h1>Sign up</h1>
