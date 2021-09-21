@@ -152,6 +152,7 @@
       <DependentUpon>FullDataSet.xsd</DependentUpon>
     </Content>
     <Content Include="WebForm1.aspx" />
+    <Content Include="MakeBooking.aspx" />
     <None Include="FullDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -181,7 +182,6 @@
     <Content Include="Images\WhatsApp Image 2021-08-25 at 11.57.29.jpeg" />
     <Content Include="Login.aspx" />
     <Content Include="loginStyle.css" />
-    <Content Include="MakeBooking.aspx" />
     <Content Include="MasterStyle.css" />
     <Content Include="ModifyBooking.aspx" />
     <Content Include="Register.aspx" />
@@ -280,13 +280,6 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="MakeBooking.aspx.cs">
-      <DependentUpon>MakeBooking.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MakeBooking.aspx.designer.cs">
-      <DependentUpon>MakeBooking.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ModifyBooking.aspx.cs">
       <DependentUpon>ModifyBooking.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -329,6 +322,13 @@
     </Compile>
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MakeBooking.aspx.cs">
+      <DependentUpon>MakeBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MakeBooking.aspx.designer.cs">
+      <DependentUpon>MakeBooking.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
