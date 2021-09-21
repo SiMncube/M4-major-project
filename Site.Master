@@ -29,7 +29,7 @@
                     <a class="navbar-brand" runat="server" href="~/"><b>The Cottage BnB</b></a>
                 </div>
                 <div class="navbar-collapse collapse" staticselectedstyle-verticalpadding="10px">
-                    <ul class="nav navbar-nav" runat="server">
+                    <ul class="nav navbar-nav navbar-left" runat="server">
                         <li><a runat="server" href="~/"><b>Home</b></a></li>
                         <li><a runat="server" href="~/About"><b>About</b></a></li>
                         <li><a runat="server" href="~/Contact"><b>Contact</b></a></li>
@@ -40,6 +40,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a runat="server" id="Login1" visible="true" href="~/Login"><b>Login</b></a></li>
                         <li><a runat="server" id="Register1" visible="true" href="~/Register"><b>Register</b></a></li>
+                        <li><a runat="server" id="A1" visible="false" href="~/Default"><b></b></a></li>
+                        <li><a runat="server" id="A2" visible="false" href="~/Default"><b>LogOff</b></a></li>
                     </ul>
                 </div>
 
