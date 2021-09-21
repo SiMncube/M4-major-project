@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="MasterStyle.css" />
 </head>
 <body>
-    <form runat="server" class="auto-style1" style="background-image: url('/Images/wallpaperflare.com_wallpaper.jpg'); background-color: #0000FF; color: #000000;">
+    <form runat="server" class="auto-style1">
         <div class="navbar navbar-inverse navbar-fixed-top" id="Panel" runat="server">
             <div class="container">
                 <div class="navbar-header">
