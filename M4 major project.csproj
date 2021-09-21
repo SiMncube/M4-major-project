@@ -126,6 +126,8 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="CancelBooking.aspx" />
+    <Content Include="ChangePassword.aspx" />
+    <Content Include="changePasswordStyle.css" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -234,6 +236,13 @@
     </Compile>
     <Compile Include="CancelBooking.aspx.designer.cs">
       <DependentUpon>CancelBooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
