@@ -69,22 +69,22 @@ namespace M4_major_project
         protected global::System.Web.UI.HtmlControls.HtmlAnchor Register1;
 
         /// <summary>
-        /// A1 control.
+        /// Username1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A1;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor Username1;
 
         /// <summary>
-        /// A2 control.
+        /// Logoff1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A2;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor Logoff1;
 
         /// <summary>
         /// MainContent control.
