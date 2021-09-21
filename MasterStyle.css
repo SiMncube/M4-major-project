@@ -1,4 +1,7 @@
-﻿.site-footer {
+﻿body{
+    background-color:#008cba;
+}
+.site-footer {
     background-color: #008cba;
     padding: 45px 0 20px;
     font-size: 15px;
