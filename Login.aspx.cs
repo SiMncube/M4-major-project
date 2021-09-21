@@ -7,6 +7,7 @@ using System.Security.Claims;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace M4_major_project
@@ -34,7 +35,8 @@ namespace M4_major_project
         {
             FullDataSet fullDs = new FullDataSet();
             FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
-            taCustomer.Fill(fullDs.Customer);     
+            taCustomer.Fill(fullDs.Customer);
+            HtmlAnchor btn1 = (HtmlAnchor)FindControl("setUser");
             for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
             {
                 if (fullDs.Customer[i].emailID.Equals(TextBox1.Text, StringComparison.OrdinalIgnoreCase))

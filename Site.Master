@@ -52,7 +52,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a runat="server" id="Login1" visible="true" href="~/Login"><b>Login</b></a></li>
                         <li><a runat="server" id="Register1" visible="true" href="~/Register"><b>Register</b></a></li>
-                        <li><a runat="server" id="Username1" visible="false" href="~/Default"><b>Under construction</b></a></li>
+                        <li><a runat="server" id="Username1" visible="false" href="~/Default"><b id="setUser">Under construction</b></a></li>
                         <li><a runat="server" id="Logoff1" visible="false" href="~/Default"><b>Log off</b></a></li>
                     </ul>
                 </div>
