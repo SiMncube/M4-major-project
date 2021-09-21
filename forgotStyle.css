@@ -1,0 +1,15 @@
+﻿.center {
+    margin-top:12.5%;
+    margin-left:33%;
+    margin-bottom:12.5%;
+    width: 472px;
+    background: white;
+    border-radius: 10px;
+}
+center h1 {
+    text-align: center;
+}
+.center form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
