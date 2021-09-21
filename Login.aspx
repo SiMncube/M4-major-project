@@ -34,7 +34,7 @@
                 <asp:TextBox ID="TextBox2" runat="server" required="" Font-Bold="True" OnTextChanged="TextBox2_TextChanged" TextMode="Password"></asp:TextBox>
             </div>
             <div class="pass">
-                <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Forgot password?</asp:LinkButton>
+                <asp:LinkButton class="btn btn-primary btn-lg" ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Forgot password?</asp:LinkButton>
             </div>
             <div id="loginButton">
                 <asp:Button ID="Button1" runat="server" Text="Login" Height="50px" Width="100%" BackColor="#3399FF" ForeColor="White" OnClick="Button1_Click" />
