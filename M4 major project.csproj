@@ -151,6 +151,7 @@
     <Content Include="FullDataSet.xsc">
       <DependentUpon>FullDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="ModifyBooking.aspx" />
     <Content Include="WebForm1.aspx" />
     <Content Include="MakeBooking.aspx" />
     <None Include="FullDataSet.xsd">
@@ -183,7 +184,6 @@
     <Content Include="Login.aspx" />
     <Content Include="loginStyle.css" />
     <Content Include="MasterStyle.css" />
-    <Content Include="ModifyBooking.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="registerStyle.css" />
     <Content Include="Scripts\bootstrap.js" />
