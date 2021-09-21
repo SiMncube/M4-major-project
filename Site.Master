@@ -70,19 +70,13 @@
           <div class="col-sm-12 col-md-6">
             <h6>About</h6>
             <p class="text-justify"> <i></i>Still under Construction</p>
-              <p class="text-justify"> &nbsp;Email address&nbsp;&nbsp;&nbsp;&nbsp; : <a href="mailto:Sonya@gmail.com" style="color: #C0C0C0; background-color: #333333;">Sonya@gmail.com</a> <br />
- 
-                  Phone no.&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 067 245 4478<br />
-                  Instagram&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;@TheCottage </p>
           </div>
-
           <div class="col-xs-6 col-md-3">
             <h6>Services</h6>
             <ul class="footer-links">
-              <li><a href="">Rooms</a></li>
-              <li><a href="">Food</a></li>
-              <li><a href="">Gym</a></li>
-
+              <li><a href="#">Rooms</a></li>
+              <li><a href="#">Food</a></li>
+              <li><a href="#">Gym</a></li>
             </ul>
           </div>
 
@@ -91,8 +85,8 @@
             <ul class="footer-links">
               <li><a href="/About">About Us</a></li>
               <li><a href="/Contact">Contact Us</a></li>
-              <li><a href="">Help</a></li>
-              <li><a href="">Privacy Policy</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Privacy Policy</a></li>
             </ul>
           </div>
         </div>

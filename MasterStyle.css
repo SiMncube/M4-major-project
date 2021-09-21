@@ -47,7 +47,9 @@
    color: #3366cc;
    text-decoration: none;
 }
-
+.text-justify {
+    color: #ffffff
+}
 .footer-links.inline li {
     display: inline-block
 }
