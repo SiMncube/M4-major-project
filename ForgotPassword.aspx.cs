@@ -9,6 +9,7 @@ namespace M4_major_project
 {
     public partial class ForgotPassword : System.Web.UI.Page
     {
+        public static string email = "";
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -29,7 +30,10 @@ namespace M4_major_project
             for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
             {
                 if (fullDs.Customer[i].emailID.Equals(emailTextBox.Text, StringComparison.OrdinalIgnoreCase))
+                {
+                    email = emailTextBox.Text;
                     return true;
+                }
             }
             return false;
         }
