@@ -138,17 +138,21 @@
       <DependentUpon>FullDataSet.xsd</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Images\08-Villa Cantik Pandawa - Gym area.jpg" />
     <Content Include="Images\194fbd4e-6047-4937-a9c6-96ed2de79fab.jpg" />
     <Content Include="Images\1d0635eb-a70d-49a6-89d1-9f20f008f7c5.jpg" />
     <Content Include="Images\4ec0b423-f222-48e3-be7d-869433c98184.jpg" />
     <Content Include="Images\53d5ce15-ec62-474c-9077-85be09e8e4ce.jpg" />
+    <Content Include="Images\AdobeStock_306626511-scaled.jpeg" />
     <Content Include="Images\Airbnb_breakfast.jpg" />
+    <Content Include="Images\happy people.jpg" />
     <Content Include="Images\istockphoto-535353855-612x612.jpg" />
     <Content Include="Images\La-Lucia-Cottage.jpg" />
     <Content Include="Images\luxury bed.jpg" />
     <Content Include="Images\png-clipart-login-computer-icons-avatar-icon-monochrome-black.png" />
     <Content Include="Images\Screenshot %28164%29.png" />
     <Content Include="Images\Screenshot %28173%29.png" />
+    <Content Include="Images\Screenshot %28183%29.png" />
     <Content Include="Images\unnamed.jpg" />
     <Content Include="Images\wallpaperflare.com_wallpaper.jpg" />
     <Content Include="Images\WhatsApp Image 2021-08-25 at 11.57.29.jpeg" />

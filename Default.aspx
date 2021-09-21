@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="M4_major_project._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <br />
+    <br />
     <style type="text/css">
         .auto-style1 {
             height: 650px;
@@ -31,9 +33,7 @@
             margin-left: 40px;
             text-align: center;
             height: 25px;
-        }
-        .auto-style10 {
-            width: 89%;
+            width: 1247px;
         }
         .auto-style13 {
             width: 690px;
@@ -66,44 +66,52 @@
             text-align: center;
             height: 129px;
         }
+        .auto-style23 {
+            width: 100%;
+            height: 64px;
+        }
+        .auto-style24 {
+            width: 181px;
+            height: 64px;
+        }
     </style>
     <table class="auto-style8" style="border-style: groove">
                 <tr>
-                    <td class="auto-style9" style="border-color: #000000; border-style: groove; background-color: #808080">&nbsp;&nbsp;&nbsp; <asp:Label ID="Label2" runat="server" ForeColor="Blue" Font-Size ="XX-Large" Text="The Cottage"></asp:Label>
-       </td>
+                    <td class="auto-style9" style="border-color: #000000; border-style: groove; background-color: #808080">&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="Label2" runat="server" ForeColor="Black" Font-Size ="XX-Large" Text="The Cottage" Font-Names="Times New Roman"></asp:Label>
+       
                 </tr>
             </table>
         
-        <table class="auto-style10">
+        <table class="nav-justified">
             <tr>
                 <td class="auto-style3">
-                    <asp:Image ID="Image1" runat="server" Height="248px" ImageUrl="~/Images/luxury bed.jpg" Width="432px" BorderStyle="Groove" />
+                    <asp:Image ID="Image1" runat="server" Height="248px" ImageUrl="~/Images/luxury bed.jpg" Width="377px" BorderStyle="Groove" />
                 </td>
                 <td class="auto-style5">
-                    <asp:Image ID="Image2" runat="server" Height="248px" ImageUrl="~/Images/4ec0b423-f222-48e3-be7d-869433c98184.jpg" Width="493px" BorderStyle="Groove" />
+                    <asp:Image ID="Image2" runat="server" Height="252px" ImageUrl="~/Images/AdobeStock_306626511-scaled.jpeg" Width="424px" BorderStyle="Groove" />
                 </td>
                 <td class="auto-style2">
-                    <asp:Image ID="Image3" runat="server" CssClass="auto-style7" Height="248px" ImageUrl="~/Images/Airbnb_breakfast.jpg" Width="423px" BorderColor="White" BorderStyle="Groove" />
+                    <asp:Image ID="Image3" runat="server" CssClass="auto-style7" Height="248px" ImageUrl="~/Images/Airbnb_breakfast.jpg" Width="363px" BorderColor="White" BorderStyle="Groove" />
                 </td>
             </tr>
         </table>
-            <asp:Table ID="Table2" runat="server" BackColor="Gray" ForeColor="Gray" Height="16px" Width="1353px" BorderColor="Black" BorderStyle="Double" CssClass="auto-style21">
+            <asp:Table ID="Table2" runat="server" BackColor="Gray" ForeColor="Gray" Height="16px" Width="1167px" BorderColor="Black" BorderStyle="Double" CssClass="auto-style21">
         </asp:Table>
 
             <br />
 
             <table class="nav-justified" style="border-style: groove">
                 <tr>
-                    <td class="auto-style22" style="border-color: #000000; border-style: groove; background-color: #808080; color: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    <td class="auto-style22" style="border-color: #000000; border-style: groove; background-color: #333333; color: #000000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
                         <table class="auto-style19" style="border-color: #000000; border-style: double; color: #000000; font-size: large; font-family: 'Times New Roman', Times, serif; background-color: #808080;">
                             <tr>
-                                <td class="auto-style13" style="font-family: 'Times New Roman', Times, serif; color: #0000FF; font-size: x-large">Single Rooms: R450&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
-                                <td class="auto-style14" style="color: #0000FF; font-size: x-large; font-family: 'Times New Roman', Times, serif;">
+                                <td class="auto-style13" style="color: #FFFFFF; background-color: #333333;">Single Rooms: R450&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                                <td class="auto-style14" style="color: #FFFFFF; background-color: #333333;">
                                     Would You Like To Get Quote?</td>
                             </tr>
                             <tr>
-                                <td class="auto-style15" style="color: #0000FF; font-size: x-large;">Double Rooms: R800&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
-                                <td class="auto-style16">
+                                <td class="auto-style15" style="color: #FFFFFF; background-color: #333333;">Double Rooms: R800&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                                <td class="auto-style16" style="background-color: #333333">
                                     <asp:Button ID="Button2" runat="server" BackColor="Blue" BorderColor="Black" BorderStyle="Groove" ForeColor="White" Height="45px" Text="Get Quote" Width="147px" />
                                 </td>
                             </tr>
@@ -112,5 +120,6 @@
                 </tr>
             </table>
 
+            
             <br />
     </asp:Content>
