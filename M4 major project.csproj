@@ -152,6 +152,11 @@
     <Content Include="FullDataSet.xsc">
       <DependentUpon>FullDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="Images\Beach.jpg" />
+    <Content Include="Images\Beach1.jpg" />
+    <Content Include="Images\BeachLight.jpg" />
+    <Content Include="Images\BeachView.jpg" />
+    <Content Include="Images\Fishing.jpg" />
     <Content Include="ModifyBooking.aspx" />
     <Content Include="MakeBooking.aspx" />
     <None Include="FullDataSet.xsd">
@@ -170,7 +175,6 @@
     <Content Include="Images\53d5ce15-ec62-474c-9077-85be09e8e4ce.jpg" />
     <Content Include="Images\AdobeStock_306626511-scaled.jpeg" />
     <Content Include="Images\Airbnb_breakfast.jpg" />
-    <Content Include="Images\happy people.jpg" />
     <Content Include="Images\istockphoto-535353855-612x612.jpg" />
     <Content Include="Images\La-Lucia-Cottage.jpg" />
     <Content Include="Images\luxury bed.jpg" />
