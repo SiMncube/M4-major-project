@@ -33,15 +33,6 @@ namespace M4_major_project
         protected global::System.Web.UI.HtmlControls.HtmlAnchor MakeBooking1;
 
         /// <summary>
-        /// CancelBooking1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor CancelBooking1;
-
-        /// <summary>
         /// ModifyBooking1 control.
         /// </summary>
         /// <remarks>
@@ -49,6 +40,15 @@ namespace M4_major_project
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor ModifyBooking1;
+
+        /// <summary>
+        /// CancelBooking1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor CancelBooking1;
 
         /// <summary>
         /// Login1 control.

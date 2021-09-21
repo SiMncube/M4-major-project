@@ -152,7 +152,6 @@
       <DependentUpon>FullDataSet.xsd</DependentUpon>
     </Content>
     <Content Include="ModifyBooking.aspx" />
-    <Content Include="WebForm1.aspx" />
     <Content Include="MakeBooking.aspx" />
     <None Include="FullDataSet.xsd">
       <SubType>Designer</SubType>
@@ -315,13 +314,6 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="MakeBooking.aspx.cs">
       <DependentUpon>MakeBooking.aspx</DependentUpon>
