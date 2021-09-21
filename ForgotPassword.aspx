@@ -8,5 +8,6 @@
         <asp:Button ID="Button1" runat="server" Text="Reset password" />
         Don&#39;t have an account?
         <asp:LinkButton Text="Signup" ID="LinkButton1" runat="server"></asp:LinkButton>
+
     </div>
 </asp:Content>
