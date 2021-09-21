@@ -6,6 +6,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <div class="container">
+        <h1>Welcome to the Cottage BnB</h1>
+        <br />
         <h2>Gallery</h2>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -51,4 +53,24 @@
         </div>
     </div>
     <br />
+    <style>
+        .map-container {
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
+        }
+
+            .map-container iframe {
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+            }
+    </style>
+    <div id="map-container-google-3" class="z-depth-1-half map-container-3">
+        <iframe src="https://maps.google.com/maps?q=warsaw&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+            style="border-style: none; border-color: inherit; border-width: 0; width: 1142px; height: 299px; margin-left: 15px;" allowfullscreen=""></iframe>
+    </div>
 </asp:Content>
