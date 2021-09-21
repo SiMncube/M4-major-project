@@ -27,7 +27,8 @@ namespace M4_major_project
                     if (fullDs.Customer[i].emailID.Equals(ForgotPassword.email, StringComparison.OrdinalIgnoreCase))
                     {
                         fullDs.Customer[i].password = confirmTextBox.Text;
-                        Response.Write("<script language='javascript'>window.alert('Password successfully reset');window.location='~/Default';</script>");
+                        taCustomer.Update(fullDs);
+                        Response.Write("<script language='javascript'>window.alert('Password successfully reset');window.location='Default.aspx';</script>");
                         break;
                     }
                 }
