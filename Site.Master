@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="MasterStyle.css" />
 </head>
 <body>
-    <form runat="server" class="auto-style1" style="background-image: url('/Images/wallpaperflare.com_wallpaper.jpg'); background-color: #0000FF; color: #000000;">
+    <form runat="server" class="auto-style1">
         <div class="navbar navbar-inverse navbar-fixed-top" id="Panel" runat="server">
             <div class="container">
                 <div class="navbar-header">
@@ -26,21 +26,25 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">The Cottage</a>
+                    <a class="navbar-brand" runat="server" href="~/"><b>The Cottage BnB</b></a>
                 </div>
                 <div class="navbar-collapse collapse" staticselectedstyle-verticalpadding="10px">
-                    <ul class="nav navbar-nav" runat="server">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-
-                        <li><a runat="server" id="Login1" visible="true" href="~/Login">Login</a></li>
-                        <li><a runat="server" id="Register1" visible="true" href="~/Register">Register</a></li>
-                        <li><a runat="server" id="MakeBooking1" visible="false" href="~/MakeBooking">MakeBooking</a></li>
-                        <li><a runat="server" id="CancelBooking1" visible="false" href="~/CancelBooking">CancelBooking</a></li>
-                        <li><a runat="server" id="ModifyBooking1" visible="false" href="~/ModifyBooking">ModifyBooking</a></li>
+                    <ul class="nav navbar-nav navbar-left" runat="server">
+                        <li><a runat="server" href="~/"><b>Home</b></a></li>
+                        <li><a runat="server" href="~/About"><b>About</b></a></li>
+                        <li><a runat="server" href="~/Contact"><b>Contact</b></a></li>
+                        <li><a runat="server" id="MakeBooking1" visible="false" href="~/MakeBooking"><b>MakeBooking</b></a></li>
+                        <li><a runat="server" id="CancelBooking1" visible="false" href="~/CancelBooking"><b>CancelBooking</b></a></li>
+                        <li><a runat="server" id="ModifyBooking1" visible="false" href="~/ModifyBooking"><b>ModifyBooking</b></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a runat="server" id="Login1" visible="true" href="~/Login"><b>Login</b></a></li>
+                        <li><a runat="server" id="Register1" visible="true" href="~/Register"><b>Register</b></a></li>
+                        <li><a runat="server" id="A1" visible="false" href="~/Default"><b></b></a></li>
+                        <li><a runat="server" id="A2" visible="false" href="~/Default"><b>LogOff</b></a></li>
                     </ul>
                 </div>
+
             </div>
         </div>
         <div class="container body-content">
