@@ -60,7 +60,7 @@
             }
 
         .jumbotron {
-            background-color: #f4511e;
+            background-color: #008cba;
             color: #fff;
             padding: 100px 25px;
         }
@@ -100,6 +100,31 @@
                 text-align: center;
                 margin: 25px 0;
             }
+        }
+
+        .carousel-control.right, .carousel-control.left {
+            background-image: none;
+            color: #008cba;
+        }
+
+        .carousel-indicators li {
+            border-color:#008cba;
+        }
+
+            .carousel-indicators li.active {
+                background-color: #008cba;
+            }
+
+        .item h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            font-weight: 400;
+            font-style: italic;
+            margin: 70px 0;
+        }
+
+        .item span {
+            font-style: normal;
         }
     </style>
     <div class="jumbotron text-center">
@@ -176,7 +201,36 @@
             </div>
         </div>
     </div>
-
+    <h2>What our customers say</h2>
+    <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <h4>"Thank you for a truly amazing stay! Your hospitality is quite outstanding"<br>
+                    <span style="font-style: normal;">Siya Kolisi, Rugby Legend, Comment Box</span></h4>
+            </div>
+            <div class="item">
+                <h4>"One word... WOW!!"<br>
+                    <span style="font-style: normal;">John, Salesman, Facebook</span></h4>
+            </div>
+            <div class="item">
+                <h4>"Everything was great, staff was very helpful and we were extremely happy"<br>
+                    <span style="font-style: normal;">Harry Kane, Footballer, Twitter</span></h4>
+            </div>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
     <div class="container">
         <br />
         <h2>Gallery</h2>
@@ -223,6 +277,7 @@
             </a>
         </div>
     </div>
+
     <br />
     <style>
         .map-container {
