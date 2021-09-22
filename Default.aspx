@@ -14,6 +14,7 @@
         }
 
         .panel {
+            background-image:url("\Images\wallpaperflare.com_wallpaper.jpg");
             border: 1px solid #f4511e;
             border-radius: 0;
             transition: box-shadow 0.5s;
@@ -176,7 +177,7 @@
     <div class="container-fluid text-center bg-grey">
         <h2>The cottage</h2>
         <br>
-        <h4>What we offer our customers</h4>
+        <h4>Some of the things on offer</h4>
         <div class="row text-center">
             <div class="col-sm-4">
                 <div class="thumbnail">

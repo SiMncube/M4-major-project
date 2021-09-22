@@ -100,7 +100,7 @@
     <br />
     <div id="map-container-google-1" class="z-depth-1 map-container">
         <iframe src="https://maps.google.com/maps?q=46+Albert+Dlomo+Rd&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-          style="border-style: none; border-color: inherit; border-width: 0; width: 1151px;" allowfullscreen=""></iframe>
+          style="border-style: none; border-color: inherit; border-width: 0; width: 1151px; height: 366px;" allowfullscreen=""></iframe>
     </div>
     <br />
 </asp:Content>
