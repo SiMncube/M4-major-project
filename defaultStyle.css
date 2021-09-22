@@ -1,7 +1,5 @@
-﻿[data-component="slideshow"] .slide {
-    display: none;
+﻿.jumbotron {
+    background-color: #f4511e;
+    color: #fff;
+    width:100%;
 }
-
-    [data-component="slideshow"] .slide.active {
-        display: block;
-    }
