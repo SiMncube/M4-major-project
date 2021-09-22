@@ -146,6 +146,7 @@
                     <div class="panel-body">
                         <p><strong>1</strong> King size bed</p>
                         <p><strong>1</strong> Tv screen</p>
+                        <p><strong>Yes</strong> Free wifi</p>
                         <p><strong>Yes</strong> Food service</p>
                     </div>
                     <div class="panel-footer">
@@ -163,6 +164,7 @@
                     <div class="panel-body">
                         <p><strong>1</strong> Double bed</p>
                         <p><strong>1</strong> Tv screen</p>
+                        <p><strong>No</strong> Free wifi</p>
                         <p><strong>No</strong> Food service</p>
                     </div>
                     <div class="panel-footer">
