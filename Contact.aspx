@@ -79,9 +79,9 @@
         </div>
         <div class="col-md-4">
             <form>
-            <legend><span class="glyphicon glyphicon-globe"></span> Our office</legend>
+            <legend><span class="glyphicon glyphicon-globe"></span>The Cottage BnB</legend>
             <address>
-                <strong>The Cottage BnB</strong><br>
+                <strong>Visit</strong><br>
                 81 Evan Rd<br>
                 Glenwood <br>
                 Durban, 4001<br>
