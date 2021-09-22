@@ -58,6 +58,49 @@
                 background-color: #008cba;
                 color: #fff;
             }
+
+        .jumbotron {
+            background-color: #f4511e;
+            color: #fff;
+            padding: 100px 25px;
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+        .logo-small {
+            color: #f4511e;
+            font-size: 50px;
+        }
+
+        .logo {
+            color: #f4511e;
+            font-size: 200px;
+        }
+
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+
+            .thumbnail img {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 10px;
+            }
+
+        @media screen and (max-width: 768px) {
+            .col-sm-4 {
+                text-align: center;
+                margin: 25px 0;
+            }
+        }
     </style>
     <div class="jumbotron text-center">
         <h1>The Cottage BnB</h1>
@@ -89,7 +132,7 @@
     <div class="col-sm-6">
       <div class="panel panel-default text-center">
         <div class="panel-heading">
-          <h1>Signle Room</h1>
+          <h1>Single Room</h1>
         </div>
         <div class="panel-body">
           <p><strong>1</strong> Double bed</p>
@@ -105,6 +148,35 @@
     </div>
   </div>
 </div>
+    <div class="container-fluid text-center bg-grey">
+        <h2>The cottage</h2>
+        <br>
+        <h4>What we offer our customers</h4>
+        <div class="row text-center">
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="Images/AB.jpg" alt="Paris" width="400" height="300">
+                    <p><strong>Breakfast table</strong></p>
+                    <p>Brerakfast area</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="Images/LB.jpg" alt="New York" width="400" height="300">
+                    <p><strong>Luxury bed</strong></p>
+                    <p>Sleep like a baby</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="Images/G.jpg" alt="San Francisco" width="400" height="300">
+                    <p><strong>Nice Gym area</strong></p>
+                    <p>Yes, we have a gym</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <br />
         <h2>Gallery</h2>

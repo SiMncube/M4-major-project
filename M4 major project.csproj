@@ -152,11 +152,14 @@
     <Content Include="FullDataSet.xsc">
       <DependentUpon>FullDataSet.xsd</DependentUpon>
     </Content>
+    <Content Include="Images\AB.jpg" />
     <Content Include="Images\Beach.jpg" />
     <Content Include="Images\Beach1.jpg" />
     <Content Include="Images\BeachLight.jpg" />
     <Content Include="Images\BeachView.jpg" />
     <Content Include="Images\Fishing.jpg" />
+    <Content Include="Images\G.jpg" />
+    <Content Include="Images\LB.jpg" />
     <Content Include="ModifyBooking.aspx" />
     <Content Include="MakeBooking.aspx" />
     <None Include="FullDataSet.xsd">
