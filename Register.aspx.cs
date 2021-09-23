@@ -13,5 +13,10 @@ namespace M4_major_project
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Write("<script language='javascript'>window.alert('You have successfully registered');window.location='Default.aspx';</script>");
+        }
     }
 }
