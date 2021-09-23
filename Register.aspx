@@ -30,11 +30,11 @@
                                 </div>
                                 <div class="form-group">
                                     <asp:Label ID="Label4" runat="server" Text="Street name" class="form-label mt-4"></asp:Label>
-                                    <asp:TextBox ID="streetTextBox" runat="server" class="form-control" placeholder="Enter Street name" required=""></asp:TextBox>
+                                    <asp:TextBox ID="streetTextBox" runat="server" class="form-control" placeholder="Enter Street name"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
                                     <asp:Label ID="Label6" runat="server" Text="City" class="form-label mt-4"></asp:Label>
-                                    <asp:TextBox ID="cityTextBox" runat="server" class="form-control" placeholder="Enter city" required=""></asp:TextBox>
+                                    <asp:TextBox ID="cityTextBox" runat="server" class="form-control" placeholder="Enter city"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
                                     <asp:Label ID="Label9" runat="server" Text="Email" class="form-label mt-4"></asp:Label>
@@ -56,7 +56,7 @@
                                 </div>
                                 <div class="form-group">
                                     <asp:Label ID="Label5" runat="server" Text="Surburb" class="form-label mt-4"></asp:Label>
-                                    <asp:TextBox ID="surbubNameTextBox" runat="server" class="form-control" placeholder="Enter suburb" required=""></asp:TextBox>
+                                    <asp:TextBox ID="surbubNameTextBox" runat="server" class="form-control" placeholder="Enter suburb"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
                                     <asp:Label ID="Label7" runat="server" Text="Postal code" class="form-label mt-4"></asp:Label>

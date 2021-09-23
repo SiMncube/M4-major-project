@@ -22,8 +22,9 @@ namespace M4_major_project
             if(isValid())
             {
                 taCustomer.Insert(capFirst(emailTextBox.Text), capFirst(nameTextBox.Text), capFirst(surnameTextBox.Text), idTextBox.Text, cellTextBox.Text, passwordTextBox.Text, capFirst(streetTextBox.Text), capFirst(surbubNameTextBox.Text), capFirst(cityTextBox.Text), capFirst(postalTextBox.Text));
+                Response.Write("<script language='javascript'>window.alert('You have successfully registered');window.location='Default.aspx';</script>");
             }
-            Response.Write("<script language='javascript'>window.alert('You have successfully registered');window.location='Default.aspx';</script>");
+            
         }
         private string capFirst(string s)
         {
