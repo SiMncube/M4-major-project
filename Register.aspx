@@ -6,12 +6,19 @@
     <link rel="stylesheet" href="https://bootswatch.com/3/yeti/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <div class="container">
+    <style>
+    </style>
+    <br />
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
                 <div class="well well-sm">
                     <form>
                         <div class="row">
+                            <div class="text-center">
+                                <h3>Sign up</h3>
+                                <p>Please fill the form below to sign up<p>
+                            </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <asp:Label ID="Label1" runat="server" Text="Name" class="form-label mt-4"></asp:Label>
@@ -64,8 +71,8 @@
                                     <asp:TextBox ID="confirmTextBox" runat="server" class="form-control" placeholder="Enter password" required=""></asp:TextBox>
                                 </div>
                             </div>
-                            <div class="col-md-12">
-                                <asp:Button class="btn btn-primary pull-center" ID="Button1" runat="server" Text="Register" OnClick="Button1_Click" />
+                            <div class="col-md-12 text-center">
+                                <asp:Button class="btn btn-primary pull-center" ID="Button1" runat="server" Text="Register" OnClick="Button1_Click" Width="210px" />
                             </div>
                         </div>
                     </form>
