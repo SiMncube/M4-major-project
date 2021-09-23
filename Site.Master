@@ -7,11 +7,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - My ASP.NET Application</title>
-
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="MasterStyle.css" />
@@ -45,7 +43,6 @@
                         <li><a runat="server" id="Logoff1" visible="false" href="~/Default"><b>Log off</b></a></li>
                     </ul>
                 </div>
-
             </div>
         </div>
         <div class="container body-content">
@@ -68,7 +65,6 @@
               <li><a href="#">Gym</a></li>
             </ul>
           </div>
-
           <div class="col-xs-6 col-md-3">
             <h6>Quick Links</h6>
             <ul class="footer-links">

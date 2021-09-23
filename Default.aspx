@@ -135,7 +135,7 @@
     <div class="container-fluid">
         <div class="text-center">
             <h2>Our prices per night</h2>
-            <h4>Sign up to start making bookings</h4>
+            <h4>Sign in to start making bookings</h4>
         </div>
         <div class="row">
             <div class="col-sm-6">
@@ -152,7 +152,7 @@
                     <div class="panel-footer">
                         <h3>R800</h3>
                         <h4>Per night</h4>
-                        <button class="btn btn-lg">Sign Up</button>
+                        <asp:Button class="btn btn-lg" ID="Button1" runat="server" Text="Sign in" />
                     </div>
                 </div>
             </div>
@@ -170,7 +170,7 @@
                     <div class="panel-footer">
                         <h3>R450</h3>
                         <h4>Per night</h4>
-                        <button class="btn btn-lg">Sign Up</button>
+                        <asp:Button class="btn btn-lg" ID="Button2" runat="server" Text="Sign in" />
                     </div>
                 </div>
             </div>
