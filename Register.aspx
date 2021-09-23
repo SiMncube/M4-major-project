@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="form-group">
                                     <asp:Label ID="Label10" runat="server" Text="Password" class="form-label mt-4"></asp:Label>
-                                    <asp:TextBox ID="passwordTextBox" runat="server" class="form-control" placeholder="Enter password" required=""></asp:TextBox>
+                                    <asp:TextBox ID="passwordTextBox" runat="server" class="form-control" placeholder="Enter password" required="" TextMode="Password"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -68,7 +68,7 @@
                                 </div>
                                 <div class="form-group">
                                     <asp:Label ID="Label11" runat="server" Text="Confirm password" class="form-label mt-4"></asp:Label>
-                                    <asp:TextBox ID="confirmTextBox" runat="server" class="form-control" placeholder="Enter password" required=""></asp:TextBox>
+                                    <asp:TextBox ID="confirmTextBox" runat="server" class="form-control" placeholder="Enter password" required="" TextMode="Password"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-md-12 text-center">
