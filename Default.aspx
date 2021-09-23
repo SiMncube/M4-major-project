@@ -152,7 +152,7 @@
                     <div class="panel-footer">
                         <h3>R800</h3>
                         <h4>Per night</h4>
-                        <asp:Button class="btn btn-lg" ID="Button1" runat="server" Text="Sign in" />
+                        <asp:Button class="btn btn-lg" ID="Button1" runat="server" Text="Sign in" OnClick="Button1_Click" />
                     </div>
                 </div>
             </div>
@@ -170,7 +170,7 @@
                     <div class="panel-footer">
                         <h3>R450</h3>
                         <h4>Per night</h4>
-                        <asp:Button class="btn btn-lg" ID="Button2" runat="server" Text="Sign in" />
+                        <asp:Button class="btn btn-lg" ID="Button2" runat="server" Text="Sign in" OnClick="Button2_Click" />
                     </div>
                 </div>
             </div>

@@ -15,5 +15,15 @@ namespace M4_major_project
         {
             HtmlAnchor btn1 = (HtmlAnchor)FindControl("setUser");
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Login");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Login");
+        }
     }
 }
