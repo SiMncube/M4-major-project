@@ -33,10 +33,10 @@
                         <li><a runat="server" href="~/"><b>Home</b></a></li>
                         <li><a runat="server" href="~/About"><b>About us</b></a></li>
                         <li><a runat="server" href="~/Contact"><b>Contact us</b></a></li>
-                        <li><a runat="server" href="~/Gallery"><b>Gallery</b></a></li>
                         <li><a runat="server" id="MakeBooking1" visible="false" href="~/MakeBooking" aria-pressed="false"><b>Make Booking</b></a></li>
                         <li><a runat="server" id="ModifyBooking1" visible="false" href="~/ModifyBooking"><b>Modify Booking</b></a></li>
                         <li><a runat="server" id="CancelBooking1" visible="false" href="~/CancelBooking"><b>Cancel Booking</b></a></li>
+                        <li><a runat="server" href="~/Gallery"><b>Gallery</b></a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a runat="server" id="Login1" visible="true" href="~/Login"><b>Login</b></a></li>
