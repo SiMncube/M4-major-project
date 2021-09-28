@@ -7,6 +7,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
+        .panel{
+            border: 1px solid #f4511e;
+            border-radius: 0;
+            color:white;
+        }
     </style>
     <br />
     <div class="container-fluid">
@@ -14,7 +19,7 @@
             <div class="col-md-6">
                 <div class="well well-sm">
                     <form>
-                        <div class="row">
+                        <div id="panel"  class="row">
                             <div class="text-center">
                                 <h3>Sign up</h3>
                                 <p>Please fill the form below to sign up<p>

@@ -85,6 +85,7 @@
         }
 
         .thumbnail {
+            background-color: #008cba;
             padding: 0 0 15px 0;
             border: none;
             border-radius: 0;
