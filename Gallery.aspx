@@ -25,8 +25,13 @@
             </ol>
 
             <div class="carousel-inner">
+
+                <div class="item">
+                    <img src="Images/d71fb818-5a90-428b-aaaf-4c97130c5e4b.jpg" alt="New york" style="width: 100%;">
+                </div>
+
                 <div class="item active">
-                    <img src="Images/wallpaperflare.com_wallpaper.jpg" style="width: 100%;" />
+                    <img src="Images/001df72d-e0e2-456c-87ba-314760081f2b.jpg" style="width: 100%;" />
                 </div>
 
                 <div class="item">
@@ -34,15 +39,33 @@
                 </div>
 
                 <div class="item">
+                    <img src="Images/d71fb818-5a90-428b-aaaf-4c97130c5e4b.jpg" alt="New york" style="width: 100%;">
+                </div>
+
+                <div class="item">
                     <img src="Images/Fishing.jpg" alt="New york" style="width: 100%;">
+                </div>
+
+                <div class="item">
+                    <img src="Images/6705d34b-5c7c-4e7c-96a0-febdc16c43a0.jpg" alt="New york" style="width: 100%;">
                 </div>
 
                 <div class="item">
                     <img src="Images/Beach.jpg" alt="New york" style="width: 100%;">
                 </div>
+
+                <div class="item">
+                    <img src="Images/b8daca7b-4f5d-4ffa-afd8-31375e77c202.jpg" alt="New york" style="width: 100%;">
+                </div>
+
                 <div class="item">
                     <img src="Images/Beach1.jpg" alt="New york" style="width: 100%;">
                 </div>
+
+                <div class="item">
+                    <img src="Images/b8daca7b-4f5d-4ffa-afd8-31375e77c202.jpg" alt="New york" style="width: 100%;">
+                </div>
+
             </div>
 
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">
