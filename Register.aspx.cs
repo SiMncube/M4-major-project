@@ -21,7 +21,7 @@ namespace M4_major_project
             taCustomer.Fill(fullDs.Customer);
             if(isValid())
             {
-                taCustomer.Insert(capFirst(emailTextBox.Text), capFirst(nameTextBox.Text), capFirst(surnameTextBox.Text), idTextBox.Text, cellTextBox.Text, passwordTextBox.Text, capFirst(streetTextBox.Text), capFirst(surbubNameTextBox.Text), capFirst(cityTextBox.Text), capFirst(postalTextBox.Text));
+                taCustomer.Insert(capFirst(emailTextBox.Text), capFirst(nameTextBox.Text), capFirst(surnameTextBox.Text), idTextBox.Text, cellTextBox.Text, passwordTextBox.Text, capFirst(streetTextBox.Text), capFirst(surbubNameTextBox.Text), capFirst(cityTextBox.Text), postalTextBox.Text);
                 Response.Write("<script language='javascript'>window.alert('You have successfully registered');window.location='Default.aspx';</script>");
             }
             
