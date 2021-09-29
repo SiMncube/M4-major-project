@@ -53,9 +53,9 @@
                                         Subject</label>
                                     <select id="subject" name="subject" class="form-control" required="required">
                                         <option value="na" selected="">Choose One:</option>
-                                        <option value="service">General Customer Service</option>
+                                        <option value="service">General customer query</option>
                                         <option value="suggestions">Suggestions</option>
-                                        <option value="product">Product Support</option>
+                                        <option value="product">Feedback on service</option>
                                     </select>
                                 </div>
                             </div>
@@ -80,13 +80,13 @@
                     <legend><span class="glyphicon glyphicon-globe"></span>The Cottage BnB</legend>
                     <address>
                         <strong>Visit</strong><br>
-                        81 Evan Rd<br>
+                        81 Evans Rd<br>
                         Glenwood
                         <br>
                         Durban, 4001<br>
                         <abbr title="Phone">
                             P:</abbr>
-                        (+27) 83-809 3982
+                        (+27) 083 809 3982
                     </address>
                     <address>
                         <strong>Sonya Jardine</strong><br>
@@ -98,7 +98,7 @@
     </div>
     <br />
     <div id="map-container-google-1" class="z-depth-1 map-container">
-        <iframe src="https://maps.google.com/maps?q=46+Albert+Dlomo+Rd&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+        <iframe src="https://maps.google.com/maps?q=81+Evans+Rd,+Glenwood,+Berea&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
             style="border-style: none; border-color: inherit; border-width: 0; width: 1151px; height: 366px;" allowfullscreen=""></iframe>
     </div>
     <br />
