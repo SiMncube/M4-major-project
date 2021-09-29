@@ -32,7 +32,7 @@ namespace M4_major_project
         }
         private bool isValid()
         {
-            return false;
+            return true;
         }
     }
 }
