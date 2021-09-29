@@ -16,7 +16,9 @@
                         <br />
                         <asp:TextBox ID="confirmTextBox" runat="server" required="" class="form-control" placeholder="Confirm password" TextMode="Password"></asp:TextBox>
                         <br />
-                        <asp:Button ID="Button1" runat="server" Text="Change password" OnClick="Button1_Click" class="btn btn-primary pull-center"/>
+                        <div class="col-md text-center">
+                            <asp:Button ID="Button1" runat="server" Text="Change password" OnClick="Button1_Click" class="btn btn-primary pull-center" />
+                        </div>
                     </div>
                 </div>
             </div>

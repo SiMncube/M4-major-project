@@ -14,11 +14,13 @@
                         <asp:TextBox ID="emailTextBox" runat="server" required="" class="form-control" placeholder="Enter email"></asp:TextBox>
                         <br />
                         <div class="signup_link">
-                            Don&#39;t have an account?
+                            <asp:Label ID="Label3" runat="server" Text="Don't have an account?" class="form-label mt-4"></asp:Label>
                         <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Signup</asp:LinkButton>
                         </div>
                         <br />
-                        <asp:Button ID="Button1" runat="server" Text="Reset password" OnClick="Button1_Click" class="btn btn-primary pull-center" />
+                        <div class="col-md text-center">
+                            <asp:Button ID="Button1" runat="server" Text="Reset password" OnClick="Button1_Click" class="btn btn-primary pull-center" />
+                        </div>
                     </div>
                 </div>
             </div>
