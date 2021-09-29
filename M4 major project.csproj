@@ -167,6 +167,8 @@
     <Content Include="Images\Fishing.jpg" />
     <Content Include="Images\G.jpg" />
     <Content Include="Images\LB.jpg" />
+    <Content Include="Manager.aspx" />
+    <Content Include="mangerStyle.css" />
     <Content Include="ModifyBooking.aspx" />
     <Content Include="MakeBooking.aspx" />
     <None Include="FullDataSet.xsd">
@@ -299,6 +301,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.aspx.cs">
+      <DependentUpon>Manager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manager.aspx.designer.cs">
+      <DependentUpon>Manager.aspx</DependentUpon>
     </Compile>
     <Compile Include="ModifyBooking.aspx.cs">
       <DependentUpon>ModifyBooking.aspx</DependentUpon>
