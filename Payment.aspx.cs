@@ -17,7 +17,34 @@ namespace M4_major_project
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            if (!checkCardHoldersName())
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingSummaryTableAdapter taBooking = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            taBooking.Fill(fullDs.BookingSummary);
+            FullDataSetTableAdapters.PaymentTableAdapter taPayment = new FullDataSetTableAdapters.PaymentTableAdapter();
+            
+
+            int summaryid = 0;
+            string amountDue = "";
+            for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
+            {
+                if(CurrentUser.getEmailID() == fullDs.BookingSummary[i].emailID)
+                {
+                    summaryid = fullDs.BookingSummary[i].summaryID;
+                    amountDue = fullDs.BookingSummary[i].amountDue;
+                }
+
+            }
+
+
+            if (checkCardHoldersName() && checkCardNumber() && checkCVV())
+            {
+                taPayment.Insert(summaryid, "Credit card", DateTime.Today, amountDue);
+                taPayment.Fill(fullDs.Payment);
+                Response.Write("<script language='javascript'>window.alert('You have successfully registered');window.location='Default.aspx';</script>");
+                
+            }
+
+            else if (!checkCardHoldersName())
             {
                 this.Label4.Visible = true;
             }
@@ -29,6 +56,9 @@ namespace M4_major_project
             {
                 this.Label6.Visible = true;
             }
+
+           
+            
 
         }
 
