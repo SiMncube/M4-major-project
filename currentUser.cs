@@ -1,15 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
-public static class currentUser
+namespace M4_major_project
 {
+    public class CurrentUser
+    {
         private static string emailID;
-        private static bool isAdmin = false;
-        public static string getEmailID()
-        {
-            return emailID;
-        }
         public static void setEmailID(string e)
         {
             emailID = e;
         }
+
+        public static string getEmailID()
+        {
+            return emailID;
+        }
+    }
 }

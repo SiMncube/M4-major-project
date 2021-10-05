@@ -26,6 +26,7 @@ namespace M4_major_project
             {
                 check = 1;
                 ViewState["CurrentUserEmail"] = TextBox1.Text;
+                CurrentUser.setEmailID(TextBox1.Text);
                 Response.Redirect("/Default");
             }
             else
