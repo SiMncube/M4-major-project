@@ -111,21 +111,21 @@
                 <tr>
                     <td class="auto-style8">Card Holders Name</td>
                     <td class="auto-style16">
-                        <asp:TextBox ID="TextBox1" runat="server" Height="25px" ToolTip="Enter Card Name "></asp:TextBox>
+                        <asp:TextBox ID="TextBox1" runat="server" Height="25px" BorderStyle="Solid" ToolTip="Enter Card Name "></asp:TextBox>
                         <asp:Label ID="Label4" runat="server" ForeColor="Red" Text="Incorrect card name" Visible="False"></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style8">Card Number</td>
                     <td class="auto-style16">
-                        <asp:TextBox ID="TextBox2" runat="server" Height="25px" ToolTip="Must be 16 digits"></asp:TextBox>
+                        <asp:TextBox ID="TextBox2" runat="server" Height="25px" BorderStyle="Solid" ToolTip="Must be 16 digits"></asp:TextBox>
                         <asp:Label ID="Label5" runat="server" ForeColor="Red" Text="Must be 16 digits" Visible="False"></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style8">Card Verification Value (CVV)</td>
                     <td class="auto-style16">
-                        <asp:TextBox ID="TextBox3" runat="server" Height="25px" ToolTip="Must be 3 digits"></asp:TextBox>
+                        <asp:TextBox ID="TextBox3" runat="server" Height="25px" BorderStyle="Solid" ToolTip="Must be 3 digits"></asp:TextBox>
                         <asp:Label ID="Label6" runat="server" ForeColor="Red" Text="Must be 3 digits" Visible="False"></asp:Label>
                     </td>
                 </tr>
