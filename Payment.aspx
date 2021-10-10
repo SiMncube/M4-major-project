@@ -13,6 +13,7 @@
         .auto-style2 {
             width: 658px;
             text-align: center;
+            height: 72px;
         }
         .auto-style3 {
             text-align: center;
@@ -68,30 +69,39 @@
         .auto-style17 {
             text-align: left;
         }
-        .auto-style18 {
-            height: 174px;
-        }
         .auto-style19 {
             text-align: left;
             width: 658px;
+        }
+        .auto-style20 {
+            text-align: center;
+            height: 72px;
+        }
+        .auto-style21 {
+            height: 136px;
+        }
+        .auto-style22 {
+            height: 137px;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="auto-style10" style="border-color: #000000">
+        <div class="auto-style10" style="border-color: #000000; font-family: 'Times New Roman', Times, serif; font-size: x-large;">
 
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="Label1" runat="server" Font-Size="XX-Large" ForeColor="Black" Text="Payment GateWay" Font-Bold="False"></asp:Label>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label1" runat="server" Font-Size="XX-Large" ForeColor="Black" Text="Payment GateWay" Font-Bold="True"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <table class="auto-style1" style="border-color: #000000; border-style: double;">
                 <tr>
                     <td class="auto-style2" style="background-color: #0000FF">
                         <asp:Image ID="Image1" runat="server" Height="102px" ImageUrl="~/Images/card payment icon.png" Width="174px" />
                     </td>
-                    <td class="auto-style3" style="border-color: #3366FF; background-color: #0000FF; font-family: 'Times New Roman', Times, serif; color: #FFFFFF; font-size: x-large;">
+                    <td class="auto-style20" style="border-color: #3366FF; background-color: #0000FF; font-family: 'Times New Roman', Times, serif; color: #FFFFFF; font-size: x-large;">
                         <asp:Label ID="Label2" runat="server" Font-Size="X-Large" ForeColor="White" Text="Online Payment"></asp:Label>
                     </td>
                 </tr>
@@ -99,13 +109,18 @@
             <div class="auto-style17">
                 <div>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="Label3" runat="server" Font-Bold="True" Font-Size="Large" ForeColor="Maroon" Text="Payment Details"></asp:Label>
-                </div>
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="auto-style3"> <img class="auto-style18" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Mastercard-Curved.png"> <img class="auto-style18" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Discover-Curved.png"> <img class="auto-style18" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Paypal-Curved.png"> <img class="auto-style18" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/American-Express-Curved.png"> </div>
+                    <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label3" runat="server" Font-Bold="True" Font-Size="XX-Large" ForeColor="Maroon" Text="Payment Details"></asp:Label>
+                    <div class="row">
+                        <div class="auto-style3">
+                            <img class="auto-style21" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Mastercard-Curved.png">
+                            <img class="auto-style22" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Discover-Curved.png">
+                            <img class="auto-style22" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Paypal-Curved.png">
+                            <img class="auto-style22" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/American-Express-Curved.png">
                         </div>
                     </div>
+                </div>
 &nbsp;</div>
             <table class="auto-style4" style="border-right-color: #000000; border-left-color: #000000; border-top-color: #000000; border-top-style: double; border-right-style: double; border-left-style: double;">
                 <tr>
@@ -130,7 +145,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style11">Credit Card Expiry</td>
+                    <td class="auto-style11" style="font-size: x-large">Credit Card Expiry</td>
                     <td class="auto-style12">
                         <asp:DropDownList ID="DropDownList1" runat="server" Height="45px" Width="85px">
                             <asp:ListItem Value="01"></asp:ListItem>
@@ -156,10 +171,10 @@
                 </tr>
                 <tr>
                     <td class="auto-style8">
-                        <asp:Button ID="Button1" runat="server" BackColor="#006600" BorderColor="#003300" BorderStyle="Groove" ForeColor="White" Height="45px" Text="Cancel" Width="131px" Font-Bold="True" />
+                        <asp:Button ID="Button1" runat="server" BackColor="#006600" BorderColor="#003300" BorderStyle="Groove" ForeColor="White" Height="45px" Text="Cancel" Width="131px" Font-Bold="True" Font-Size="Large" />
                     </td>
                     <td class="auto-style16">
-                        <asp:Button ID="Button2" runat="server" BackColor="#0066FF" BorderColor="Blue" BorderStyle="Groove" ForeColor="White" Height="45px" OnClick="Button2_Click" Text="Confirm Payment" Width="131px" Font-Bold="True" />
+                        <asp:Button ID="Button2" runat="server" BackColor="#0066FF" BorderColor="Blue" BorderStyle="Groove" ForeColor="White" Height="45px" OnClick="Button2_Click" Text="Confirm" Width="131px" Font-Bold="True" Font-Size="Large" />
                     </td>
                 </tr>
                 <tr>
@@ -169,9 +184,9 @@
             </table>
             <table class="auto-style13" style="border-color: #000000; border-style: double;">
                 <tr>
-                    <td class="auto-style14" style="font-size: large; font-family: 'Times New Roman', Times, serif">Would you like to make an EFT Payment?</td>
+                    <td class="auto-style14" style="font-size: x-large; font-family: 'Times New Roman', Times, serif">Would you like to make an EFT Payment?</td>
                     <td class="auto-style15">
-                        <asp:Button ID="Button3" runat="server" BackColor="#0066FF" BorderColor="Blue" BorderStyle="Groove" Font-Bold="True" ForeColor="White" Height="45px" OnClick="Button3_Click" Text="Yes" Width="131px" />
+                        <asp:Button ID="Button3" runat="server" BackColor="#0066FF" BorderColor="Blue" BorderStyle="Groove" Font-Bold="True" ForeColor="White" Height="45px" OnClick="Button3_Click" Text="Yes" Width="131px" Font-Size="Large" />
                     </td>
                 </tr>
             </table>
