@@ -29,7 +29,7 @@ namespace M4_major_project
                 taPayment.Insert(currentBooking.getSummaryID(), "Credit", DateTime.Today, getAmountDue());
                 taPayment.Fill(fullDs.Payment);
                 Response.Write("<script language='javascript'>window.alert('Your Payment Was Successful');window.location='Default.aspx';</script>");
-                
+                Email.sendInvoice();
             }
 
             if (!checkCardHoldersName())
@@ -109,6 +109,7 @@ namespace M4_major_project
             taPayment.Insert(currentBooking.getSummaryID(), "EFT", DateTime.Today, getAmountDue());
             taPayment.Fill(fullDs.Payment);
             Response.Write("<script language='javascript'>window.alert('Your Payment Was Successful');window.location='Default.aspx';</script>");
+            Email.sendInvoice();
         }
     }
 }
