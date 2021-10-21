@@ -11,6 +11,7 @@
             background-color: #008cba;
             color: #fff;
             width: 100%;
+            height: 160px;
         }
 
         .panel {
@@ -63,7 +64,7 @@
         .jumbotron {
             background-color: #008cba;
             color: #fff;
-            padding: 100px 25px;
+            
         }
 
         .container-fluid {
