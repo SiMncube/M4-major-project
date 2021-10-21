@@ -34,6 +34,7 @@
             left: 0;
             position: absolute;
             width: 54px;
+
         }
 
     .aboutus-text {
@@ -169,7 +170,7 @@
                                 </div>
                                 <div class="feature-content">
                                     <h3>Great customer support</h3>
-                                    <p>Whether you’ve just booked or are already enjoying your trip, our customer experience team are on hand around the clock to answer your questions and advocate on your behalf.</p>
+                                    <p>Whether you’ve just  booked or are already enjoying your trip, our customer experience team are on hand around the clock to answer your questions and advocate on your behalf.</p>
                                 </div>
                             </div>
                         </div>
