@@ -34,6 +34,7 @@ namespace M4_major_project
                 HtmlAnchor btn7 = (HtmlAnchor)FindControl("Logoff1");
                 btn7.Visible = true;
             }
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)

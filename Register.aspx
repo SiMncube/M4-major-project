@@ -14,7 +14,7 @@
         }
     </style>
     <br />
-    <div class="container-fluid">
+    <div class="container-fluid" >
         <div class="row" >
             <div class="col-md-6">
                 <div class="well well-sm">
