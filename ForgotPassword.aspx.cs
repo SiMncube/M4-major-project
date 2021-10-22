@@ -17,10 +17,9 @@ namespace M4_major_project
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (userExist())
-                Response.Redirect("~/ChangePassword");
-            else
-                Label2.Visible = true;
+            
+            
+                //Label2.Visible = true;
         }
         private bool userExist()
         {
@@ -29,9 +28,9 @@ namespace M4_major_project
             taCustomer.Fill(fullDs.Customer);
             for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
             {
-                if (fullDs.Customer[i].emailID.Equals(emailTextBox.Text, StringComparison.OrdinalIgnoreCase))
+                if (fullDs.Customer[i].emailID.Equals(emailTextbox.Text, StringComparison.OrdinalIgnoreCase))
                 {
-                    email = emailTextBox.Text;
+                    email = emailTextbox.Text;
                     return true;
                 }
             }
@@ -40,6 +39,14 @@ namespace M4_major_project
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Register");
+        }
+
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+            if (userExist())
+                Response.Redirect("~/ChangePassword");
+            else
+                Response.Write("<script language='javascript'>window.alert('You have entered an invalid email address');window.location='ForgotPassword.aspx';</script>");
         }
     }
 }

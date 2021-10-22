@@ -1,25 +1,34 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ForgotPassword.aspx.cs" Inherits="M4_major_project.ForgotPassword" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <link rel="stylesheet" href="forgotStyle.css" />
-    <div class="forgot">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="well well-sm">
-                        <h1>Forgot Password</h1>
-                        <br />
-                        <asp:Label ID="Label2" Visible="false" runat="server" Text="Invalid email, please try again" CssClass="auto-style1" ForeColor="Red"></asp:Label>
-                        <br />
-                        <asp:Label ID="Label1" runat="server" Text="Email" class="form-label mt-4"></asp:Label>
-                        <asp:TextBox ID="emailTextBox" runat="server" required="" class="form-control" placeholder="Enter email"></asp:TextBox>
-                        <br />
-                        <div class="signup_link">
-                            <asp:Label ID="Label3" runat="server" Text="Don't have an account?" class="form-label mt-4"></asp:Label>
-                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Signup</asp:LinkButton>
-                        </div>
-                        <br />
-                        <div class="col-md text-center">
-                            <asp:Button ID="Button1" runat="server" Text="Reset password" OnClick="Button1_Click" class="btn btn-primary pull-center" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <div class="form-gap"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-center">
+                            <h3><i class="fa fa-lock fa-4x"></i></h3>
+                            <h2 class="text-center">Forgot Password?</h2>
+                            <p>You can reset your password here.</p>
+                            <div class="panel-body">
+                                <form id="register-form" role="form" autocomplete="off" class="form" method="post">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                                            <asp:TextBox ID="emailTextbox" runat="server" placeholder="email address" class="form-control" type="email"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <asp:Button ID="Button1" class="btn btn-lg btn-primary btn-block" value="Reset Password" runat="server" Text="Reset Password" OnClick="Button1_Click1" Width="1237px" />
+                                    </div>
+                                    <input type="hidden" class="hide" name="token" id="token" value="">
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

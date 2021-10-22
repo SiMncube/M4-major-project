@@ -122,7 +122,6 @@
         width: 70px;
     }
 </style>
-
 <div class="aboutus-section">
         <div class="container">
             <div class="row">
