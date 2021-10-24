@@ -23,7 +23,7 @@
             <tr>
                 <td style="width: 478px">&nbsp;</td>
                 <td style="width: 193px">
-                    <asp:TextBox ID="viewBookingTextBox" runat="server" OnTextChanged="TextBox1_TextChanged" style="margin-left: 3px" Width="192px"></asp:TextBox>
+                    <asp:TextBox ID="viewBookingTextBox" runat="server" OnTextChanged="TextBox1_TextChanged" Style="margin-left: 3px" Width="192px"></asp:TextBox>
                 </td>
                 <td>&nbsp;</td>
             </tr>
@@ -37,6 +37,11 @@
                 <td style="width: 193px">
                     <asp:Button ID="viewBookingButton" runat="server" OnClick="Button1_Click" Text="View Booking" Width="206px" />
                 </td>
+            </tr>
+            <tr>
+                <td style="width: 478px">&nbsp;</td>
+                <td style="width: 193px">&nbsp;</td>
+                <td>&nbsp;</td>
             </tr>
         </table>
     </div>
