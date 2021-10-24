@@ -63,7 +63,7 @@
               <li><a href="#">Rooms</a></li>
               <li><a href="#">Food</a></li>
               <li><a href="#">Gym</a></li>
-              <li><a href="~/ViewBooking">View Booking</a></li>
+              <li><a href="ViewBooking">View Booking</a></li>
             </ul>
           </div>
           <div class="col-xs-6 col-md-3">
