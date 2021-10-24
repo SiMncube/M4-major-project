@@ -28,13 +28,13 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td style="width: 478px">&nbsp;</td>
-                <td style="width: 193px">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td style="width: 478px; height: 16px;"></td>
+                <td style="width: 193px; height: 16px;"></td>
+                <td style="height: 16px"></td>
             </tr>
             <tr>
                 <td style="width: 478px">
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBox1" runat="server" Visible="False"></asp:TextBox>
                 </td>
                 <td style="width: 193px">
                     <asp:Button ID="viewBookingButton" runat="server" OnClick="Button1_Click" Text="View Booking" Width="206px" PostBackUrl="~/ViewBooking.aspx" />
@@ -50,17 +50,14 @@
     <div>
         <table style="width: 100%;">
             <tr>
-                <td style="width: 594px" class="modal-sm">
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="summaryID" DataSourceID="gridSelect" ForeColor="#333333" GridLines="None">
+                <td style="width: 470px" class="modal-sm">
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="summaryID" DataSourceID="gridSelect" ForeColor="#333333" GridLines="None" Width="423px">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
+                            <asp:CommandField ShowSelectButton="True" />
                             <asp:BoundField DataField="summaryID" HeaderText="summaryID" InsertVisible="False" ReadOnly="True" SortExpression="summaryID" />
-                            <asp:BoundField DataField="emailID" HeaderText="emailID" SortExpression="emailID" />
                             <asp:BoundField DataField="dateIn" HeaderText="dateIn" SortExpression="dateIn" />
                             <asp:BoundField DataField="dateOut" HeaderText="dateOut" SortExpression="dateOut" />
-                            <asp:BoundField DataField="numberOfNights" HeaderText="numberOfNights" SortExpression="numberOfNights" />
-                            <asp:BoundField DataField="bookingMethod" HeaderText="bookingMethod" SortExpression="bookingMethod" />
-                            <asp:BoundField DataField="bookingStatus" HeaderText="bookingStatus" SortExpression="bookingStatus" />
                             <asp:BoundField DataField="amountDue" HeaderText="amountDue" SortExpression="amountDue" />
                         </Columns>
                         <EditRowStyle BackColor="#2461BF" />
@@ -100,8 +97,8 @@
                     </td>
             </tr>
             <tr>
-                <td style="width: 594px" class="modal-sm">
-                    <asp:SqlDataSource ID="gridSelect" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:group7ConnectionString %>" DeleteCommand="DELETE FROM [BookingSummary] WHERE [summaryID] = @original_summaryID AND [emailID] = @original_emailID AND [dateIn] = @original_dateIn AND [dateOut] = @original_dateOut AND [numberOfNights] = @original_numberOfNights AND (([bookingMethod] = @original_bookingMethod) OR ([bookingMethod] IS NULL AND @original_bookingMethod IS NULL)) AND (([bookingStatus] = @original_bookingStatus) OR ([bookingStatus] IS NULL AND @original_bookingStatus IS NULL)) AND [amountDue] = @original_amountDue" InsertCommand="INSERT INTO [BookingSummary] ([emailID], [dateIn], [dateOut], [numberOfNights], [bookingMethod], [bookingStatus], [amountDue]) VALUES (@emailID, @dateIn, @dateOut, @numberOfNights, @bookingMethod, @bookingStatus, @amountDue)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [BookingSummary] WHERE ([emailID] = @emailID) ORDER BY [summaryID] DESC" UpdateCommand="UPDATE [BookingSummary] SET [emailID] = @emailID, [dateIn] = @dateIn, [dateOut] = @dateOut, [numberOfNights] = @numberOfNights, [bookingMethod] = @bookingMethod, [bookingStatus] = @bookingStatus, [amountDue] = @amountDue WHERE [summaryID] = @original_summaryID AND [emailID] = @original_emailID AND [dateIn] = @original_dateIn AND [dateOut] = @original_dateOut AND [numberOfNights] = @original_numberOfNights AND (([bookingMethod] = @original_bookingMethod) OR ([bookingMethod] IS NULL AND @original_bookingMethod IS NULL)) AND (([bookingStatus] = @original_bookingStatus) OR ([bookingStatus] IS NULL AND @original_bookingStatus IS NULL)) AND [amountDue] = @original_amountDue">
+                <td style="width: 470px" class="modal-sm">
+                    <asp:SqlDataSource ID="gridSelect" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:group7ConnectionString %>" DeleteCommand="DELETE FROM [BookingSummary] WHERE [summaryID] = @original_summaryID AND [emailID] = @original_emailID AND [dateIn] = @original_dateIn AND [dateOut] = @original_dateOut AND [numberOfNights] = @original_numberOfNights AND (([bookingMethod] = @original_bookingMethod) OR ([bookingMethod] IS NULL AND @original_bookingMethod IS NULL)) AND (([bookingStatus] = @original_bookingStatus) OR ([bookingStatus] IS NULL AND @original_bookingStatus IS NULL)) AND [amountDue] = @original_amountDue" InsertCommand="INSERT INTO [BookingSummary] ([emailID], [dateIn], [dateOut], [numberOfNights], [bookingMethod], [bookingStatus], [amountDue]) VALUES (@emailID, @dateIn, @dateOut, @numberOfNights, @bookingMethod, @bookingStatus, @amountDue)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT summaryID, dateIn, dateOut, amountDue FROM BookingSummary WHERE (emailID = @emailID) ORDER BY summaryID DESC" UpdateCommand="UPDATE [BookingSummary] SET [emailID] = @emailID, [dateIn] = @dateIn, [dateOut] = @dateOut, [numberOfNights] = @numberOfNights, [bookingMethod] = @bookingMethod, [bookingStatus] = @bookingStatus, [amountDue] = @amountDue WHERE [summaryID] = @original_summaryID AND [emailID] = @original_emailID AND [dateIn] = @original_dateIn AND [dateOut] = @original_dateOut AND [numberOfNights] = @original_numberOfNights AND (([bookingMethod] = @original_bookingMethod) OR ([bookingMethod] IS NULL AND @original_bookingMethod IS NULL)) AND (([bookingStatus] = @original_bookingStatus) OR ([bookingStatus] IS NULL AND @original_bookingStatus IS NULL)) AND [amountDue] = @original_amountDue">
                         <DeleteParameters>
                             <asp:Parameter Name="original_summaryID" Type="Int32" />
                             <asp:Parameter Name="original_emailID" Type="String" />
@@ -153,7 +150,7 @@
                 </td>
             </tr>
             <tr>
-                <td style="width: 594px" class="modal-sm">&nbsp;</td>
+                <td style="width: 470px" class="modal-sm">&nbsp;</td>
                 <td style="width: 32px">
                     &nbsp;</td>
                 <td>&nbsp;</td>
