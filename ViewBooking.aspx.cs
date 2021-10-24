@@ -13,5 +13,10 @@ namespace M4_major_project
         {
 
         }
+
+        protected void viewBookingButton_Click(object sender, EventArgs e)
+        {
+            viewBookingTextBox
+        }
     }
 }

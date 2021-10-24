@@ -26,12 +26,15 @@
             <tr>
                 <td style="width: 420px">&nbsp;</td>
                 <td class="modal-sm" style="width: 107px">
-                    <asp:Button ID="viewBookingButton" runat="server" Text="View Booking" style="margin-left: 23" Width="242px" />
+                    <asp:Button ID="viewBookingButton" runat="server" Text="View Booking" style="margin-left: 23" Width="243px" BorderColor="White" Height="26px" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
             
         </table>
     </div>
-    <p>&nbsp;</p>
+    <p>
+        <asp:Button ID="Button1" runat="server" Text="Button" />
+    </p>
+    <asp:Button ID="Button2" runat="server" Text="Button" />
 </asp:Content>
