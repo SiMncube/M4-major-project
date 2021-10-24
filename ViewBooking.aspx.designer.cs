@@ -42,6 +42,24 @@ namespace M4_major_project
         protected global::System.Web.UI.WebControls.Button viewBookingButton;
 
         /// <summary>
+        /// GridView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView1;
+
+        /// <summary>
+        /// gridSelect control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource gridSelect;
+
+        /// <summary>
         /// DetailsView1 control.
         /// </summary>
         /// <remarks>
