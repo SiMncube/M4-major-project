@@ -13,10 +13,10 @@ namespace M4_major_project
         {
 
         }
-
         protected void Button1_Click(object sender, EventArgs e)
         {
-
+            //SqlDataSource1.DataBind();
+            //DetailsView1 = (DetailsView)SqlDataSource1.SelectCommand;
         }
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)
