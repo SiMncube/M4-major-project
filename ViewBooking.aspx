@@ -26,7 +26,7 @@
             <tr>
                 <td style="width: 420px">&nbsp;</td>
                 <td class="modal-sm" style="width: 107px">
-                    <asp:Button ID="viewBookingButton" runat="server" Text="View Booking" style="margin-left: 23" Width="243px" BorderColor="White" Height="26px" />
+                    <asp:Button ID="viewBookingButton" runat="server" Text="View Booking" OnClick="viewBookingButton_Click" Width="242px" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
