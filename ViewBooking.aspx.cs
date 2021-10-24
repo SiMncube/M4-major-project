@@ -11,17 +11,11 @@ namespace M4_major_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            TextBox1.Text = CurrentUser.getEmailID();
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //SqlDataSource1.DataBind();
-            //DetailsView1 = (DetailsView)SqlDataSource1.SelectCommand;
 
-            //FullDataSet ds = new FullDataSet();
-            //DetailsView dv = new DetailsView();
-            //dv.DataSource = SqlDataSource1;
-            Label1.Text = SqlDataSource1.SelectCommand;
         }
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)
