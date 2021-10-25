@@ -18,11 +18,11 @@ namespace M4_major_project
         {
             try
             {
-                Email.sendEmail(emailTextBox.Text, subject.Items[subject.SelectedIndex].Text, EmailBody(), true);
+                Email.sendEmail(emailTextBox.Text, subject.Items[subject.SelectedIndex].Text, EmailBody(), nameTextBox.Text);
             }
             catch(Exception ex)
             {
-
+                //Response.Write("<script language='javascript'>window.alert('You have entered an invalid email address');window.location='Contact.aspx';</script>");
             }
         }
         public string EmailBody()

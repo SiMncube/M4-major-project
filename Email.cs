@@ -25,9 +25,19 @@ namespace M4_major_project
             SmtpServer.Send(mail);
             
         }
-        public static void sendEmail(string fromEmail,string emailSubject, string emailBody,bool a)
+        public static void sendEmail(string fromEmail,string emailSubject, string emailBody,string name)
         {
-
+            MailAddress addressFrom = new MailAddress(fromEmail);
+            MailAddress addressTo = new MailAddress("TheCottageGroup7@gmail.com");
+            MailMessage mail = new MailMessage(addressFrom, addressTo);
+            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+            mail.Subject = emailSubject;
+            mail.IsBodyHtml = true;  //to make message body as html could be commented out.
+            mail.Body = emailBody;
+            SmtpServer.Port = 587;
+            SmtpServer.Credentials = new System.Net.NetworkCredential("TheCottageGroup7@gmail.com", "UKZNgroup7");
+            SmtpServer.EnableSsl = true;
+            SmtpServer.Send(mail);
         }
         public static void sendEmail(string toEmail, string emailSubject, string emailBody)
         {
