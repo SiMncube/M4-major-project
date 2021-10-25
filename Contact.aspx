@@ -41,17 +41,17 @@
                                 <div class="form-group">
                                     <label for="name">
                                         Name</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Enter name" required="required" />
+                                    <asp:TextBox class="form-control" id="nameTextBox" placeholder="Enter name" required="required" runat="server"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
                                     <label for="name">
                                         Email</label>
-                                    <input type="text" class="form-control" id="email" placeholder="Enter email address" required="required" />
+                                    <asp:TextBox class="form-control" id="emailTextBox" placeholder="Enter email address" required="required" runat="server"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
                                     <label for="subject">
                                         Subject</label>
-                                    <select id="subject" name="subject" class="form-control" required="required">
+                                    <select id="subject" name="subject" class="form-control" required="required" runat="server">
                                         <option value="na" selected="">Choose One:</option>
                                         <option value="service">General customer query</option>
                                         <option value="suggestions">Suggestions</option>
@@ -62,13 +62,12 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="name">
-                                        Message</label>
-                                    <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
-                                        placeholder="Message"></textarea>
+                                       Message</label>
+                                    <asp:TextBox ID="messageTextBox" class="form-control" runat="server" TextMode="MultiLine" Columns="25" Rows="9"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <asp:Button class="btn btn-primary pull-right" id="btnContactUs" runat="server" Text="Send Message" />
+                                <asp:Button class="btn btn-primary pull-right" id="btnContactUs" runat="server" Text="Send Message" OnClick="btnContactUs_Click" />
                             </div>
                         </div>
                     </form>

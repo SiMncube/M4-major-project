@@ -13,5 +13,27 @@ namespace M4_major_project
         {
 
         }
+
+        protected void btnContactUs_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Email.sendEmail(emailTextBox.Text, subject.Items[subject.SelectedIndex].Text, EmailBody(), true);
+            }
+            catch(Exception ex)
+            {
+
+            }
+        }
+        public string EmailBody()
+        {
+            string body = @"<html>
+                           <body>";
+            body += "<p> Dear Admin please attend to "+ nameTextBox.Text +" on His/Her query</p>";
+            body += "<p>" + messageTextBox.Text + "<p>";
+            body += "<p> Please attend to them on this email address" + emailTextBox.Text + "</p>";
+            body += " </body></html>";
+            return body;
+        }
     }
 }

@@ -25,6 +25,10 @@ namespace M4_major_project
             SmtpServer.Send(mail);
             
         }
+        public static void sendEmail(string fromEmail,string emailSubject, string emailBody,bool a)
+        {
+
+        }
         public static void sendEmail(string toEmail, string emailSubject, string emailBody)
         {
             try
