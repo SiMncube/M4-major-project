@@ -86,11 +86,6 @@
                     <br />
                     <br />
                     <br />
-                    <CR:CrystalReportViewer ID="CrystalReportViewer2" runat="server" AutoDataBind="True" GroupTreeImagesFolderUrl="" Height="1202px" ReportSourceID="CrystalReportSource1" ToolbarImagesFolderUrl="" ToolPanelWidth="200px" Width="1104px" ToolPanelView="None" ViewStateMode="Enabled" />
-                    <CR:CrystalReportSource ID="CrystalReportSource1" runat="server">
-                        <Report FileName="CrystalReport4.rpt">
-                        </Report>
-                    </CR:CrystalReportSource>
                 </td>
             </tr>
         </table>

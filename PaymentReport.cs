@@ -16,14 +16,14 @@ namespace M4_major_project {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Payment_Report : ReportClass {
+    public class PaymentReport1 : ReportClass {
         
-        public Payment_Report() {
+        public PaymentReport1() {
         }
         
         public override string ResourceName {
             get {
-                return "Payment Report.rpt";
+                return "PaymentReport.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace M4_major_project {
         
         public override string FullResourceName {
             get {
-                return "M4_major_project.Payment Report.rpt";
+                return "M4_major_project.PaymentReport.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace M4_major_project {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedPayment_Report : Component, ICachedReport {
+    public class CachedPaymentReport : Component, ICachedReport {
         
-        public CachedPayment_Report() {
+        public CachedPaymentReport() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace M4_major_project {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Payment_Report rpt = new Payment_Report();
+            PaymentReport1 rpt = new PaymentReport1();
             rpt.Site = this.Site;
             return rpt;
         }
