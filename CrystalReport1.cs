@@ -16,14 +16,14 @@ namespace M4_major_project {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Booking_Report : ReportClass {
+    public class CrystalReport1 : ReportClass {
         
-        public Booking_Report() {
+        public CrystalReport1() {
         }
         
         public override string ResourceName {
             get {
-                return "Booking Report.rpt";
+                return "CrystalReport1.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace M4_major_project {
         
         public override string FullResourceName {
             get {
-                return "M4_major_project.Booking Report.rpt";
+                return "M4_major_project.CrystalReport1.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace M4_major_project {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedBooking_Report : Component, ICachedReport {
+    public class CachedCrystalReport1 : Component, ICachedReport {
         
-        public CachedBooking_Report() {
+        public CachedCrystalReport1() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace M4_major_project {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Booking_Report rpt = new Booking_Report();
+            CrystalReport1 rpt = new CrystalReport1();
             rpt.Site = this.Site;
             return rpt;
         }

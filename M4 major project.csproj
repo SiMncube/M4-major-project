@@ -129,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="BookingReport.aspx" />
     <Content Include="CancelBooking.aspx" />
     <Content Include="ChangePassword.aspx" />
     <Content Include="changePasswordStyle.css" />
@@ -138,8 +139,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="BookingReport.aspx" />
-    <Content Include="DayReport.aspx" />
+    <Content Include="DayMonthAndYearReport.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="defaultStyle.css" />
     <Content Include="favicon.ico" />
@@ -256,6 +256,13 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BookingReport.aspx.cs">
+      <DependentUpon>BookingReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookingReport.aspx.designer.cs">
+      <DependentUpon>BookingReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CancelBooking.aspx.cs">
       <DependentUpon>CancelBooking.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -277,16 +284,16 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Booking Report.cs">
+    <Compile Include="CrystalReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Booking Report.rpt</DependentUpon>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Payment Report.cs">
+    <Compile Include="PaymentReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Payment Report.rpt</DependentUpon>
+      <DependentUpon>PaymentReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DayMonthAndYearReport.cs">
@@ -297,19 +304,12 @@
     </Compile>
     <Compile Include="currentBooking.cs" />
     <Compile Include="currentUser.cs" />
-    <Compile Include="BookingReport.aspx.cs">
-      <DependentUpon>BookingReport.aspx</DependentUpon>
+    <Compile Include="DayMonthAndYearReport.aspx.cs">
+      <DependentUpon>DayMonthAndYearReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="BookingReport.aspx.designer.cs">
-      <DependentUpon>BookingReport.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DayReport.aspx.cs">
-      <DependentUpon>DayReport.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DayReport.aspx.designer.cs">
-      <DependentUpon>DayReport.aspx</DependentUpon>
+    <Compile Include="DayMonthAndYearReport.aspx.designer.cs">
+      <DependentUpon>DayMonthAndYearReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -442,13 +442,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Booking Report.rpt">
+    <EmbeddedResource Include="CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Booking Report.cs</LastGenOutput>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Payment Report.rpt">
+    <EmbeddedResource Include="PaymentReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Payment Report.cs</LastGenOutput>
+      <LastGenOutput>PaymentReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DayMonthAndYearReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

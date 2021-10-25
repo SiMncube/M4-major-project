@@ -11,16 +11,19 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Button ID="Button1" runat="server" Height="38px" OnClick="Button1_Click" Text="Button" Width="124px" />
-            <br />
-            <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="True" GroupTreeImagesFolderUrl="" Height="1202px" ReportSourceID="CrystalReportSource1" ToolbarImagesFolderUrl="" ToolPanelWidth="200px" Width="1104px" />
             <CR:CrystalReportSource ID="CrystalReportSource1" runat="server">
-                <Report FileName="CrystalReport1.rpt">
+                <Report FileName="PaymentReport.rpt">
                 </Report>
             </CR:CrystalReportSource>
+            <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="true" ReportSourceID="CrystalReportSource1" />
             <br />
             <br />
         </div>
+        <CR:CrystalReportSource ID="CrystalReportSource2" runat="server">
+            <Report FileName="PaymentReport.rpt">
+            </Report>
+        </CR:CrystalReportSource>
+        <CR:CrystalReportViewer ID="CrystalReportViewer2" runat="server" AutoDataBind="true" ReportSourceID="CrystalReportSource2" />
     </form>
 </body>
 </html>
