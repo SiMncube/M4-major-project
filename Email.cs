@@ -27,7 +27,7 @@ namespace M4_major_project
         }
         public static void sendEmail(string fromEmail,string emailSubject, string emailBody,string name)
         {
-            MailAddress addressFrom = new MailAddress(fromEmail);
+            MailAddress addressFrom = new MailAddress("TheCottageGroup7@gmail.com",name);
             MailAddress addressTo = new MailAddress("TheCottageGroup7@gmail.com");
             MailMessage mail = new MailMessage(addressFrom, addressTo);
             SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
