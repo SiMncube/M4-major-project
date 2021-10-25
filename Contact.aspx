@@ -68,8 +68,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
-                                    Send Message</button>
+                                <asp:Button class="btn btn-primary pull-right" id="btnContactUs" runat="server" Text="Send Message" />
                             </div>
                         </div>
                     </form>
