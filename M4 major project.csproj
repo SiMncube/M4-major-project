@@ -129,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="About1.aspx" />
     <Content Include="BookingReport.aspx" />
     <Content Include="CancelBooking.aspx" />
     <Content Include="ChangePassword.aspx" />
@@ -179,6 +180,7 @@
     <Content Include="ModifyBooking.aspx" />
     <Content Include="MakeBooking.aspx" />
     <Content Include="ViewBooking.aspx" />
+    <Content Include="WebForm3.aspx" />
     <None Include="FullDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -253,6 +255,13 @@
     </Compile>
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="About1.aspx.cs">
+      <DependentUpon>About1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About1.aspx.designer.cs">
+      <DependentUpon>About1.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -425,6 +434,13 @@
     </Compile>
     <Compile Include="ViewBooking.aspx.designer.cs">
       <DependentUpon>ViewBooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm3.aspx.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm3.aspx.designer.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.cs" Inherits="M4_major_project.About" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About1.aspx.cs" Inherits="M4_major_project.About1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -122,7 +122,7 @@
         width: 70px;
     }
 </style>
-<div class="aboutus-section">
+    <div class="aboutus-section">
         <div class="container">
             <div class="row">
                 <div class="col-md-30 col-sm-6 col-xs-12">
@@ -130,8 +130,15 @@
                         <h2 class="aboutus-title">About Us</h2>
                         <p class="aboutus-text">Founded in 2010 in Durban, The Cottage BnB aims to grow from a small Durban startup to one of the Durban's leading BnB. The Cottage's mission is <strong>To make it easier for everyone to experience the Durban</strong></p>
                         <p class="aboutus-text">The Cottage is available in 24/7 and offers 15 rooms(7 double rooms and 8 single rooms). No matter when you want to stay and how long you want to stay, The Cottage makes it easy and backs it all up with excellent customer support</p>
-                        <p class="aboutus-text"></p>
-                        <a class="aboutus-more" href="/About1">read more</a>
+                        <p class="aboutus-text">In addition to comfortable hotel lounge, Our rooms are equipped with a smart TV and Wi-Fi. Our rooms offer all the space and comfort you need during your stay.</p>
+                        <h2 class="aboutus-title">Activities around Durban</h2>
+                        <p class="aboutus-text">For your gambling entertainment Suncoast Casino
+                        <br/>Events at Moses Mabhida
+                        <br />Florida Road if you are looking at a night out in the city
+                        <br />UShaka Marine World for family water activities
+                        <br />Durban Botanic Gardens if you want a picnic spot
+                        <br />Safari adventure at Phezulu Safari Park
+                        </p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
@@ -171,6 +178,28 @@
                                 <div class="feature-content">
                                     <h3>Great customer support</h3>
                                     <p>Whether you’ve just  booked or are already enjoying your trip, our customer experience team are on hand around the clock to answer your questions and advocate on your behalf.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="clearfix">
+                                <div class="iconset">
+                                    <span class="glyphicon glyphicon-cog icon"></span>
+                                </div>
+                                <div class="feature-content">
+                                    <h3>Single Room</h3>
+                                    <p>Our comfortable single rooms are just the right size if you are a couple or travelling alone, seeking affordable accommodation. Similar to our double rooms, the single room is fully equipped with all comforts.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-box">
+                            <div class="clearfix">
+                                <div class="iconset">
+                                    <span class="glyphicon glyphicon-cog icon"></span>
+                                </div>
+                                <div class="feature-content">
+                                    <h3>Double Room</h3>
+                                    <p>Warmth, luxury and peace meet you in our charming comfort double room. In addition to the queen sized bed, the room (23.5m^2) is equipped with all amenities The Cottage has to offer, including free access to the gym.</p>
                                 </div>
                             </div>
                         </div>
