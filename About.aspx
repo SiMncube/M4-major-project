@@ -12,7 +12,6 @@
     }
 
     .aboutus-section {
-        padding: 90px 0;
     }
 
     .aboutus-title {
