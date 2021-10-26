@@ -13,7 +13,6 @@ namespace M4_major_project
 
     public partial class SiteMaster : MasterPage
     {
-        
         protected void Page_Load(object sender, EventArgs e)
         {
           
@@ -34,7 +33,25 @@ namespace M4_major_project
                 setUser.InnerText = currentUserName(); 
                 HtmlAnchor btn7 = (HtmlAnchor)FindControl("Logoff1");
                 btn7.Visible = true;
-                
+                ViewBooking1.Visible = true;
+            }
+            if(Login.check == 0)
+            {
+                HtmlAnchor btn1 = (HtmlAnchor)FindControl("MakeBooking1");
+                btn1.Visible = false;
+                HtmlAnchor btn2 = (HtmlAnchor)FindControl("ModifyBooking1");
+                btn2.Visible = false;
+                HtmlAnchor btn3 = (HtmlAnchor)FindControl("CancelBooking1");
+                btn3.Visible = false;
+                HtmlAnchor btn4 = (HtmlAnchor)FindControl("Login1");
+                btn4.Visible = true;
+                HtmlAnchor btn5 = (HtmlAnchor)FindControl("Register1");
+                btn5.Visible = true;
+                HtmlAnchor btn6 = (HtmlAnchor)FindControl("Username1");
+                btn6.Visible = false;
+                setUser.InnerText = currentUserName();
+                HtmlAnchor btn7 = (HtmlAnchor)FindControl("Logoff1");
+                btn7.Visible = false;
             }
             
         }
@@ -64,9 +81,13 @@ namespace M4_major_project
             for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
             {
                 if (fullDs.Customer[i].emailID.Equals(CurrentUser.getEmailID(), StringComparison.OrdinalIgnoreCase))
-                    return fullDs.Customer[i].surname + " " + fullDs.Customer[i].name;
+                    return fullDs.Customer[i].name;
             }
             return "";
+        }
+        protected void logOff_click(object sender, EventArgs e)
+        {
+            Login.check = 0;
         }
     }
 }

@@ -12,6 +12,13 @@
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="MasterStyle.css" />
+    <script>
+        function loggoOffFunction() {
+            var x = document.getElementById("MakeBooking1");
+            x.style.display = "none";
+            loggoOffFunction();
+        }
+    </script>
 </head>
 <body>
     <form runat="server" class="auto-style1">
@@ -31,6 +38,7 @@
                         <li><a runat="server" href="~/About"><b>About us</b></a></li>
                         <li><a runat="server" href="~/Contact"><b>Contact us</b></a></li>
                         <li><a runat="server" id="MakeBooking1" visible="false" href="~/MakeBooking" aria-pressed="false"><b>Make Booking</b></a></li>
+                        <li><a runat="server" id="ViewBooking1" visible="false" href="~/ViewBooking"><b>View Booking</b></a></li>
                         <li><a runat="server" id="ModifyBooking1" visible="false" href="~/ModifyBooking"><b>Modify Booking</b></a></li>
                         <li><a runat="server" id="CancelBooking1" visible="false" href="~/CancelBooking"><b>Cancel Booking</b></a></li>
                         <li><a runat="server" href="~/Gallery"><b>Gallery</b></a></li>
@@ -38,8 +46,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a runat="server" id="Login1" visible="true" href="~/Login"><b>Login</b></a></li>
                         <li><a runat="server" id="Register1" visible="true" href="~/Register"><b>Register</b></a></li>
-                        <li><a runat="server" id="Username1" visible="false" href="~/Default"><b id="setUser" runat="server">Under construction</b></a></li>
-                        <li><a runat="server" id="Logoff1" visible="false" href="~/Default"><b>Log off</b></a></li>
+                        <li><a runat="server" id="Username1" visible="false" href="~/Default"><b id="setUser" runat="server"></b></a></li>
+                        <li><a runat="server" id="Logoff1" visible="false" href="~/Default" onclick="logOff_click()" ><b>Log off</b></a></li>
                     </ul>
                 </div>
             </div>
@@ -62,7 +70,6 @@
               <li><a href="#">Rooms</a></li>
               <li><a href="#">Food</a></li>
               <li><a href="#">Gym</a></li>
-              <li><a href="ViewBooking">View Booking</a></li>
             </ul>
           </div>
           <div class="col-xs-6 col-md-3">
