@@ -64,7 +64,7 @@ namespace M4_major_project
             for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
             {
                 if (fullDs.Customer[i].emailID.Equals(CurrentUser.getEmailID(), StringComparison.OrdinalIgnoreCase))
-                    return fullDs.Customer[i].name;
+                    return fullDs.Customer[i].surname + " " + fullDs.Customer[i].name;
             }
             return "";
         }
