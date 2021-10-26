@@ -31,8 +31,10 @@ namespace M4_major_project
                 btn5.Visible = false;
                 HtmlAnchor btn6 = (HtmlAnchor)FindControl("Username1");
                 btn6.Visible = true;
+                setUser.InnerText = currentUserName(); 
                 HtmlAnchor btn7 = (HtmlAnchor)FindControl("Logoff1");
                 btn7.Visible = true;
+                
             }
             
         }
@@ -52,7 +54,19 @@ namespace M4_major_project
 
         protected void Button1_Click1(object sender, EventArgs e)
         {
-          
+
+        }
+        private string currentUserName()
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
+            taCustomer.Fill(fullDs.Customer);
+            for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
+            {
+                if (fullDs.Customer[i].emailID.Equals(CurrentUser.getEmailID(), StringComparison.OrdinalIgnoreCase))
+                    return fullDs.Customer[i].name;
+            }
+            return "";
         }
     }
 }

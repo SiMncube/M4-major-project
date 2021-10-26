@@ -32,7 +32,6 @@ namespace M4_major_project
             else
             {
                 Label3.Visible = true;
-                string h = "Hello";
                 string script = "<script language='javascript'>window.alert('You have entered an invalid email address');window.location='ForgotPassword.aspx';</script>";
                 RegisterStartupScript("Button1_ClickScript", script);
             }
