@@ -19,6 +19,7 @@ namespace M4_major_project
             try
             {
                 Email.sendEmail(emailTextBox.Text, subject.Items[subject.SelectedIndex].Text, EmailBody(),nameTextBox.Text);
+                Email.sendEmail(emailTextBox.Text, subject.Items[subject.SelectedIndex].Text, Email_body());
             }
             catch(Exception ex)
             {
@@ -35,6 +36,16 @@ namespace M4_major_project
             body += "<h3>Query</h3>";
             body += "<p><strong>" + messageTextBox.Text + "</strong><p>";
             body += "<p><strong> Please attend to them on this email address : " + emailTextBox.Text + "</strong></p>";
+            body += " </body></html>";
+            return body;
+        }
+        public string Email_body()
+        {
+            string body = @"<html><body>";
+            body += "<h3>Dear "+ nameTextBox.Text +", Thank you for contacting The Cottage BnB</h3>";
+            body += "<p><strong>We have received you query and one of our support staff will be in contact shortly</strong><p>";
+            body += "<p>Thank you";
+            body += "<br/>The Cottage BnB support team</p>";
             body += " </body></html>";
             return body;
         }
