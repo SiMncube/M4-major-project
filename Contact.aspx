@@ -67,7 +67,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <asp:Button class="btn btn-primary pull-right" id="btnContactUs" runat="server" Text="Send Message" OnClick="btnContactUs_Click" />
+                                <asp:Button class="btn btn-primary pull-right" id="btnContactUs" runat="server" Text="Send Message" OnClick="btnContactUs_Click" data-toggle="modal" data-target="#myModal" />
                             </div>
                         </div>
                     </form>
@@ -94,6 +94,23 @@
             </div>
         </div>
     </div>
+    <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>You query has been sent to the support team.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
     <br />
     <div id="map-container-google-1" class="z-depth-1 map-container">
         <iframe src="https://maps.google.com/maps?q=81+Evans+Rd,+Glenwood,+Berea&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"

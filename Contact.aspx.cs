@@ -32,6 +32,7 @@ namespace M4_major_project
                            <body>";
             body += "<h1>"+ subject.Items[subject.SelectedIndex].Text + "</h1>";
             body += "<h3> Dear Admin please attend to "+ nameTextBox.Text +" on His/Her query</h3>";
+            body += "<h4>Query</h4>";
             body += "<p><strong>" + messageTextBox.Text + "</strong><p>";
             body += "<p><strong> Please attend to them on this email address : " + emailTextBox.Text + "</strong></p>";
             body += " </body></html>";
