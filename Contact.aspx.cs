@@ -18,7 +18,7 @@ namespace M4_major_project
         {
             try
             {
-                Email.sendEmail(emailTextBox.Text, subject.Items[subject.SelectedIndex].Text, EmailBody(), emailTextBox.Text);
+                Email.sendEmail(emailTextBox.Text, subject.Items[subject.SelectedIndex].Text, EmailBody(),nameTextBox.Text);
             }
             catch(Exception ex)
             {
@@ -30,9 +30,10 @@ namespace M4_major_project
         {
             string body = @"<html>
                            <body>";
-            body += "<p> Dear Admin please attend to "+ nameTextBox.Text +" on His/Her query</p>";
-            body += "<p>" + messageTextBox.Text + "<p>";
-            body += "<p> Please attend to them on this email address" + emailTextBox.Text + "</p>";
+            body += "<h1>"+ subject.Items[subject.SelectedIndex].Text + "</h1>";
+            body += "<h3> Dear Admin please attend to "+ nameTextBox.Text +" on His/Her query</h3>";
+            body += "<p><strong>" + messageTextBox.Text + "</strong><p>";
+            body += "<p><strong> Please attend to them on this email address : " + emailTextBox.Text + "</strong></p>";
             body += " </body></html>";
             return body;
         }

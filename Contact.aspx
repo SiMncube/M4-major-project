@@ -63,7 +63,7 @@
                                 <div class="form-group">
                                     <label for="name">
                                        Message</label>
-                                    <asp:TextBox ID="messageTextBox" class="form-control" runat="server" TextMode="MultiLine" Columns="25" Rows="9"></asp:TextBox>
+                                    <asp:TextBox ID="messageTextBox" class="form-control" runat="server" TextMode="MultiLine" Columns="25" Rows="9" placeholder="Write message"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-md-12">
