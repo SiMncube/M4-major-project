@@ -120,6 +120,30 @@
         text-align: center;
         width: 70px;
     }
+            .carousel-control.right, .carousel-control.left {
+            background-image: none;
+            color: #008cba;
+        }
+
+        .carousel-indicators li {
+            border-color: #008cba;
+        }
+
+            .carousel-indicators li.active {
+                background-color: #008cba;
+            }
+
+        .item h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            font-weight: 400;
+            font-style: italic;
+            margin: 70px 0;
+        }
+
+        .item span {
+            font-style: normal;
+        }
 </style>
     <div class="aboutus-section">
         <div class="container">
@@ -127,14 +151,14 @@
                 <div class="col-md-30 col-sm-6 col-xs-12">
                     <div class="aboutus">
                         <h2 class="aboutus-title">About Us</h2>
-                        <p class="aboutus-text">Founded in 2010 in Durban, The Cottage BnB aims to grow from a small Durban startup to one of the Durban's leading BnB. The Cottage's mission is <strong>To make it easier for everyone to experience the Durban</strong></p>
-                        <p class="aboutus-text">The Cottage is available in 24/7 and offers 15 rooms(7 double rooms and 8 single rooms). No matter when you want to stay and how long you want to stay, The Cottage makes it easy and backs it all up with excellent customer support</p>
+                        <p class="aboutus-text">Founded in 2010 in Durban, The Cottage BnB aims to grow from a small Durban outhouse to one of the Durban's leading BnB. The Cottage's mission is <strong>To make it easier for everyone to experience the Durban</strong></p>
+                        <p class="aboutus-text">The Cottage is always open and offers 15 rooms(7 double rooms and 8 single rooms). No matter when you want to stay and how long you want to stay, The Cottage makes it easy and backs it all up with excellent customer support</p>
                         <p class="aboutus-text">In addition to comfortable hotel lounge, Our rooms are equipped with a smart TV and Wi-Fi. Our rooms offer all the space and comfort you need during your stay.</p>
                         <h2 class="aboutus-title">Activities around Durban</h2>
                         <p class="aboutus-text">For your gambling entertainment Suncoast Casino
                         <br/>Events at Moses Mabhida
                         <br />Florida Road if you are looking at a night out in the city
-                        <br />UShaka Marine World for family water activities
+                        <br />UShaka Marine World for family water activities and Indian Ocean wildlife
                         <br />Durban Botanic Gardens if you want a picnic spot
                         <br />Safari adventure at Phezulu Safari Park
                         </p>
@@ -206,5 +230,47 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div>&nbsp</div>
+    <div>&nbsp</div>
+        <h2>Add a comment in the comment box to feature</h2>
+    <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <h4>"Staff is very kind and helpful"<br>
+                    <span style="font-style: normal;">Sanele Theu</span></h4>
+            </div>
+            <div class="item">
+                <h4>"Had a cute breakfast in your garden"<br>
+                    <span style="font-style: normal;">Ayanda Ntuli</span></h4>
+            </div>
+            <div class="item">
+                <h4>"You get value for your money"<br>
+                    <span style="font-style: normal;">John Smith</span></h4>
+            </div>
+             <div class="item">
+                <h4>"Definity coming back next holidays"<br>
+                    <span style="font-style: normal;">Amy Pollard</span></h4>
+            </div>
+             <div class="item">
+                <h4>"Bathroom was spotless when my wife and i arrived"<br>
+                    <span style="font-style: normal;">Matthew Govender</span></h4>
+            </div>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
 </asp:Content>
