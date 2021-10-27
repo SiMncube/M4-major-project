@@ -1,97 +1,84 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About1.aspx.cs" Inherits="M4_major_project.About1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="defaultStyle.css" />
+    <link rel="stylesheet" href="https://bootswatch.com/3/yeti/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-<style>
-    body {
-        font-family: 'Roboto';
-        font-size: 16px;
-    }
-
-    .aboutus-section {
-    }
-
-    .aboutus-title {
-        font-size: 30px;
-        letter-spacing: 0;
-        line-height: 32px;
-        margin: 0 0 39px;
-        padding: 0 0 11px;
-        position: relative;
-        text-transform: uppercase;
-        color: #000;
-    }
-
-        .aboutus-title::after {
-            background: #008cba none repeat scroll 0 0;
-            bottom: 0;
-            content: "";
-            height: 2px;
-            left: 0;
-            position: absolute;
-            width: 54px;
-
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Roboto';
+            font-size: 16px;
         }
 
-    .aboutus-text {
-        color: #606060;
-        font-size: 15px;
-        line-height: 22px;
-        margin: 0 0 35px;
-    }
-
-    a:hover, a:active {
-        color: #ffb901;
-        text-decoration: none;
-        outline: 0;
-    }
-
-    .aboutus-more {
-        border: 1px solid #008cba;
-        border-radius: 25px;
-        color: #008cba;
-        display: inline-block;
-        font-size: 14px;
-        font-weight: 700;
-        letter-spacing: 0;
-        padding: 7px 20px;
-        text-transform: uppercase;
-    }
-
-    .feature .feature-box .iconset {
-        background: #fff none repeat scroll 0 0;
-        float: left;
-        position: relative;
-        width: 18%;
-    }
-
-        .feature .feature-box .iconset::after {
-            background: #008cba none repeat scroll 0 0;
-            content: "";
-            height: 150%;
-            left: 43%;
-            position: absolute;
-            top: 100%;
-            width: 1px;
+        .aboutus-section {
         }
 
-    .feature .feature-box .feature-content h4 {
-        color: #0f0f0f;
-        font-size: 18px;
-        letter-spacing: 0;
-        line-height: 22px;
-        margin: 0 0 5px;
-    }
+        .aboutus-title {
+            font-size: 30px;
+            letter-spacing: 0;
+            line-height: 32px;
+            margin: 0 0 39px;
+            padding: 0 0 11px;
+            position: relative;
+            text-transform: uppercase;
+            color: #000;
+        }
 
+            .aboutus-title::after {
+                background: #008cba none repeat scroll 0 0;
+                bottom: 0;
+                content: "";
+                height: 2px;
+                left: 0;
+                position: absolute;
+                width: 54px;
+            }
 
-    .feature .feature-box .feature-content {
-        float: left;
-        padding-left: 30px;
-        width: 78%;
-    }
+        .aboutus-text {
+            color: #606060;
+            font-size: 15px;
+            line-height: 22px;
+            margin: 0 0 35px;
+        }
+
+        a:hover, a:active {
+            color: #ffb901;
+            text-decoration: none;
+            outline: 0;
+        }
+
+        .aboutus-more {
+            border: 1px solid #008cba;
+            border-radius: 25px;
+            color: #008cba;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0;
+            padding: 7px 20px;
+            text-transform: uppercase;
+        }
+
+        .feature .feature-box .iconset {
+            background: #fff none repeat scroll 0 0;
+            float: left;
+            position: relative;
+            width: 18%;
+        }
+
+            .feature .feature-box .iconset::after {
+                background: #008cba none repeat scroll 0 0;
+                content: "";
+                height: 150%;
+                left: 43%;
+                position: absolute;
+                top: 100%;
+                width: 1px;
+            }
 
         .feature .feature-box .feature-content h4 {
             color: #0f0f0f;
@@ -101,26 +88,42 @@
             margin: 0 0 5px;
         }
 
-        .feature .feature-box .feature-content p {
-            color: #606060;
-            font-size: 13px;
-            line-height: 22px;
+
+        .feature .feature-box .feature-content {
+            float: left;
+            padding-left: 30px;
+            width: 78%;
         }
 
-    .icon {
-        color: #008cba;
-        padding: 0px;
-        font-size: 40px;
-        border: 1px solid #008cba;
-        border-radius: 100px;
-        color: #fdb801;
-        font-size: 28px;
-        height: 70px;
-        line-height: 70px;
-        text-align: center;
-        width: 70px;
-    }
-            .carousel-control.right, .carousel-control.left {
+            .feature .feature-box .feature-content h4 {
+                color: #0f0f0f;
+                font-size: 18px;
+                letter-spacing: 0;
+                line-height: 22px;
+                margin: 0 0 5px;
+            }
+
+            .feature .feature-box .feature-content p {
+                color: #606060;
+                font-size: 13px;
+                line-height: 22px;
+            }
+
+        .icon {
+            color: #008cba;
+            padding: 0px;
+            font-size: 40px;
+            border: 1px solid #008cba;
+            border-radius: 100px;
+            color: #fdb801;
+            font-size: 28px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            width: 70px;
+        }
+
+        .carousel-control.right, .carousel-control.left {
             background-image: none;
             color: #008cba;
         }
@@ -144,7 +147,7 @@
         .item span {
             font-style: normal;
         }
-</style>
+    </style>
     <div class="aboutus-section">
         <div class="container">
             <div class="row">
@@ -155,12 +158,18 @@
                         <p class="aboutus-text">The Cottage is always open and offers 15 rooms(7 double rooms and 8 single rooms). No matter when you want to stay and how long you want to stay, The Cottage makes it easy and backs it all up with excellent customer support</p>
                         <p class="aboutus-text">In addition to comfortable hotel lounge, Our rooms are equipped with a smart TV and Wi-Fi. Our rooms offer all the space and comfort you need during your stay.</p>
                         <h2 class="aboutus-title">Activities around Durban</h2>
-                        <p class="aboutus-text">For your gambling entertainment Suncoast Casino
-                        <br/>Events at Moses Mabhida
-                        <br />Florida Road if you are looking at a night out in the city
-                        <br />UShaka Marine World for family water activities and Indian Ocean wildlife
-                        <br />Durban Botanic Gardens if you want a picnic spot
-                        <br />Safari adventure at Phezulu Safari Park
+                        <p class="aboutus-text">
+                            For your gambling entertainment Suncoast Casino
+                        <br />
+                            Events at Moses Mabhida
+                        <br />
+                            Florida Road if you are looking at a night out in the city
+                        <br />
+                            UShaka Marine World for family water activities and Indian Ocean wildlife
+                        <br />
+                            Durban Botanic Gardens if you want a picnic spot
+                        <br />
+                            Safari adventure at Phezulu Safari Park
                         </p>
                     </div>
                 </div>
@@ -233,7 +242,7 @@
     </div>
     <div>&nbsp</div>
     <div>&nbsp</div>
-        <h2>Add a comment in the comment box to feature</h2>
+    <h2>Add a comment in the comment box to feature</h2>
     <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -255,11 +264,11 @@
                 <h4>"You get value for your money"<br>
                     <span style="font-style: normal;">John Smith</span></h4>
             </div>
-             <div class="item">
+            <div class="item">
                 <h4>"Definity coming back next holidays"<br>
                     <span style="font-style: normal;">Amy Pollard</span></h4>
             </div>
-             <div class="item">
+            <div class="item">
                 <h4>"Bathroom was spotless when my wife and i arrived"<br>
                     <span style="font-style: normal;">Matthew Govender</span></h4>
             </div>
