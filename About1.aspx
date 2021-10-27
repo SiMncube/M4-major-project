@@ -159,9 +159,9 @@
                         <p class="aboutus-text">In addition to comfortable hotel lounge, Our rooms are equipped with a smart TV and Wi-Fi. Our rooms offer all the space and comfort you need during your stay.</p>
                         <h2 class="aboutus-title">Activities around Durban</h2>
                         <p class="aboutus-text">
-                            For your gambling entertainment Suncoast Casino
+                            For your gambling entertainment <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="https://www.suncoastcasino.co.za/">Suncoast Casino</asp:HyperLink>
                         <br />
-                            Events at Moses Mabhida
+                            Events at <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="https://www.mmstadium.com/">Moses Mabhida</asp:HyperLink>
                         <br />
                             Florida Road if you are looking at a night out in the city
                         <br />
@@ -242,7 +242,7 @@
     </div>
     <div>&nbsp</div>
     <div>&nbsp</div>
-    <h2>Add a comment in the comment box to feature</h2>
+    <h2>Send us a comment in <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Contact.aspx">Contact</asp:HyperLink> to feature</h2>   
     <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
