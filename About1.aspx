@@ -163,16 +163,13 @@
                         <br />
                             Events at <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="https://www.mmstadium.com/">Moses Mabhida</asp:HyperLink>
                         <br />
-                            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="https://www.iol.co.za/lifestyle/food-drink/10-things-to-do-on-florida-road-19731588">Florida Road</asp:HyperLink>
-&nbsp;if you are looking at a night out in the city
+                            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="https://www.iol.co.za/lifestyle/food-drink/10-things-to-do-on-florida-road-19731588">Florida Road</asp:HyperLink> if you are looking at a night out in the city
                         <br />
-                            <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="https://ushakamarine.com/">uShaka Marine World</asp:HyperLink>
-&nbsp;for family water activities and Indian Ocean wildlife
+                            <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="https://ushakamarine.com/">uShaka Marine World</asp:HyperLink> for family water activities and Indian Ocean wildlife
                         <br />
-                            <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="https://durbanbotanicgardens.org.za/">Durban Botanical Gardens</asp:HyperLink>
-                            Durban Botanic Gardens if you want a picnic spot
+                            <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="https://durbanbotanicgardens.org.za/">Durban Botanical Gardens</asp:HyperLink> Durban Botanic Gardens if you want a picnic spot
                         <br />
-                            Safari adventure at Phezulu Safari Park
+                            Safari adventure at <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="https://phezulusafaripark.co.za/">Phezulu Park</asp:HyperLink>
                         </p>
                     </div>
                 </div>
@@ -245,7 +242,7 @@
     </div>
     <div>&nbsp</div>
     <div>&nbsp</div>
-    <h2>Send us a comment in <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Contact.aspx">Contact</asp:HyperLink> to feature</h2>   
+    <h2>Send us a comment in <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Contact.aspx">Contact</asp:HyperLink> &nbsp;to feature</h2>   
     <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
