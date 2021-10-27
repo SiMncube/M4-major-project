@@ -34,8 +34,8 @@
             </tr>
             <tr>
                 <td style="width: 478px">
-                    <asp:TextBox ID="TextBox1" runat="server" Width="134px"></asp:TextBox>
-                    <asp:TextBox ID="TextBox2" runat="server" Width="152px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox1" runat="server" Width="181px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox2" runat="server" Width="171px"></asp:TextBox>
                 </td>
                 <td style="width: 193px">
                     <asp:Button ID="viewBookingButton" runat="server" OnClick="Button1_Click" Text="View Booking" Width="206px" PostBackUrl="~/ViewBooking.aspx" />
