@@ -163,7 +163,8 @@
                         <br />
                             Events at <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="https://www.mmstadium.com/">Moses Mabhida</asp:HyperLink>
                         <br />
-                            Florida Road if you are looking at a night out in the city
+                            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="https://www.iol.co.za/lifestyle/food-drink/10-things-to-do-on-florida-road-19731588">Florida Road</asp:HyperLink>
+&nbsp;if you are looking at a night out in the city
                         <br />
                             UShaka Marine World for family water activities and Indian Ocean wildlife
                         <br />
