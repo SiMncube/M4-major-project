@@ -11,7 +11,9 @@
             background-color: #008cba;
             color: #fff;
             width: 100%;
-            height: 160px;
+            height: 128px;
+            padding:0px;
+            margin:0px;
         }
 
         .panel {
@@ -129,13 +131,17 @@
         .item span {
             font-style: normal;
         }
+        .item h2
+        {
+            padding:0px;
+        }
     </style>
     <div class="jumbotron text-center">
         <h1>The Cottage BnB</h1>
         <p>Safe . Dependable . Affordable </p>
     </div>
     <div class="container-fluid">
-        <div class="text-center">
+        <div class="text-center" >
             <h2>Our prices per night</h2>
             <h4>Sign in to start making bookings</h4>
         </div>
