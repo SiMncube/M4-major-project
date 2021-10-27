@@ -29,9 +29,9 @@ namespace M4_major_project
             bookingSummaryTa.Fill(fullDs.BookingSummary);
             for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
             {
-                int tempID;
-                if (int.TryParse(TextBox3.Text, out tempID))
+                try
                 {
+                    int tempID = int.Parse(TextBox3.Text);
                     if (fullDs.BookingSummary[i].summaryID == tempID)
                     {
                         fullDs.BookingSummary[i].bookingStatus = "Cancelled";
@@ -39,15 +39,13 @@ namespace M4_major_project
                         break;
                     }
                 }
-                else
+                catch
                 {
                     ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "INVALID Booking Ref" + "');", true);
                 }
             }
             bookingSummaryTa.Update(fullDs.BookingSummary);
             bookingSummaryTa.Fill(fullDs.BookingSummary);
-
-            
         }
     }
 }
