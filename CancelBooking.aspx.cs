@@ -34,14 +34,14 @@ namespace M4_major_project
                     int tempID = int.Parse(TextBox3.Text);
                     if (fullDs.BookingSummary[i].summaryID == tempID)
                     {
-                        fullDs.BookingSummary[i].bookingStatus = "Cancelled";
-                        ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking Successfully Cancelled" + "');", true);
+                        //fullDs.BookingSummary[i].bookingStatus = "Cancelled";
+                        ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking " + tempID + " Successfully Cancelled" + "');", true);
                         break;
                     }
                 }
                 catch
                 {
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "INVALID Booking Ref" + "');", true);
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "INVALID Booking Ref:" + "');", true);
                 }
             }
             bookingSummaryTa.Update(fullDs.BookingSummary);
