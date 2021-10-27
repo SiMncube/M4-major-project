@@ -38,7 +38,7 @@
                     <asp:TextBox ID="TextBox2" runat="server" Width="171px"></asp:TextBox>
                 </td>
                 <td style="width: 193px">
-                    <asp:Button ID="viewBookingButton" runat="server" OnClick="Button1_Click" Text="View Booking" Width="206px" PostBackUrl="~/ViewBooking.aspx" />
+                    <asp:Button ID="viewBookingButton" runat="server" OnClick="Button1_Click" Text="View Booking" Width="206px" />
                 </td>
             </tr>
             <tr>
@@ -128,9 +128,10 @@
                 </td>
                 <td style="width: 32px">&nbsp;</td>
                 <td>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:group7ConnectionString %>" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [BookingSummary] WHERE ([summaryID] = @summaryID)">
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:group7ConnectionString %>" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT summaryID, emailID, dateIn, dateOut, numberOfNights, bookingMethod, bookingStatus, amountDue FROM BookingSummary WHERE (summaryID = @summaryID) OR (summaryID = @summaryID2)">
                         <SelectParameters>
                             <asp:ControlParameter ControlID="GridView1" Name="summaryID" PropertyName="SelectedValue" Type="Int32" />
+                            <asp:ControlParameter ControlID="viewBookingTextBox" Name="summaryID2" PropertyName="Text" />
                         </SelectParameters>
                     </asp:SqlDataSource>
                 </td>
