@@ -32,7 +32,7 @@
                     <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
                 </td>
                 <td style="width: 249px">
-                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Cancel Booking" Width="201px" />
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="View Booking" Width="201px" />
                 </td>
                 <td>&nbsp;</td>
             </tr>

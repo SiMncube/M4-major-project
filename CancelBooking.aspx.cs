@@ -34,7 +34,7 @@ namespace M4_major_project
                     int tempID = int.Parse(TextBox3.Text);
                     if (fullDs.BookingSummary[i].summaryID == tempID)
                     {
-                        //fullDs.BookingSummary[i].bookingStatus = "Cancelled";
+                        fullDs.BookingSummary[i].bookingStatus = "Cancelled";
                         ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking " + tempID + " Successfully Cancelled" + "');", true);
                         break;
                     }

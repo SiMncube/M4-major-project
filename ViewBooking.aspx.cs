@@ -12,6 +12,7 @@ namespace M4_major_project
         protected void Page_Load(object sender, EventArgs e)
         {
             TextBox1.Text = CurrentUser.getEmailID();
+            TextBox2.Text = DateTime.Today.ToString();
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
