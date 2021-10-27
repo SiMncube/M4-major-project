@@ -22,6 +22,14 @@
             font-size: 24px;
         }
     </style>
+    <script>
+        function myResetFunction() {
+            document.getElementById("nameTextBox").reset();
+            document.getElementById("emailTextBox").reset();
+            document.getElementById("messageTextBox").reset();
+            document.getElementById("subject").reset();
+        }
+    </script>
     <div class="jumbotron jumbotron-sm">
         <div class="container">
             <div class="row">
@@ -35,7 +43,7 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="well well-sm">
-                    <form>
+                    <form onreset="reset()">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">

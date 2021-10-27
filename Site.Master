@@ -16,7 +16,7 @@
         function loggoOffFunction() {
             var x = document.getElementById("MakeBooking1");
             x.style.display = "none";
-            loggoOffFunction();
+            
         }
     </script>
 </head>

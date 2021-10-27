@@ -60,7 +60,6 @@ namespace M4_major_project
         {
             Page.ClientScript.RegisterStartupScript(
             this.GetType(), "OpenWindow", "window.open('https://localhost:44301/Login.aspx','_newtab');", true);
-
         }
 
         protected void Button2_Click(object sender, EventArgs e)
