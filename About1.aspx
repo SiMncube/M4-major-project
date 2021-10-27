@@ -169,6 +169,7 @@
                             <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="https://ushakamarine.com/">uShaka Marine World</asp:HyperLink>
 &nbsp;for family water activities and Indian Ocean wildlife
                         <br />
+                            <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="https://durbanbotanicgardens.org.za/">Durban Botanical Gardens</asp:HyperLink>
                             Durban Botanic Gardens if you want a picnic spot
                         <br />
                             Safari adventure at Phezulu Safari Park
