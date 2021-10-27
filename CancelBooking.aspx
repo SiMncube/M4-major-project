@@ -177,6 +177,11 @@
                     <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Confirm Cancel" />
                 </td>
             </tr>
+            <tr>
+                <td style="width: 422px">&nbsp;</td>
+                <td style="width: 249px">&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
         </table>
     </div>
 </asp:Content>
