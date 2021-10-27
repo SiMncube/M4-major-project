@@ -22,17 +22,17 @@
             </tr>
             <tr>
                 <td style="width: 422px">
-                    <asp:TextBox ID="TextBox1" runat="server" Width="97px"></asp:TextBox>
-                </td>
+                    &nbsp;</td>
                 <td style="width: 249px">&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td style="width: 422px">
-                    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBox1" runat="server" Width="195px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox2" runat="server" Width="203px"></asp:TextBox>
                 </td>
                 <td style="width: 249px">
-                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="View Booking" Width="201px" />
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Cancel Booking" Width="201px" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
