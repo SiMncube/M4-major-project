@@ -24,13 +24,13 @@ namespace M4_major_project
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// TextBox1 control.
+        /// dateInText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox dateInText;
 
         /// <summary>
         /// Label2 control.
@@ -42,13 +42,13 @@ namespace M4_major_project
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// TextBox2 control.
+        /// dateOutText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox dateOutText;
 
         /// <summary>
         /// Label3 control.
@@ -60,13 +60,13 @@ namespace M4_major_project
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// DropDownList1 control.
+        /// singleTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.TextBox singleTextBox;
 
         /// <summary>
         /// Label5 control.
@@ -78,13 +78,13 @@ namespace M4_major_project
         protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
-        /// DropDownList2 control.
+        /// doubleTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.TextBox doubleTextBox;
 
         /// <summary>
         /// Label4 control.
@@ -96,21 +96,21 @@ namespace M4_major_project
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// TextBox3 control.
+        /// amtDue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox amtDue;
 
         /// <summary>
-        /// Button1 control.
+        /// saveBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button saveBtn;
     }
 }
