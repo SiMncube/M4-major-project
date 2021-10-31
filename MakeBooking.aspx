@@ -5,22 +5,28 @@
         <table style="width: 100%;">
             <tr>
                 <td style="width: 428px">&nbsp;</td>
-                <td style="width: 322px">&nbsp;</td>
+                <td style="width: 318px" class="modal-sm">&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
                 <td style="width: 428px">&nbsp;</td>
-                <td style="width: 322px">&nbsp;</td>
+                <td style="width: 318px" class="modal-sm">
+                    <asp:Label ID="Label3" runat="server" Text="Check-In Date:"></asp:Label>
+                    <asp:TextBox ID="TextBox3" runat="server" style="margin-right: 29" TextMode="DateTime" Width="309px"></asp:TextBox>
+                </td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td style="width: 428px">&nbsp;</td>
-                <td style="width: 322px">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td style="width: 428px; height: 37px;"></td>
+                <td style="width: 318px; height: 37px;">
+                    <asp:Label ID="Label2" runat="server" Text="Check-Out Date:"></asp:Label>
+                    <asp:TextBox ID="TextBox2" runat="server" TextMode="DateTime" Width="311px"></asp:TextBox>
+                </td>
+                <td style="height: 37px"></td>
             </tr>
             <tr>
                 <td style="width: 428px">&nbsp;</td>
-                <td style="width: 322px">
+                <td style="width: 318px" class="modal-sm">
                     <label for="subject">Single rooms:</label>
                     <select id="singleBox" name="subject" class="form-control" required="required" runat="server">
                     </select></td>
@@ -28,7 +34,7 @@
             </tr>
             <tr>
                 <td style="width: 428px">&nbsp;</td>
-                <td style="width: 322px">
+                <td style="width: 318px" class="modal-sm">
                     <label for="subject">Double Rooms:</label>
                     <select id="doubleBox" name="subject" class="form-control" required="required" runat="server">
                     </select></td>
@@ -36,12 +42,22 @@
             </tr>
             <tr>
                 <td style="width: 428px">&nbsp;</td>
-                <td style="width: 322px">&nbsp;</td>
+                <td style="width: 318px" class="modal-sm">
+                    <asp:Label ID="Label1" runat="server" Text="Amount Due: "></asp:Label>
+                    <asp:TextBox ID="TextBox1" runat="server" Width="307px"></asp:TextBox>
+                </td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
+                <td style="width: 428px; height: 25px;"></td>
+                <td style="width: 318px; height: 25px;">
+                    <asp:Button ID="saveBtn" runat="server" Text="Save Booking" Width="318px" />
+                </td>
+                <td style="height: 25px"></td>
+            </tr>
+            <tr>
                 <td style="width: 428px">&nbsp;</td>
-                <td style="width: 322px">&nbsp;</td>
+                <td style="width: 318px" class="modal-sm">&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
         </table>
