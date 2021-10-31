@@ -15,6 +15,24 @@ namespace M4_major_project
     {
 
         /// <summary>
+        /// dateInTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox dateInTextBox;
+
+        /// <summary>
+        /// dateOutTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox dateOutTextBox;
+
+        /// <summary>
         /// singleBox control.
         /// </summary>
         /// <remarks>
@@ -22,5 +40,14 @@ namespace M4_major_project
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlSelect singleBox;
+
+        /// <summary>
+        /// doubleBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlSelect doubleBox;
     }
 }

@@ -14,7 +14,7 @@ namespace M4_major_project
         {
             for (int i = 0; i < 10; i++)
             {
-                //doubleBox.Items.Add(i + " ");
+                doubleBox.Items.Add(i + " ");
             }
 
             for (int i = 0; i < 10; i++)
