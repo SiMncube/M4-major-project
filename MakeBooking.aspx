@@ -1,5 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="MakeBooking.aspx.cs" Inherits="M4_major_project.WebForm2" %>
 
+<script runat="server">
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+
+    }
+</script>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="center" style="margin: auto; width: 50%; border: 0px solid #FFFF00; padding: 0px">
         <h2 style="margin: auto; width: 52%; border: 0px solid #FFFF00; padding: 0px">Make a booking</h2>
