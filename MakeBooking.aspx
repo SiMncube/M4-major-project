@@ -39,6 +39,10 @@
                 <label for="subject">Double Rooms</label>
                 <select id="doubleBox" class="form-control" required="required" runat="server"></select>
             </div>
+            <div class="form-group" style="margin: auto; width: 80%">
+                <asp:Button class="btn btn-primary" ID="Button1" runat="server" Text="???" OnClick="Button1_Click" Width="210px" />
+            </div>
         </div>
+        <br />
     </div>
 </asp:Content>
