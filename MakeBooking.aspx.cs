@@ -27,6 +27,11 @@ namespace M4_major_project
         DateTime dateIn = DateTime.Today;
         DateTime dateOut = DateTime.Today;
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         /*
 
     int numberOfNights;
