@@ -10,22 +10,25 @@ namespace M4_major_project
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        public void Page_Load(object sender, EventArgs e)
         {
+            for (int i = 0; i < 10; i++)
+            {
+                //doubleBox.Items.Add(i + " ");
+            }
+
             for (int i = 0; i < 10; i++)
             {
                 singleBox.Items.Add(i + " ");
             }
-            for (int i = 0; i < 10; i++)
-            {
-                doubleBox.Items.Add(i + " ");
-            }
+            
         }
+        string currentCustomerEmailID;
+        DateTime dateIn = DateTime.Today;
+        DateTime dateOut = DateTime.Today;
 
         /*
-    string currentCustomerEmailID;
-    DateTime dateIn = DateTime.Today;
-    DateTime dateOut = DateTime.Today;
+
     int numberOfNights;
     string bookingMethod = "Admin";
     string bookingStatus = "inComplete";
