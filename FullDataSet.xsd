@@ -187,7 +187,26 @@ FROM            BookingSummary</CommandText>
               <Mapping SourceColumn="bookingStatus" DataSetColumn="bookingStatus" />
               <Mapping SourceColumn="amountDue" DataSetColumn="amountDue" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="group7ConnectionString (Web.config)" DbObjectName="group7.dbo.BookingSummary" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getLastRecord" Modifier="Public" Name="getLastRecord" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="getLastRecord">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>Select summaryID
+from BookingSummary
+where summaryID = (select max(summaryID) from BookingSummary);</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="group7ConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQuery" Modifier="Public" Name="ScalarQuery" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ScalarQuery">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT COUNT(*) FROM BookingSummary</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BookedRoomTableAdapter" GeneratorDataComponentClassName="BookedRoomTableAdapter" Name="BookedRoom" UserDataComponentName="BookedRoomTableAdapter">
             <MainSource>

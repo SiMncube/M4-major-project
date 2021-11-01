@@ -19,7 +19,7 @@ namespace M4_major_project
         }
         protected void saveBookingButton_Click(object sender, EventArgs e)
         {
-
+            updateBookingSummary(getAmountDue(singleBox, doubleBox))
         }
 
         //User Input fields
@@ -174,8 +174,9 @@ namespace M4_major_project
             int[] doubleAllocatedRooms = new int[numberOfDoubleRooms];
 
             bookingSummaryTa.Insert(currentCustomerEmailID, dateIn, dateOut, numberOfNights, bookingMethod, bookingStatus, callAmountDueMethod);
-            int summaryIDOriginal = (int)bookingSummaryTa.getLastRecord();
-            int summaryID = fullDs.BookingSummary[fullDs.BookingSummary.Rows.Count-1].summaryID;
+            int summaryIDOriginal = (int)bookingSummaryTa.getLastRecord();  //NB current last summaryID = 10677
+            int summaryIDScalar = (int)bookingSummaryTa.ScalarQuery();
+            int summaryID = fullDs.BookingSummary[fullDs.BookingSummary.Rows.Count-1].summaryID;  
             currentBooking.setSummaryID(summaryID);
 
             for (int i = 0; i < numberOfSingleRooms; i++) //adding single rooms to bookedRoom table
