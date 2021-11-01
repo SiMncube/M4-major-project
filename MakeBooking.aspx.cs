@@ -13,17 +13,50 @@ namespace M4_major_project
         public void Page_Load(object sender, EventArgs e)
         {
             updateAvailableRoomList();
-            loadAvailableSinlges(singleBox);
-            loadAvailableDoubles(doubleBox);
+            loadAvailableSinlges(singleDDList);
+            loadAvailableDoubles(doubleDDList);
+        }
+        protected void dateInCalender_SelectionChanged(object sender, EventArgs e)
+        {
+            dateIn = dateInCalender.SelectedDate;
+            updateAvailableRoomList();
+            loadAvailableSinlges(singleDDList);
+            loadAvailableDoubles(doubleDDList);
+        }
 
+        protected void dateOutCalender_SelectionChanged(object sender, EventArgs e)
+        {
+            dateOut = dateOutCalender.SelectedDate;
+            updateAvailableRoomList();
+            loadAvailableSinlges(singleDDList);
+            loadAvailableDoubles(doubleDDList);
+        }
+        protected void singleDDList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            amountDueTextBox.Text = getAmountDue(singleDDList, doubleDDList);
+            numberOfSingleRooms = int.Parse(singleDDList.SelectedItem.ToString());
+            if (amountDue != 0)
+                saveBookingButton.Enabled = true;
+            else
+                saveBookingButton.Enabled = false;
+        }
+
+        protected void doubleDDList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            amountDueTextBox.Text = getAmountDue(singleDDList, doubleDDList);
+            numberOfDoubleRooms = int.Parse(doubleDDList.SelectedItem.ToString());
+            if (amountDue != 0)
+                saveBookingButton.Enabled = true;
+            else
+                saveBookingButton.Enabled = false;
         }
         protected void saveBookingButton_Click(object sender, EventArgs e)
         {
-            updateBookingSummary(getAmountDue(singleBox, doubleBox))
+            updateBookingSummary(getAmountDue(singleDDList, doubleDDList));
         }
 
         //User Input fields
-        string currentCustomerEmailID;
+        string currentCustomerEmailID = CurrentUser.getEmailID();
         DateTime dateIn = DateTime.Today;
         DateTime dateOut = DateTime.Today;
         int numberOfNights;
@@ -228,39 +261,9 @@ namespace M4_major_project
 
         }
 
-        protected void dateInCalender_SelectionChanged(object sender, EventArgs e)
-        {
-            dateIn = dateInCalender.SelectedDate;
-
-        }
-
-        protected void dateOutCalender_SelectionChanged(object sender, EventArgs e)
-        {
-            dateOut = dateOutCalender.SelectedDate;
-        }
-        protected void singleBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            amountDueTextBox.Text = getAmountDue(singleBox, doubleBox);
-            numberOfSingleRooms = int.Parse(singleBox.SelectedItem.ToString());
-            if (amountDue != 0)
-                saveBookingButton.Enabled = true;
-            else
-                saveBookingButton.Enabled = false;
-        }
-
-        protected void doubleBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            amountDueTextBox.Text = getAmountDue(singleBox, doubleBox);
-            numberOfDoubleRooms = int.Parse(doubleBox.SelectedItem.ToString());
-            if (amountDue != 0)
-                saveBookingButton.Enabled = true;
-            else
-                saveBookingButton.Enabled = false;
-        }
-
 
         /*
-
+        Deleted*
     private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
     {
         dateIn = dateTimePicker1.Value.Date;
@@ -281,7 +284,7 @@ namespace M4_major_project
             comboBox2.Enabled = false;
         }
     }
-
+        Deleted*
     private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
     {
         dateIn = dateTimePicker1.Value.Date;
@@ -304,6 +307,7 @@ namespace M4_major_project
         }
     }
 
+    Deleted* Save booking Button
     private void button8_Click(object sender, EventArgs e)
     {
         updateBookingSummary(getAmountDue(comboBox1, comboBox2).ToString());
@@ -323,6 +327,7 @@ namespace M4_major_project
     }
 
 
+    Deleted* Dynamic Search
     private void textBox3_TextChanged(object sender, EventArgs e)
     {
         customerTa.FillByAnythingGiven(fullDs.Customer, textBox3.Text);
@@ -332,6 +337,7 @@ namespace M4_major_project
 
     }
 
+    Deleted* Confirm button
     private void button10_Click(object sender, EventArgs e)
     {
         panel5.Enabled = true;
@@ -341,7 +347,7 @@ namespace M4_major_project
         //pre populate the fields with booking details we have
     }
 
-
+    Deleted* selection grid
     private void customerDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
     {
         currentCustomerEmailID = customerDataGridView.CurrentRow.Cells[0].Value.ToString();
@@ -349,6 +355,8 @@ namespace M4_major_project
         label33.Visible = true;
         button10.Enabled = true;
     }
+
+    Deleted* blue clear button, on the left of confirm button.
     private void button12_Click(object sender, EventArgs e)
     {
         customerDataGridView.ClearSelection();

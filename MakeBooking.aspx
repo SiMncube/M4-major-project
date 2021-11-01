@@ -54,8 +54,8 @@
                 <td style="width: 474px">&nbsp;</td>
                 <td class="modal-sm" style="width: 302px">
                     <div class="form-group">
-                        <label for="singleBox">Single Rooms:</label>
-                        <asp:DropDownList ID="singleBox" class="form-control" runat="server" Width="300px" OnSelectedIndexChanged="singleBox_SelectedIndexChanged"></asp:DropDownList>
+                        <label for="singleDDList">Single Rooms:</label>
+                        <asp:DropDownList ID="singleDDList" class="form-control" runat="server" Width="300px" OnSelectedIndexChanged="singleDDList_SelectedIndexChanged"></asp:DropDownList>
                     </div>
                 </td>
                 <td>&nbsp;</td>
@@ -64,8 +64,8 @@
                 <td style="width: 474px">&nbsp;</td>
                 <td class="modal-sm" style="width: 302px">
                     <div class="form-group">
-                        <label for="doubleBox">Double Rooms: </label>
-                        <asp:DropDownList ID="doubleBox" class="form-control" runat="server" Width="300px" OnSelectedIndexChanged="doubleBox_SelectedIndexChanged"></asp:DropDownList>
+                        <label for="doubleDDList">Double Rooms: </label>
+                        <asp:DropDownList ID="doubleDDList" class="form-control" runat="server" Width="300px" OnSelectedIndexChanged="doubleDDList_SelectedIndexChanged"></asp:DropDownList>
                     </div>
                 </td>
                 <td>&nbsp;</td>

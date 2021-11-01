@@ -33,22 +33,22 @@ namespace M4_major_project
         protected global::System.Web.UI.WebControls.Calendar dateOutCalender;
 
         /// <summary>
-        /// singleBox control.
+        /// singleDDList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList singleBox;
+        protected global::System.Web.UI.WebControls.DropDownList singleDDList;
 
         /// <summary>
-        /// doubleBox control.
+        /// doubleDDList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList doubleBox;
+        protected global::System.Web.UI.WebControls.DropDownList doubleDDList;
 
         /// <summary>
         /// amountDueTextBox control.
