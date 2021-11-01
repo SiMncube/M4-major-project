@@ -12,6 +12,9 @@ namespace M4_major_project
     {
         public void Page_Load(object sender, EventArgs e)
         {
+            //dateInTextBox.Text = dateIn.ToString();
+            //dateOutTextBox.Text = dateIn.ToString("dd/MM/yy");
+
             for (int i = 0; i < 10; i++)
             {
                 doubleBox.Items.Add(i + " ");
@@ -312,15 +315,6 @@ namespace M4_major_project
         c.ShowDialog();
     }
 
-    private void tabPage2_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void tabPage3_Click(object sender, EventArgs e)
-    {
-
-    }
 
     private void textBox3_TextChanged(object sender, EventArgs e)
     {
@@ -340,20 +334,6 @@ namespace M4_major_project
         //pre populate the fields with booking details we have
     }
 
-    private void tabPage6_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    private void groupBox1_Enter(object sender, EventArgs e)
-    {
-
-    }
-
-    private void tabPage4_Click(object sender, EventArgs e)
-    {
-
-    }
 
     private void customerDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
     {
@@ -382,10 +362,6 @@ namespace M4_major_project
         bookedRoomTa.Fill(fullDs.BookedRoom);
     }
 
-    private void label20_Click(object sender, EventArgs e)
-    {
-
-    }
          */
     }
 }

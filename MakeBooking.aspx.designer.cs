@@ -15,22 +15,22 @@ namespace M4_major_project
     {
 
         /// <summary>
-        /// dateInTextBox control.
+        /// dateInCalender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dateInTextBox;
+        protected global::System.Web.UI.WebControls.Calendar dateInCalender;
 
         /// <summary>
-        /// dateOutTextBox control.
+        /// dateOutCalender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dateOutTextBox;
+        protected global::System.Web.UI.WebControls.Calendar dateOutCalender;
 
         /// <summary>
         /// singleBox control.
@@ -39,7 +39,7 @@ namespace M4_major_project
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect singleBox;
+        protected global::System.Web.UI.WebControls.DropDownList singleBox;
 
         /// <summary>
         /// doubleBox control.
@@ -48,24 +48,24 @@ namespace M4_major_project
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect doubleBox;
+        protected global::System.Web.UI.WebControls.DropDownList doubleBox;
 
         /// <summary>
-        /// Button1 control.
+        /// amountDue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.TextBox amountDue;
 
         /// <summary>
-        /// TextBox1 control.
+        /// saveBooking control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.Button saveBooking;
     }
 }
