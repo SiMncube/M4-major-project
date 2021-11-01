@@ -75,7 +75,7 @@
                 <td class="modal-sm" style="width: 302px">
                     <div class="form-group">
                         <label for="amountDueTextBox">Amount Due: </label>
-                        <asp:TextBox ID="amountDueTextBox" class="form-control" runat="server" Width="300px" Enabled="False"></asp:TextBox>
+                        <asp:TextBox ID="amountDueTextBox" class="form-control" runat="server" Width="300px"></asp:TextBox>
                     </div>
                 </td>
                 <td>&nbsp;</td>
@@ -84,7 +84,7 @@
                 <td style="width: 474px">&nbsp;</td>
                 <td class="modal-sm" style="width: 302px">
                     <div class="form-group">
-                        <asp:Button ID="saveBookingButton" class="btn btn-primary" runat="server" Text="Save Booking" Width="300px" OnClick="saveBookingButton_Click" Enabled="False" />
+                        <asp:Button ID="saveBookingButton" class="btn btn-primary" runat="server" Text="Save Booking" Width="300px" OnClick="saveBookingButton_Click" />
                     </div>
                 </td>
                 <td>&nbsp;</td>
