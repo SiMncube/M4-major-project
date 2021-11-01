@@ -6,8 +6,6 @@ using System.Web;
 
 namespace M4_major_project
 {
-    
-
     public class Email
     {
         private static void send(string toEmail, string emailSubject, string emailBody)

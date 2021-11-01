@@ -13,7 +13,7 @@
                 <td style="width: 487px">
                     <div style="border-color: #008CBA; border-style: solid; float: left; width: 47%;">
                         <label for="dateInCalender">Check-In Date:</label>
-                        <asp:Calendar ID="dateInCalender" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px">
+                        <asp:Calendar ID="dateInCalender" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px" OnSelectionChanged="dateInCalender_SelectionChanged">
                             <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
                             <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
                             <OtherMonthDayStyle ForeColor="#999999" />
@@ -26,7 +26,7 @@
                     </div>
                     <div style="border-color: #008CBA; border-style: solid; float: left; width: 47%;">
                         <label for="dateOutCalender">Check-Out Date:</label>
-                        <asp:Calendar ID="dateOutCalender" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px">
+                        <asp:Calendar ID="dateOutCalender" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" Width="220px" OnSelectionChanged="dateOutCalender_SelectionChanged">
                             <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
                             <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
                             <OtherMonthDayStyle ForeColor="#999999" />
@@ -55,7 +55,7 @@
                 <td class="modal-sm" style="width: 302px">
                     <div class="form-group">
                         <label for="singleBox">Single Rooms:</label>
-                        <asp:DropDownList ID="singleBox" class="form-control" runat="server" Width="300px"></asp:DropDownList>
+                        <asp:DropDownList ID="singleBox" class="form-control" runat="server" Width="300px" OnSelectedIndexChanged="singleBox_SelectedIndexChanged"></asp:DropDownList>
                     </div>
                 </td>
                 <td>&nbsp;</td>
@@ -65,7 +65,7 @@
                 <td class="modal-sm" style="width: 302px">
                     <div class="form-group">
                         <label for="doubleBox">Double Rooms: </label>
-                        <asp:DropDownList ID="doubleBox" class="form-control" runat="server" Width="300px"></asp:DropDownList>
+                        <asp:DropDownList ID="doubleBox" class="form-control" runat="server" Width="300px" OnSelectedIndexChanged="doubleBox_SelectedIndexChanged"></asp:DropDownList>
                     </div>
                 </td>
                 <td>&nbsp;</td>
@@ -74,8 +74,8 @@
                 <td style="width: 474px">&nbsp;</td>
                 <td class="modal-sm" style="width: 302px">
                     <div class="form-group">
-                        <label for="amountDue">Amount Due: </label>
-                        <asp:TextBox ID="amountDue" class="form-control" runat="server" Width="300px" Enabled="False"></asp:TextBox>
+                        <label for="amountDueTextBox">Amount Due: </label>
+                        <asp:TextBox ID="amountDueTextBox" class="form-control" runat="server" Width="300px" Enabled="False"></asp:TextBox>
                     </div>
                 </td>
                 <td>&nbsp;</td>
@@ -84,7 +84,7 @@
                 <td style="width: 474px">&nbsp;</td>
                 <td class="modal-sm" style="width: 302px">
                     <div class="form-group">
-                        <asp:Button ID="saveBooking" class="btn btn-primary" runat="server" Text="Save Booking" Width="300px" />
+                        <asp:Button ID="saveBookingButton" class="btn btn-primary" runat="server" Text="Save Booking" Width="300px" OnClick="saveBookingButton_Click" Enabled="False" />
                     </div>
                 </td>
                 <td>&nbsp;</td>

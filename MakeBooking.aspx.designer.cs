@@ -51,21 +51,21 @@ namespace M4_major_project
         protected global::System.Web.UI.WebControls.DropDownList doubleBox;
 
         /// <summary>
-        /// amountDue control.
+        /// amountDueTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox amountDue;
+        protected global::System.Web.UI.WebControls.TextBox amountDueTextBox;
 
         /// <summary>
-        /// saveBooking control.
+        /// saveBookingButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button saveBooking;
+        protected global::System.Web.UI.WebControls.Button saveBookingButton;
     }
 }

@@ -12,227 +12,253 @@ namespace M4_major_project
     {
         public void Page_Load(object sender, EventArgs e)
         {
-            //dateInTextBox.Text = dateIn.ToString();
-            //dateOutTextBox.Text = dateIn.ToString("dd/MM/yy");
+            updateAvailableRoomList();
+            loadAvailableSinlges(singleBox);
+            loadAvailableDoubles(doubleBox);
 
-            for (int i = 0; i < 10; i++)
-            {
-                doubleBox.Items.Add(i + " ");
-            }
-
-            for (int i = 0; i < 10; i++)
-            {
-                singleBox.Items.Add(i + " ");
-            }
-            
         }
+        protected void saveBookingButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //User Input fields
         string currentCustomerEmailID;
         DateTime dateIn = DateTime.Today;
         DateTime dateOut = DateTime.Today;
+        int numberOfNights;
+        string bookingMethod = "Online";
+        string bookingStatus = "inComplete";
+        double amountDue = 0;
 
-        protected void Button1_Click(object sender, EventArgs e)
+        ArrayList availableSingleRooms = new ArrayList();
+        ArrayList availableDoubleRooms = new ArrayList();
+
+        int numberOfSingleRooms = 0; //refers to user selected number of single rooms, or booked rooms
+        int numberOfDoubleRooms = 0; //refers to user selected number of double rooms, or booked rooms
+
+        //Database fields
+        FullDataSet fullDs = new FullDataSet();
+        FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+
+        private bool bookingIsComplete(string summaryID)
         {
-
-        }
-
-        /*
-
-    int numberOfNights;
-    string bookingMethod = "Admin";
-    string bookingStatus = "inComplete";
-    double amountDue = 0;
-
-    ArrayList availableSingleRooms = new ArrayList();
-    ArrayList availableDoubleRooms = new ArrayList();
-
-    int numberOfSingleRooms = 0;
-    int numberOfDoubleRooms = 0;
-
-
-    private bool bookingIsComplete(string summaryID)
-    {
-        for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
-        {
-            if ((fullDs.Tables["BookingSummary"].Rows[i]["summaryID"].ToString().Equals(summaryID)) &&
-               (fullDs.Tables["BookingSummary"].Rows[i]["bookingStatus"].ToString().Equals("Complete")))
-                return true;
-        }
-        return false;
-    }
-
-    private bool isRoomAvailable(int roomID, DateTime dateID)
-    {
-        for (int i = 0; i < fullDs.BookedRoom.Rows.Count; i++)
-        {
-            if (((fullDs.Tables["BookedRoom"].Rows[i]["dateID"].ToString().Equals(dateID.ToString())) &&
-               (int.Parse(fullDs.Tables["BookedRoom"].Rows[i]["roomID"].ToString()) == roomID)) &&
-               (bookingIsComplete(fullDs.Tables["BookedRoom"].Rows[i]["summaryID"].ToString())))
-            //if the record of the room in bookedRoom is complete then that room is not available
-            //however if the booking of that room has been cancelled than that room has to be marked available
-            //even though it exist in bookedRoom records
+            for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
             {
-                return false;
+                if ((fullDs.Tables["BookingSummary"].Rows[i]["summaryID"].ToString().Equals(summaryID)) &&
+                   (fullDs.Tables["BookingSummary"].Rows[i]["bookingStatus"].ToString().Equals("Complete")))
+                    return true;
+            }
+            return false;
+        }
+        private bool isRoomAvailable(int roomID, DateTime dateID)
+        {
+            for (int i = 0; i < fullDs.BookedRoom.Rows.Count; i++)
+            {
+                if (((fullDs.Tables["BookedRoom"].Rows[i]["dateID"].ToString().Equals(dateID.ToString())) &&
+                   (int.Parse(fullDs.Tables["BookedRoom"].Rows[i]["roomID"].ToString()) == roomID)) &&
+                   (bookingIsComplete(fullDs.Tables["BookedRoom"].Rows[i]["summaryID"].ToString())))
+                //if the record of the room in bookedRoom is complete then that room is not available
+                //however if the booking of that room has been cancelled than that room has to be marked available
+                //even though it exist in bookedRoom records
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private void updateAvailableRoomList()
+        {
+            availableSingleRooms = new ArrayList();
+            availableDoubleRooms = new ArrayList();
+
+            for (int roomID = 1; roomID <= 15; roomID++)
+            {
+                bool roomAvailableFlag = true;
+                for (DateTime dateID = dateIn; DateTime.Compare(dateID, dateOut) < 0; dateID = dateID.AddDays(1))
+                {
+                    if (!isRoomAvailable(roomID, dateID))
+                    {
+                        roomAvailableFlag = false;
+                        break;
+                    }
+                }
+
+                if (roomAvailableFlag)
+                {
+                    if (roomID <= 7)
+                        availableSingleRooms.Add(roomID);
+                    else
+                        availableDoubleRooms.Add(roomID);
+                }
             }
         }
-        return true;
-    }
 
-    private void updateAvailableRoomList()
-    {
-        availableSingleRooms = new ArrayList();
-        availableDoubleRooms = new ArrayList();
-
-        for (int roomID = 1; roomID <= 15; roomID++)
+        private void loadAvailableSinlges(DropDownList ddList)
         {
-            bool roomAvailableFlag = true;
-            for (DateTime dateID = dateIn; DateTime.Compare(dateID, dateOut) < 0; dateID = dateID.AddDays(1))
+
+            ddList.Items.Clear();
+            ddList.Items.Add("0");
+            for (int i = 0; i < availableSingleRooms.Count; i++)
+                ddList.Items.Add(i + 1 + "");
+        }
+
+        private void loadAvailableDoubles(DropDownList ddList)
+        {
+            ddList.Items.Clear();
+            ddList.Items.Add("0");
+            for (int i = 0; i < availableDoubleRooms.Count; i++)
+                ddList.Items.Add(i + 1 + "");
+        }
+
+        private bool dateIsValid()
+        {
+            if (((DateTime.Compare(DateTime.Today, dateIn) <= 0) && (DateTime.Compare(DateTime.Today, dateOut) < 0) && (DateTime.Compare(dateIn, dateOut) < 0)))
+                return true;
+            return false;
+        }
+
+        private string getAmountDue(DropDownList ddList1, DropDownList ddList2)
+        {
+            double amountDueForSingleRooms;
+            double amountDueForDoubleRooms;
+            numberOfNights = dateOut.Subtract(dateIn).Days;
+            if (numberOfNights == 0)
+                numberOfNights++;
+
+            if (ddList1.SelectedItem == null || ddList1.SelectedItem.ToString() == "0")
             {
-                if (!isRoomAvailable(roomID, dateID))
+                amountDueForSingleRooms = 0.0;
+            }
+            else
+            {
+                numberOfSingleRooms = int.Parse(ddList1.SelectedItem.ToString());
+                amountDueForSingleRooms = (numberOfSingleRooms * 450 * numberOfNights);
+            }
+            if (ddList2.SelectedItem == null || ddList2.SelectedItem.ToString() == "0")
+            {
+                amountDueForDoubleRooms = 0.0;
+            }
+            else
+            {
+                numberOfDoubleRooms = int.Parse(ddList2.SelectedItem.ToString());
+                amountDueForDoubleRooms = (numberOfDoubleRooms * 800 * numberOfNights);
+            }
+
+            amountDue = amountDueForSingleRooms + amountDueForDoubleRooms;
+            return "R " + amountDue.ToString() + ".00";
+        }
+
+        public string arrayToString(int[] array)
+        {
+            string s = "Room: ";
+
+            if (array.Length == 0)
+                return "none";
+            else
+            {
+                for (int i = 0; i < array.Length; i++)
                 {
-                    roomAvailableFlag = false;
-                    break;
+                    s += array[i];
+                    if (i != array.Length - 1)
+                        s += ", ";
+                }
+            }
+            return s;
+        }
+
+        private void updateBookingSummary(string callAmountDueMethod)
+        {
+            int[] singleAllocatedRooms = new int[numberOfSingleRooms];
+            int[] doubleAllocatedRooms = new int[numberOfDoubleRooms];
+
+            bookingSummaryTa.Insert(currentCustomerEmailID, dateIn, dateOut, numberOfNights, bookingMethod, bookingStatus, callAmountDueMethod);
+            int summaryIDOriginal = (int)bookingSummaryTa.getLastRecord();
+            int summaryID = fullDs.BookingSummary[fullDs.BookingSummary.Rows.Count-1].summaryID;
+            currentBooking.setSummaryID(summaryID);
+
+            for (int i = 0; i < numberOfSingleRooms; i++) //adding single rooms to bookedRoom table
+            {
+                for (DateTime dateID = dateIn; DateTime.Compare(dateID, dateOut) < 0; dateID = dateID.AddDays(1))
+                {
+                    singleAllocatedRooms[i] = (int)availableSingleRooms[i];
                 }
             }
 
-            if (roomAvailableFlag)
+            for (int i = 0; i < numberOfDoubleRooms; i++) //adding double rooms to bookedRoom table
             {
-                if (roomID <= 7)
-                    availableSingleRooms.Add(roomID);
-                else
-                    availableDoubleRooms.Add(roomID);
+                for (DateTime dateID = dateIn; DateTime.Compare(dateID, dateOut) < 0; dateID = dateID.AddDays(1)) //adding double rooms to bookedRoom table
+                {
+                    doubleAllocatedRooms[i] = (int)availableDoubleRooms[i];
+                }
             }
-        }
-    }
 
-    private string getAmountDue(ComboBox cb1, ComboBox cb2)
-    {
-        double amountDueForSingleRooms;
-        double amountDueForDoubleRooms;
-        numberOfNights = dateOut.Subtract(dateIn).Days;
-        if (numberOfNights == 0)
-            numberOfNights++;
+            int[] allAllocatedRooms = new int[singleAllocatedRooms.Length + doubleAllocatedRooms.Length];
+            Array.Copy(singleAllocatedRooms, allAllocatedRooms, singleAllocatedRooms.Length);
+            Array.Copy(doubleAllocatedRooms, 0, allAllocatedRooms, singleAllocatedRooms.Length, doubleAllocatedRooms.Length);
+            currentBooking.setRoomIDs(allAllocatedRooms);
 
-        if (cb1.SelectedItem == null || cb1.SelectedItem.ToString() == "0")
-        {
-            amountDueForSingleRooms = 0.0;
-        }
-        else
-        {
-            numberOfSingleRooms = int.Parse(cb1.SelectedItem.ToString());
-            amountDueForSingleRooms = (numberOfSingleRooms * 450 * numberOfNights);
-        }
-        if (cb2.SelectedItem == null || cb2.SelectedItem.ToString() == "0")
-        {
-            amountDueForDoubleRooms = 0.0;
-        }
-        else
-        {
-            numberOfDoubleRooms = int.Parse(cb2.SelectedItem.ToString());
-            amountDueForDoubleRooms = (numberOfDoubleRooms * 800 * numberOfNights);
-        }
-        amountDue = amountDueForSingleRooms + amountDueForDoubleRooms;
-        return "R " + amountDue.ToString() + ".00";
-    }
+            this.bookingSummaryTa.Update(this.fullDs.BookingSummary);
+            this.bookingSummaryTa.Fill(this.fullDs.BookingSummary);
 
-    private void loadAvailableSinlges(ComboBox cb)
-    {
-
-        cb.Items.Clear();
-        cb.Items.Add("0");
-        for (int i = 0; i < availableSingleRooms.Count; i++)
-            cb.Items.Add(i + 1 + "");
-    }
-
-    private void loadAvailableDoubles(ComboBox cb)
-    {
-        cb.Items.Clear();
-        cb.Items.Add("0");
-        for (int i = 0; i < availableDoubleRooms.Count; i++)
-            cb.Items.Add(i + 1 + "");
-    }
-
-    private bool dateIsValid()
-    {
-        if (((DateTime.Compare(DateTime.Today, dateIn) <= 0) && (DateTime.Compare(DateTime.Today, dateOut) < 0) && (DateTime.Compare(dateIn, dateOut) < 0)))
-            return true;
-        return false;
-    }
-
-    public string arrayToString(int[] array)
-    {
-        string s = "Room: ";
-
-        if (array.Length == 0)
-            return "none";
-        else
-        {
-            for (int i = 0; i < array.Length; i++)
+            //These initailizes the invoice fields
+            for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
             {
-                s += array[i];
-                if (i != array.Length - 1)
-                    s += ", ";
+                if (fullDs.Customer[i].emailID.Equals(currentCustomerEmailID))
+                {
+                    Email.customerName = fullDs.Customer[i].name;
+                    Email.customerSurname = fullDs.Customer[i].surname;
+                    Email.customerIdNumber = fullDs.Customer[i].idNumber;
+                }
             }
+            Email.customerEmail = currentCustomerEmailID;
+            Email.bookingID = summaryID.ToString();
+            Email.bookingStatus = bookingStatus;
+            Email.bookingMethod = bookingMethod;
+            Email.dateIn = dateIn.ToString("dd/MM/yyyy") + " 12:00 PM";
+            Email.dateOut = dateOut.ToString("dd/MM/yyyy") + " 12:00 PM";
+            Email.numberOfNights = numberOfNights.ToString();
+            Email.numberOfSingles = singleAllocatedRooms.Length.ToString();
+            Email.numberOfDoubles = doubleAllocatedRooms.Length.ToString();
+            Email.singleRoomIDs = arrayToString(singleAllocatedRooms);
+            Email.doubleRoomIDs = arrayToString(doubleAllocatedRooms);
+            Email.amountDue = callAmountDueMethod;
+
         }
-        return s;
-    }
 
-    private void updateBookingSummary(string callAmountDueMethod)
-    {
-        int[] singleAllocatedRooms = new int[numberOfSingleRooms];
-        int[] doubleAllocatedRooms = new int[numberOfDoubleRooms];
-
-        bookingSummaryTa.Insert(currentCustomerEmailID, dateIn, dateOut, numberOfNights, bookingMethod, bookingStatus, callAmountDueMethod);
-        int summaryID = (int)bookingSummaryTa.getLastRecord();
-        currentBooking.setSummaryID(summaryID);
-
-        for (int i = 0; i < numberOfSingleRooms; i++) //adding single rooms to bookedRoom table
+        protected void dateInCalender_SelectionChanged(object sender, EventArgs e)
         {
-            for (DateTime dateID = dateIn; DateTime.Compare(dateID, dateOut) < 0; dateID = dateID.AddDays(1))
-            {
-                singleAllocatedRooms[i] = (int)availableSingleRooms[i];
-            }
+            dateIn = dateInCalender.SelectedDate;
+
         }
 
-        for (int i = 0; i < numberOfDoubleRooms; i++) //adding double rooms to bookedRoom table
+        protected void dateOutCalender_SelectionChanged(object sender, EventArgs e)
         {
-            for (DateTime dateID = dateIn; DateTime.Compare(dateID, dateOut) < 0; dateID = dateID.AddDays(1)) //adding double rooms to bookedRoom table
-            {
-                doubleAllocatedRooms[i] = (int)availableDoubleRooms[i];
-            }
+            dateOut = dateOutCalender.SelectedDate;
         }
-
-        int[] allAllocatedRooms = new int[singleAllocatedRooms.Length + doubleAllocatedRooms.Length];
-        Array.Copy(singleAllocatedRooms, allAllocatedRooms, singleAllocatedRooms.Length);
-        Array.Copy(doubleAllocatedRooms, 0, allAllocatedRooms, singleAllocatedRooms.Length, doubleAllocatedRooms.Length);
-        currentBooking.setRoomIDs(allAllocatedRooms);
-
-        this.bookingSummaryTa.Update(this.fullDs.BookingSummary);
-        this.bookingSummaryTa.Fill(this.fullDs.BookingSummary);
-
-        //These initailizes the invoice fields
-        for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
+        protected void singleBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (fullDs.Customer[i].emailID.Equals(currentCustomerEmailID))
-            {
-                Email.customerName = fullDs.Customer[i].name;
-                Email.customerSurname = fullDs.Customer[i].surname;
-                Email.customerIdNumber = fullDs.Customer[i].idNumber;
-            }
+            amountDueTextBox.Text = getAmountDue(singleBox, doubleBox);
+            numberOfSingleRooms = int.Parse(singleBox.SelectedItem.ToString());
+            if (amountDue != 0)
+                saveBookingButton.Enabled = true;
+            else
+                saveBookingButton.Enabled = false;
         }
-        Email.customerEmail = currentCustomerEmailID;
-        Email.bookingID = summaryID.ToString();
-        Email.bookingStatus = bookingStatus;
-        Email.bookingMethod = bookingMethod;
-        Email.dateIn = dateIn.ToString("dd/MM/yyyy") + " 12:00 PM";
-        Email.dateOut = dateOut.ToString("dd/MM/yyyy") + " 12:00 PM";
-        Email.numberOfNights = numberOfNights.ToString();
-        Email.numberOfSingles = singleAllocatedRooms.Length.ToString();
-        Email.numberOfDoubles = doubleAllocatedRooms.Length.ToString();
-        Email.singleRoomIDs = arrayToString(singleAllocatedRooms);
-        Email.doubleRoomIDs = arrayToString(doubleAllocatedRooms);
-        Email.amountDue = callAmountDueMethod;
 
-    }
+        protected void doubleBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            amountDueTextBox.Text = getAmountDue(singleBox, doubleBox);
+            numberOfDoubleRooms = int.Parse(doubleBox.SelectedItem.ToString());
+            if (amountDue != 0)
+                saveBookingButton.Enabled = true;
+            else
+                saveBookingButton.Enabled = false;
+        }
+
+
+        /*
 
     private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
     {
@@ -275,26 +301,6 @@ namespace M4_major_project
             comboBox1.Enabled = false;
             comboBox2.Enabled = false;
         }
-    }
-
-    private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        textBox5.Text = getAmountDue(comboBox1, comboBox2);
-        numberOfSingleRooms = int.Parse(comboBox1.SelectedItem.ToString());
-        if (amountDue != 0)
-            button8.Enabled = true;
-        else
-            button8.Enabled = false;
-    }
-
-    private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        textBox5.Text = getAmountDue(comboBox1, comboBox2);
-        numberOfDoubleRooms = int.Parse(comboBox2.SelectedItem.ToString());
-        if (amountDue != 0)
-            button8.Enabled = true;
-        else
-            button8.Enabled = false;
     }
 
     private void button8_Click(object sender, EventArgs e)

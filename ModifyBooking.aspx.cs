@@ -12,10 +12,6 @@ namespace M4_major_project
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            dateInTextBox.Text = dateIn.ToString("dd/MM/yy");
-            dateOutTextBox.Text = dateIn.ToString("dd/MM/yy");
-            //TextBox1.Text = dateIn.ToString("dd/MM/yy");
-
             for (int i = 0; i < 10; i++)
             {
                 doubleBox.Items.Add(i + " ");
