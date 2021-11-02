@@ -35,20 +35,20 @@ namespace M4_major_project
         {
             amountDueTextBox.Text = getAmountDue(singleDDList, doubleDDList);
             numberOfSingleRooms = int.Parse(singleDDList.SelectedItem.ToString());
-            if (amountDue != 0)
-                saveBookingButton.Enabled = true;
-            else
-                saveBookingButton.Enabled = false;
+            //if (amountDue != 0)
+              //  saveBookingButton.Enabled = true;
+            //else
+                //saveBookingButton.Enabled = false;
         }
 
         protected void doubleDDList_SelectedIndexChanged(object sender, EventArgs e)
         {
             amountDueTextBox.Text = getAmountDue(singleDDList, doubleDDList);
             numberOfDoubleRooms = int.Parse(doubleDDList.SelectedItem.ToString());
-            if (amountDue != 0)
-                saveBookingButton.Enabled = true;
-            else
-                saveBookingButton.Enabled = false;
+            //if (amountDue != 0)
+              //  saveBookingButton.Enabled = true;
+            //else
+                //saveBookingButton.Enabled = false;
         }
         protected void saveBookingButton_Click(object sender, EventArgs e)
         {
@@ -207,9 +207,9 @@ namespace M4_major_project
             int[] doubleAllocatedRooms = new int[numberOfDoubleRooms];
 
             bookingSummaryTa.Insert(currentCustomerEmailID, dateIn, dateOut, numberOfNights, bookingMethod, bookingStatus, callAmountDueMethod);
-            int summaryIDOriginal = (int)bookingSummaryTa.getLastRecord();  //NB current last summaryID = 10677
+            int summaryID = (int)bookingSummaryTa.getLastRecord();  //NB current last summaryID = 10677
             int summaryIDScalar = (int)bookingSummaryTa.ScalarQuery();
-            int summaryID = fullDs.BookingSummary[fullDs.BookingSummary.Rows.Count-1].summaryID;  
+            //int summaryID = fullDs.BookingSummary[fullDs.BookingSummary.Rows.Count].summaryID;  
             currentBooking.setSummaryID(summaryID);
 
             for (int i = 0; i < numberOfSingleRooms; i++) //adding single rooms to bookedRoom table
