@@ -18,6 +18,8 @@
             position: relative;
             text-transform: uppercase;
             color: #000;
+            top: 67px;
+            left: 0px;
         }
 
             .aboutus-title::after {
@@ -149,8 +151,9 @@
             <div class="row">
                 <div class="col-md-30 col-sm-6 col-xs-12">
                     <div class="aboutus">
-                        <h2 class="aboutus-title">HELp</h2>
-                        <p class="aboutus-text">To answer the most asked questions by our customers</p>
+                        <h2 class="aboutus-title" style="font-size: 40px; font-weight: bold;">HELP</h2>
+                        <H3 style="font-size: 45px; font-weight: bold;">&nbsp;</H3>
+                        <H3 style="font-size: 32px; font-weight: normal;">How can we help you?</H3>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
@@ -166,17 +169,17 @@
                                     <span class="glyphicon glyphicon-cog icon"></span>
                                 </div>
                                 <div class="feature-content">
-                                    <h3>Booking</h3>
-                                    <p>
-                                        <asp:HyperLink ID="HyperLink2" runat="server">Making a booking</asp:HyperLink>
+                                    <h3 style="font-size: 25px; font-weight: bold; text-transform: uppercase; text-decoration: underline">Booking</h3>
+                                    <p style="font-size: 19px">
+                                        <asp:HyperLink ID="HyperLink2" runat="server">Make a booking</asp:HyperLink>
                                     </p>
-                                    <p>
-                                        <asp:HyperLink ID="HyperLink3" runat="server">Canceling a booking</asp:HyperLink>
+                                    <p style="font-size: 19px">
+                                        <asp:HyperLink ID="HyperLink3" runat="server">Cancel an existing booking</asp:HyperLink>
                                     </p>
-                                    <p>
-                                        <asp:HyperLink ID="HyperLink4" runat="server">Modifying a booking</asp:HyperLink>
+                                    <p style="font-size: 19px">
+                                        <asp:HyperLink ID="HyperLink4" runat="server">Modify a booking</asp:HyperLink>
                                     </p>
-                                    <p>
+                                    <p style="font-size: 19px">
                                         <asp:HyperLink ID="HyperLink5" runat="server">Don&#39;t want to register?</asp:HyperLink>
                                     </p>
                                 </div>
@@ -188,11 +191,11 @@
                                     <span class="glyphicon glyphicon-cog icon"></span>
                                 </div>
                                 <div class="feature-content">
-                                    <h3>Registering</h3>
-                                    <p>
+                                    <h3 style="font-size: 25px; text-decoration: underline; font-weight: bold; text-transform: uppercase;">Registering</h3>
+                                    <p style="font-size: 19px">
                                         <asp:HyperLink ID="HyperLink1" runat="server">How to create an account</asp:HyperLink>
                                     </p>
-                                    <p>
+                                    <p style="font-size: 19px">
                                         <asp:HyperLink ID="HyperLink6" runat="server">Updating your info?</asp:HyperLink>
                                     </p>
                                 </div>
