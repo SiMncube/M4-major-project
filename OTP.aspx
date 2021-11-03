@@ -39,7 +39,7 @@
                     <div></div>
                     <p class="mb-4" style="font-size: 17px; font-weight: bold; color: #0000FF">Enter Code</p>
                     <p class="mb-4">Enter 6-digits code from your email</p>
-                    <form>
+                    <div>
                         <div class="row mb-4">
                             <div class="col-lg-2 col-md-2 col-2 ps-0 ps-md-2">
                                 <input type="text" class="form-control text-lg text-center" placeholder="_" aria-label="2fa">
@@ -66,7 +66,7 @@
                         <div class="text-center">
                             <button type="button" class="btn bg-info btn-lg my-4">Confirm Code</button>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
