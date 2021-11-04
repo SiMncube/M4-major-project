@@ -171,16 +171,16 @@
                                 <div class="feature-content">
                                     <h3 style="font-size: 25px; font-weight: bold; text-transform: uppercase; text-decoration: underline">Booking</h3>
                                     <p style="font-size: 19px">
-                                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Help files/MakeBooking.html">Make a booking</asp:HyperLink>
+                                        <asp:HyperLink ID="HyperLink2" runat="server">Make a booking</asp:HyperLink>
                                     </p>
                                     <p style="font-size: 19px">
-                                        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Help files/CancelBooking.html">Cancel an existing booking</asp:HyperLink>
+                                        <asp:HyperLink ID="HyperLink3" runat="server">Cancel an existing booking</asp:HyperLink>
                                     </p>
                                     <p style="font-size: 19px">
-                                        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Help files/ModifyBooking.html">Modify a booking</asp:HyperLink>
+                                        <asp:HyperLink ID="HyperLink4" runat="server">Modify a booking</asp:HyperLink>
                                     </p>
                                     <p style="font-size: 19px">
-                                        <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Help files/ContactUsBooking.html">Don&#39;t want to register?</asp:HyperLink>
+                                        <asp:HyperLink ID="HyperLink5" runat="server">Don&#39;t want to register?</asp:HyperLink>
                                     </p>
                                 </div>
                             </div>
@@ -193,7 +193,7 @@
                                 <div class="feature-content">
                                     <h3 style="font-size: 25px; text-decoration: underline; font-weight: bold; text-transform: uppercase;">Registering</h3>
                                     <p style="font-size: 19px">
-                                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Help files/CreatingAnAccount.html">How to create an account</asp:HyperLink>
+                                        <asp:HyperLink ID="HyperLink1" runat="server">How to create an account</asp:HyperLink>
                                     </p>
                                     <p style="font-size: 19px">
                                         <asp:HyperLink ID="HyperLink6" runat="server">Updating your info?</asp:HyperLink>

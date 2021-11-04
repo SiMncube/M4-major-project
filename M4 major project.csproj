@@ -160,12 +160,6 @@
     <Content Include="FullDataSet.xsc">
       <DependentUpon>FullDataSet.xsd</DependentUpon>
     </Content>
-    <Content Include="Help files\CancelBooking.html" />
-    <Content Include="Help files\ContactUsBooking.html" />
-    <Content Include="Help files\CreatingAnAccount.html" />
-    <Content Include="Help files\MakeBooking.html" />
-    <Content Include="Help files\ModifyBooking.html" />
-    <Content Include="Help files\UpdatingAccount.html" />
     <Content Include="Help.aspx" />
     <Content Include="Images\001df72d-e0e2-456c-87ba-314760081f2b.jpg" />
     <Content Include="Images\13120f2b-9dce-4c9b-8168-010e6a7ff8b4.jpg" />
