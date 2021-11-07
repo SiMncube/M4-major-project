@@ -30,7 +30,9 @@
     height: 150px;
     width: 150px;
 }</style>
-    <div class="col-lg-5 col-md-7 mx-auto my-auto">
+   <div style="height: 939px; width: 1447px">
+       <div>
+        <div class="col-lg-5 col-md-7 mx-auto my-auto">
             <div class="card">
                 <div class="card-body px-lg-5 py-lg-5 text-center">
                     <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="rounded-circle avatar-lg img-thumbnail mb-4" alt="profile-image">
@@ -68,4 +70,6 @@
                 </div>
             </div>
         </div>
+       </div>
+     </div>
 </asp:Content>
