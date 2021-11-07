@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <style>
         body{
-    font-family: 'Roboto';
+    background:#eee;
 }
 .card {
     box-shadow: 0 20px 27px 0 rgb(0 0 0 / 5%);
@@ -30,8 +30,9 @@
     height: 150px;
     width: 150px;
 }</style>
-   <div style="height: 939px; width: 1447px">
-       <div>
+    <div class="container">
+    <br>
+    <div class="row">
         <div class="col-lg-5 col-md-7 mx-auto my-auto">
             <div class="card">
                 <div class="card-body px-lg-5 py-lg-5 text-center">
@@ -70,6 +71,6 @@
                 </div>
             </div>
         </div>
-       </div>
-     </div>
+    </div>
+</div>
 </asp:Content>
