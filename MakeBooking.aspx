@@ -46,16 +46,16 @@
     <div>
         <table style="width: 100%;">
             <tr>
-                <td style="width: 474px">&nbsp;</td>
-                <td class="modal-sm" style="width: 302px"></td>
-                <td>&nbsp;</td>
+                <td style="width: 474px; height: 16px;"></td>
+                <td class="modal-sm" style="width: 302px; height: 16px;"></td>
+                <td style="height: 16px"></td>
             </tr>
             <tr>
                 <td style="width: 474px">&nbsp;</td>
                 <td class="modal-sm" style="width: 302px">
                     <div class="form-group">
                         <label for="singleDDList">Single Rooms:</label>
-                        <asp:DropDownList ID="singleDDList" class="form-control" runat="server" Width="300px" OnSelectedIndexChanged="singleDDList_SelectedIndexChanged"></asp:DropDownList>
+                        <asp:DropDownList ID="singleDDList" class="form-control" runat="server" Width="300px" OnSelectedIndexChanged="singleDDList_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
                     </div>
                 </td>
                 <td>&nbsp;</td>
@@ -65,7 +65,7 @@
                 <td class="modal-sm" style="width: 302px">
                     <div class="form-group">
                         <label for="doubleDDList">Double Rooms: </label>
-                        <asp:DropDownList ID="doubleDDList" class="form-control" runat="server" Width="300px" OnSelectedIndexChanged="doubleDDList_SelectedIndexChanged"></asp:DropDownList>
+                        <asp:DropDownList ID="doubleDDList" class="form-control" runat="server" Width="300px" OnSelectedIndexChanged="doubleDDList_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
                     </div>
                 </td>
                 <td>&nbsp;</td>

@@ -12,23 +12,28 @@ namespace M4_major_project
     {
         public void Page_Load(object sender, EventArgs e)
         {
+            bookingSummaryTa.Fill(fullDs.BookingSummary);
+            bookedRoomTa.Fill(fullDs.BookedRoom);
+
             updateAvailableRoomList();
-            loadAvailableSinlges(singleDDList);
+            loadAvailableSingles(singleDDList);
             loadAvailableDoubles(doubleDDList);
         }
         protected void dateInCalender_SelectionChanged(object sender, EventArgs e)
         {
             dateIn = dateInCalender.SelectedDate;
+            dateOut = dateOutCalender.SelectedDate;
             updateAvailableRoomList();
-            loadAvailableSinlges(singleDDList);
+            loadAvailableSingles(singleDDList);
             loadAvailableDoubles(doubleDDList);
         }
 
         protected void dateOutCalender_SelectionChanged(object sender, EventArgs e)
         {
+            dateIn = dateInCalender.SelectedDate;
             dateOut = dateOutCalender.SelectedDate;
             updateAvailableRoomList();
-            loadAvailableSinlges(singleDDList);
+            loadAvailableSingles(singleDDList);
             loadAvailableDoubles(doubleDDList);
         }
         protected void singleDDList_SelectedIndexChanged(object sender, EventArgs e)
@@ -58,7 +63,7 @@ namespace M4_major_project
         //User Input fields
         string currentCustomerEmailID = CurrentUser.getEmailID();
         DateTime dateIn = DateTime.Today;
-        DateTime dateOut = DateTime.Today;
+        DateTime dateOut = DateTime.Today.AddDays(1);
         int numberOfNights;
         string bookingMethod = "Online";
         string bookingStatus = "inComplete";
@@ -73,8 +78,10 @@ namespace M4_major_project
         //Database fields
         FullDataSet fullDs = new FullDataSet();
         FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
-
-        private bool bookingIsComplete(string summaryID)
+        FullDataSetTableAdapters.BookedRoomTableAdapter bookedRoomTa = new FullDataSetTableAdapters.BookedRoomTableAdapter();
+        //FullDataSetTableAdapters.PaymentTableAdapter paymentTa = new FullDataSetTableAdapters.PaymentTableAdapter();
+       
+        private bool bookingIsComplete(string summaryID)    //now working correctly, fully tested
         {
             for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
             {
@@ -84,7 +91,7 @@ namespace M4_major_project
             }
             return false;
         }
-        private bool isRoomAvailable(int roomID, DateTime dateID)
+        private bool isRoomAvailable(int roomID, DateTime dateID)   //now working correctly, fully tested
         {
             for (int i = 0; i < fullDs.BookedRoom.Rows.Count; i++)
             {
@@ -101,7 +108,7 @@ namespace M4_major_project
             return true;
         }
 
-        private void updateAvailableRoomList()
+        private void updateAvailableRoomList()  //now working correctly, fully tested
         {
             availableSingleRooms = new ArrayList();
             availableDoubleRooms = new ArrayList();
@@ -128,7 +135,7 @@ namespace M4_major_project
             }
         }
 
-        private void loadAvailableSinlges(DropDownList ddList)
+        private void loadAvailableSingles(DropDownList ddList)  //now working correctly, fully tested
         {
 
             ddList.Items.Clear();
@@ -137,7 +144,7 @@ namespace M4_major_project
                 ddList.Items.Add(i + 1 + "");
         }
 
-        private void loadAvailableDoubles(DropDownList ddList)
+        private void loadAvailableDoubles(DropDownList ddList) //now working correctly, fully tested
         {
             ddList.Items.Clear();
             ddList.Items.Add("0");
