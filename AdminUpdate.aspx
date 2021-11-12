@@ -10,7 +10,6 @@
     <form id="form1" runat="server">
         <div class="navbar navbar-inverse navbar-fixed-top" id="Panel" runat="server">
             <div class="container">
-
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
@@ -38,7 +37,9 @@
             <br />
             <br />
             <div class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px">
-                <h1>Update Cusomer Details</h1>
+                <div class="jumbotron text-center" style="background-color: #008cba">
+                    <h1 style="color:white">Update Customer Details</h1>
+                </div>
                 <div class="form-group">
                     <asp:Label ID="Label1" runat="server" Text="Enter Email, Name, Surname, or ID"></asp:Label>
                     <asp:TextBox ID="adminTextBox" runat="server" class="form-control" placeholder="Enter Email, Name, Surname, or ID" Width="100%"></asp:TextBox>
