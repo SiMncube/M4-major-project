@@ -49,6 +49,22 @@ namespace M4_major_project
                 FullDataSet fullDs = new FullDataSet();
                 FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
                 taCustomer.Fill(fullDs.Customer);
+                for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
+                {
+                    if (fullDs.Customer[i].emailID.Equals(this.email, StringComparison.OrdinalIgnoreCase))
+                    {
+                        fullDs.Customer[i].name = nameTextBox.Text;
+                        fullDs.Customer[i].surname = surbubNameTextBox.Text;
+                        fullDs.Customer[i].idNumber = idTextBox.Text;
+                        fullDs.Customer[i].cellNumber = cellTextBox.Text;
+                        fullDs.Customer[i].streetName = streetTextBox.Text;
+                        fullDs.Customer[i].suburb = surbubNameTextBox.Text;
+                        fullDs.Customer[i].city = cityTextBox.Text;
+                        fullDs.Customer[i].postalCode = postalTextBox.Text;
+                        break;
+                    }
+                }
+                taCustomer.Update(fullDs);
             }
         }
     }
