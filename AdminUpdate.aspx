@@ -38,8 +38,10 @@
             <br />
             <div class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px">
                 <div class="jumbotron text-center" style="background-color: #008cba">
-                    <h1 style="color:white">Update Customer Details</h1>
+                    <h1 style="color: white">Update Customer Details</h1>
                 </div>
+            </div>
+            <div class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px">
                 <div class="form-group">
                     <asp:Label ID="Label1" runat="server" Text="Enter Email, Name, Surname, or ID"></asp:Label>
                     <asp:TextBox ID="adminTextBox" runat="server" class="form-control" placeholder="Enter Email, Name, Surname, or ID" Width="100%"></asp:TextBox>
