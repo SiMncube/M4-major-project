@@ -64,6 +64,7 @@ namespace M4_major_project
                 }
                 taCustomer.Update(fullDs.Customer);
                 taCustomer.Fill(fullDs.Customer);
+                GridView1.DataBind();
             }
         }
     }
