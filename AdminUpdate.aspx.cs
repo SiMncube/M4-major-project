@@ -75,5 +75,13 @@ namespace M4_major_project
                 GridView1.DataBind();
             }
         }
+
+        protected void adminTextBox_TextChanged(object sender, EventArgs e)
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
+            taCustomer.FillBy(fullDs.Customer, adminTextBox.Text);
+            //customerDataGridView.ClearSelection();
+        }
     }
 }

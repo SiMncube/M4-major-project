@@ -44,7 +44,7 @@
             <div class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px">
                 <div class="form-group">
                     <asp:Label ID="Label1" runat="server" Text="Enter Email, Name, Surname, or ID"></asp:Label>
-                    <asp:TextBox ID="adminTextBox" runat="server" class="form-control" placeholder="Enter Email, Name, Surname, or ID" Width="100%"></asp:TextBox>
+                    <asp:TextBox ID="adminTextBox" runat="server" class="form-control" placeholder="Enter Email, Name, Surname, or ID" Width="100%" OnTextChanged="adminTextBox_TextChanged"></asp:TextBox>
                 </div>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:group7ConnectionString %>" SelectCommand="SELECT [emailID], [surname], [name], [idNumber], [cellNumber], [streetName], [suburb], [city], [postalCode] FROM [Customer]"></asp:SqlDataSource>
                 <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="emailID" DataSourceID="SqlDataSource1" Width="100%" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
