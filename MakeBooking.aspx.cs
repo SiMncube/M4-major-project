@@ -15,9 +15,16 @@ namespace M4_major_project
             bookingSummaryTa.Fill(fullDs.BookingSummary);
             bookedRoomTa.Fill(fullDs.BookedRoom);
 
+            dateIn = dateInCalender.SelectedDate;
+            dateOut = dateOutCalender.SelectedDate;
+
+            if (dateIn.ToString().Equals(dateOut.ToString()))
+                dateOut.AddDays(1);
+            
             updateAvailableRoomList();
             loadAvailableSingles(singleDDList);
             loadAvailableDoubles(doubleDDList);
+           
         }
         protected void dateInCalender_SelectionChanged(object sender, EventArgs e)
         {
@@ -41,9 +48,9 @@ namespace M4_major_project
             amountDueTextBox.Text = getAmountDue(singleDDList, doubleDDList);
             numberOfSingleRooms = int.Parse(singleDDList.SelectedItem.ToString());
             //if (amountDue != 0)
-              //  saveBookingButton.Enabled = true;
+            //  saveBookingButton.Enabled = true;
             //else
-                //saveBookingButton.Enabled = false;
+            //saveBookingButton.Enabled = false;
         }
 
         protected void doubleDDList_SelectedIndexChanged(object sender, EventArgs e)
@@ -51,9 +58,9 @@ namespace M4_major_project
             amountDueTextBox.Text = getAmountDue(singleDDList, doubleDDList);
             numberOfDoubleRooms = int.Parse(doubleDDList.SelectedItem.ToString());
             //if (amountDue != 0)
-              //  saveBookingButton.Enabled = true;
+            //  saveBookingButton.Enabled = true;
             //else
-                //saveBookingButton.Enabled = false;
+            //saveBookingButton.Enabled = false;
         }
         protected void saveBookingButton_Click(object sender, EventArgs e)
         {
@@ -62,8 +69,8 @@ namespace M4_major_project
 
         //User Input fields
         string currentCustomerEmailID = CurrentUser.getEmailID();
-        DateTime dateIn = DateTime.Today;
-        DateTime dateOut = DateTime.Today.AddDays(1);
+        DateTime dateIn; // = DateTime.Today;
+        DateTime dateOut; // = DateTime.Today.AddDays(1);
         int numberOfNights;
         string bookingMethod = "Online";
         string bookingStatus = "inComplete";
@@ -80,7 +87,7 @@ namespace M4_major_project
         FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
         FullDataSetTableAdapters.BookedRoomTableAdapter bookedRoomTa = new FullDataSetTableAdapters.BookedRoomTableAdapter();
         //FullDataSetTableAdapters.PaymentTableAdapter paymentTa = new FullDataSetTableAdapters.PaymentTableAdapter();
-       
+
         private bool bookingIsComplete(string summaryID)    //now working correctly, fully tested
         {
             for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
