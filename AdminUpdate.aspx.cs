@@ -81,6 +81,7 @@ namespace M4_major_project
             FullDataSet fullDs = new FullDataSet();
             FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
             taCustomer.FillBy(fullDs.Customer, adminTextBox.Text);
+            GridView1.DataBind();
             //customerDataGridView.ClearSelection();
         }
     }
