@@ -46,7 +46,7 @@ namespace M4_major_project
         {
             if(isValid())
             {
-                dataRow[3].ToString()FullDataSet fullDs = new FullDataSet();
+                FullDataSet fullDs = new FullDataSet();
                 FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
                 taCustomer.Fill(fullDs.Customer);
             }
