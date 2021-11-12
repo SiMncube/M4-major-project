@@ -36,6 +36,37 @@ namespace M4_major_project
         {
             t.Text = s;
         }
+        private bool isLetter(char c)
+        {
+            if (c >= 'a' && c <= 'z')
+                return true;
+            return false;
+        }
+        private bool isAllLetters(string s)
+        {
+            s = s.ToLower();
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (!isLetter(s[i]))
+                    return false;
+            }
+            return true;
+        }
+        private bool nameIsValid()
+        {
+            int count = 0;
+            if (!isAllLetters(nameTextBox.Text) || nameTextBox.Text.Length < 3)
+            {
+                nameTextBox.BackColor = System.Drawing.Color.Red;
+                count++;
+            }
+            if (!isAllLetters(surnameTextBox.Text) || surnameTextBox.Text.Length < 3)
+            {
+                surnameTextBox.BackColor = System.Drawing.Color.Red;
+                count++;
+            }
+            return count == 0;
+        }
         private bool isValid()
         {
             return true;
