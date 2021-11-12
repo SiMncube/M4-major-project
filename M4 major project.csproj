@@ -138,6 +138,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="About1.aspx" />
+    <Content Include="Admin.aspx" />
     <Content Include="BookingReport.aspx" />
     <Content Include="CancelBooking.aspx" />
     <Content Include="ChangePassword.aspx" />
@@ -274,6 +275,13 @@
     </Compile>
     <Compile Include="About1.aspx.designer.cs">
       <DependentUpon>About1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
