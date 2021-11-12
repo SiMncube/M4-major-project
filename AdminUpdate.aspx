@@ -106,11 +106,28 @@
                                 </div>
                             </div>
                             <div class="col-md-12 text-center">
-                                <asp:Button class="btn btn-primary pull-center" ID="Button1" runat="server" Text="Update Details" Width="210px" OnClick="Button1_Click" />
+                                <asp:Button class="btn btn-primary pull-center" ID="Button1" runat="server" Text="Update Details" Width="210px" OnClick="Button1_Click" data-toggle="modal" data-target="#myModal" />
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Update Confirmation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>The customer's details have been updated!</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </form>

@@ -10,7 +10,6 @@ namespace M4_major_project
 {
     public partial class AdminUpdate : System.Web.UI.Page
     {
-        private string email; 
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -24,7 +23,6 @@ namespace M4_major_project
             DataRow dataRow = fullDs.Customer.NewRow();
             for (int i = 0; i < dataRow.ItemArray.Length; i++)
                 dataRow[i] = GridView1.SelectedRow.Cells[i].Text;
-            this.email = dataRow[1].ToString();
             updateTextBox(nameTextBox, dataRow[3].ToString());
             updateTextBox(surnameTextBox, dataRow[2].ToString());
             updateTextBox(idTextBox, dataRow[4].ToString());
@@ -46,12 +44,13 @@ namespace M4_major_project
         {
             if(isValid())
             {
+                string email = GridView1.SelectedRow.Cells[1].Text;
                 FullDataSet fullDs = new FullDataSet();
                 FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
                 taCustomer.Fill(fullDs.Customer);
                 for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
                 {
-                    if (fullDs.Customer[i].emailID.Equals(this.email, StringComparison.OrdinalIgnoreCase))
+                    if (fullDs.Customer[i].emailID.Equals(GridView1.SelectedRow.Cells[1].Text, StringComparison.OrdinalIgnoreCase))
                     {
                         fullDs.Customer[i].name = nameTextBox.Text;
                         fullDs.Customer[i].surname = surbubNameTextBox.Text;
@@ -65,6 +64,7 @@ namespace M4_major_project
                     }
                 }
                 taCustomer.Update(fullDs);
+                taCustomer.Fill(fullDs.Customer);
             }
         }
     }
