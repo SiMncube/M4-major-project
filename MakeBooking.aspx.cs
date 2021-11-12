@@ -137,7 +137,6 @@ namespace M4_major_project
 
         private void loadAvailableSingles(DropDownList ddList)  //now working correctly, fully tested
         {
-
             ddList.Items.Clear();
             ddList.Items.Add("0");
             for (int i = 0; i < availableSingleRooms.Count; i++)
@@ -161,6 +160,11 @@ namespace M4_major_project
 
         private string getAmountDue(DropDownList ddList1, DropDownList ddList2)
         {
+            var temp = ddList1.Items;
+            var temp2 = ddList1.SelectedItem.ToString();
+            var d1temp = ddList1.Items[ddList1.SelectedIndex].Text;
+            var d1temp2 = ddList1.SelectedValue.ToString();
+
             double amountDueForSingleRooms;
             double amountDueForDoubleRooms;
             numberOfNights = dateOut.Subtract(dateIn).Days;
