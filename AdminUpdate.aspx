@@ -106,7 +106,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12 text-center">
-                                <asp:Button class="btn btn-primary pull-center" ID="Button1" runat="server" Text="Update Details" Width="210px" />
+                                <asp:Button class="btn btn-primary pull-center" ID="Button1" runat="server" Text="Update Details" Width="210px" OnClick="Button1_Click" />
                             </div>
                         </div>
                     </div>

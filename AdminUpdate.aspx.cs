@@ -10,6 +10,7 @@ namespace M4_major_project
 {
     public partial class AdminUpdate : System.Web.UI.Page
     {
+        private string email; 
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -23,6 +24,7 @@ namespace M4_major_project
             DataRow dataRow = fullDs.Customer.NewRow();
             for (int i = 0; i < dataRow.ItemArray.Length; i++)
                 dataRow[i] = GridView1.SelectedRow.Cells[i].Text;
+            this.email = dataRow[1].ToString();
             updateTextBox(nameTextBox, dataRow[3].ToString());
             updateTextBox(surnameTextBox, dataRow[2].ToString());
             updateTextBox(idTextBox, dataRow[4].ToString());
@@ -35,6 +37,19 @@ namespace M4_major_project
         private void updateTextBox(TextBox t , string s)
         {
             t.Text = s;
+        }
+        private bool isValid()
+        {
+            return true;
+        }
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if(isValid())
+            {
+                dataRow[3].ToString()FullDataSet fullDs = new FullDataSet();
+                FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
+                taCustomer.Fill(fullDs.Customer);
+            }
         }
     }
 }
