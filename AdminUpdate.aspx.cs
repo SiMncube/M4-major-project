@@ -13,5 +13,10 @@ namespace M4_major_project
         {
 
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //nameTextBox.Text 
+        }
     }
 }
