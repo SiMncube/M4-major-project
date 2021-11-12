@@ -33,9 +33,6 @@
                 </ul>
             </div>
         </div>
-        <div>
-            Landing page = make booking
-        </div>
     </div>
 </body>
 </html>
