@@ -48,6 +48,13 @@
                     <asp:Label ID="Label1" runat="server" Text="Enter Email, Name, Surname, or ID"></asp:Label>
                     <asp:TextBox ID="adminTextBox" runat="server" class="form-control" placeholder="Enter Email, Name, Surname, or ID" Width="100%" OnTextChanged="adminTextBox_TextChanged"></asp:TextBox>
                 </div>
+                <div class="col-md-12 text-center">
+                    <asp:Button class="btn btn-primary pull-center" ID="Button2" runat="server" Text="Search" Width="210px" OnClick="Button2_Click" />
+                </div>
+                <br />
+                <br />
+                <br />
+                <br />
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:group7ConnectionString %>" SelectCommand="SELECT [emailID], [surname], [name], [idNumber], [cellNumber], [streetName], [suburb], [city], [postalCode] FROM [Customer]"></asp:SqlDataSource>
                 <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="emailID" DataSourceID="SqlDataSource1" Width="100%" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                     <Columns>
@@ -74,11 +81,11 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <asp:Label ID="Label2" runat="server" Text="Name" class="form-label mt-4"></asp:Label>
-                                    <asp:TextBox ID="nameTextBox" runat="server" class="form-control" placeholder="Enter name" required=""></asp:TextBox>
+                                    <asp:TextBox ID="nameTextBox" runat="server" class="form-control" placeholder="Enter name"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
                                     <asp:Label ID="Label3" runat="server" Text="ID Number" class="form-label mt-4"></asp:Label>
-                                    <asp:TextBox ID="idTextBox" runat="server" class="form-control" placeholder="Enter Id Number" required=""></asp:TextBox>
+                                    <asp:TextBox ID="idTextBox" runat="server" class="form-control" placeholder="Enter Id Number" ></asp:TextBox>
                                 </div>
                                 <div class="form-group">
                                     <asp:Label ID="Label4" runat="server" Text="Street name" class="form-label mt-4"></asp:Label>
@@ -92,11 +99,11 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <asp:Label ID="Label5" runat="server" Text="Surname" class="form-label mt-4"></asp:Label>
-                                    <asp:TextBox ID="surnameTextBox" runat="server" class="form-control" placeholder="Enter surname" required=""></asp:TextBox>
+                                    <asp:TextBox ID="surnameTextBox" runat="server" class="form-control" placeholder="Enter surname"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
                                     <asp:Label ID="Label8" runat="server" Text="Cell phone" class="form-label mt-4"></asp:Label>
-                                    <asp:TextBox ID="cellTextBox" runat="server" class="form-control" placeholder="Enter cell number" required=""></asp:TextBox>
+                                    <asp:TextBox ID="cellTextBox" runat="server" class="form-control" placeholder="Enter cell number"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
                                     <asp:Label ID="Label7" runat="server" Text="Surburb" class="form-label mt-4"></asp:Label>
@@ -104,7 +111,7 @@
                                 </div>
                                 <div class="form-group">
                                     <asp:Label ID="Label11" runat="server" Text="Postal code" class="form-label mt-4"></asp:Label>
-                                    <asp:TextBox ID="postalTextBox" runat="server" class="form-control" placeholder="Enter pastal code" required=""></asp:TextBox>
+                                    <asp:TextBox ID="postalTextBox" runat="server" class="form-control" placeholder="Enter pastal code"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-md-12 text-center">

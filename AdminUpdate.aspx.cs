@@ -109,13 +109,16 @@ namespace M4_major_project
 
         protected void adminTextBox_TextChanged(object sender, EventArgs e)
         {
-            string a = "";
             FullDataSet fullDs = new FullDataSet();
             FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
             taCustomer.FillBy(fullDs.Customer, adminTextBox.Text);
             taCustomer.Update(fullDs.Customer);
             GridView1.DataBind();
-            //customerDataGridView.ClearSelection();
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
