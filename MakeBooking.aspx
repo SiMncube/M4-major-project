@@ -55,7 +55,7 @@
                 <td class="modal-sm" style="width: 302px">
                     <div class="form-group">
                         <label for="singleDDList">Single Rooms:</label>
-                        <asp:DropDownList ID="singleDDList" class="form-control" runat="server" Width="300px" OnSelectedIndexChanged="singleDDList_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+                        <asp:DropDownList ID="singleDDList" class="form-control" runat="server" Width="300px" OnSelectedIndexChanged="singleDDList_SelectedIndexChanged"></asp:DropDownList>
                     </div>
                 </td>
                 <td>&nbsp;</td>
