@@ -52,13 +52,21 @@ namespace M4_major_project
                     if (fullDs.Customer[i].emailID.Equals(GridView1.SelectedRow.Cells[1].Text, StringComparison.OrdinalIgnoreCase))
                     {
                         fullDs.Customer[i].name = nameTextBox.Text;
+                        nameTextBox.Text = "";
                         fullDs.Customer[i].surname = surnameTextBox.Text;
+                        surnameTextBox.Text = "";
                         fullDs.Customer[i].idNumber = idTextBox.Text;
+                        idTextBox.Text = "";
                         fullDs.Customer[i].cellNumber = cellTextBox.Text;
+                        cellTextBox.Text = "";
                         fullDs.Customer[i].streetName = streetTextBox.Text;
+                        streetTextBox.Text = "";
                         fullDs.Customer[i].suburb = surbubNameTextBox.Text;
+                        surbubNameTextBox.Text = "";
                         fullDs.Customer[i].city = cityTextBox.Text;
+                        cityTextBox.Text = "";
                         fullDs.Customer[i].postalCode = postalTextBox.Text;
+                        postalTextBox.Text = "";
                         break;
                     }
                 }
