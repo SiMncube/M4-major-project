@@ -46,7 +46,6 @@
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="summaryID" DataSourceID="cancelGrid" ForeColor="#333333" GridLines="None" Height="161px" Width="494px">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
-                            <asp:CommandField ShowSelectButton="True" />
                             <asp:BoundField DataField="summaryID" HeaderText="summaryID" InsertVisible="False" ReadOnly="True" SortExpression="summaryID" />
                             <asp:BoundField DataField="emailID" HeaderText="emailID" SortExpression="emailID" />
                             <asp:BoundField DataField="dateIn" HeaderText="dateIn" SortExpression="dateIn" />
