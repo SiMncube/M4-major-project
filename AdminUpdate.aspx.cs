@@ -22,11 +22,7 @@ namespace M4_major_project
             taCustomer.Fill(fullDs.Customer);
             DataRow dataRow = fullDs.Customer.NewRow();
             for (int i = 0; i < dataRow.ItemArray.Length; i++)
-            {
                 dataRow[i] = GridView1.SelectedRow.Cells[i].Text;
-            }
-            updateTextBox(emailTextBox, dataRow[1].ToString());
-            updateTextBox(confirmEmailTextBox, dataRow[1].ToString());
             updateTextBox(nameTextBox, dataRow[3].ToString());
             updateTextBox(surnameTextBox, dataRow[2].ToString());
             updateTextBox(idTextBox, dataRow[4].ToString());

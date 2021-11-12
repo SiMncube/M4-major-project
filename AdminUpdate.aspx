@@ -83,10 +83,6 @@
                                     <asp:Label ID="Label6" runat="server" Text="City" class="form-label mt-4"></asp:Label>
                                     <asp:TextBox ID="cityTextBox" runat="server" class="form-control" placeholder="Enter city"></asp:TextBox>
                                 </div>
-                                <div class="form-group">
-                                    <asp:Label ID="Label9" runat="server" Text="Email" class="form-label mt-4"></asp:Label>
-                                    <asp:TextBox ID="emailTextBox" runat="server" class="form-control" placeholder="Enter email" required=""></asp:TextBox>
-                                </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -104,10 +100,6 @@
                                 <div class="form-group">
                                     <asp:Label ID="Label11" runat="server" Text="Postal code" class="form-label mt-4"></asp:Label>
                                     <asp:TextBox ID="postalTextBox" runat="server" class="form-control" placeholder="Enter pastal code" required=""></asp:TextBox>
-                                </div>
-                                <div class="form-group">
-                                    <asp:Label ID="Label12" runat="server" Text="Confirm email" class="form-label mt-4"></asp:Label>
-                                    <asp:TextBox ID="confirmEmailTextBox" runat="server" class="form-control" placeholder="Enter email" required=""></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-md-12 text-center">
