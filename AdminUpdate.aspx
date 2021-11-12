@@ -41,10 +41,10 @@
                 <h1>Update Cusomer Details</h1>
                 <div class="form-group">
                     <asp:Label ID="Label1" runat="server" Text="Enter Email, Name, Surname, or ID"></asp:Label>
-                    <asp:TextBox ID="adminTextBox" runat="server" class="form-control" placeholder="Enter Email, Name, Surname, or ID" required="" Width="85%"></asp:TextBox>
+                    <asp:TextBox ID="adminTextBox" runat="server" class="form-control" placeholder="Enter Email, Name, Surname, or ID" required="" Width="100%"></asp:TextBox>
                 </div>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:group7ConnectionString %>" SelectCommand="SELECT [emailID], [surname], [name], [idNumber], [cellNumber], [streetName], [suburb], [city], [postalCode] FROM [Customer]"></asp:SqlDataSource>
-                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="emailID" DataSourceID="SqlDataSource1" Width="85%">
+                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="emailID" DataSourceID="SqlDataSource1" Width="100%">
                     <Columns>
                         <asp:CommandField ShowSelectButton="True" />
                         <asp:BoundField DataField="emailID" HeaderText="emailID" ReadOnly="True" SortExpression="emailID" />
@@ -63,7 +63,7 @@
         <br />
         <div class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px">
             <div class="row">
-                <div class="col-md-6" style="margin: auto; width: 85%; border: 0px solid #FFFF00; padding: 5px">
+                <div class="col-md-6" style="margin: auto; width: 100%; border: 0px solid #FFFF00; padding: 5px">
                     <div class="well well-sm">
                         <div class="row">
                             <div class="col-md-6">
