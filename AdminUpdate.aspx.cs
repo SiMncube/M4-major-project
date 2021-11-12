@@ -44,7 +44,6 @@ namespace M4_major_project
         {
             if(isValid())
             {
-                string email = GridView1.SelectedRow.Cells[1].Text;
                 FullDataSet fullDs = new FullDataSet();
                 FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
                 taCustomer.Fill(fullDs.Customer);
@@ -63,7 +62,7 @@ namespace M4_major_project
                         break;
                     }
                 }
-                taCustomer.Update(fullDs);
+                taCustomer.Update(fullDs.Customer);
                 taCustomer.Fill(fullDs.Customer);
             }
         }
