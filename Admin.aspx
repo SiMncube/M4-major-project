@@ -20,18 +20,21 @@
                 <a class="navbar-brand" runat="server" href="~/">The Cottage</a>
             </div>
             <div class="navbar-collapse collapse" staticselectedstyle-verticalpadding="10px">
-                    <ul class="nav navbar-nav" runat="server">
-                        <li><a runat="server" href="~/"><b>View Bookings</b></a></li>
-                        <li><a runat="server" href="~/About"><b>Modify Booikings</b></a></li>
-                        <li><a runat="server" href="~/Contact"><b>Cancel Bookings</b></a></li>
-                        <li><a runat="server" href="~/Contact"><b>Register Customer</b></a></li>
-                        <li><a runat="server" href="~/AdminUpdate"><b>Update CustomerDetails</b></a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a runat="server" id="Username1" href="~/Admin"><b id="setUser" runat="server"></b></a></li>
-                        <li><a runat="server" id="Logoff1" href="~/Default" onclick="logOff_click()" ><b>Log off</b></a></li>
-                    </ul>
-                </div>
+                <ul class="nav navbar-nav" runat="server">
+                    <li><a runat="server" href="~/"><b>View Bookings</b></a></li>
+                    <li><a runat="server" href="~/About"><b>Modify Booikings</b></a></li>
+                    <li><a runat="server" href="~/Contact"><b>Cancel Bookings</b></a></li>
+                    <li><a runat="server" href="~/Contact"><b>Register Customer</b></a></li>
+                    <li><a runat="server" href="~/AdminUpdate"><b>Update CustomerDetails</b></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a runat="server" id="Username1" href="~/Admin"><b id="setUser" runat="server"></b></a></li>
+                    <li><a runat="server" id="Logoff1" href="~/Default" onclick="logOff_click()"><b>Log off</b></a></li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            Landing page = make booking
         </div>
     </div>
 </body>
