@@ -52,7 +52,7 @@ namespace M4_major_project
                     if (fullDs.Customer[i].emailID.Equals(GridView1.SelectedRow.Cells[1].Text, StringComparison.OrdinalIgnoreCase))
                     {
                         fullDs.Customer[i].name = nameTextBox.Text;
-                        fullDs.Customer[i].surname = surbubNameTextBox.Text;
+                        fullDs.Customer[i].surname = surnameTextBox.Text;
                         fullDs.Customer[i].idNumber = idTextBox.Text;
                         fullDs.Customer[i].cellNumber = cellTextBox.Text;
                         fullDs.Customer[i].streetName = streetTextBox.Text;
