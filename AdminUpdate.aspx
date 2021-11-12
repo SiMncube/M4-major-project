@@ -41,10 +41,10 @@
                 <h1>Update Cusomer Details</h1>
                 <div class="form-group">
                     <asp:Label ID="Label1" runat="server" Text="Enter Email, Name, Surname, or ID"></asp:Label>
-                    <asp:TextBox ID="adminTextBox" runat="server" class="form-control" placeholder="Enter Email, Name, Surname, or ID" required="" Width="85%"></asp:TextBox>
+                    <asp:TextBox ID="adminTextBox" runat="server" class="form-control" placeholder="Enter Email, Name, Surname, or ID" Width="100%"></asp:TextBox>
                 </div>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:group7ConnectionString %>" SelectCommand="SELECT [emailID], [surname], [name], [idNumber], [cellNumber], [streetName], [suburb], [city], [postalCode] FROM [Customer]"></asp:SqlDataSource>
-                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="emailID" DataSourceID="SqlDataSource1" Width="85%" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="emailID" DataSourceID="SqlDataSource1" Width="100%" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                     <Columns>
                         <asp:CommandField ShowSelectButton="True" />
                         <asp:BoundField DataField="emailID" HeaderText="emailID" ReadOnly="True" SortExpression="emailID" />
@@ -63,7 +63,7 @@
         <br />
         <div class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px">
             <div class="row">
-                <div class="col-md-6" style="margin: auto; width: 85%; border: 0px solid #FFFF00; padding: 5px">
+                <div class="col-md-6" style="margin: auto; width: 100%; border: 0px solid #FFFF00; padding: 5px">
                     <div class="well well-sm">
                         <div class="row">
                             <div class="col-md-6">
@@ -87,10 +87,6 @@
                                     <asp:Label ID="Label9" runat="server" Text="Email" class="form-label mt-4"></asp:Label>
                                     <asp:TextBox ID="emailTextBox" runat="server" class="form-control" placeholder="Enter email" required=""></asp:TextBox>
                                 </div>
-                                <div class="form-group">
-                                    <asp:Label ID="Label10" runat="server" Text="Password" class="form-label mt-4"></asp:Label>
-                                    <asp:TextBox ID="passwordTextBox" runat="server" class="form-control" placeholder="Enter password" required="" TextMode="Password"></asp:TextBox>
-                                </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -112,10 +108,6 @@
                                 <div class="form-group">
                                     <asp:Label ID="Label12" runat="server" Text="Confirm email" class="form-label mt-4"></asp:Label>
                                     <asp:TextBox ID="confirmEmailTextBox" runat="server" class="form-control" placeholder="Enter email" required=""></asp:TextBox>
-                                </div>
-                                <div class="form-group">
-                                    <asp:Label ID="Label13" runat="server" Text="Confirm password" class="form-label mt-4"></asp:Label>
-                                    <asp:TextBox ID="confirmTextBox" runat="server" class="form-control" placeholder="Enter password" required="" TextMode="Password"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-md-12 text-center">
