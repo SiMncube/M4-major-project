@@ -37,6 +37,21 @@ namespace M4_major_project
         {
             t.Text = s;
         }
+        private bool isDigit(char ch)
+        {
+            if (ch >= '0' && ch <= '9')
+                return true;
+            return false;
+        }
+        private bool isAllDigit(string s)
+        {
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (!isDigit(s[i]))
+                    return false;
+            }
+            return true;
+        }
         private bool isLetter(char c)
         {
             if (c >= 'a' && c <= 'z')
@@ -68,9 +83,45 @@ namespace M4_major_project
             }
             return count == 0;
         }
+        private bool AddrressIsValid()
+        {
+            if (!isAllDigit(postalTextBox.Text) || postalTextBox.Text.Length != 4)
+            {
+                postalTextBox.BackColor = System.Drawing.Color.Red;
+                return false;
+            }
+            return true;
+        }
+        private bool IdIsValid()
+        {
+            if (!isAllDigit(idTextBox.Text) || idTextBox.Text.Length != 13)
+            {
+                idTextBox.BackColor = System.Drawing.Color.Red;
+                return false;
+            }
+            return true;
+        }
+        private bool CellNumberisValid()
+        {
+            if (!isAllDigit(cellTextBox.Text) || cellTextBox.Text.Length != 10)
+            {
+                cellTextBox.BackColor = System.Drawing.Color.Red;
+                return false;
+            }
+            return true;
+        }
         private bool isValid()
         {
-            return nameIsValid();
+            int count = 0;
+            if (!nameIsValid())
+                count++;
+            if (!AddrressIsValid())
+                count++;
+            if (!CellNumberisValid())
+                count++;
+            if (!IdIsValid())
+                count ++;
+            return count == 0;
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
