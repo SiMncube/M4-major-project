@@ -11,7 +11,12 @@ namespace M4_major_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //paymentDetails.InnerHtml = "<><strong>Order Date:</strong><br>" + DateTime.Now.ToString() + "< br >< br > ";
+            paymentDetails.InnerHtml = "<address>"+
+                                        "<strong> Payment Method:</strong ><br>"
+                                        +"Credit Card<br>"+
+                                        CurrentUser.getEmailID()+
+                                         "</address>";
+
             orderDate.InnerHtml = "<address>" +
                                     "<strong> Order Date:</strong><br>" +
                                     DateTime.Now.ToString() + "</br >" +

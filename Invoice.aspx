@@ -43,8 +43,8 @@
     			</div>
     		</div>
     		<div class="row">
-    			<div class="col-xs-6">
-    				<address id="paymentDetails" runat="server">
+    			<div class="col-xs-6" id="paymentDetails" runat="server">
+    				<address>
     					<strong>Payment Method:</strong><br>
     					Credit Card<br>
     					jsmith@email.com
