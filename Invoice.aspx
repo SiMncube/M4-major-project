@@ -103,5 +103,13 @@
     		</div>
     	</div>
     </div>
+    <br />
+    <div class="col-md-12 text-center">
+        <asp:Button class="btn btn-primary pull-center" ID="homeBtn" runat="server" Text="Home" Width="210px" OnClick="homeBtn_Click" />
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
 </div>
 </asp:Content>
