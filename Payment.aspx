@@ -7,17 +7,16 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="row">
-                        <h3 class="text-center">Payment Details</h3>
+                        <h3 style="color: #008cba" class="text-center">Payment Details</h3>
                         <img class="img-responsive cc-img" src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png">
                     </div>
                 </div>
                 <div class="panel-body">
-                    <form role="form">
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label>CARD NUMBER</label>
-                                    <input type="tel" class="form-control" placeholder="Valid Card Number" />
+                                    <asp:TextBox ID="cardNumberTextBox" class="form-control" runat ="server" placeholder="Valid Card Number" required=""></asp:TextBox>
                                 </div>
                             </div>
                         </div>
@@ -25,13 +24,13 @@
                             <div class="col-xs-7 col-md-7">
                                 <div class="form-group">
                                     <label><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
-                                    <input type="tel" class="form-control" placeholder="MM / YY" />
+                                    <asp:TextBox ID="expireTextBox" runat="server" class="form-control" placeholder="MM / YY"></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-xs-5 col-md-5 pull-right">
                                 <div class="form-group">
                                     <label>CV CODE</label>
-                                    <input type="tel" class="form-control" placeholder="CVC" />
+                                    <input type="tel" class="form-control" placeholder="CVC" required="" />
                                 </div>
                             </div>
                         </div>
@@ -39,11 +38,10 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label>CARD OWNER</label>
-                                    <input type="text" class="form-control" placeholder="Card Owner Names" />
+                                    <asp:TextBox ID="TextBox1" runat="server" class="form-control" placeholder="Card Owner Names" required=""></asp:TextBox>
                                 </div>
                             </div>
                         </div>
-                    </form>
                 </div>
                 <div class="panel-footer">
                     <div class="row">
@@ -56,7 +54,6 @@
         </div>
     </div>
 </div>
-
 <style>
     .cc-img {
         margin: 0 auto;
