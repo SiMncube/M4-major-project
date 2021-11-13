@@ -70,7 +70,7 @@
                     <div class="panel-footer">
                         <div class="row">
                             <div class="col-xs-12">
-                                <asp:Button ID="Button1" class="btn btn-primary pull-center" runat="server" Text="Process payment" Style="background-color: #008cba" Width="810px" />
+                                <asp:Button ID="Button1" class="btn btn-primary pull-center" runat="server" Text="Process payment" Style="background-color: #008cba" Width="810px" OnClick="Button1_Click" />
                             </div>
                         </div>
                     </div>

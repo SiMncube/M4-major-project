@@ -78,10 +78,8 @@ namespace M4_major_project
         private bool dateIsSelected()
         {
             
-            //if (monthComboBox.SelectedItem != null && yearComboBox.SelectedItem != null)
-               // return true;
-           // monthComboBox.BackColor = Color.Red;
-            //yearComboBox.BackColor = Color.Red;
+            if (!monthComboBox.Items[monthComboBox.SelectedIndex].Text.Equals("Month:") && !yearComboBox.Items[yearComboBox.SelectedIndex].Text.Equals("Year:"))
+               return true;
             return false;
         }
         private bool creditDetailsValid()
@@ -98,5 +96,89 @@ namespace M4_major_project
             return count == 0;
         }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+            if (creditDetailsValid())
+            {
+                FullDataSet fullDs = new FullDataSet();
+                FullDataSetTableAdapters.PaymentTableAdapter paymentTa = new FullDataSetTableAdapters.PaymentTableAdapter();
+                paymentTa.Fill(fullDs.Payment);
+                paymentTa.Insert(currentBooking.getSummaryID(), getAmountDue(), DateTime.Now, "Credit card");
+                updateBookedRoom();
+                updateBookingStatus();
+                Email.bookingStatus = "Complete";  //added by Sihle
+                Email.sendInvoice();               //added by Sihle
+            }
+        }
+        private DateTime GetDateIn()
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingSummaryTableAdapter taBookingSummary = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            taBookingSummary.Fill(fullDs.BookingSummary);
+            DateTime dateIn = DateTime.Today;
+            for (int i = fullDs.BookingSummary.Rows.Count - 1; i >= 0; i--)
+            {
+                if (fullDs.BookingSummary[i].summaryID == currentBooking.getSummaryID())
+                {
+                    dateIn = fullDs.BookingSummary[i].dateIn;
+                    break;
+                }
+            }
+            return dateIn;
+        }
+        private DateTime GetDateOut()
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingSummaryTableAdapter taBookingSummary = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            taBookingSummary.Fill(fullDs.BookingSummary);
+            DateTime dateOut = DateTime.Today;
+            for (int i = fullDs.BookingSummary.Rows.Count - 1; i >= 0; i--)
+            {
+                if (fullDs.BookingSummary[i].summaryID == currentBooking.getSummaryID())
+                {
+                    dateOut = fullDs.BookingSummary[i].dateOut;
+                }
+            }
+            return dateOut;
+        }
+        private void updateBookedRoom()
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookedRoomTableAdapter bookedRoomTa = new FullDataSetTableAdapters.BookedRoomTableAdapter();
+            bookedRoomTa.Fill(fullDs.BookedRoom);
+            int[] rooms = currentBooking.getRoomIDs();
+            if (rooms[0] != -1)
+            {
+                for (int i = 0; i < rooms.Length; i++)
+                {
+                    for (DateTime dateID = GetDateIn(); DateTime.Compare(dateID, GetDateOut()) < 0; dateID = dateID.AddDays(1))
+                    {
+                        bookedRoomTa.Insert(dateID, currentBooking.getSummaryID(), rooms[i]);
+                    }
+                }
+                bookedRoomTa.Update(fullDs.BookedRoom);
+                bookedRoomTa.Fill(fullDs.BookedRoom);
+            }
+        }
+        private void updateBookingStatus()
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            bookingSummaryTa.Fill(fullDs.BookingSummary);
+            int[] rooms = currentBooking.getRoomIDs();
+            if (rooms[0] != -1)
+            {
+                for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
+                {
+                    if (fullDs.BookingSummary[i].summaryID == currentBooking.getSummaryID())
+                    {
+                        fullDs.BookingSummary[i].bookingStatus = "Complete";
+                        bookingSummaryTa.Update(fullDs.BookingSummary);
+                        bookingSummaryTa.Fill(fullDs.BookingSummary);
+                    }
+                }
+            }
+        }
     }
 }
