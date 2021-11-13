@@ -37,6 +37,7 @@
             <br />
             <br />
             <br />
+            <br />
             <div class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px">
                 <div class="text-center" style="background-color: #008cba; height: 55px">
                     <h1 style="color: white; margin: auto">Register New Customer</h1>
