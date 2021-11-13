@@ -170,7 +170,7 @@ namespace M4_major_project
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-
+            colorBoxes();
         }
 
         protected void nameTextBox_TextChanged(object sender, EventArgs e)
@@ -186,6 +186,9 @@ namespace M4_major_project
         {
             nameTextBox.BackColor = System.Drawing.Color.White;
             surnameTextBox.BackColor = System.Drawing.Color.White;
+            idTextBox.BackColor = System.Drawing.Color.White;
+            cellTextBox.BackColor = System.Drawing.Color.White;
+            postalTextBox.BackColor = System.Drawing.Color.White;
         }
     }
 }

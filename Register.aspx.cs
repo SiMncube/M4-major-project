@@ -160,6 +160,11 @@ namespace M4_major_project
         }
         private bool EmailISValid()
         {
+            if(!emailTextBox.Text.Equals(confirmTextBox.Text))
+            {
+                emailTextBox.BackColor = System.Drawing.Color.Red;
+                confirmTextBox.BackColor = System.Drawing.Color.Red;
+            }
             if (emailTextBox.Text != null)
             {
                 EmailAddressAttribute email = new EmailAddressAttribute();
@@ -205,6 +210,17 @@ namespace M4_major_project
                 return false;
             }
             return true;
+        }
+        private void colorBoxes()
+        {
+            nameTextBox.BackColor = System.Drawing.Color.White;
+            surnameTextBox.BackColor = System.Drawing.Color.White;
+            idTextBox.BackColor = System.Drawing.Color.White;
+            cellTextBox.BackColor = System.Drawing.Color.White;
+            postalTextBox.BackColor = System.Drawing.Color.White;
+            emailTextBox.BackColor = System.Drawing.Color.White;
+            passwordTextBox.BackColor = System.Drawing.Color.White;
+            confirmTextBox.BackColor = System.Drawing.Color.White;
         }
     }
 }
