@@ -25,7 +25,7 @@ namespace M4_major_project
                 HtmlAnchor btn1 = (HtmlAnchor)FindControl("panel");
                 btn1.Visible = false;
             }
-            /*if (signUIsValid())
+            if (signUIsValid())
             {
                 string temp = randomOTP();
                 Email.sendEmail(emailTextBox.Text, "Sign up OTP confirmation", htmlOTP(temp));
@@ -33,11 +33,11 @@ namespace M4_major_project
             FullDataSet fullDs = new FullDataSet();
             FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
             taCustomer.Fill(fullDs.Customer);
-            /*if(signUIsValid())
+            if(signUIsValid())
             {
                 taCustomer.Insert(capFirst(emailTextBox.Text), capFirst(nameTextBox.Text), capFirst(surnameTextBox.Text), idTextBox.Text, cellTextBox.Text, passwordTextBox.Text, capFirst(streetTextBox.Text), capFirst(surbubNameTextBox.Text), capFirst(cityTextBox.Text), postalTextBox.Text);
                 Response.Write("<script language='javascript'>window.alert('You have successfully registered');window.location='Default.aspx';</script>");
-            }*/
+            }
 
         }
         private string capFirst(string s)

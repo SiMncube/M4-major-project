@@ -13,5 +13,26 @@ namespace M4_major_project
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
+            taCustomer.Fill(fullDs.Customer);
+            if (signUIsValid())
+            {
+                taCustomer.Insert(capFirst(emailTextBox.Text), capFirst(nameTextBox.Text), capFirst(surnameTextBox.Text), idTextBox.Text, cellTextBox.Text, passwordTextBox.Text, capFirst(streetTextBox.Text), capFirst(surbubNameTextBox.Text), capFirst(cityTextBox.Text), postalTextBox.Text);
+                Response.Write("<script language='javascript'>window.alert('You have successfully registered');window.location='Default.aspx';</script>");
+            }
+        }
+        private bool signUIsValid()
+        {
+            return true;
+        }
+        private string capFirst(string s)
+        {
+            return (s[0] + "").ToUpper() + s.Substring(1).ToLower();
+        }
     }
 }
