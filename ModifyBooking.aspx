@@ -167,7 +167,7 @@
                 <td style="width: 474px">&nbsp;</td>
                 <td class="modal-sm" style="width: 302px">
                     <div class="form-group">
-                        <asp:Button ID="saveBookingButton" class="btn btn-primary" runat="server" Text="Save Booking" Width="300px" OnClick="saveBookingButton_Click" />
+                        <asp:Button ID="saveBookingButton" class="btn btn-primary" runat="server" Text="Modify Booking" Width="300px" OnClick="saveBookingButton_Click" />
                     </div>
                 </td>
                 <td>&nbsp;</td>
