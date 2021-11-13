@@ -15,17 +15,15 @@ namespace M4_major_project
         }
         private string currentAdminName()
         {
-            return "Admin1";
-            /*
             FullDataSet fullDs = new FullDataSet();
             FullDataSetTableAdapters.StaffTableAdapter taStaff = new FullDataSetTableAdapters.StaffTableAdapter();
             taStaff.Fill(fullDs.Staff);
             for (int i = 0; i < fullDs.Staff.Rows.Count; i++)
             {
                 if (fullDs.Staff[i].emailID.Equals(CurrentUser.getEmailID(), StringComparison.OrdinalIgnoreCase))
-                    return fullDs.Customer[i].name;
+                    return fullDs.Staff[i].name;
             }
-            return "";*/
+            return "";
         }
     }
 }
