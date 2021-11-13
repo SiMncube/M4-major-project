@@ -29,9 +29,17 @@ namespace M4_major_project
         {
             roomIDs = r;
         }
+        public void NumberSingles(string n)
+        {
+            numberSingles = n;
+        }
         public string getNumberSingles()
         {
             return numberSingles;
+        }
+        public void setNumberDoubles(string n)
+        {
+            numberDoubles = n;
         }
         public string getNumberDoubles()
         {
