@@ -114,9 +114,12 @@ namespace M4_major_project
                 else
                 {
                     completeModifyBooking(Email.amountDue);  //this is the update booking for modified booking
+                    Email.sendInvoice();
+                    Response.Redirect("/Invoice");
                 }
             }
         }
+
         private DateTime GetDateIn()
         {
             FullDataSet fullDs = new FullDataSet();

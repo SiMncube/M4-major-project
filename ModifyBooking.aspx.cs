@@ -236,7 +236,7 @@ namespace M4_major_project
             OldBookingSummaryID = GridView1.SelectedRow.Cells[0].Text;
         }
 
-        private void UpdateBooking(string callNewBookingAmoundDue)
+        private void completeModifyBooking(string callNewBookingAmoundDue)
         {
             UpdateOldBookingStatusToModified(int.Parse(OldBookingSummaryID));
             ProcessModifiedBookingRefund();    //adds a negative payment record == oldBookingAmountDue 
@@ -268,7 +268,7 @@ namespace M4_major_project
             if (finalAmountDue < 0)   //WE issue a refund
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking has been successfully Modified" + "A Refund of: " + Math.Abs(finalAmountDue) +" Will be processed" + "');", true);
-                UpdateBooking(newBookingAmountDueString);
+                completeModifyBooking(newBookingAmountDueString);
             }
             else if (finalAmountDue > 0)  //The customer has to add more money then, hence they should go to payment page
             {
@@ -278,7 +278,7 @@ namespace M4_major_project
             else  // it's a break even no excess or refund.
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking has been successfully Modified" + "');", true);
-                UpdateBooking(newBookingAmountDueString);
+                completeModifyBooking(newBookingAmountDueString);
             }
         }
 
