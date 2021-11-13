@@ -31,6 +31,11 @@ namespace M4_major_project
         FullDataSetTableAdapters.BookedRoomTableAdapter bookedRoomTa = new FullDataSetTableAdapters.BookedRoomTableAdapter();
         FullDataSetTableAdapters.PaymentTableAdapter paymentTa = new FullDataSetTableAdapters.PaymentTableAdapter();
 
+        //modify booking special attributes
+        string OldBookingSummaryID = "";
+        int newBookingSummaryID = 0;
+
+
         public void Page_Load(object sender, EventArgs e)
         {
             TextBox1.Text = CurrentUser.getEmailID();
@@ -99,7 +104,7 @@ namespace M4_major_project
             }
         }
 
-        private bool bookingIsComplete(string summaryID)    //fully tested
+        private bool bookingIsComplete(string summaryID)  //fully tested
         {
             for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
             {
@@ -177,7 +182,7 @@ namespace M4_major_project
             return false;
         }
 
-        private string getAmountDue(DropDownList ddList1, DropDownList ddList2) //now working correctly, fully tested
+        private string getAmountDue(DropDownList ddList1, DropDownList ddList2) //fully tested
         {
             double amountDueForSingleRooms;
             double amountDueForDoubleRooms;
@@ -208,7 +213,7 @@ namespace M4_major_project
             return "R " + amountDue.ToString() + ".00";
         }
 
-        public string arrayToString(int[] array)
+        public string arrayToString(int[] array) //fully tested
         {
             string s = "Room: ";
 
@@ -225,64 +230,6 @@ namespace M4_major_project
             }
             return s;
         }
-
-        private void updateBookingSummary(string callAmountDueMethod)
-        {
-            int[] singleAllocatedRooms = new int[numberOfSingleRoomsSelected];
-            int[] doubleAllocatedRooms = new int[numberOfDoubleRoomsSelected];
-
-            bookingSummaryTa.Insert(currentCustomerEmailID, dateIn, dateOut, numberOfNights, bookingMethod, bookingStatus, callAmountDueMethod);
-            int summaryID = (int)bookingSummaryTa.getLastRecord();
-            currentBooking.setSummaryID(summaryID);
-
-            for (int i = 0; i < numberOfSingleRoomsSelected; i++) //adding single rooms to bookedRoom table
-            {
-                for (DateTime dateID = dateIn; DateTime.Compare(dateID, dateOut) < 0; dateID = dateID.AddDays(1))
-                {
-                    singleAllocatedRooms[i] = (int)availableSingleRooms[i];
-                }
-            }
-
-            for (int i = 0; i < numberOfDoubleRoomsSelected; i++) //adding double rooms to bookedRoom table
-            {
-                for (DateTime dateID = dateIn; DateTime.Compare(dateID, dateOut) < 0; dateID = dateID.AddDays(1)) //adding double rooms to bookedRoom table
-                {
-                    doubleAllocatedRooms[i] = (int)availableDoubleRooms[i];
-                }
-            }
-
-            int[] allAllocatedRooms = new int[singleAllocatedRooms.Length + doubleAllocatedRooms.Length];
-            Array.Copy(singleAllocatedRooms, allAllocatedRooms, singleAllocatedRooms.Length);
-            Array.Copy(doubleAllocatedRooms, 0, allAllocatedRooms, singleAllocatedRooms.Length, doubleAllocatedRooms.Length);
-            currentBooking.setRoomIDs(allAllocatedRooms);
-
-            this.bookingSummaryTa.Update(this.fullDs.BookingSummary);
-            this.bookingSummaryTa.Fill(this.fullDs.BookingSummary);
-
-            //These initailizes the invoice fields
-            for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
-            {
-                if (fullDs.Customer[i].emailID.Equals(currentCustomerEmailID))
-                {
-                    Email.customerName = fullDs.Customer[i].name;
-                    Email.customerSurname = fullDs.Customer[i].surname;
-                    Email.customerIdNumber = fullDs.Customer[i].idNumber;
-                }
-            }
-            Email.customerEmail = currentCustomerEmailID;
-            Email.bookingID = summaryID.ToString();
-            Email.bookingStatus = bookingStatus;
-            Email.bookingMethod = bookingMethod;
-            Email.dateIn = dateIn.ToString("dd/MM/yyyy") + " 12:00 PM";
-            Email.dateOut = dateOut.ToString("dd/MM/yyyy") + " 11:00 AM";
-            Email.numberOfNights = numberOfNights.ToString();
-            Email.numberOfSingles = singleAllocatedRooms.Length.ToString();
-            Email.numberOfDoubles = doubleAllocatedRooms.Length.ToString();
-            Email.singleRoomIDs = arrayToString(singleAllocatedRooms);
-            Email.doubleRoomIDs = arrayToString(doubleAllocatedRooms);
-            Email.amountDue = callAmountDueMethod;
-        }
-
 
         private bool canBeModified(DateTime checkInDate, string bookingStatus)
         {
@@ -315,12 +262,26 @@ namespace M4_major_project
             return false;
         }
 
-        string OldBookingSummaryID = "";
-        int newBookingSummaryID = 0;
-
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             OldBookingSummaryID = GridView1.SelectedRow.Cells[0].Text;
+        }
+
+        private void UpdateBooking(string callNewBookingAmoundDue)
+        {
+            UpdateOldBookingStatusToModified(int.Parse(OldBookingSummaryID));
+            ProcessModifiedBookingRefund();    //adds a negative payment record == oldBookingAmountDue 
+            paymentTa.Insert(newBookingSummaryID, "EFT", DateTime.Today, callNewBookingAmoundDue);
+            UpdateNewBookingStatusToComplete();
+
+            //MessageBox.Show("Booking Has Been Successfully Updated", "Customer Message"); //could be changed to showing all bookind details or something like an invoice 
+            // with all necessary details including the new customer booking reference.
+            this.paymentTa.Update(fullDs.Payment);
+            this.paymentTa.Fill(fullDs.Payment);
+            this.bookingSummaryTa.Fill(this.fullDs.BookingSummary);
+            this.bookingSummaryTa.Update(this.fullDs.BookingSummary);
+            this.bookedRoomTa.Update(this.fullDs.BookedRoom);
+            this.bookedRoomTa.Fill(this.fullDs.BookedRoom);
         }
 
         protected void saveBookingButton_Click(object sender, EventArgs e)
@@ -345,6 +306,7 @@ namespace M4_major_project
             m.ShowDialog(); 
             */
         }
+
 
         private void CaptureNEWBookingRecord(string callAmountDueMethod)  //this method does not capture payment records
         {
@@ -406,18 +368,6 @@ namespace M4_major_project
             Email.oldBookingID = OldBookingSummaryID;
             Email.oldBookingAmountDue = getOldBookingAmountDue(int.Parse(OldBookingSummaryID)).ToString();
         }
-        private void UpdateOldBookingStatusToModified(int summaryID)
-        {
-            for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
-            {
-                if (fullDs.BookingSummary[i].summaryID == summaryID)    //this is also used to capture the that was paid for this booking
-                {
-                    fullDs.BookingSummary[i].bookingStatus = "Modified";
-                }
-            }
-            bookingSummaryTa.Update(fullDs.BookingSummary);
-            bookingSummaryTa.Fill(fullDs.BookingSummary);
-        }
 
         private decimal getOldBookingAmountDue(int summaryID)
         {
@@ -447,6 +397,19 @@ namespace M4_major_project
             paymentTa.Fill(fullDs.Payment);
         }
 
+        private void UpdateOldBookingStatusToModified(int summaryID)
+        {
+            for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
+            {
+                if (fullDs.BookingSummary[i].summaryID == summaryID)    //this is also used to capture the that was paid for this booking
+                {
+                    fullDs.BookingSummary[i].bookingStatus = "Modified";
+                }
+            }
+            bookingSummaryTa.Update(fullDs.BookingSummary);
+            bookingSummaryTa.Fill(fullDs.BookingSummary);
+        }
+
         private void UpdateNewBookingStatusToComplete()
         {
             for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
@@ -458,25 +421,9 @@ namespace M4_major_project
                 }
 
             }
+
             bookingSummaryTa.Update(fullDs.BookingSummary);
             bookingSummaryTa.Fill(fullDs.BookingSummary);
-        }
-
-        private void UpdateBooking(string callNewBookingAmoundDue)
-        {
-            UpdateOldBookingStatusToModified(int.Parse(OldBookingSummaryID));
-            ProcessModifiedBookingRefund();    //adds a negative payment record == oldBookingAmountDue 
-            paymentTa.Insert(newBookingSummaryID, "EFT", DateTime.Today, callNewBookingAmoundDue);
-            UpdateNewBookingStatusToComplete();
-
-            //MessageBox.Show("Booking Has Been Successfully Updated", "Customer Message"); //could be changed to showing all bookind details or something like an invoice 
-            // with all necessary details including the new customer booking reference.
-            this.paymentTa.Update(fullDs.Payment);
-            this.paymentTa.Fill(fullDs.Payment);
-            this.bookingSummaryTa.Fill(this.fullDs.BookingSummary);
-            this.bookingSummaryTa.Update(this.fullDs.BookingSummary);
-            this.bookedRoomTa.Update(this.fullDs.BookedRoom);
-            this.bookedRoomTa.Fill(this.fullDs.BookedRoom);
         }
     }
 }
