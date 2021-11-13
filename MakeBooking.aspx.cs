@@ -21,11 +21,9 @@ namespace M4_major_project
             if (dateIn.ToString().Equals(dateOut.ToString()))
                 dateOut.AddDays(1);
             
-            updateAvailableRoomList();
-            //loadAvailableSingles(singleDDList);
-            //loadAvailableDoubles(doubleDDList);
-           
+            updateAvailableRoomList();         
         }
+
         protected void dateInCalender_SelectionChanged(object sender, EventArgs e)
         {
             dateIn = dateInCalender.SelectedDate;
@@ -33,6 +31,7 @@ namespace M4_major_project
             updateAvailableRoomList();
             loadAvailableSingles(singleDDList);
             loadAvailableDoubles(doubleDDList);
+            amountDueTextBox.Text = "";
         }
 
         protected void dateOutCalender_SelectionChanged(object sender, EventArgs e)
@@ -42,6 +41,7 @@ namespace M4_major_project
             updateAvailableRoomList();
             loadAvailableSingles(singleDDList);
             loadAvailableDoubles(doubleDDList);
+            amountDueTextBox.Text = "";
         }
         protected void singleDDList_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -73,15 +73,10 @@ namespace M4_major_project
             }
         }
 
-        protected void saveBookingButton_Click(object sender, EventArgs e)
-        {
-            updateBookingSummary(getAmountDue(singleDDList, doubleDDList));
-        }
-
         //User Input fields
         string currentCustomerEmailID = CurrentUser.getEmailID();
-        DateTime dateIn; // = DateTime.Today;
-        DateTime dateOut; // = DateTime.Today.AddDays(1);
+        DateTime dateIn; 
+        DateTime dateOut; 
         int numberOfNights;
         string bookingMethod = "Online";
         string bookingStatus = "inComplete";
@@ -90,14 +85,13 @@ namespace M4_major_project
         ArrayList availableSingleRooms = new ArrayList();
         ArrayList availableDoubleRooms = new ArrayList();
 
-        int numberOfSingleRoomsSelected = 0; //refers to user selected number of single rooms, or booked rooms
-        int numberOfDoubleRoomsSelected = 0; //refers to user selected number of double rooms, or booked rooms
+        int numberOfSingleRoomsSelected = 0;
+        int numberOfDoubleRoomsSelected = 0; 
 
         //Database fields
         FullDataSet fullDs = new FullDataSet();
         FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
         FullDataSetTableAdapters.BookedRoomTableAdapter bookedRoomTa = new FullDataSetTableAdapters.BookedRoomTableAdapter();
-        //FullDataSetTableAdapters.PaymentTableAdapter paymentTa = new FullDataSetTableAdapters.PaymentTableAdapter();
 
         private bool bookingIsComplete(string summaryID)    //now working correctly, fully tested
         {
@@ -225,15 +219,18 @@ namespace M4_major_project
             return s;
         }
 
+        protected void saveBookingButton_Click(object sender, EventArgs e)
+        {
+            updateBookingSummary(getAmountDue(singleDDList, doubleDDList));
+        }
+
         private void updateBookingSummary(string callAmountDueMethod)
         {
             int[] singleAllocatedRooms = new int[numberOfSingleRoomsSelected];
             int[] doubleAllocatedRooms = new int[numberOfDoubleRoomsSelected];
 
             bookingSummaryTa.Insert(currentCustomerEmailID, dateIn, dateOut, numberOfNights, bookingMethod, bookingStatus, callAmountDueMethod);
-            int summaryID = (int)bookingSummaryTa.getLastRecord();  //NB current last summaryID = 10677
-            int summaryIDScalar = (int)bookingSummaryTa.ScalarQuery();
-            //int summaryID = fullDs.BookingSummary[fullDs.BookingSummary.Rows.Count].summaryID;  
+            int summaryID = (int)bookingSummaryTa.getLastRecord();  //NB current last summaryID = 10696
             currentBooking.setSummaryID(summaryID);
 
             for (int i = 0; i < numberOfSingleRoomsSelected; i++) //adding single rooms to bookedRoom table
@@ -260,6 +257,7 @@ namespace M4_major_project
             this.bookingSummaryTa.Update(this.fullDs.BookingSummary);
             this.bookingSummaryTa.Fill(this.fullDs.BookingSummary);
 
+
             //These initailizes the invoice fields
             for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
             {
@@ -275,14 +273,13 @@ namespace M4_major_project
             Email.bookingStatus = bookingStatus;
             Email.bookingMethod = bookingMethod;
             Email.dateIn = dateIn.ToString("dd/MM/yyyy") + " 12:00 PM";
-            Email.dateOut = dateOut.ToString("dd/MM/yyyy") + " 12:00 PM";
+            Email.dateOut = dateOut.ToString("dd/MM/yyyy") + " 11:00 AM";
             Email.numberOfNights = numberOfNights.ToString();
             Email.numberOfSingles = singleAllocatedRooms.Length.ToString();
             Email.numberOfDoubles = doubleAllocatedRooms.Length.ToString();
             Email.singleRoomIDs = arrayToString(singleAllocatedRooms);
             Email.doubleRoomIDs = arrayToString(doubleAllocatedRooms);
             Email.amountDue = callAmountDueMethod;
-
         }
 
 
