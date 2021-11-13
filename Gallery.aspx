@@ -8,7 +8,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <div class="container">
         <br />
-        <h2>Gallery</h2>
+        <div><h2>Gallery</h2></div>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
             <ol class="carousel-indicators">
@@ -27,7 +27,7 @@
             <div class="carousel-inner">
 
                 <div class="item">
-                    <img src="Images/d71fb818-5a90-428b-aaaf-4c97130c5e4b.jpg" alt="New york" style="width: 100%;">
+                    <img src="Images/bath.jpg" alt="New york" style="width: 100%;">
                 </div>
 
                 <div class="item active">
@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="item">
-                    <img src="Images/SterlingsGarden.jpg" alt="New york" style="width: 100%;">
+                    <img src="Images/suite.jpg" alt="New york" style="width: 100%;">
                 </div>
 
                 <div class="item">
@@ -59,7 +59,7 @@
                 </div>
 
                 <div class="item">
-                    <img src="Images/mass.jpg" alt="New york" style="width: 100%;">
+                    <img src="Images/double.jpg" alt="New york" style="width: 100%;">
                 </div>
 
                 <div class="item">
