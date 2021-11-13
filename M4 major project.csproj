@@ -201,6 +201,7 @@
     <Content Include="Images\SterlingsGarden.jpg" />
     <Content Include="Images\suite.jpg" />
     <Content Include="Images\WhatsApp Image 2021-09-05 at 19.21.54.jpeg" />
+    <Content Include="Invoice.aspx" />
     <Content Include="Manager.aspx" />
     <Content Include="mangerStyle.css" />
     <Content Include="ModifyBooking.aspx" />
@@ -354,6 +355,13 @@
     </Compile>
     <Compile Include="Help.aspx.designer.cs">
       <DependentUpon>Help.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice.aspx.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Invoice.aspx.designer.cs">
+      <DependentUpon>Invoice.aspx</DependentUpon>
     </Compile>
     <Compile Include="OTP.aspx.cs">
       <DependentUpon>OTP.aspx</DependentUpon>
