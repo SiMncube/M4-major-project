@@ -47,11 +47,11 @@
                 </div>
 
                 <div class="item">
-                    <img src="Images/6705d34b-5c7c-4e7c-96a0-febdc16c43a0.jpg" alt="New york" style="width: 100%;">
+                    <img src="Images/lux.jpg" alt="New york" style="width: 100%;">
                 </div>
 
                 <div class="item">
-                    <img src="Images/Beach.jpg" alt="New york" style="width: 100%;">
+                    <img src="Images/luxx.jpg" alt="New york" style="width: 100%;">
                 </div>
 
                 <div class="item">
