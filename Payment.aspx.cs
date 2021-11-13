@@ -104,7 +104,7 @@ namespace M4_major_project
                 FullDataSet fullDs = new FullDataSet();
                 FullDataSetTableAdapters.PaymentTableAdapter paymentTa = new FullDataSetTableAdapters.PaymentTableAdapter();
                 paymentTa.Fill(fullDs.Payment);
-                paymentTa.Insert(currentBooking.getSummaryID(), getAmountDue(), DateTime.Now, "Credit card");
+                paymentTa.Insert(currentBooking.getSummaryID(), "Credit card", DateTime.Now, getAmountDue());
                 updateBookedRoom();
                 updateBookingStatus();
                 Email.bookingStatus = "Complete";  //added by Sihle
