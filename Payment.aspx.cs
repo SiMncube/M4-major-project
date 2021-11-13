@@ -9,52 +9,15 @@ namespace M4_major_project
 {
     public partial class Payment : System.Web.UI.Page
     {
-      
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-        }
-
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            FullDataSet fullDs = new FullDataSet();
-            FullDataSetTableAdapters.BookingSummaryTableAdapter taBooking = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
-            taBooking.Fill(fullDs.BookingSummary);
-            FullDataSetTableAdapters.PaymentTableAdapter taPayment = new FullDataSetTableAdapters.PaymentTableAdapter();
-           
-
-
-            if (checkCardHoldersName() && checkCardNumber() && checkCVV())
-            {
-                taPayment.Insert(currentBooking.getSummaryID(), "Credit", DateTime.Today, getAmountDue());
-                taPayment.Fill(fullDs.Payment);
-                Response.Write("<script language='javascript'>window.alert('Your Payment Was Successful');window.location='Default.aspx';</script>");
-                Email.sendInvoice();
-            }
-
-            if (!checkCardHoldersName())
-            {
-                this.Label4.Visible = true;
-            }
-            if (!checkCardNumber())
-            {
-                this.Label5.Visible = true;
-            }
-            if (!checkCVV())
-            {
-                this.Label6.Visible = true;
-            }
-
-           
-            
 
         }
-
-        public string getAmountDue()
+        private string getAmountDue()
         {
             FullDataSet fullDs = new FullDataSet();
-            FullDataSetTableAdapters.BookingSummaryTableAdapter taBooking = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
-            taBooking.Fill(fullDs.BookingSummary);
+            FullDataSetTableAdapters.BookingSummaryTableAdapter taBookingSummary = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            taBookingSummary.Fill(fullDs.BookingSummary);
             for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
             {
                 if (fullDs.BookingSummary[i].summaryID == currentBooking.getSummaryID())
@@ -62,54 +25,160 @@ namespace M4_major_project
             }
             return "";
         }
-
-        public bool checkCardHoldersName()
+        private string getSurname()
         {
-            FullDataSet fullDs = new FullDataSet();
-            FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
-            taCustomer.Fill(fullDs.Customer);
-            string e = "";
-            for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
+            int startIndex = 0;
+            for (int i = 0; i < holderNameTextBox.Text.Length; i++)
             {
-
-                e = fullDs.Customer[i].name + fullDs.Customer[i].surname;
-                if(e == TextBox1.Text.Trim())
+                if (holderNameTextBox.Text[i] == ' ')
                 {
-                    return true;
+                    startIndex = i + 1;
+                    break;
                 }
-                    
             }
-            return false;
+            return holderNameTextBox.Text.Substring(startIndex).Trim();
         }
-
-        public bool checkCardNumber()
+        private bool isLetter(char c)
         {
-            if (TextBox2.Text.Length == 16)
-            {
+            if (c >= 'a' && c <= 'z' || c == ' ')
                 return true;
-            }
             return false;
         }
-
-        public bool checkCVV()
+        private bool isAllLetters(string s)
         {
-            if(TextBox3.Text.Length == 3)
+            s = s.ToLower();
+            for (int i = 0; i < s.Length; i++)
             {
-                return true;
+                if (!isLetter(s[i]))
+                    return false;
             }
+            return true;
+        }
+        private bool nameIsValid()
+        {
+            if (isAllLetters(holderNameTextBox.Text) && holderNameTextBox.Text.Length > 3)
+                return true;
+            holderNameTextBox.BackColor = System.Drawing.Color.Red;
             return false;
         }
+        private bool cardNumberIsValid()
+        {
+            if (cardNumberTextBox.Text.Length == 16)
+                return true;
+            cardNumberTextBox.BackColor = System.Drawing.Color.Red;
+            return false;
+        }
+        private bool cvvIsValid()
+        {
+            if (cvvTextbox.Text.Length == 3)
+                return true;
+            cvvTextbox.BackColor = System.Drawing.Color.Red;
+            return false;
+        }
+        private bool dateIsSelected()
+        {
+            
+            if (!monthComboBox.Items[monthComboBox.SelectedIndex].Text.Equals("Month:") && !yearComboBox.Items[yearComboBox.SelectedIndex].Text.Equals("Year:"))
+               return true;
+            return false;
+        }
+        private bool creditDetailsValid()
+        {
+            int count = 0;
+            if (!nameIsValid())
+                count++;
+            if (!cardNumberIsValid())
+                count++;
+            if (!cvvIsValid())
+                count++;
+            if (!dateIsSelected())
+                count++;
+            return count == 0;
+        }
 
-        protected void Button3_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+            if (creditDetailsValid())
+            {
+                FullDataSet fullDs = new FullDataSet();
+                FullDataSetTableAdapters.PaymentTableAdapter paymentTa = new FullDataSetTableAdapters.PaymentTableAdapter();
+                paymentTa.Fill(fullDs.Payment);
+                paymentTa.Insert(currentBooking.getSummaryID(), "Credit card", DateTime.Now, getAmountDue());
+                updateBookedRoom();
+                updateBookingStatus();
+                Email.bookingStatus = "Complete";  //added by Sihle
+                Email.sendInvoice();               //added by Sihle
+            }
+        }
+        private DateTime GetDateIn()
         {
             FullDataSet fullDs = new FullDataSet();
-            FullDataSetTableAdapters.BookingSummaryTableAdapter taBooking = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
-            taBooking.Fill(fullDs.BookingSummary);
-            FullDataSetTableAdapters.PaymentTableAdapter taPayment = new FullDataSetTableAdapters.PaymentTableAdapter();
-            taPayment.Insert(currentBooking.getSummaryID(), "EFT", DateTime.Today, getAmountDue());
-            taPayment.Fill(fullDs.Payment);
-            Response.Write("<script language='javascript'>window.alert('Your Payment Was Successful');window.location='Default.aspx';</script>");
-            Email.sendInvoice();
+            FullDataSetTableAdapters.BookingSummaryTableAdapter taBookingSummary = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            taBookingSummary.Fill(fullDs.BookingSummary);
+            DateTime dateIn = DateTime.Today;
+            for (int i = fullDs.BookingSummary.Rows.Count - 1; i >= 0; i--)
+            {
+                if (fullDs.BookingSummary[i].summaryID == currentBooking.getSummaryID())
+                {
+                    dateIn = fullDs.BookingSummary[i].dateIn;
+                    break;
+                }
+            }
+            return dateIn;
+        }
+        private DateTime GetDateOut()
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingSummaryTableAdapter taBookingSummary = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            taBookingSummary.Fill(fullDs.BookingSummary);
+            DateTime dateOut = DateTime.Today;
+            for (int i = fullDs.BookingSummary.Rows.Count - 1; i >= 0; i--)
+            {
+                if (fullDs.BookingSummary[i].summaryID == currentBooking.getSummaryID())
+                {
+                    dateOut = fullDs.BookingSummary[i].dateOut;
+                }
+            }
+            return dateOut;
+        }
+        private void updateBookedRoom()
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookedRoomTableAdapter bookedRoomTa = new FullDataSetTableAdapters.BookedRoomTableAdapter();
+            bookedRoomTa.Fill(fullDs.BookedRoom);
+            int[] rooms = currentBooking.getRoomIDs();
+            if (rooms[0] != -1)
+            {
+                for (int i = 0; i < rooms.Length; i++)
+                {
+                    for (DateTime dateID = GetDateIn(); DateTime.Compare(dateID, GetDateOut()) < 0; dateID = dateID.AddDays(1))
+                    {
+                        bookedRoomTa.Insert(dateID, currentBooking.getSummaryID(), rooms[i]);
+                    }
+                }
+                bookedRoomTa.Update(fullDs.BookedRoom);
+                bookedRoomTa.Fill(fullDs.BookedRoom);
+            }
+        }
+        private void updateBookingStatus()
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            bookingSummaryTa.Fill(fullDs.BookingSummary);
+            int[] rooms = currentBooking.getRoomIDs();
+            if (rooms[0] != -1)
+            {
+                for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
+                {
+                    if (fullDs.BookingSummary[i].summaryID == currentBooking.getSummaryID())
+                    {
+                        fullDs.BookingSummary[i].bookingStatus = "Complete";
+                        bookingSummaryTa.Update(fullDs.BookingSummary);
+                        bookingSummaryTa.Fill(fullDs.BookingSummary);
+                    }
+                }
+            }
         }
     }
 }

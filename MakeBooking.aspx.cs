@@ -222,6 +222,7 @@ namespace M4_major_project
         protected void saveBookingButton_Click(object sender, EventArgs e)
         {
             updateBookingSummary(getAmountDue(singleDDList, doubleDDList));
+            Response.Redirect("/Payment");
         }
 
         private void updateBookingSummary(string callAmountDueMethod)

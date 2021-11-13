@@ -206,6 +206,7 @@
     <Content Include="ModifyBooking.aspx" />
     <Content Include="MakeBooking.aspx" />
     <Content Include="OTP.aspx" />
+    <Content Include="Payment.aspx" />
     <Content Include="ViewBooking.aspx" />
     <Content Include="WebForm3.aspx" />
     <Content Include="TestingWebForm.aspx" />
@@ -238,7 +239,6 @@
     <Content Include="loginStyle.css" />
     <Content Include="MasterStyle.css" />
     <Content Include="MonthAndYearReport.aspx" />
-    <Content Include="Payment.aspx" />
     <Content Include="PaymentReport.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="registerStyle.css" />
@@ -362,6 +362,13 @@
     <Compile Include="OTP.aspx.designer.cs">
       <DependentUpon>OTP.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PaymentReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -440,13 +447,6 @@
     </Compile>
     <Compile Include="MonthAndYearReport.aspx.designer.cs">
       <DependentUpon>MonthAndYearReport.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Payment.aspx.cs">
-      <DependentUpon>Payment.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Payment.aspx.designer.cs">
-      <DependentUpon>Payment.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaymentReport.aspx.cs">
       <DependentUpon>PaymentReport.aspx</DependentUpon>
