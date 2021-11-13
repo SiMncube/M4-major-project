@@ -42,28 +42,45 @@
                 </div>
             </div>
             <br />
-            <br />
             <div class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px">
-                <div class="form-group">
-                    <asp:Label ID="Label1" runat="server" Text="Enter Email, Name, Surname, or ID"></asp:Label>
-                    <asp:TextBox ID="adminTextBox" runat="server" class="form-control" placeholder="Enter Email, Name, Surname, or ID" Width="100%" OnTextChanged="adminTextBox_TextChanged"></asp:TextBox>
-                </div>
                 <div class="col-md-12 text-center">
-                    <asp:Button class="btn btn-primary pull-center" ID="Button2" runat="server" Text="Search" Width="210px" OnClick="Button2_Click" />
+                    Search Customer Username:
+                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="emailID" DataValueField="emailID" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:group7ConnectionString %>" SelectCommand="SELECT [emailID] FROM [Customer]"></asp:SqlDataSource>
                 </div>
                 <br />
                 <br />
                 <br />
+                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="emailID" DataSourceID="SqlDataSource3">
+                    <Columns>
+                        <asp:BoundField DataField="emailID" HeaderText="emailID" ReadOnly="True" SortExpression="emailID"></asp:BoundField>
+                        <asp:BoundField DataField="name" HeaderText="name" SortExpression="name"></asp:BoundField>
+                        <asp:BoundField DataField="surname" HeaderText="surname" SortExpression="surname"></asp:BoundField>
+                        <asp:BoundField DataField="idNumber" HeaderText="idNumber" SortExpression="idNumber"></asp:BoundField>
+                        <asp:BoundField DataField="cellNumber" HeaderText="cellNumber" SortExpression="cellNumber"></asp:BoundField>
+                        <asp:BoundField DataField="password" HeaderText="password" SortExpression="password"></asp:BoundField>
+                        <asp:BoundField DataField="streetName" HeaderText="streetName" SortExpression="streetName"></asp:BoundField>
+                        <asp:BoundField DataField="suburb" HeaderText="suburb" SortExpression="suburb"></asp:BoundField>
+                        <asp:BoundField DataField="city" HeaderText="city" SortExpression="city"></asp:BoundField>
+                        <asp:BoundField DataField="postalCode" HeaderText="postalCode" SortExpression="postalCode"></asp:BoundField>
+                    </Columns>
+                </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:group7ConnectionString %>" SelectCommand="SELECT * FROM [Customer]"></asp:SqlDataSource>
                 <br />
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:group7ConnectionString %>" SelectCommand="SELECT [emailID], [surname], [name], [idNumber], [cellNumber], [streetName], [suburb], [city], [postalCode] FROM [Customer]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:group7ConnectionString %>" SelectCommand="SELECT * FROM [Customer] WHERE ([emailID] = @emailID)" OldValuesParameterFormatString="original_{0}">
+                    <SelectParameters>
+                        <asp:ControlParameter ControlID="DropDownList1" Name="emailID" PropertyName="SelectedValue" Type="String" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
                 <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="emailID" DataSourceID="SqlDataSource1" Width="100%" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                     <Columns>
-                        <asp:CommandField ShowSelectButton="True" />
                         <asp:BoundField DataField="emailID" HeaderText="emailID" ReadOnly="True" SortExpression="emailID" />
-                        <asp:BoundField DataField="surname" HeaderText="surname" SortExpression="surname" />
                         <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
+                        <asp:BoundField DataField="surname" HeaderText="surname" SortExpression="surname" />
                         <asp:BoundField DataField="idNumber" HeaderText="idNumber" SortExpression="idNumber" />
                         <asp:BoundField DataField="cellNumber" HeaderText="cellNumber" SortExpression="cellNumber" />
+                        <asp:BoundField DataField="password" HeaderText="password" SortExpression="password"></asp:BoundField>
                         <asp:BoundField DataField="streetName" HeaderText="streetName" SortExpression="streetName" />
                         <asp:BoundField DataField="suburb" HeaderText="suburb" SortExpression="suburb" />
                         <asp:BoundField DataField="city" HeaderText="city" SortExpression="city" />
