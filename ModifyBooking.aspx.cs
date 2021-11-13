@@ -231,37 +231,6 @@ namespace M4_major_project
             return s;
         }
 
-        private bool canBeModified(DateTime checkInDate, string bookingStatus)
-        {
-            if (DateTime.Compare(DateTime.Today, checkInDate) < 0)
-            {
-                if (bookingStatus.Equals("Complete"))  //this is the only block that should be executed for the booking to be modified.
-                    return true;
-                else if (bookingStatus.Equals("Modified"))
-                {
-                    //MessageBox.Show("A " + bookingStatus + "can not be modified", "Selection Error");
-                    return false;
-                }
-                else if (bookingStatus.Equals("Cancelled"))
-                {
-                    //MessageBox.Show("A " + bookingStatus + "can not be modified", "Selection Error");
-                    return false;
-                }
-                else if (bookingStatus.Equals("inComplete"))
-                {
-                    //MessageBox.Show("An " + bookingStatus + "can not be modified, No Payment Was Made for this booking", "Selection Error");
-                    return false;
-                }
-            }
-            else
-            {
-                //MessageBox.Show("The Selected booking can not be modified, Checking in date has already passed", "Selection Error");
-                return false;
-            }
-
-            return false;
-        }
-
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             OldBookingSummaryID = GridView1.SelectedRow.Cells[0].Text;
@@ -286,27 +255,16 @@ namespace M4_major_project
 
         protected void saveBookingButton_Click(object sender, EventArgs e)
         {
-            //updateBookingSummary(getAmountDue(singleDDList, doubleDDList));
-
             string newBookingAmountDueString = getAmountDue(singleDDList, doubleDDList);
             decimal oldBookingAmountDue = getOldBookingAmountDue(int.Parse(OldBookingSummaryID));
             decimal newBookingAmountDue = decimal.Parse(newBookingAmountDueString.Substring(2, newBookingAmountDueString.Length - 5));
             decimal finalAmountDue = newBookingAmountDue - oldBookingAmountDue;
             Email.excessOrefund = finalAmountDue;
-
-            CaptureNEWBookingRecord(newBookingAmountDueString);      //not this record is incomplete untill the admin confirms the receipt of payment
-
-            /*            
+            CaptureNEWBookingRecord(newBookingAmountDueString);      //not this record is incomplete untill the admin confirms the receipt of payment      
             int[] a = { -1, (int)finalAmountDue };
             currentBooking.setRoomIDs(a);
             UpdateBooking(newBookingAmountDueString);
-            currentBooking.setSummaryID((int)modifyBookingInnerDataGridView.CurrentRow.Cells[4].Value);
-            currentUser.setEmailID(modifyBookingInnerDataGridView.CurrentRow.Cells[0].Value.ToString());
-            ModifyConfirm m = new ModifyConfirm(finalAmountDue);
-            m.ShowDialog(); 
-            */
         }
-
 
         private void CaptureNEWBookingRecord(string callAmountDueMethod)  //this method does not capture payment records
         {
