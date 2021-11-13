@@ -95,21 +95,28 @@ namespace M4_major_project
                 count++;
             return count == 0;
         }
-
         protected void Button1_Click(object sender, EventArgs e)
         {
 
             if (creditDetailsValid())
             {
-                FullDataSet fullDs = new FullDataSet();
-                FullDataSetTableAdapters.PaymentTableAdapter paymentTa = new FullDataSetTableAdapters.PaymentTableAdapter();
-                paymentTa.Fill(fullDs.Payment);
-                paymentTa.Insert(currentBooking.getSummaryID(), "Credit card", DateTime.Now, getAmountDue());
-                updateBookedRoom();
-                updateBookingStatus();
-                Email.bookingStatus = "Complete";  //added by Sihle
-                Email.sendInvoice();               //added by Sihle
-                Response.Redirect("/Invoice");
+                if (!Email.isModify)
+                {
+                    FullDataSet fullDs = new FullDataSet();
+                    FullDataSetTableAdapters.PaymentTableAdapter paymentTa = new FullDataSetTableAdapters.PaymentTableAdapter();
+                    paymentTa.Fill(fullDs.Payment);
+                    paymentTa.Insert(currentBooking.getSummaryID(), "Credit card", DateTime.Now, getAmountDue());
+                    updateBookedRoom();
+                    updateBookingStatus();
+                    Email.bookingStatus = "Complete";  //added by Sihle
+                    Email.sendInvoice();               //added by Sihle
+                    Response.Redirect("/Invoice");
+                }
+                else
+                {
+                    UpdateBooking(Email.amountDue);  //this is the update booking for modified booking
+                }
+                
             }
         }
         private DateTime GetDateIn()
@@ -180,6 +187,91 @@ namespace M4_major_project
                     }
                 }
             }
+        }
+
+
+        //***********************************  Author @Sihle,  Modify booking specialized methods   ******************************
+        
+        /*
+         * This code is used when a user is required to make a payment if the 
+         * This ensures that a booking is only modified after the customer has paid the amount required
+         * and this is the case when the when the amount the user paid on the previous booking is not enough to cover the
+         * changes the have made to the booking. i.e the new booking is more expensive then the previously made booking.
+         * Hence they are redirected to this payment page.
+         * 
+         * But other wise the everything will be finalized if the modify booking page.
+         */
+
+        //Database fields
+        FullDataSet fullDs = new FullDataSet();
+        FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+        FullDataSetTableAdapters.BookedRoomTableAdapter bookedRoomTa = new FullDataSetTableAdapters.BookedRoomTableAdapter();
+        FullDataSetTableAdapters.PaymentTableAdapter paymentTa = new FullDataSetTableAdapters.PaymentTableAdapter();
+
+
+        //modify booking special attributes
+        string OldBookingSummaryID = Email.oldBookingID;
+        int newBookingSummaryID = currentBooking.getSummaryID();
+
+        private void UpdateBooking(string callNewBookingAmoundDue)
+        {
+            UpdateOldBookingStatusToModified(int.Parse(OldBookingSummaryID));
+            ProcessModifiedBookingRefund();    //adds a negative payment record == oldBookingAmountDue 
+            paymentTa.Insert(newBookingSummaryID, "EFT", DateTime.Today, callNewBookingAmoundDue);
+            UpdateNewBookingStatusToComplete();
+
+            //MessageBox.Show("Booking Has Been Successfully Updated", "Customer Message"); //could be changed to showing all bookind details or something like an invoice 
+            // with all necessary details including the new customer booking reference.
+            this.paymentTa.Update(fullDs.Payment);
+            this.paymentTa.Fill(fullDs.Payment);
+            this.bookingSummaryTa.Fill(this.fullDs.BookingSummary);
+            this.bookingSummaryTa.Update(this.fullDs.BookingSummary);
+            this.bookedRoomTa.Update(this.fullDs.BookedRoom);
+            this.bookedRoomTa.Fill(this.fullDs.BookedRoom);
+        }
+
+        private void ProcessModifiedBookingRefund() //100% refund will be used to make the new booking
+        {
+            for (int i = 0; i < fullDs.Payment.Rows.Count; i++)
+            {
+                if (fullDs.Payment[i].summaryID.ToString() == OldBookingSummaryID)
+                {
+                    string negativePayment = "-" + fullDs.Payment[i].amountDue;
+                    paymentTa.Insert(int.Parse(OldBookingSummaryID), "Refund", DateTime.Today, negativePayment);
+                    break;
+                }
+            }
+            paymentTa.Update(fullDs.Payment);
+            paymentTa.Fill(fullDs.Payment);
+        }
+
+        private void UpdateOldBookingStatusToModified(int summaryID)
+        {
+            for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
+            {
+                if (fullDs.BookingSummary[i].summaryID == summaryID)    //this is also used to capture the that was paid for this booking
+                {
+                    fullDs.BookingSummary[i].bookingStatus = "Modified";
+                }
+            }
+            bookingSummaryTa.Update(fullDs.BookingSummary);
+            bookingSummaryTa.Fill(fullDs.BookingSummary);
+        }
+
+        private void UpdateNewBookingStatusToComplete()
+        {
+            for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
+            {
+                if (fullDs.BookingSummary[i].summaryID == newBookingSummaryID)
+                {
+                    fullDs.BookingSummary[i].bookingStatus = "Complete";
+                    break;
+                }
+
+            }
+
+            bookingSummaryTa.Update(fullDs.BookingSummary);
+            bookingSummaryTa.Fill(fullDs.BookingSummary);
         }
     }
 }

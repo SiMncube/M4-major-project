@@ -263,7 +263,23 @@ namespace M4_major_project
             CaptureNEWBookingRecord(newBookingAmountDueString);      //not this record is incomplete untill the admin confirms the receipt of payment      
             int[] a = { -1, (int)finalAmountDue };
             currentBooking.setRoomIDs(a);
-            UpdateBooking(newBookingAmountDueString);
+           
+
+            if (finalAmountDue < 0)   //WE issue a refund
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking has been successfully Modified" + "A Refund of: " + Math.Abs(finalAmountDue) +" Will be processed" + "');", true);
+                UpdateBooking(newBookingAmountDueString);
+            }
+            else if (finalAmountDue > 0)  //The customer has to add more money then, hence they should go to payment page
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Proced to checkout to pay the excess of:" + finalAmountDue +"');", true);
+                Response.Redirect("/Payment");
+            }
+            else  // it's a break even no excess or refund.
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking has been successfully Modified" + "');", true);
+                UpdateBooking(newBookingAmountDueString);
+            }
         }
 
         private void CaptureNEWBookingRecord(string callAmountDueMethod)  //this method does not capture payment records
@@ -271,6 +287,7 @@ namespace M4_major_project
             bookingSummaryTa.Insert(currentCustomerEmailID, dateIn, dateOut, numberOfNights, bookingMethod, "inComplete", callAmountDueMethod);
             int summaryID = (int)bookingSummaryTa.getLastRecord();
             newBookingSummaryID = summaryID;
+            currentBooking.setSummaryID(summaryID); //might be used in payment form. but it wasn't there in FES 
 
             int[] singleAllocatedRooms = new int[numberOfSingleRoomsSelected];
             int[] doubleAllocatedRooms = new int[numberOfDoubleRoomsSelected];
