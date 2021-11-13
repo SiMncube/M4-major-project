@@ -69,7 +69,7 @@ namespace M4_major_project
         }
         private bool isValid()
         {
-            return true;
+            return nameIsValid();
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
