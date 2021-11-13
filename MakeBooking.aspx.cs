@@ -48,15 +48,14 @@ namespace M4_major_project
             if (dateIsValid())
             {
                 amountDueTextBox.Text = getAmountDue(singleDDList, doubleDDList);
+                saveBookingButton.Enabled = true;
             }
             else
             {
+                amountDueTextBox.Text = "";
+                saveBookingButton.Enabled = false;
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Your Date Input is INVALID" + "');", true);
             }
-            //if (amountDue != 0)
-            //  saveBookingButton.Enabled = true;
-            //else
-            //saveBookingButton.Enabled = false;
         }
 
         protected void doubleDDList_SelectedIndexChanged(object sender, EventArgs e)
@@ -64,17 +63,16 @@ namespace M4_major_project
             if (dateIsValid())
             {
                 amountDueTextBox.Text = getAmountDue(singleDDList, doubleDDList);
+                saveBookingButton.Enabled = true;
             }
             else
             {
+                amountDueTextBox.Text = "";
+                saveBookingButton.Enabled = false;
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Your Date Input is INVALID" + "');", true);
             }
-
-            //if (amountDue != 0)
-            //  saveBookingButton.Enabled = true;
-            //else
-            //saveBookingButton.Enabled = false;
         }
+
         protected void saveBookingButton_Click(object sender, EventArgs e)
         {
             updateBookingSummary(getAmountDue(singleDDList, doubleDDList));
