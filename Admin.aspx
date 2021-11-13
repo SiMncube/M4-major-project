@@ -25,7 +25,7 @@
                     <li><a runat="server" href="~/Admin"><b>Modify Booikings</b></a></li>
                     <li><a runat="server" href="~/Admin"><b>Cancel Bookings</b></a></li>
                     <li><a runat="server" href="~/AdminRegister"><b>Register Customer</b></a></li>
-                    <li><a runat="server" href="~/AdminUpdate"><b>Update CustomerDetails</b></a></li>
+                    <li><a runat="server" href="~/AdminUpdate"><b>Update Customer Details</b></a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a runat="server" id="Username1" href="~/Admin"><b id="setUser" runat="server"></b></a></li>
