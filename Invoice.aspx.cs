@@ -15,7 +15,7 @@ namespace M4_major_project
                                         "<strong> Payment Method:</strong ><br>"
                                         +"Credit Card<br>"+
                                         CurrentUser.getEmailID()+
-                                         "</address>";*/
+                                         "</address>";
 
             orderDate.InnerHtml = "<address>" +
                                     "<strong> Order Date:</strong><br>" +
