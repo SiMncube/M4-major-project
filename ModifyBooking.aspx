@@ -18,6 +18,7 @@
                     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="summaryID" DataSourceID="modifyDataSource" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="694px">
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
+                            <asp:CommandField ShowSelectButton="True" />
                             <asp:BoundField DataField="summaryID" HeaderText="summaryID" InsertVisible="False" ReadOnly="True" SortExpression="summaryID" />
                             <asp:BoundField DataField="dateIn" HeaderText="dateIn" SortExpression="dateIn" />
                             <asp:BoundField DataField="dateOut" HeaderText="dateOut" SortExpression="dateOut" />

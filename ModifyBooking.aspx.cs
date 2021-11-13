@@ -30,6 +30,7 @@ namespace M4_major_project
         FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
         FullDataSetTableAdapters.BookedRoomTableAdapter bookedRoomTa = new FullDataSetTableAdapters.BookedRoomTableAdapter();
         FullDataSetTableAdapters.PaymentTableAdapter paymentTa = new FullDataSetTableAdapters.PaymentTableAdapter();
+        FullDataSetTableAdapters.CustomerTableAdapter customerTa = new FullDataSetTableAdapters.CustomerTableAdapter();
 
         //modify booking special attributes
         string OldBookingSummaryID = "";
@@ -44,6 +45,12 @@ namespace M4_major_project
 
             bookingSummaryTa.Fill(fullDs.BookingSummary);
             bookedRoomTa.Fill(fullDs.BookedRoom);
+            paymentTa.Fill(fullDs.Payment);
+            customerTa.Fill(fullDs.Customer);
+
+            bookingSummaryTa.Update(this.fullDs.BookingSummary);
+            bookedRoomTa.Update(this.fullDs.BookedRoom);
+
 
             dateIn = dateInCalender.SelectedDate;
             dateOut = dateOutCalender.SelectedDate;
@@ -323,7 +330,6 @@ namespace M4_major_project
                     Email.customerName = fullDs.Customer[i].name;
                     Email.customerSurname = fullDs.Customer[i].surname;
                     Email.customerIdNumber = fullDs.Customer[i].idNumber;
-                    break;
                 }
             }
             Email.customerEmail = currentCustomerEmailID;

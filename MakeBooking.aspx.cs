@@ -29,10 +29,15 @@ namespace M4_major_project
         FullDataSet fullDs = new FullDataSet();
         FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
         FullDataSetTableAdapters.BookedRoomTableAdapter bookedRoomTa = new FullDataSetTableAdapters.BookedRoomTableAdapter();
+        FullDataSetTableAdapters.PaymentTableAdapter paymentTa = new FullDataSetTableAdapters.PaymentTableAdapter();
+        FullDataSetTableAdapters.CustomerTableAdapter customerTa = new FullDataSetTableAdapters.CustomerTableAdapter();
+
         public void Page_Load(object sender, EventArgs e)
         {
             bookingSummaryTa.Fill(fullDs.BookingSummary);
             bookedRoomTa.Fill(fullDs.BookedRoom);
+            paymentTa.Fill(fullDs.Payment);
+            customerTa.Fill(fullDs.Customer);
 
             dateIn = dateInCalender.SelectedDate;
             dateOut = dateOutCalender.SelectedDate;
@@ -269,7 +274,6 @@ namespace M4_major_project
                     Email.customerName = fullDs.Customer[i].name;
                     Email.customerSurname = fullDs.Customer[i].surname;
                     Email.customerIdNumber = fullDs.Customer[i].idNumber;
-                    break;
                 }
             }
             Email.customerEmail = currentCustomerEmailID;
