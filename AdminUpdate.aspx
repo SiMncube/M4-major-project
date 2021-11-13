@@ -81,7 +81,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <asp:Label ID="Label2" runat="server" Text="Name" class="form-label mt-4"></asp:Label>
-                                    <asp:TextBox ID="nameTextBox" runat="server" class="form-control" placeholder="Enter name"></asp:TextBox>
+                                    <asp:TextBox ID="nameTextBox" runat="server" class="form-control" placeholder="Enter name" OnTextChanged="nameTextBox_TextChanged"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
                                     <asp:Label ID="Label3" runat="server" Text="ID Number" class="form-label mt-4"></asp:Label>
@@ -99,7 +99,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <asp:Label ID="Label5" runat="server" Text="Surname" class="form-label mt-4"></asp:Label>
-                                    <asp:TextBox ID="surnameTextBox" runat="server" class="form-control" placeholder="Enter surname"></asp:TextBox>
+                                    <asp:TextBox ID="surnameTextBox" runat="server" class="form-control" placeholder="Enter surname" OnTextChanged="surnameTextBox_TextChanged"></asp:TextBox>
                                 </div>
                                 <div class="form-group">
                                     <asp:Label ID="Label8" runat="server" Text="Cell phone" class="form-label mt-4"></asp:Label>

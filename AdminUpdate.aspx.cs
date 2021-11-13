@@ -17,6 +17,7 @@ namespace M4_major_project
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            colorBoxes();
             FullDataSet fullDs = new FullDataSet();
             FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
             taCustomer.Fill(fullDs.Customer);
@@ -119,6 +120,21 @@ namespace M4_major_project
         protected void Button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void nameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            nameTextBox.BackColor = System.Drawing.Color.White;
+        }
+
+        protected void surnameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            surnameTextBox.BackColor = System.Drawing.Color.White;
+        }
+        private void colorBoxes()
+        {
+            nameTextBox.BackColor = System.Drawing.Color.White;
+            surnameTextBox.BackColor = System.Drawing.Color.White;
         }
     }
 }
