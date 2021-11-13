@@ -325,11 +325,12 @@ namespace M4_major_project
             //These initailizes the invoice fields
             for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
             {
-                if (fullDs.Customer[i].emailID.Equals(currentCustomerEmailID))
+                if (fullDs.Customer[i].emailID.ToLower().Equals(currentCustomerEmailID.ToLower()))
                 {
                     Email.customerName = fullDs.Customer[i].name;
                     Email.customerSurname = fullDs.Customer[i].surname;
                     Email.customerIdNumber = fullDs.Customer[i].idNumber;
+                    break;
                 }
             }
             Email.customerEmail = currentCustomerEmailID;
