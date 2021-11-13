@@ -24,7 +24,6 @@ namespace M4_major_project
         {
             if (loginValid())
             {
-                check = 1;
                 ViewState["CurrentUserEmail"] = TextBox1.Text;
                 CurrentUser.setEmailID(TextBox1.Text);
                 Response.Redirect("/Default");
@@ -49,6 +48,33 @@ namespace M4_major_project
             }
             return false;
         }
+        private bool adminNameCorrect()
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.StaffTableAdapter taStaff = new FullDataSetTableAdapters.StaffTableAdapter();
+            taStaff.Fill(fullDs.Staff);
+            for (int i = 0; i < fullDs.Staff.Rows.Count; i++)
+            {
+                if (fullDs.Staff[i].emailID.Equals(TextBox1.Text, StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+            return false;
+        }
+        private bool adminPaaswordCorrect()
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.StaffTableAdapter taStaff = new FullDataSetTableAdapters.StaffTableAdapter();
+            taStaff.Fill(fullDs.Staff);
+            for (int i = 0; i < fullDs.Staff.Rows.Count; i++)
+            {
+                if (fullDs.Staff[i].password == TextBox2.Text && fullDs.Staff[i].emailID.Equals(TextBox1.Text, StringComparison.OrdinalIgnoreCase))
+                {
+                    check = 2;
+                    return true;
+                }
+            }
+            return false;
+        }
         private bool userPasswordIsCorrect()
         {
             FullDataSet fullDs = new FullDataSet();
@@ -57,7 +83,10 @@ namespace M4_major_project
             for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
             {
                 if (fullDs.Customer[i].password == TextBox2.Text && fullDs.Customer[i].emailID.Equals(TextBox1.Text, StringComparison.OrdinalIgnoreCase))
+                {
+                    check = 1;
                     return true;
+                }
             }
             return false;
         }
