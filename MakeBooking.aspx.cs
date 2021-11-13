@@ -269,6 +269,7 @@ namespace M4_major_project
                     Email.customerName = fullDs.Customer[i].name;
                     Email.customerSurname = fullDs.Customer[i].surname;
                     Email.customerIdNumber = fullDs.Customer[i].idNumber;
+                    break;
                 }
             }
             Email.customerEmail = currentCustomerEmailID;

@@ -31,7 +31,7 @@
     		<div class="row">
     			<div class="col-xs-6">
     				<address>
-                        <strong>Biiled To</strong><br>
+                        <strong>Billed To</strong><br>
                         81 Evans Rd<br>
                         Glenwood
                         <br>
@@ -79,13 +79,13 @@
     						</thead>
     						<tbody>
     							<tr>
-    								<td>Single Room</td>
+    								<td>Single Room(s)</td>
     								<td class="text-center">R450.00</td>
     								<td class="text-center" id="numberSingles" runat="server">1</td>
     								<td class="text-right" id="totalSingles"  runat="server">R450.00</td>
     							</tr>
                                 <tr>
-        							<td>Double Room</td>
+        							<td>Double Room(s)</td>
     								<td class="text-center">R800.00</td>
     								<td class="text-center" id="numberDoubles"  runat="server">1</td>
     								<td class="text-right" id="totalDoubles"  runat="server">R800.00</td>
