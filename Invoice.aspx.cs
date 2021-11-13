@@ -11,7 +11,7 @@ namespace M4_major_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*paymentDetails.InnerHtml = "<address>"+
+            paymentDetails.InnerHtml = "<address>"+
                                         "<strong> Payment Method:</strong ><br>"
                                         +"Credit Card<br>"+
                                         CurrentUser.getEmailID()+
@@ -21,7 +21,11 @@ namespace M4_major_project
                                     "<strong> Order Date:</strong><br>" +
                                     DateTime.Now.ToString() + "</br >" +
                                     "</address> ";
-            totalBookings.InnerText = "R200";
+            updateText();
+            numberDoubles.InnerText = currentBooking.getNumberDoubles();
+            totalDoubles.InnerText = "R"+(Convert.ToInt32(currentBooking.getNumberDoubles()) * 800)+".00";
+            numberSingles.InnerText = currentBooking.getNumberSingles();
+            totalSingles.InnerText = "R" + (Convert.ToInt32(currentBooking.getNumberSingles()) * 450) + ".00";
         }
 
         protected void homeBtn_Click(object sender, EventArgs e)

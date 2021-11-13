@@ -29,19 +29,19 @@ namespace M4_major_project
         {
             roomIDs = r;
         }
-        public void NumberSingles(string n)
+        public static void NumberSingles(string n)
         {
             numberSingles = n;
         }
-        public string getNumberSingles()
+        public static string getNumberSingles()
         {
             return numberSingles;
         }
-        public void setNumberDoubles(string n)
+        public static void setNumberDoubles(string n)
         {
             numberDoubles = n;
         }
-        public string getNumberDoubles()
+        public static string getNumberDoubles()
         {
             return numberDoubles;
         }
