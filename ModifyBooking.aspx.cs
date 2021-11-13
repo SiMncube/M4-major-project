@@ -96,6 +96,7 @@ namespace M4_major_project
         FullDataSet fullDs = new FullDataSet();
         FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
         FullDataSetTableAdapters.BookedRoomTableAdapter bookedRoomTa = new FullDataSetTableAdapters.BookedRoomTableAdapter();
+        FullDataSetTableAdapters.PaymentTableAdapter paymentTa = new FullDataSetTableAdapters.PaymentTableAdapter();
 
         private bool bookingIsComplete(string summaryID)    //now working correctly, fully tested
         {
@@ -225,7 +226,22 @@ namespace M4_major_project
 
         protected void saveBookingButton_Click(object sender, EventArgs e)
         {
-            updateBookingSummary(getAmountDue(singleDDList, doubleDDList));
+            //updateBookingSummary(getAmountDue(singleDDList, doubleDDList));
+            /*
+            string newBookingAmountDueString = getAmountDue(comboBox3, comboBox4);
+            CaptureNEWBookingRecord(newBookingAmountDueString);      //not this record is incomplete untill the admin confirms the receipt of payment
+            decimal oldBookingAmountDue = getOldBookingAmountDue(int.Parse(OldBookingSummaryID));
+            decimal newBookingAmountDue = decimal.Parse(newBookingAmountDueString.Substring(2, newBookingAmountDueString.Length - 5));
+            decimal finalAmountDue = newBookingAmountDue - oldBookingAmountDue;
+            Email.excessOrefund = finalAmountDue;
+            int[] a = { -1, (int)finalAmountDue };
+            currentBooking.setRoomIDs(a);
+            UpdateBooking(newBookingAmountDueString);
+            currentBooking.setSummaryID((int)modifyBookingInnerDataGridView.CurrentRow.Cells[4].Value);
+            currentUser.setEmailID(modifyBookingInnerDataGridView.CurrentRow.Cells[0].Value.ToString());
+            ModifyConfirm m = new ModifyConfirm(finalAmountDue);
+            m.ShowDialog(); 
+            */
         }
 
         private void updateBookingSummary(string callAmountDueMethod)
@@ -285,9 +301,11 @@ namespace M4_major_project
             Email.amountDue = callAmountDueMethod;
         }
 
+        string OldBookingSummaryID;
+        int newBookingSummaryID = 0;
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            OldBookingSummaryID = GridView1.SelectedRow.Cells[0].Text;
         }
         private bool canBeModified(DateTime checkInDate, string bookingStatus)
         {
@@ -319,55 +337,16 @@ namespace M4_major_project
 
             return false;
         }
-    }
-    /*
-     string OldBookingSummaryID = "";
-        int newBookingSummaryID = 0;
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-            modifyBookingInnerTa.FillByAnythingGiven(this.fullDs.ModifyBookingInner, textBox4.Text);
-        }
-
-        
-
-        
-
-        private void modifyBookingInnerDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (canBeModified((DateTime)(modifyBookingInnerDataGridView.CurrentRow.Cells[5].Value), modifyBookingInnerDataGridView.CurrentRow.Cells[9].Value.ToString()))
-            {
-                currentCustomerEmailID = modifyBookingInnerDataGridView.CurrentRow.Cells[0].Value.ToString();
-                label36.Text = "To Modify Booking for: " + modifyBookingInnerDataGridView.CurrentRow.Cells[1].Value.ToString() + " " + modifyBookingInnerDataGridView.CurrentRow.Cells[2].Value.ToString() + " (" + modifyBookingInnerDataGridView.CurrentRow.Cells[0].Value.ToString() + " - Booking Ref: " + modifyBookingInnerDataGridView.CurrentRow.Cells[4].Value.ToString() + ")";
-                label36.Visible = true;
-                button13.Enabled = true;
-
-                OldBookingSummaryID = modifyBookingInnerDataGridView.CurrentRow.Cells[4].Value.ToString();
-            }
-            else
-            {
-                customerDataGridView.ClearSelection();
-            }
-
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            panel8.Enabled = true;
-            dateTimePicker3.Enabled = true;
-            dateTimePicker4.Enabled = true;
-        }
-
         private void CaptureNEWBookingRecord(string callAmountDueMethod)  //this method does not capture payment records
         {
             bookingSummaryTa.Insert(currentCustomerEmailID, dateIn, dateOut, numberOfNights, bookingMethod, "inComplete", callAmountDueMethod);
             int summaryID = (int)bookingSummaryTa.getLastRecord();
             newBookingSummaryID = summaryID;
 
-            int[] singleAllocatedRooms = new int[numberOfSingleRooms];
-            int[] doubleAllocatedRooms = new int[numberOfDoubleRooms];
+            int[] singleAllocatedRooms = new int[numberOfSingleRoomsSelected];
+            int[] doubleAllocatedRooms = new int[numberOfDoubleRoomsSelected];
 
-            for (int i = 0; i < numberOfSingleRooms; i++) //adding single rooms to bookedRoom table
+            for (int i = 0; i < numberOfSingleRoomsSelected; i++) //adding single rooms to bookedRoom table
             {
                 for (DateTime dateID = dateIn; DateTime.Compare(dateID, dateOut) < 0; dateID = dateID.AddDays(1))
                 {
@@ -376,7 +355,7 @@ namespace M4_major_project
                 }
             }
 
-            for (int i = 0; i < numberOfDoubleRooms; i++) //adding double rooms to bookedRoom table
+            for (int i = 0; i < numberOfDoubleRoomsSelected; i++) //adding double rooms to bookedRoom table
             {
                 for (DateTime dateID = dateIn; DateTime.Compare(dateID, dateOut) < 0; dateID = dateID.AddDays(1)) //adding double rooms to bookedRoom table
                 {
@@ -407,8 +386,8 @@ namespace M4_major_project
             Email.dateIn = dateIn.ToString("dd/MM/yyyy") + " 12:00 PM";
             Email.dateOut = dateOut.ToString("dd/MM/yyyy") + " 12:00 PM";
             Email.numberOfNights = numberOfNights.ToString();
-            Email.numberOfSingles = numberOfSingleRooms.ToString();
-            Email.numberOfDoubles = numberOfDoubleRooms.ToString();
+            Email.numberOfSingles = numberOfSingleRoomsSelected.ToString();
+            Email.numberOfDoubles = numberOfDoubleRoomsSelected.ToString();
             Email.singleRoomIDs = arrayToString(singleAllocatedRooms);
             Email.doubleRoomIDs = arrayToString(doubleAllocatedRooms);
             Email.amountDue = callAmountDueMethod;
@@ -418,7 +397,6 @@ namespace M4_major_project
             Email.oldBookingID = OldBookingSummaryID;
             Email.oldBookingAmountDue = getOldBookingAmountDue(int.Parse(OldBookingSummaryID)).ToString();
         }
-
         private void UpdateOldBookingStatusToModified(int summaryID)
         {
             for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
@@ -452,7 +430,7 @@ namespace M4_major_project
                 if (fullDs.Payment[i].summaryID.ToString() == OldBookingSummaryID)
                 {
                     string negativePayment = "-" + fullDs.Payment[i].amountDue;
-                    paymentTa.Insert(DateTime.Today, negativePayment, int.Parse(OldBookingSummaryID), "Refund");
+                    paymentTa.Insert(int.Parse(OldBookingSummaryID), "Refund", DateTime.Today, negativePayment);
                     break;
                 }
             }
@@ -479,10 +457,10 @@ namespace M4_major_project
         {
             UpdateOldBookingStatusToModified(int.Parse(OldBookingSummaryID));
             ProcessModifiedBookingRefund();    //adds a negative payment record == oldBookingAmountDue 
-            paymentTa.Insert(DateTime.Today, callNewBookingAmoundDue, newBookingSummaryID, "EFT");
+            paymentTa.Insert(newBookingSummaryID, "EFT", DateTime.Today, callNewBookingAmoundDue);
             UpdateNewBookingStatusToComplete();
 
-            MessageBox.Show("Booking Has Been Successfully Updated", "Customer Message"); //could be changed to showing all bookind details or something like an invoice 
+            //MessageBox.Show("Booking Has Been Successfully Updated", "Customer Message"); //could be changed to showing all bookind details or something like an invoice 
                                                                                           // with all necessary details including the new customer booking reference.
             this.paymentTa.Update(fullDs.Payment);
             this.paymentTa.Fill(fullDs.Payment);
@@ -491,104 +469,5 @@ namespace M4_major_project
             this.bookedRoomTa.Update(this.fullDs.BookedRoom);
             this.bookedRoomTa.Fill(this.fullDs.BookedRoom);
         }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            string newBookingAmountDueString = getAmountDue(comboBox3, comboBox4);
-            CaptureNEWBookingRecord(newBookingAmountDueString);      //not this record is incomplete untill the admin confirms the receipt of payment
-            decimal oldBookingAmountDue = getOldBookingAmountDue(int.Parse(OldBookingSummaryID));
-            decimal newBookingAmountDue = decimal.Parse(newBookingAmountDueString.Substring(2, newBookingAmountDueString.Length - 5));
-            decimal finalAmountDue = newBookingAmountDue - oldBookingAmountDue;
-            Email.excessOrefund = finalAmountDue;
-            int[] a = { -1, (int)finalAmountDue };
-            currentBooking.setRoomIDs(a);
-            UpdateBooking(newBookingAmountDueString);
-            currentBooking.setSummaryID((int)modifyBookingInnerDataGridView.CurrentRow.Cells[4].Value);
-            currentUser.setEmailID(modifyBookingInnerDataGridView.CurrentRow.Cells[0].Value.ToString());
-            ModifyConfirm m = new ModifyConfirm(finalAmountDue);
-            m.ShowDialog(); 
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            customerDataGridView.ClearSelection();
-
-            textBox4.Clear();
-            textBox6.Clear();
-            label36.Visible = false;
-            label39.Visible = false;
-            panel8.Enabled = false;
-            button13.Enabled = false;
-
-            dateTimePicker3.Value = DateTime.Today;
-            dateTimePicker4.Value = DateTime.Today;
-
-            bookingSummaryTa.Fill(fullDs.BookingSummary);
-            bookedRoomTa.Fill(fullDs.BookedRoom);
-        }
-
-        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
-        {
-            dateIn = dateTimePicker3.Value.Date;
-            dateOut = dateTimePicker4.Value.Date;
-            if (dateIsValid())
-            {
-                label39.Visible = false;
-                comboBox3.Enabled = true;
-                comboBox4.Enabled = true;
-                updateAvailableRoomList();
-                loadAvailableSinlges(comboBox3);
-                loadAvailableDoubles(comboBox4);
-            }
-            else
-            {
-                label39.Visible = true;
-                comboBox3.Enabled = false;
-                comboBox4.Enabled = false;
-            }
-        }
-
-        private void dateTimePicker4_ValueChanged(object sender, EventArgs e)
-        {
-            dateIn = dateTimePicker3.Value.Date;
-            dateOut = dateTimePicker4.Value.Date;
-            label39.Visible = false;
-            if (dateIsValid())
-            {
-                label39.Visible = false;
-                comboBox3.Enabled = true;
-                comboBox4.Enabled = true;
-                updateAvailableRoomList();
-                loadAvailableSinlges(comboBox3);
-                loadAvailableDoubles(comboBox4);
-            }
-            else
-            {
-                label39.Visible = true;
-                comboBox3.Enabled = false;
-                comboBox4.Enabled = false;
-            }
-        }
-
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            textBox6.Text = getAmountDue(comboBox3, comboBox4).ToString();
-            numberOfSingleRooms = int.Parse(comboBox3.SelectedItem.ToString());
-            if (amountDue != 0)
-                button14.Enabled = true;
-            else
-                button14.Enabled = false;
-        }
-
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            textBox6.Text = getAmountDue(comboBox3, comboBox4).ToString();
-            numberOfDoubleRooms = int.Parse(comboBox4.SelectedItem.ToString());
-            if (amountDue != 0)
-                button14.Enabled = true;
-            else
-                button14.Enabled = false;
-        }
-
-    */
+    }
 }
