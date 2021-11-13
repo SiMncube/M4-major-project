@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -70,7 +71,140 @@ namespace M4_major_project
                 random += temp[i] + "-";
 
             return random.Substring(0, 11);
-
+        }
+        private bool isDigit(char ch)
+        {
+            if (ch >= '0' && ch <= '9')
+                return true;
+            return false;
+        }
+        private bool isAllDigit(string s)
+        {
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (!isDigit(s[i]))
+                    return false;
+            }
+            return true;
+        }
+        private bool isLetter(char c)
+        {
+            if (c >= 'a' && c <= 'z')
+                return true;
+            return false;
+        }
+        private bool isAllLetters(string s)
+        {
+            s = s.ToLower();
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (!isLetter(s[i]))
+                    return false;
+            }
+            return true;
+        }
+        private bool nameIsValid()
+        {
+            int count = 0;
+            if (!isAllLetters(nameTextBox.Text) || nameTextBox.Text.Length < 3)
+            {
+                nameTextBox.BackColor = System.Drawing.Color.Red;
+                count++;
+            }
+            if (!isAllLetters(surnameTextBox.Text) || surnameTextBox.Text.Length < 3)
+            {
+                surnameTextBox.BackColor = System.Drawing.Color.Red;
+                count++;
+            }
+            return count == 0;
+        }
+        private bool AddrressIsValid()
+        {
+            if (!isAllDigit(postalTextBox.Text) || postalTextBox.Text.Length != 4)
+            {
+                postalTextBox.BackColor = System.Drawing.Color.Red;
+                return false;
+            }
+            return true;
+        }
+        private bool IdIsValid()
+        {
+            if (!isAllDigit(idTextBox.Text) || idTextBox.Text.Length != 13)
+            {
+                idTextBox.BackColor = System.Drawing.Color.Red;
+                return false;
+            }
+            return true;
+        }
+        private bool CellNumberisValid()
+        {
+            if (!isAllDigit(cellTextBox.Text) || cellTextBox.Text.Length != 10)
+            {
+                cellTextBox.BackColor = System.Drawing.Color.Red;
+                return false;
+            }
+            return true;
+        }
+        private bool isValid()
+        {
+            int count = 0;
+            if (!nameIsValid())
+                count++;
+            if (!AddrressIsValid())
+                count++;
+            if (!CellNumberisValid())
+                count++;
+            if (!IdIsValid())
+                count++;
+            return count == 0;
+        }
+        private bool EmailISValid()
+        {
+            if (emailTextBox.Text != null)
+            {
+                EmailAddressAttribute email = new EmailAddressAttribute();
+                if (!email.IsValid(emailTextBox.Text))
+                {
+                    emailTextBox.BackColor = System.Drawing.Color.Red;
+                    return false;
+                }
+                if (EmailIsRegistred())
+                {
+                    emailTextBox.BackColor = System.Drawing.Color.Red;
+                    return false;
+                }
+                return true;
+            }
+            emailTextBox.BackColor = System.Drawing.Color.Red;
+            return false;
+        }
+        private bool EmailIsRegistred()
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
+            taCustomer.Fill(fullDs.Customer);
+            for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
+            {
+                if (fullDs.Customer[i].emailID.Equals(emailTextBox.Text, StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+            return false;
+        }
+        private bool PasswordIsValid()
+        {
+            if (passwordTextBox.Text != confirmTextBox.Text)
+            {
+                passwordTextBox.BackColor = System.Drawing.Color.Red;
+                confirmTextBox.BackColor = System.Drawing.Color.Red;
+                return false;
+            }
+            if (passwordTextBox.Text.Length < 8)
+            {
+                passwordTextBox.BackColor = System.Drawing.Color.Red;
+                confirmTextBox.BackColor = System.Drawing.Color.Red;
+                return false;
+            }
+            return true;
         }
     }
 }
