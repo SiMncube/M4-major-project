@@ -17,9 +17,7 @@
                             <div class="col-xs-12">
                                 <div class="form-group">
                                     <label>CARD NUMBER</label>
-                                    <div class="input-group">
-                                        <input type="tel" class="form-control" placeholder="Valid Card Number" />
-                                    </div>
+                                    <input type="tel" class="form-control" placeholder="Valid Card Number" />
                                 </div>
                             </div>
                         </div>
@@ -38,7 +36,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-10">
+                            <div class="col-xs-12">
                                 <div class="form-group">
                                     <label>CARD OWNER</label>
                                     <input type="text" class="form-control" placeholder="Card Owner Names" />
@@ -50,7 +48,7 @@
                 <div class="panel-footer">
                     <div class="row">
                         <div class="col-xs-12">
-                            <asp:Button ID="Button1" class="btn btn-primary pull-center" runat="server" Text="Process payment" style="background-color: #008cba"/>
+                            <asp:Button ID="Button1" class="btn btn-primary pull-center" runat="server" Text="Process payment" style="background-color: #008cba" Width="810px"/>
                         </div>
                     </div>
                 </div>
