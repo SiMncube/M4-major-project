@@ -24,22 +24,40 @@ namespace M4_major_project
         protected global::System.Web.UI.WebControls.TextBox cardNumberTextBox;
 
         /// <summary>
-        /// expireTextBox control.
+        /// monthComboBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox expireTextBox;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect monthComboBox;
 
         /// <summary>
-        /// TextBox1 control.
+        /// yearComboBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect yearComboBox;
+
+        /// <summary>
+        /// cvvTextbox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox cvvTextbox;
+
+        /// <summary>
+        /// holderNameTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox holderNameTextBox;
 
         /// <summary>
         /// Button1 control.
