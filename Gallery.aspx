@@ -27,43 +27,43 @@
             <div class="carousel-inner">
 
                 <div class="item">
-                    <img src="Images/d71fb818-5a90-428b-aaaf-4c97130c5e4b.jpg" alt="New york" style="width: 100%;">
+                    <img src="Images/bath.jpg" alt="New york" style="width: 100%;">
                 </div>
 
                 <div class="item active">
-                    <img src="Images/001df72d-e0e2-456c-87ba-314760081f2b.jpg" style="width: 100%;" />
+                    <img src="Images/foxcroft.jpg" style="width: 100%;" />
                 </div>
 
                 <div class="item">
-                    <img src="Images/BeachLight.jpg" alt="Chicago" style="width: 100%;">
+                    <img src="Images/starlings-cafe.jpg" alt="Chicago" style="width: 100%;">
                 </div>
 
                 <div class="item">
-                    <img src="Images/d71fb818-5a90-428b-aaaf-4c97130c5e4b.jpg" alt="New york" style="width: 100%;">
+                    <img src="Images/suite.jpg" alt="New york" style="width: 100%;">
                 </div>
 
                 <div class="item">
-                    <img src="Images/Fishing.jpg" alt="New york" style="width: 100%;">
+                    <img src="Images/ga.jpg" alt="New york" style="width: 100%;">
                 </div>
 
                 <div class="item">
-                    <img src="Images/6705d34b-5c7c-4e7c-96a0-febdc16c43a0.jpg" alt="New york" style="width: 100%;">
+                    <img src="Images/lux.jpg" alt="New york" style="width: 100%;">
                 </div>
 
                 <div class="item">
-                    <img src="Images/Beach.jpg" alt="New york" style="width: 100%;">
+                    <img src="Images/luxx.jpg" alt="New york" style="width: 100%;">
                 </div>
 
                 <div class="item">
-                    <img src="Images/b8daca7b-4f5d-4ffa-afd8-31375e77c202.jpg" alt="New york" style="width: 100%;">
+                    <img src="Images/mas.jpg" alt="New york" style="width: 100%;">
                 </div>
 
                 <div class="item">
-                    <img src="Images/Beach1.jpg" alt="New york" style="width: 100%;">
+                    <img src="Images/double.jpg" alt="New york" style="width: 100%;">
                 </div>
 
                 <div class="item">
-                    <img src="Images/b8daca7b-4f5d-4ffa-afd8-31375e77c202.jpg" alt="New york" style="width: 100%;">
+                    <img src="Images/garden.jpg" alt="New york" style="width: 100%;">
                 </div>
 
             </div>
