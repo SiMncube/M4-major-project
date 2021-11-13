@@ -11,21 +11,36 @@ namespace M4_major_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            paymentDetails.InnerHtml = "<address>"+
+            /*paymentDetails.InnerHtml = "<address>"+
                                         "<strong> Payment Method:</strong ><br>"
                                         +"Credit Card<br>"+
                                         CurrentUser.getEmailID()+
-                                         "</address>";
+                                         "</address>";*/
 
             orderDate.InnerHtml = "<address>" +
                                     "<strong> Order Date:</strong><br>" +
                                     DateTime.Now.ToString() + "</br >" +
                                     "</address> ";
+            totalBookings.InnerText = "R200";
         }
 
         protected void homeBtn_Click(object sender, EventArgs e)
         {
             Response.Redirect("/Default");
+        }
+        private void updateText()
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingSummaryTableAdapter taBookingSummary = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            taBookingSummary.Fill(fullDs.BookingSummary);
+            for (int i = fullDs.BookingSummary.Rows.Count - 1; i >= 0; i--)
+            {
+                if (fullDs.BookingSummary[i].summaryID == currentBooking.getSummaryID())
+                {
+                    totalBookings.InnerText = fullDs.BookingSummary[i].amountDue;
+                    break;
+                }
+            }
         }
     }
 }
