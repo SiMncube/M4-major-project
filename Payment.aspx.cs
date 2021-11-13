@@ -109,6 +109,7 @@ namespace M4_major_project
                 updateBookingStatus();
                 Email.bookingStatus = "Complete";  //added by Sihle
                 Email.sendInvoice();               //added by Sihle
+                Response.Redirect("/Invoice");
             }
         }
         private DateTime GetDateIn()
