@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="item">
-                    <img src="Images/Fishing.jpg" alt="New york" style="width: 100%;">
+                    <img src="Images/ga.jpg" alt="New york" style="width: 100%;">
                 </div>
 
                 <div class="item">
@@ -55,15 +55,15 @@
                 </div>
 
                 <div class="item">
-                    <img src="Images/b8daca7b-4f5d-4ffa-afd8-31375e77c202.jpg" alt="New york" style="width: 100%;">
+                    <img src="Images/mas.jpg" alt="New york" style="width: 100%;">
                 </div>
 
                 <div class="item">
-                    <img src="Images/Beach1.jpg" alt="New york" style="width: 100%;">
+                    <img src="Images/mass.jpg" alt="New york" style="width: 100%;">
                 </div>
 
                 <div class="item">
-                    <img src="Images/b8daca7b-4f5d-4ffa-afd8-31375e77c202.jpg" alt="New york" style="width: 100%;">
+                    <img src="Images/garden.jpg" alt="New york" style="width: 100%;">
                 </div>
 
             </div>

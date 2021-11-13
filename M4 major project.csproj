@@ -187,9 +187,13 @@
     <Content Include="Images\Fishing.jpg" />
     <Content Include="Images\foxcroft.jpg" />
     <Content Include="Images\G.jpg" />
+    <Content Include="Images\ga.jpg" />
+    <Content Include="Images\garden.jpg" />
     <Content Include="Images\LB.jpg" />
     <Content Include="Images\lux.jpg" />
     <Content Include="Images\luxx.jpg" />
+    <Content Include="Images\mas.jpg" />
+    <Content Include="Images\mass.jpg" />
     <Content Include="Images\starlings-cafe.jpg" />
     <Content Include="Images\SterlingsGarden.jpg" />
     <Content Include="Images\WhatsApp Image 2021-09-05 at 19.21.54.jpeg" />
