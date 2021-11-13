@@ -22,11 +22,17 @@ namespace M4_major_project
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (loginValid())
+            if (customerLoginValid())
             {
                 ViewState["CurrentUserEmail"] = TextBox1.Text;
                 CurrentUser.setEmailID(TextBox1.Text);
                 Response.Redirect("/Default");
+            }
+            else if(adminPaaswordCorrect())
+            {
+                ViewState["CurrentUserEmail"] = TextBox1.Text;
+                CurrentUser.setEmailID(TextBox1.Text);
+                Response.Redirect("/Admin");
             }
             else
             {
@@ -69,11 +75,14 @@ namespace M4_major_project
             {
                 if (fullDs.Staff[i].password == TextBox2.Text && fullDs.Staff[i].emailID.Equals(TextBox1.Text, StringComparison.OrdinalIgnoreCase))
                 {
-                    check = 2;
                     return true;
                 }
             }
             return false;
+        }
+        private bool adminLoginValid()
+        {
+            return adminNameCorrect() && adminPaaswordCorrect();
         }
         private bool userPasswordIsCorrect()
         {
@@ -90,7 +99,7 @@ namespace M4_major_project
             }
             return false;
         }
-        private bool loginValid()
+        private bool customerLoginValid()
         {
             return userNameIsCorrect() && userPasswordIsCorrect();
         }
