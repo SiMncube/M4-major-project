@@ -44,13 +44,13 @@
     		</div>
     		<div class="row">
     			<div class="col-xs-6">
-    				<address>
+    				<address id="paymentDetails" runat="server">
     					<strong>Payment Method:</strong><br>
     					Credit Card<br>
     					jsmith@email.com
     				</address>
     			</div>
-    			<div class="col-xs-6 text-right">
+    			<div class="col-xs-6 text-right" id="orderDate" runat="server">
     				<address>
     					<strong>Order Date:</strong><br>
     					November 13, 2021<br><br>

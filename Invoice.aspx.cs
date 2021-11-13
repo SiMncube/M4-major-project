@@ -11,7 +11,11 @@ namespace M4_major_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //paymentDetails.InnerHtml = "<><strong>Order Date:</strong><br>" + DateTime.Now.ToString() + "< br >< br > ";
+            orderDate.InnerHtml = "<address>" +
+                                    "<strong> Order Date:</strong><br>" +
+                                    DateTime.Now.ToString() + "</br >" +
+                                    "</address> ";
         }
 
         protected void homeBtn_Click(object sender, EventArgs e)
