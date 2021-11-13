@@ -46,7 +46,7 @@ namespace M4_major_project
         protected void singleDDList_SelectedIndexChanged(object sender, EventArgs e)
         {
             amountDueTextBox.Text = getAmountDue(singleDDList, doubleDDList);
-            numberOfSingleRooms = int.Parse(singleDDList.SelectedItem.ToString());
+            numberOfSingleRoomsSelected = int.Parse(singleDDList.SelectedItem.ToString());
             //if (amountDue != 0)
             //  saveBookingButton.Enabled = true;
             //else
@@ -56,7 +56,7 @@ namespace M4_major_project
         protected void doubleDDList_SelectedIndexChanged(object sender, EventArgs e)
         {
             amountDueTextBox.Text = getAmountDue(singleDDList, doubleDDList);
-            numberOfDoubleRooms = int.Parse(doubleDDList.SelectedItem.ToString());
+            numberOfDoubleRoomsSelected = int.Parse(doubleDDList.SelectedItem.ToString());
             //if (amountDue != 0)
             //  saveBookingButton.Enabled = true;
             //else
@@ -79,8 +79,8 @@ namespace M4_major_project
         ArrayList availableSingleRooms = new ArrayList();
         ArrayList availableDoubleRooms = new ArrayList();
 
-        int numberOfSingleRooms = 0; //refers to user selected number of single rooms, or booked rooms
-        int numberOfDoubleRooms = 0; //refers to user selected number of double rooms, or booked rooms
+        int numberOfSingleRoomsSelected = 0; //refers to user selected number of single rooms, or booked rooms
+        int numberOfDoubleRoomsSelected = 0; //refers to user selected number of double rooms, or booked rooms
 
         //Database fields
         FullDataSet fullDs = new FullDataSet();
@@ -165,7 +165,7 @@ namespace M4_major_project
             return false;
         }
 
-        private string getAmountDue(DropDownList ddList1, DropDownList ddList2)
+        private string getAmountDue(DropDownList ddList1, DropDownList ddList2) //now working correctly, fully tested
         {
             double amountDueForSingleRooms;
             double amountDueForDoubleRooms;
@@ -179,8 +179,8 @@ namespace M4_major_project
             }
             else
             {
-                numberOfSingleRooms = int.Parse(ddList1.SelectedItem.ToString());
-                amountDueForSingleRooms = (numberOfSingleRooms * 450 * numberOfNights);
+                numberOfSingleRoomsSelected = int.Parse(ddList1.SelectedItem.ToString());
+                amountDueForSingleRooms = (numberOfSingleRoomsSelected * 450 * numberOfNights);
             }
             if (ddList2.SelectedItem == null || ddList2.SelectedItem.ToString() == "0")
             {
@@ -188,8 +188,8 @@ namespace M4_major_project
             }
             else
             {
-                numberOfDoubleRooms = int.Parse(ddList2.SelectedItem.ToString());
-                amountDueForDoubleRooms = (numberOfDoubleRooms * 800 * numberOfNights);
+                numberOfDoubleRoomsSelected = int.Parse(ddList2.SelectedItem.ToString());
+                amountDueForDoubleRooms = (numberOfDoubleRoomsSelected * 800 * numberOfNights);
             }
 
             amountDue = amountDueForSingleRooms + amountDueForDoubleRooms;
@@ -216,8 +216,8 @@ namespace M4_major_project
 
         private void updateBookingSummary(string callAmountDueMethod)
         {
-            int[] singleAllocatedRooms = new int[numberOfSingleRooms];
-            int[] doubleAllocatedRooms = new int[numberOfDoubleRooms];
+            int[] singleAllocatedRooms = new int[numberOfSingleRoomsSelected];
+            int[] doubleAllocatedRooms = new int[numberOfDoubleRoomsSelected];
 
             bookingSummaryTa.Insert(currentCustomerEmailID, dateIn, dateOut, numberOfNights, bookingMethod, bookingStatus, callAmountDueMethod);
             int summaryID = (int)bookingSummaryTa.getLastRecord();  //NB current last summaryID = 10677
@@ -225,7 +225,7 @@ namespace M4_major_project
             //int summaryID = fullDs.BookingSummary[fullDs.BookingSummary.Rows.Count].summaryID;  
             currentBooking.setSummaryID(summaryID);
 
-            for (int i = 0; i < numberOfSingleRooms; i++) //adding single rooms to bookedRoom table
+            for (int i = 0; i < numberOfSingleRoomsSelected; i++) //adding single rooms to bookedRoom table
             {
                 for (DateTime dateID = dateIn; DateTime.Compare(dateID, dateOut) < 0; dateID = dateID.AddDays(1))
                 {
@@ -233,7 +233,7 @@ namespace M4_major_project
                 }
             }
 
-            for (int i = 0; i < numberOfDoubleRooms; i++) //adding double rooms to bookedRoom table
+            for (int i = 0; i < numberOfDoubleRoomsSelected; i++) //adding double rooms to bookedRoom table
             {
                 for (DateTime dateID = dateIn; DateTime.Compare(dateID, dateOut) < 0; dateID = dateID.AddDays(1)) //adding double rooms to bookedRoom table
                 {
