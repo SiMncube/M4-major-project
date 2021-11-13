@@ -97,15 +97,14 @@ namespace M4_major_project
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-
             if (creditDetailsValid())
             {
-                if (!Email.isModify)
+                if (!Email.isModify)  // added by Sihle, this means this block we are not coming form modify booking page
                 {
                     FullDataSet fullDs = new FullDataSet();
                     FullDataSetTableAdapters.PaymentTableAdapter paymentTa = new FullDataSetTableAdapters.PaymentTableAdapter();
                     paymentTa.Fill(fullDs.Payment);
-                    paymentTa.Insert(currentBooking.getSummaryID(), "Credit card", DateTime.Now, getAmountDue());
+                    paymentTa.Insert(currentBooking.getSummaryID(), "Credit card", DateTime.Today, getAmountDue());
                     updateBookedRoom();
                     updateBookingStatus();
                     Email.bookingStatus = "Complete";  //added by Sihle
@@ -114,9 +113,8 @@ namespace M4_major_project
                 }
                 else
                 {
-                    UpdateBooking(Email.amountDue);  //this is the update booking for modified booking
+                    completeModifyBooking(Email.amountDue);  //this is the update booking for modified booking
                 }
-                
             }
         }
         private DateTime GetDateIn()
@@ -193,7 +191,7 @@ namespace M4_major_project
         //***********************************  Author @Sihle,  Modify booking specialized methods   ******************************
         
         /*
-         * This code is used when a user is required to make a payment if the 
+         * This code is used when a user is required to make a payment during booking modification 
          * This ensures that a booking is only modified after the customer has paid the amount required
          * and this is the case when the when the amount the user paid on the previous booking is not enough to cover the
          * changes the have made to the booking. i.e the new booking is more expensive then the previously made booking.
@@ -213,21 +211,22 @@ namespace M4_major_project
         string OldBookingSummaryID = Email.oldBookingID;
         int newBookingSummaryID = currentBooking.getSummaryID();
 
-        private void UpdateBooking(string callNewBookingAmoundDue)
+        private void completeModifyBooking(string callNewBookingAmoundDue)
         {
             UpdateOldBookingStatusToModified(int.Parse(OldBookingSummaryID));
             ProcessModifiedBookingRefund();    //adds a negative payment record == oldBookingAmountDue 
             paymentTa.Insert(newBookingSummaryID, "EFT", DateTime.Today, callNewBookingAmoundDue);
             UpdateNewBookingStatusToComplete();
 
-            //MessageBox.Show("Booking Has Been Successfully Updated", "Customer Message"); //could be changed to showing all bookind details or something like an invoice 
-            // with all necessary details including the new customer booking reference.
             this.paymentTa.Update(fullDs.Payment);
             this.paymentTa.Fill(fullDs.Payment);
             this.bookingSummaryTa.Fill(this.fullDs.BookingSummary);
             this.bookingSummaryTa.Update(this.fullDs.BookingSummary);
             this.bookedRoomTa.Update(this.fullDs.BookedRoom);
             this.bookedRoomTa.Fill(this.fullDs.BookedRoom);
+
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking has been successfully Modified" + "');", true);
+
         }
 
         private void ProcessModifiedBookingRefund() //100% refund will be used to make the new booking
