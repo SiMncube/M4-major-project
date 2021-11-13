@@ -15,48 +15,57 @@ namespace M4_major_project
     {
 
         /// <summary>
-        /// dateInTextBox control.
+        /// dateInCalender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dateInTextBox;
+        protected global::System.Web.UI.WebControls.Calendar dateInCalender;
 
         /// <summary>
-        /// dateOutTextBox control.
+        /// dateOutCalender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dateOutTextBox;
+        protected global::System.Web.UI.WebControls.Calendar dateOutCalender;
 
         /// <summary>
-        /// singleBox control.
+        /// singleDDList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect singleBox;
+        protected global::System.Web.UI.WebControls.DropDownList singleDDList;
 
         /// <summary>
-        /// doubleBox control.
+        /// doubleDDList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect doubleBox;
+        protected global::System.Web.UI.WebControls.DropDownList doubleDDList;
 
         /// <summary>
-        /// Button1 control.
+        /// amountDueTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.TextBox amountDueTextBox;
+
+        /// <summary>
+        /// saveBookingButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button saveBookingButton;
     }
 }
