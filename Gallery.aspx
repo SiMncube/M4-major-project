@@ -8,7 +8,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <div class="container">
         <br />
-        <div><h2>Gallery</h2></div>
+        <h2>Gallery</h2>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
             <ol class="carousel-indicators">
