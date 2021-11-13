@@ -14,6 +14,7 @@ namespace M4_major_project
         {
             TextBox1.Text = CurrentUser.getEmailID();
             TextBox2.Text = DateTime.Today.ToString();
+            TextBox3.Text = "Complete";
 
             bookingSummaryTa.Fill(fullDs.BookingSummary);
             bookedRoomTa.Fill(fullDs.BookedRoom);
@@ -283,6 +284,41 @@ namespace M4_major_project
             Email.doubleRoomIDs = arrayToString(doubleAllocatedRooms);
             Email.amountDue = callAmountDueMethod;
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private bool canBeModified(DateTime checkInDate, string bookingStatus)
+        {
+            if (DateTime.Compare(DateTime.Today, checkInDate) < 0)
+            {
+                if (bookingStatus.Equals("Complete"))  //this is the only block that should be executed for the booking to be modified.
+                    return true;
+                else if (bookingStatus.Equals("Modified"))
+                {
+                    //MessageBox.Show("A " + bookingStatus + "can not be modified", "Selection Error");
+                    return false;
+                }
+                else if (bookingStatus.Equals("Cancelled"))
+                {
+                    //MessageBox.Show("A " + bookingStatus + "can not be modified", "Selection Error");
+                    return false;
+                }
+                else if (bookingStatus.Equals("inComplete"))
+                {
+                    //MessageBox.Show("An " + bookingStatus + "can not be modified, No Payment Was Made for this booking", "Selection Error");
+                    return false;
+                }
+            }
+            else
+            {
+                //MessageBox.Show("The Selected booking can not be modified, Checking in date has already passed", "Selection Error");
+                return false;
+            }
+
+            return false;
+        }
     }
     /*
      string OldBookingSummaryID = "";
@@ -293,47 +329,9 @@ namespace M4_major_project
             modifyBookingInnerTa.FillByAnythingGiven(this.fullDs.ModifyBookingInner, textBox4.Text);
         }
 
-        private void label37_Click(object sender, EventArgs e)
-        {
+        
 
-        }
-
-        private void adminForm_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'fullDs.ModifyBookingInner' table. You can move, or remove it, as needed.
-            this.modifyBookingInnerTa.Fill(this.fullDs.ModifyBookingInner);
-        }
-
-        private bool canBeModified(DateTime checkInDate, string bookingStatus)
-        {
-            if (DateTime.Compare(DateTime.Today, checkInDate) < 0)
-            {
-                if (bookingStatus.Equals("Complete"))  //this is the only block that should be executed for the booking to be modified.
-                    return true;
-                else if (bookingStatus.Equals("Modified"))
-                {
-                    MessageBox.Show("A " + bookingStatus + "can not be modified", "Selection Error");
-                    return false;
-                }
-                else if (bookingStatus.Equals("Cancelled"))
-                {
-                    MessageBox.Show("A " + bookingStatus + "can not be modified", "Selection Error");
-                    return false;
-                }
-                else if (bookingStatus.Equals("inComplete"))
-                {
-                    MessageBox.Show("An " + bookingStatus + "can not be modified, No Payment Was Made for this booking", "Selection Error");
-                    return false;
-                }
-            }
-            else
-            {
-                MessageBox.Show("The Selected booking can not be modified, Checking in date has already passed", "Selection Error");
-                return false;
-            }
-
-            return false;
-        }
+        
 
         private void modifyBookingInnerDataGridView_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
