@@ -22,8 +22,8 @@ namespace M4_major_project
                 dateOut.AddDays(1);
             
             updateAvailableRoomList();
-            loadAvailableSingles(singleDDList);
-            loadAvailableDoubles(doubleDDList);
+            //loadAvailableSingles(singleDDList);
+            //loadAvailableDoubles(doubleDDList);
            
         }
         protected void dateInCalender_SelectionChanged(object sender, EventArgs e)
@@ -45,11 +45,6 @@ namespace M4_major_project
         }
         protected void singleDDList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var temp = singleDDList.Items;
-            var temp2 = singleDDList.SelectedItem.ToString();
-            var d1temp = singleDDList.Items[singleDDList.SelectedIndex].Text;
-            var d1temp2 = singleDDList.SelectedValue.ToString();
-
             amountDueTextBox.Text = getAmountDue(singleDDList, doubleDDList);
             numberOfSingleRooms = int.Parse(singleDDList.SelectedItem.ToString());
             //if (amountDue != 0)
@@ -172,11 +167,6 @@ namespace M4_major_project
 
         private string getAmountDue(DropDownList ddList1, DropDownList ddList2)
         {
-            var temp = ddList1.Items;
-            var temp2 = singleDDList.SelectedItem.ToString();
-            var d1temp = singleDDList.Items[singleDDList.SelectedIndex].Text;
-            var d1temp2 = ddList1.SelectedValue.ToString();
-
             double amountDueForSingleRooms;
             double amountDueForDoubleRooms;
             numberOfNights = dateOut.Subtract(dateIn).Days;
