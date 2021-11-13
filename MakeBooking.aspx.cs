@@ -230,7 +230,7 @@ namespace M4_major_project
             int[] doubleAllocatedRooms = new int[numberOfDoubleRoomsSelected];
 
             bookingSummaryTa.Insert(currentCustomerEmailID, dateIn, dateOut, numberOfNights, bookingMethod, bookingStatus, callAmountDueMethod);
-            int summaryID = (int)bookingSummaryTa.getLastRecord();  //NB current last summaryID = 10696
+            int summaryID = (int)bookingSummaryTa.getLastRecord();  
             currentBooking.setSummaryID(summaryID);
 
             for (int i = 0; i < numberOfSingleRoomsSelected; i++) //adding single rooms to bookedRoom table
@@ -256,7 +256,6 @@ namespace M4_major_project
 
             this.bookingSummaryTa.Update(this.fullDs.BookingSummary);
             this.bookingSummaryTa.Fill(this.fullDs.BookingSummary);
-
 
             //These initailizes the invoice fields
             for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
