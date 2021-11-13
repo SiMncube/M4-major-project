@@ -185,8 +185,11 @@
     <Content Include="Images\card payment icon.png" />
     <Content Include="Images\d71fb818-5a90-428b-aaaf-4c97130c5e4b.jpg" />
     <Content Include="Images\Fishing.jpg" />
+    <Content Include="Images\foxcroft.jpg" />
     <Content Include="Images\G.jpg" />
     <Content Include="Images\LB.jpg" />
+    <Content Include="Images\starlings-cafe.jpg" />
+    <Content Include="Images\SterlingsGarden.jpg" />
     <Content Include="Images\WhatsApp Image 2021-09-05 at 19.21.54.jpeg" />
     <Content Include="Manager.aspx" />
     <Content Include="mangerStyle.css" />
