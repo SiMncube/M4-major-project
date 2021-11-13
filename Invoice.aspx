@@ -43,14 +43,14 @@
     			</div>
     		</div>
     		<div class="row">
-    			<div class="col-xs-6">
+    			<div class="col-xs-6" id="paymentDetails" runat="server">
     				<address>
     					<strong>Payment Method:</strong><br>
     					Credit Card<br>
     					jsmith@email.com
     				</address>
     			</div>
-    			<div class="col-xs-6 text-right">
+    			<div class="col-xs-6 text-right" id="orderDate" runat="server">
     				<address>
     					<strong>Order Date:</strong><br>
     					November 13, 2021<br><br>
@@ -81,20 +81,20 @@
     							<tr>
     								<td>Single Room</td>
     								<td class="text-center">R450.00</td>
-    								<td class="text-center">1</td>
-    								<td class="text-right">R450.00</td>
+    								<td class="text-center" id="numberSingles" runat="server">1</td>
+    								<td class="text-right" id="totalSingles"  runat="server">R450.00</td>
     							</tr>
                                 <tr>
         							<td>Double Room</td>
     								<td class="text-center">R800.00</td>
-    								<td class="text-center">1</td>
-    								<td class="text-right">R800.00</td>
+    								<td class="text-center" id="numberDoubles"  runat="server">1</td>
+    								<td class="text-right" id="totalDoubles"  runat="server">R800.00</td>
     							</tr>
     							<tr>
     								<td class="thick-line"></td>
     								<td class="thick-line"></td>
     								<td class="thick-line text-center"><strong>Total</strong></td>
-    								<td class="thick-line text-right">R1 250.00</td>
+    								<td class="thick-line text-right" id="totalBookings"  runat="server">R1 250.00</td>
     							</tr>
     						</tbody>
     					</table>

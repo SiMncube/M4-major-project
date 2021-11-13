@@ -222,6 +222,8 @@ namespace M4_major_project
         protected void saveBookingButton_Click(object sender, EventArgs e)
         {
             updateBookingSummary(getAmountDue(singleDDList, doubleDDList));
+            currentBooking.NumberSingles(singleDDList.SelectedItem.ToString());
+            currentBooking.setNumberDoubles(doubleDDList.SelectedItem.ToString());
             Response.Redirect("/Payment");
         }
 

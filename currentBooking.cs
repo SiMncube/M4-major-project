@@ -11,6 +11,8 @@ namespace M4_major_project
     {
         private static int summaryID;
         private static int[] roomIDs;
+        private static string numberSingles;
+        private static string numberDoubles;
         public static int getSummaryID()
         {
             return summaryID;
@@ -26,6 +28,22 @@ namespace M4_major_project
         public static void setRoomIDs(int[] r)
         {
             roomIDs = r;
+        }
+        public static void NumberSingles(string n)
+        {
+            numberSingles = n;
+        }
+        public static string getNumberSingles()
+        {
+            return numberSingles;
+        }
+        public static void setNumberDoubles(string n)
+        {
+            numberDoubles = n;
+        }
+        public static string getNumberDoubles()
+        {
+            return numberDoubles;
         }
     }
 }
