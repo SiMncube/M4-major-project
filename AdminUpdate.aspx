@@ -16,7 +16,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">The Cottage</a>
+                    <a class="navbar-brand" runat="server" href="~/Admin">The Cottage</a>
                 </div>
                 <div class="navbar-collapse collapse" staticselectedstyle-verticalpadding="10px">
                     <ul class="nav navbar-nav" runat="server">

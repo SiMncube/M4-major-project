@@ -17,12 +17,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">The Cottage</a>
+                    <a class="navbar-brand" runat="server" href="~/Admin">The Cottage</a>
                 </div>
                 <div class="navbar-collapse collapse" staticselectedstyle-verticalpadding="10px">
                     <ul class="nav navbar-nav" runat="server">
                         <li><a runat="server" href="~/Admin"><b>View Bookings</b></a></li>
-                        <li><a runat="server" href="~/Admin"><b>Modify Booikings</b></a></li>
+                        <li><a runat="server" href="~/Admin"><b>Modify Bookings</b></a></li>
                         <li><a runat="server" href="~/AdminRegister"><b>Register Customer</b></a></li>
                         <li><a runat="server" href="~/AdminUpdate"><b>Update Customer Details</b></a></li>
                     </ul>
@@ -90,7 +90,7 @@
                 </asp:GridView>
                 <br />
                 <div class="col-md-12 text-center">
-                    <asp:Button class="btn btn-primary pull-center" ID="cancelBtn" runat="server" Text="Cancel Booking" Width="50%" Visible="False"/>
+                    <asp:Button class="btn btn-primary pull-center" ID="cancelBtn" runat="server" Text="Cancel Booking" Width="50%" Visible="False" OnClick="cancelBtn_Click"/>
                 </div>
             </div>
             <br />

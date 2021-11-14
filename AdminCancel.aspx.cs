@@ -27,8 +27,6 @@ namespace M4_major_project
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
             }
-            bookingText.Visible = false;
-            cancelBtn.Visible = false;
         }
         private string calculateAmountDue(string s)
         {
@@ -123,8 +121,37 @@ namespace M4_major_project
             dt = taBookingInner.GetDataBy(GridView1.SelectedRow.Cells[5].Text);
             GridView2.DataSource = dt;
             GridView2.DataBind();
-            bookingText.Visible = true;
-            cancelBtn.Visible = true;
+            if(GridView1.SelectedIndex > -1)
+            {
+                bookingText.Visible = true;
+                cancelBtn.Visible = true;
+            }
+        }
+
+        protected void cancelBtn_Click(object sender, EventArgs e)
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            bookingSummaryTa.Fill(fullDs.BookingSummary);
+            for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
+            {
+                if (fullDs.BookingSummary[i].summaryID.ToString().Equals(GridView2.Rows[0].Cells[4].Text))
+                {
+                    fullDs.BookingSummary[i].bookingStatus = "Cancelled";
+                    break;
+                }
+            }
+            bookingSummaryTa.Update(fullDs.BookingSummary);
+            FullDataSetTableAdapters.BookingInnerTableAdapter taBookingInner = new FullDataSetTableAdapters.BookingInnerTableAdapter();
+            taBookingInner.FillBy(fullDs.BookingInner, adminTextBox.Text.Trim());
+            DataTable dt = new DataTable();
+            dt = taBookingInner.GetDataBy(adminTextBox.Text);
+            GridView1.DataSource = dt;
+            GridView1.DataBind();
+            bookingText.Visible = false;
+            cancelBtn.Visible = false;
+            GridView1.SelectedIndex = -1;
+            GridView2.DataBind();
         }
     }
 }
