@@ -17,6 +17,7 @@ namespace M4_major_project
         private static string postalCode;
         private static string password;
         private static string cellNumber;
+        private static string otpString;
         public static void setName(string n)
         {
             name = n;
@@ -96,6 +97,14 @@ namespace M4_major_project
         public static string getCellNumber()
         {
             return cellNumber;
+        }
+        public static void setOtpStringr(string n)
+        {
+            otpString = n;
+        }
+        public static string getOtpString()
+        {
+            return otpString;
         }
     }
 }

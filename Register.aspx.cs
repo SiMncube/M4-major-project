@@ -47,7 +47,7 @@ namespace M4_major_project
                 CurrentRegistration.setCity(capFirst(cityTextBox.Text));
                 CurrentRegistration.setPostalCode(postalTextBox.Text);
                 //taCustomer.Insert(capFirst(emailTextBox.Text), capFirst(nameTextBox.Text), capFirst(surnameTextBox.Text), idTextBox.Text, cellTextBox.Text, passwordTextBox.Text, capFirst(streetTextBox.Text), capFirst(surbubNameTextBox.Text), capFirst(cityTextBox.Text), postalTextBox.Text);
-                Response.Write("<script language='javascript'>window.alert('You have successfully registered');window.location='Default.aspx';</script>");
+                //Response.Write("<script language='javascript'>window.alert('You have successfully registered');window.location='Default.aspx';</script>");
                 Response.Redirect("/OTP");
             }
 
