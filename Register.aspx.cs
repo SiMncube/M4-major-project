@@ -36,8 +36,19 @@ namespace M4_major_project
             taCustomer.Fill(fullDs.Customer);
             if(signUIsValid())
             {
-                taCustomer.Insert(capFirst(emailTextBox.Text), capFirst(nameTextBox.Text), capFirst(surnameTextBox.Text), idTextBox.Text, cellTextBox.Text, passwordTextBox.Text, capFirst(streetTextBox.Text), capFirst(surbubNameTextBox.Text), capFirst(cityTextBox.Text), postalTextBox.Text);
+                CurrentRegistration.setEmail(capFirst(emailTextBox.Text));
+                CurrentRegistration.setName(capFirst(nameTextBox.Text));
+                CurrentRegistration.setSurname(capFirst(surnameTextBox.Text));
+                CurrentRegistration.setIdNumber(idTextBox.Text);
+                CurrentRegistration.setCellNumber(cellTextBox.Text);
+                CurrentRegistration.setPassword(passwordTextBox.Text);
+                CurrentRegistration.setStreetName(capFirst(streetTextBox.Text));
+                CurrentRegistration.setSuburb(capFirst(surbubNameTextBox.Text));
+                CurrentRegistration.setCity(capFirst(cityTextBox.Text));
+                CurrentRegistration.setPostalCode(postalTextBox.Text);
+                //taCustomer.Insert(capFirst(emailTextBox.Text), capFirst(nameTextBox.Text), capFirst(surnameTextBox.Text), idTextBox.Text, cellTextBox.Text, passwordTextBox.Text, capFirst(streetTextBox.Text), capFirst(surbubNameTextBox.Text), capFirst(cityTextBox.Text), postalTextBox.Text);
                 Response.Write("<script language='javascript'>window.alert('You have successfully registered');window.location='Default.aspx';</script>");
+                Response.Redirect("/OTP");
             }
 
         }

@@ -16,7 +16,7 @@ namespace M4_major_project
         private static string suburb;
         private static string postalCode;
         private static string password;
-
+        private static string cellNumber;
         public static void setName(string n)
         {
             name = n;
@@ -88,6 +88,14 @@ namespace M4_major_project
         public static string getPassword()
         {
             return password;
+        }
+        public static void setCellNumber(string n)
+        {
+            cellNumber = n;
+        }
+        public static string getCellNumber()
+        {
+            return cellNumber;
         }
     }
 }
