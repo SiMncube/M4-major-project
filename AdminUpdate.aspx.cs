@@ -176,20 +176,10 @@ namespace M4_major_project
             FullDataSetTableAdapters.Customer1TableAdapter taCustomer1 = new FullDataSetTableAdapters.Customer1TableAdapter();
             taCustomer1.Fill(fullDs.Customer1);
             taCustomer1.Update(fullDs.Customer1);
-            if (adminTextBox.Text.Length > 0)
-            {
-                DataTable dt = new DataTable();
-                dt = taCustomer1.GetDataBy(adminTextBox.Text);
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
-            }
-            else
-            {
-                DataTable dt = new DataTable();
-                dt = taCustomer1.GetData();
-                GridView1.DataSource = dt;
-            }
-            
+            DataTable dt = new DataTable();
+            dt = taCustomer1.GetDataBy(adminTextBox.Text);
+            GridView1.DataSource = dt;
+            GridView1.DataBind();
         }
 
         protected void nameTextBox_TextChanged(object sender, EventArgs e)
