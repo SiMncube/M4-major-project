@@ -33,8 +33,8 @@ namespace M4_major_project
         FullDataSetTableAdapters.CustomerTableAdapter customerTa = new FullDataSetTableAdapters.CustomerTableAdapter();
 
         //modify booking special attributes
-        string OldBookingSummaryID = "";
-        int newBookingSummaryID = 0;
+        string OldBookingSummaryID;
+        int newBookingSummaryID;
 
 
         public void Page_Load(object sender, EventArgs e)
@@ -47,10 +47,6 @@ namespace M4_major_project
             bookedRoomTa.Fill(fullDs.BookedRoom);
             paymentTa.Fill(fullDs.Payment);
             customerTa.Fill(fullDs.Customer);
-
-            bookingSummaryTa.Update(this.fullDs.BookingSummary);
-            bookedRoomTa.Update(this.fullDs.BookedRoom);
-
 
             dateIn = dateInCalender.SelectedDate;
             dateOut = dateOutCalender.SelectedDate;
@@ -240,7 +236,7 @@ namespace M4_major_project
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            OldBookingSummaryID = GridView1.SelectedRow.Cells[0].Text;
+            OldBookingSummaryID = GridView1.SelectedRow.Cells[1].Text;
         }
 
         private void completeModifyBooking(string callNewBookingAmoundDue)
