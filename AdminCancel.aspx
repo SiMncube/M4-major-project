@@ -68,9 +68,9 @@
                 <br />
             </div>
         </div>
-        <div>
+        <div id="bookingText"  runat="server" visible="false">
             <br />
-            <div id="bookingText" class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px" visible="false" runat="server">
+            <div  class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px">
                 <div class="text-center" height: 55px">
                     <h1 style="color: #008cba; margin: auto">Cancel The following Booking</h1>
                 </div>

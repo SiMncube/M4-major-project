@@ -27,6 +27,8 @@ namespace M4_major_project
                 GridView1.DataSource = dt;
                 GridView1.DataBind();
             }
+            bookingText.Visible = false;
+            cancelBtn.Visible = false;
         }
         private string calculateAmountDue(string s)
         {
@@ -121,8 +123,8 @@ namespace M4_major_project
             dt = taBookingInner.GetDataBy(GridView1.SelectedRow.Cells[5].Text);
             GridView2.DataSource = dt;
             GridView2.DataBind();
-            cancelBtn.Visible = true;
             bookingText.Visible = true;
+            cancelBtn.Visible = true;
         }
     }
 }
