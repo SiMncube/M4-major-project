@@ -26,8 +26,8 @@ namespace M4_major_project
             DataRow dataRow = fullDs.Customer.NewRow();
             for (int i = 0; i < dataRow.ItemArray.Length; i++)
                 dataRow[i] = GridView1.SelectedRow.Cells[i].Text;
-            updateTextBox(nameTextBox, dataRow[3].ToString());
-            updateTextBox(surnameTextBox, dataRow[2].ToString());
+            updateTextBox(nameTextBox, dataRow[2].ToString());
+            updateTextBox(surnameTextBox, dataRow[3].ToString());
             updateTextBox(idTextBox, dataRow[4].ToString());
             updateTextBox(cellTextBox, dataRow[5].ToString());
             updateTextBox(streetTextBox, dataRow[6].ToString());
