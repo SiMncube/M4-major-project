@@ -98,7 +98,7 @@ namespace M4_major_project
         {
             return cellNumber;
         }
-        public static void setOtpStringr(string n)
+        public static void setOtpString(string n)
         {
             otpString = n;
         }
