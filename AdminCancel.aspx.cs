@@ -112,5 +112,10 @@ namespace M4_major_project
             }
             return false;
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
