@@ -12,9 +12,13 @@ namespace M4_major_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView2.Visible = true;
-            GridView1.Visible = false;
-
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.Customer1TableAdapter taCustomer1 = new FullDataSetTableAdapters.Customer1TableAdapter();
+            taCustomer1.Fill(fullDs.Customer1);
+            taCustomer1.Update(fullDs.Customer1);
+            DataTable dt = new DataTable();
+            dt = taCustomer1.GetDataBy("0");
+            GridView1.DataSource = dt;
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -35,7 +39,7 @@ namespace M4_major_project
             updateTextBox(cityTextBox, dataRow[8].ToString());
             updateTextBox(postalTextBox, dataRow[9].ToString());
         }
-        private void updateTextBox(TextBox t , string s)
+        private void updateTextBox(TextBox t, string s)
         {
             t.Text = s;
         }
@@ -122,12 +126,12 @@ namespace M4_major_project
             if (!CellNumberisValid())
                 count++;
             if (!IdIsValid())
-                count ++;
+                count++;
             return count == 0;
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if(isValid())
+            if (isValid())
             {
                 FullDataSet fullDs = new FullDataSet();
                 FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
@@ -163,12 +167,29 @@ namespace M4_major_project
 
         protected void adminTextBox_TextChanged(object sender, EventArgs e)
         {
-        
+
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-           
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.Customer1TableAdapter taCustomer1 = new FullDataSetTableAdapters.Customer1TableAdapter();
+            taCustomer1.Fill(fullDs.Customer1);
+            taCustomer1.Update(fullDs.Customer1);
+            if (adminTextBox.Text.Length > 0)
+            {
+                DataTable dt = new DataTable();
+                dt = taCustomer1.GetDataBy(adminTextBox.Text);
+                GridView1.DataSource = dt;
+                GridView1.DataBind();
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                dt = taCustomer1.GetData();
+                GridView1.DataSource = dt;
+            }
+            
         }
 
         protected void nameTextBox_TextChanged(object sender, EventArgs e)
@@ -187,12 +208,6 @@ namespace M4_major_project
             idTextBox.BackColor = System.Drawing.Color.White;
             cellTextBox.BackColor = System.Drawing.Color.White;
             postalTextBox.BackColor = System.Drawing.Color.White;
-        }
-
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            GridView2.Visible = false;
-            GridView1.Visible = true;
         }
     }
 }

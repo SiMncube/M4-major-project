@@ -42,54 +42,32 @@
                 </div>
             </div>
             <br />
+            <br />
             <div class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px">
+                <div class="form-group">
+                    <asp:Label ID="Label1" runat="server" Text="Enter Email, Name, Surname, or ID"></asp:Label>
+                    <asp:TextBox ID="adminTextBox" runat="server" class="form-control" placeholder="Enter Email, Name, Surname, or ID" Width="100%" OnTextChanged="adminTextBox_TextChanged"></asp:TextBox>
+                </div>
                 <div class="col-md-12 text-center">
-                    Search Customer Username:
-                    <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="emailID" DataValueField="emailID" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
-                    </asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:group7ConnectionString %>" SelectCommand="SELECT [emailID] FROM [Customer]"></asp:SqlDataSource>
+                    <asp:Button class="btn btn-primary pull-center" ID="Button2" runat="server" Text="Search" Width="50%" OnClick="Button2_Click" />
                 </div>
                 <br />
                 <br />
                 <br />
-                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="emailID" DataSourceID="SqlDataSource3" AllowPaging="True" AllowSorting="True">
-                    <Columns>
-                        <asp:CommandField ShowSelectButton="True" />
-                        <asp:BoundField DataField="emailID" HeaderText="emailID" ReadOnly="True" SortExpression="emailID"></asp:BoundField>
-                        <asp:BoundField DataField="name" HeaderText="name" SortExpression="name"></asp:BoundField>
-                        <asp:BoundField DataField="surname" HeaderText="surname" SortExpression="surname"></asp:BoundField>
-                        <asp:BoundField DataField="idNumber" HeaderText="idNumber" SortExpression="idNumber"></asp:BoundField>
-                        <asp:BoundField DataField="cellNumber" HeaderText="cellNumber" SortExpression="cellNumber"></asp:BoundField>
-                        <asp:BoundField DataField="password" HeaderText="password" SortExpression="password"></asp:BoundField>
-                        <asp:BoundField DataField="streetName" HeaderText="streetName" SortExpression="streetName"></asp:BoundField>
-                        <asp:BoundField DataField="suburb" HeaderText="suburb" SortExpression="suburb"></asp:BoundField>
-                        <asp:BoundField DataField="city" HeaderText="city" SortExpression="city"></asp:BoundField>
-                        <asp:BoundField DataField="postalCode" HeaderText="postalCode" SortExpression="postalCode"></asp:BoundField>
-                    </Columns>
-                </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:group7ConnectionString %>" SelectCommand="SELECT * FROM [Customer]"></asp:SqlDataSource>
                 <br />
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:group7ConnectionString %>" SelectCommand="SELECT * FROM [Customer] WHERE ([emailID] = @emailID)" OldValuesParameterFormatString="original_{0}">
-                    <SelectParameters>
-                        <asp:ControlParameter ControlID="DropDownList1" Name="emailID" PropertyName="SelectedValue" Type="String" />
-                    </SelectParameters>
-                </asp:SqlDataSource>
-                <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="emailID" DataSourceID="SqlDataSource1" Width="100%" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
-                    <Columns>
-                        <asp:CommandField ShowSelectButton="True" />
-                        <asp:BoundField DataField="emailID" HeaderText="emailID" ReadOnly="True" SortExpression="emailID" />
-                        <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
-                        <asp:BoundField DataField="surname" HeaderText="surname" SortExpression="surname" />
-                        <asp:BoundField DataField="idNumber" HeaderText="idNumber" SortExpression="idNumber" />
-                        <asp:BoundField DataField="cellNumber" HeaderText="cellNumber" SortExpression="cellNumber" />
-                        <asp:BoundField DataField="password" HeaderText="password" SortExpression="password"></asp:BoundField>
-                        <asp:BoundField DataField="streetName" HeaderText="streetName" SortExpression="streetName" />
-                        <asp:BoundField DataField="suburb" HeaderText="suburb" SortExpression="suburb" />
-                        <asp:BoundField DataField="city" HeaderText="city" SortExpression="city" />
-                        <asp:BoundField DataField="postalCode" HeaderText="postalCode" SortExpression="postalCode" />
-                    </Columns>
+                <asp:GridView ID="GridView1" runat="server" Width="100%" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" Height="134px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                    <AlternatingRowStyle BackColor="White" />
+                    <FooterStyle BackColor="#CCCC99" />
+                    <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+                    <RowStyle BackColor="#F7F7DE" />
+                    <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#FBFBF2" />
+                    <SortedAscendingHeaderStyle BackColor="#848384" />
+                    <SortedDescendingCellStyle BackColor="#EAEAD3" />
+                    <SortedDescendingHeaderStyle BackColor="#575357" />
                 </asp:GridView>
-            </div>
+            </div>           
         </div>
         <br />
         <div class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px">
@@ -145,8 +123,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Update Confirmation</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;                 <h4 class="modal-title">Update Confirmation</h4>
                     </div>
                     <div class="modal-body">
                         <p>The customer's details have been updated!</p>
