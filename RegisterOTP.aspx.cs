@@ -11,7 +11,7 @@ namespace M4_major_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
         }
 
         protected void ConfirmOTPbt_Click(object sender, EventArgs e)

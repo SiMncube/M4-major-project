@@ -5,6 +5,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+            
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function showModal() {
+            $("#otpModal").modal('show');
+        }
+
+        $(function () {
+            $("#btnShow").click(function () {
+                showModal();
+            });
+        });
+    </script>
     <style type="text/css">
         .auto-style1 {
             height: 677px;
@@ -109,6 +123,25 @@
                 </div>
             </div>
         </div>
+        <div class="modal">
+            <div class="modal-dialog" role="document" id="otpModal" runat="server">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Registration Confirmation</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="modalBody">
+                        <p>Dear customer you have successfully registered</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
 </body>
+
 </html>
