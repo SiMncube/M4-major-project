@@ -139,6 +139,7 @@
     <Content Include="About.aspx" />
     <Content Include="About1.aspx" />
     <Content Include="Admin.aspx" />
+    <Content Include="AdminCancel.aspx" />
     <Content Include="AdminRegister.aspx" />
     <Content Include="AdminUpdate.aspx" />
     <Content Include="BookingReport.aspx" />
@@ -298,6 +299,13 @@
     </Compile>
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCancel.aspx.cs">
+      <DependentUpon>AdminCancel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCancel.aspx.designer.cs">
+      <DependentUpon>AdminCancel.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminRegister.aspx.cs">
       <DependentUpon>AdminRegister.aspx</DependentUpon>
