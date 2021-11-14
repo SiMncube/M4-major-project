@@ -22,7 +22,7 @@
                     <ul class="nav navbar-nav" runat="server">
                         <li><a runat="server" href="~/Admin"><b>View Bookings</b></a></li>
                         <li><a runat="server" href="~/Admin"><b>Modify Booikings</b></a></li>
-                        <li><a runat="server" href="~/Admin"><b>Cancel Bookings</b></a></li>
+                        <li><a runat="server" href="~/AdminCancel"><b>Cancel Bookings</b></a></li>
                         <li><a runat="server" href="~/AdminRegister"><b>Register Customer</b></a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
