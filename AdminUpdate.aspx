@@ -52,8 +52,9 @@
                 <br />
                 <br />
                 <br />
-                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="emailID" DataSourceID="SqlDataSource3">
+                <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" DataKeyNames="emailID" DataSourceID="SqlDataSource3" AllowPaging="True" AllowSorting="True">
                     <Columns>
+                        <asp:CommandField ShowSelectButton="True" />
                         <asp:BoundField DataField="emailID" HeaderText="emailID" ReadOnly="True" SortExpression="emailID"></asp:BoundField>
                         <asp:BoundField DataField="name" HeaderText="name" SortExpression="name"></asp:BoundField>
                         <asp:BoundField DataField="surname" HeaderText="surname" SortExpression="surname"></asp:BoundField>
