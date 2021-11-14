@@ -5,7 +5,6 @@
 <head runat="server">
     <title></title>
     <link href="Content/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="loginStyle.css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -22,8 +21,8 @@
                 </div>
                 <div class="navbar-collapse collapse" staticselectedstyle-verticalpadding="10px">
                     <ul class="nav navbar-nav" runat="server">
-                        <li><a runat="server" href="~/Admin"><b>View Bookings</b></a></li>
-                        <li><a runat="server" href="~/Admin"><b>Modify Booikings</b></a></li>
+                        <li><a runat="server" href="~/AdminViewBooking"><b>View Bookings</b></a></li>
+                        <li><a runat="server" href="~/Admin"><b>Modify Bookings</b></a></li>
                         <li><a runat="server" href="~/AdminCancel"><b>Cancel Bookings</b></a></li>
                         <li><a runat="server" href="~/AdminRegister"><b>Register Customer</b></a></li>
                         <li><a runat="server" href="~/AdminUpdate"><b>Update Customer Details</b></a></li>

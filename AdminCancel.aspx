@@ -21,7 +21,7 @@
                 </div>
                 <div class="navbar-collapse collapse" staticselectedstyle-verticalpadding="10px">
                     <ul class="nav navbar-nav" runat="server">
-                        <li><a runat="server" href="~/Admin"><b>View Bookings</b></a></li>
+                        <li><a runat="server" href="~/AdminViewBooking"><b>View Bookings</b></a></li>
                         <li><a runat="server" href="~/Admin"><b>Modify Bookings</b></a></li>
                         <li><a runat="server" href="~/AdminRegister"><b>Register Customer</b></a></li>
                         <li><a runat="server" href="~/AdminUpdate"><b>Update Customer Details</b></a></li>

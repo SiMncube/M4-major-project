@@ -142,6 +142,7 @@
     <Content Include="AdminCancel.aspx" />
     <Content Include="AdminRegister.aspx" />
     <Content Include="AdminUpdate.aspx" />
+    <Content Include="AdminViewBooking.aspx" />
     <Content Include="BookingReport.aspx" />
     <Content Include="CancelBooking.aspx" />
     <Content Include="ChangePassword.aspx" />
@@ -320,6 +321,13 @@
     </Compile>
     <Compile Include="AdminUpdate.aspx.designer.cs">
       <DependentUpon>AdminUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewBooking.aspx.cs">
+      <DependentUpon>AdminViewBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminViewBooking.aspx.designer.cs">
+      <DependentUpon>AdminViewBooking.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
