@@ -41,5 +41,53 @@ namespace M4_major_project
         {
             return idNumber;
         }
+        public static void setStreetName(string n)
+        {
+            streetName = n;
+        }
+        public static string getStreetName()
+        {
+            return streetName;
+        }
+        public static void setCity(string n)
+        {
+            city = n;
+        }
+        public static string getCity()
+        {
+            return city;
+        }
+        public static void setEmail(string n)
+        {
+            email = n;
+        }
+        public static string getEmail()
+        {
+            return email;
+        }
+        public static void setSuburb(string n)
+        {
+            suburb = n;
+        }
+        public static string getSuburb()
+        {
+            return suburb;
+        }
+        public static void setPostalCode(string n)
+        {
+            postalCode = n;
+        }
+        public static string getPostalCode()
+        {
+            return postalCode;
+        }
+        public static void setPassword(string n)
+        {
+            password = n;
+        }
+        public static string getPassword()
+        {
+            return password;
+        }
     }
 }
