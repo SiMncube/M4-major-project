@@ -112,10 +112,17 @@ namespace M4_major_project
             }
             return false;
         }
-
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingInnerTableAdapter taBookingInner = new FullDataSetTableAdapters.BookingInnerTableAdapter();
+            taBookingInner.FillBy(fullDs.BookingInner, adminTextBox.Text.Trim());
+            DataTable dt = new DataTable();
+            dt = taBookingInner.GetDataBy(GridView1.SelectedRow.Cells[5].Text);
+            GridView2.DataSource = dt;
+            GridView2.DataBind();
+            cancelBtn.Visible = true;
+            bookingText.Visible = true;
         }
     }
 }

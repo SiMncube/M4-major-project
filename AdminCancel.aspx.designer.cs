@@ -96,6 +96,15 @@ namespace M4_major_project
         protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
+        /// bookingText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl bookingText;
+
+        /// <summary>
         /// GridView2 control.
         /// </summary>
         /// <remarks>
@@ -105,12 +114,12 @@ namespace M4_major_project
         protected global::System.Web.UI.WebControls.GridView GridView2;
 
         /// <summary>
-        /// Button1 control.
+        /// cancelBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button cancelBtn;
     }
 }

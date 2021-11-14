@@ -54,7 +54,7 @@
                 <br />
                 <br />
                 <br />
-                <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%" Height="187px">
+                <asp:GridView AutoGenerateSelectButton="true" ID="GridView1" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%" Height="187px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                     <FooterStyle BackColor="White" ForeColor="#000066" />
                     <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
                     <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
@@ -69,6 +69,13 @@
             </div>
         </div>
         <div>
+            <br />
+            <div id="bookingText" class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px" visible="false" runat="server">
+                <div class="text-center" height: 55px">
+                    <h1 style="color: #008cba; margin: auto">Cancel The following Booking</h1>
+                </div>
+            </div>
+            <br />
             <div class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px">
                 <asp:GridView ID="GridView2" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%">
                     <FooterStyle BackColor="White" ForeColor="#000066" />
@@ -83,7 +90,7 @@
                 </asp:GridView>
                 <br />
                 <div class="col-md-12 text-center">
-                    <asp:Button class="btn btn-primary pull-center" ID="Button1" runat="server" Text="Cancel Booking" Width="50%" OnClick="Button1_Click" Visible="False"/>
+                    <asp:Button class="btn btn-primary pull-center" ID="cancelBtn" runat="server" Text="Cancel Booking" Width="50%" Visible="False"/>
                 </div>
             </div>
         </div>
