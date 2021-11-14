@@ -21,7 +21,7 @@ namespace M4_major_project
             for (int i = 0; i < fullDs.Staff.Rows.Count; i++)
             {
                 if (fullDs.Staff[i].emailID.Equals(CurrentUser.getEmailID(), StringComparison.OrdinalIgnoreCase))
-                    return fullDs.Staff[i].name;
+                    return fullDs.Staff[i].surname + " " + fullDs.Staff[i].name;
             }
             return "";
         }
