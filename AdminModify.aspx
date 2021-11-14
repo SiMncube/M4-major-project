@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -21,6 +22,7 @@
                     </div>
                     <div class="navbar-collapse collapse" staticselectedstyle-verticalpadding="10px">
                         <ul class="nav navbar-nav" runat="server">
+                            <li><a runat="server" href="~/Admin"><b>Make Bookings</b></a></li>
                             <li><a runat="server" href="~/AdminViewBooking"><b>View Bookings</b></a></li>
                             <li><a runat="server" href="~/AdminCancel"><b>Cancel Bookings</b></a></li>
                             <li><a runat="server" href="~/AdminRegister"><b>Register Customer</b></a></li>
@@ -40,7 +42,7 @@
             <br />
             <div class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px">
                 <div class="text-center" style="background-color: #008cba; height: 55px">
-                    <h1 style="color: white; margin: auto">Modify Bookings Bookings</h1>
+                    <h1 style="color: white; margin: auto">Modify Bookings</h1>
                 </div>
             </div>
             <br />
