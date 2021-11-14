@@ -73,7 +73,7 @@
                                 <tr>
         							<td><strong>Item</strong></td>
         							<td class="text-center"><strong>Price</strong></td>
-        							<td class="text-center"><strong>Quantity</strong></td>
+        							<td class="text-center"><strong>Number Of Rooms</strong></td>
         							<td class="text-right"><strong>Totals</strong></td>
                                 </tr>
     						</thead>
