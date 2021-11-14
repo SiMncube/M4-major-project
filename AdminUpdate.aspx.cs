@@ -12,13 +12,7 @@ namespace M4_major_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            FullDataSet fullDs = new FullDataSet();
-            FullDataSetTableAdapters.Customer1TableAdapter taCustomer1 = new FullDataSetTableAdapters.Customer1TableAdapter();
-            taCustomer1.Fill(fullDs.Customer1);
-            taCustomer1.Update(fullDs.Customer1);
-            DataTable dt = new DataTable();
-            dt = taCustomer1.GetDataBy("0");
-            GridView1.DataSource = dt;
+
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -161,7 +155,15 @@ namespace M4_major_project
                 }
                 taCustomer.Update(fullDs.Customer);
                 taCustomer.Fill(fullDs.Customer);
+                FullDataSetTableAdapters.Customer1TableAdapter taCustomer1 = new FullDataSetTableAdapters.Customer1TableAdapter();
+                taCustomer1.Fill(fullDs.Customer1);
+                taCustomer1.Update(fullDs.Customer1);
+                DataTable dt = new DataTable();
+                dt = taCustomer1.GetDataBy(adminTextBox.Text);
+                GridView1.DataSource = dt;
                 GridView1.DataBind();
+                adminTextBox.Text = "";
+                colorBoxes();
             }
         }
 
@@ -172,14 +174,17 @@ namespace M4_major_project
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            FullDataSet fullDs = new FullDataSet();
-            FullDataSetTableAdapters.Customer1TableAdapter taCustomer1 = new FullDataSetTableAdapters.Customer1TableAdapter();
-            taCustomer1.Fill(fullDs.Customer1);
-            taCustomer1.Update(fullDs.Customer1);
-            DataTable dt = new DataTable();
-            dt = taCustomer1.GetDataBy(adminTextBox.Text);
-            GridView1.DataSource = dt;
-            GridView1.DataBind();
+            if (adminTextBox.Text.Length > 0)
+            {
+                FullDataSet fullDs = new FullDataSet();
+                FullDataSetTableAdapters.Customer1TableAdapter taCustomer1 = new FullDataSetTableAdapters.Customer1TableAdapter();
+                taCustomer1.Fill(fullDs.Customer1);
+                taCustomer1.Update(fullDs.Customer1);
+                DataTable dt = new DataTable();
+                dt = taCustomer1.GetDataBy(adminTextBox.Text);
+                GridView1.DataSource = dt;
+                GridView1.DataBind();
+            }
         }
 
         protected void nameTextBox_TextChanged(object sender, EventArgs e)
