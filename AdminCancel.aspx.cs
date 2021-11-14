@@ -28,5 +28,89 @@ namespace M4_major_project
                 GridView1.DataBind();
             }
         }
+        private string calculateAmountDue(string s)
+        {
+            s = s.Substring(2, s.Length - 5);
+            double due = double.Parse(s) * 0.5;
+            return due + "";
+        }
+        private void processRefund(int summaryID)
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.PaymentTableAdapter paymentTa = new FullDataSetTableAdapters.PaymentTableAdapter();
+            paymentTa.Fill(fullDs.Payment);
+            for (int i = 0; i < fullDs.Payment.Rows.Count; i++)
+            {
+                if (fullDs.Payment[i].summaryID == summaryID)
+                {
+                    string newAmount = calculateAmountDue(fullDs.Payment[i].amountDue.ToString());
+                    paymentTa.Insert(summaryID, "-R " + newAmount + ".00", DateTime.Today, fullDs.Payment[i].typeOfPayment);
+                    paymentTa.Fill(fullDs.Payment);
+                    break;
+                }
+            }
+        }
+        private void cancelBooking(int summaryID)
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            FullDataSetTableAdapters.BookingInnerTableAdapter bookingInnerTa = new FullDataSetTableAdapters.BookingInnerTableAdapter();
+            bookingSummaryTa.Fill(fullDs.BookingSummary);
+            bookingInnerTa.Fill(fullDs.BookingInner);
+            for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
+            {
+                if (fullDs.BookingSummary[i].summaryID == summaryID)
+                {
+                    fullDs.BookingSummary[i].bookingStatus = "Cancelled";
+                    bookingSummaryTa.Update(fullDs.BookingSummary);
+                    bookingSummaryTa.Fill(fullDs.BookingSummary);
+                    bookingInnerTa.Fill(fullDs.BookingInner);
+                    processRefund(summaryID);
+                }
+            }
+        }
+        private bool bookingIsCanceled(int summaryID)
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            bookingSummaryTa.Fill(fullDs.BookingSummary);
+            for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
+            {
+                if (fullDs.BookingSummary[i].summaryID == summaryID && fullDs.BookingSummary[i].bookingStatus == "Cancelled")
+                {
+                    return true;
+                }
+
+            }
+            return false;
+        }
+        private bool bookingIsIncomplete(int summaryID)
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            bookingSummaryTa.Fill(fullDs.BookingSummary);
+            for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
+            {
+                if (fullDs.BookingSummary[i].summaryID == summaryID && fullDs.BookingSummary[i].bookingStatus == "inComplete")
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        private bool bookingIsModified(int summaryID)
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            bookingSummaryTa.Fill(fullDs.BookingSummary);
+            for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
+            {
+                if (fullDs.BookingSummary[i].summaryID == summaryID && fullDs.BookingSummary[i].bookingStatus == "Modified")
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
