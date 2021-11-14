@@ -69,8 +69,8 @@
             </div>
         </div>
         <div>
-            <div class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px" width="100%">
-                <asp:GridView ID="GridView2" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
+            <div class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px">
+                <asp:GridView ID="GridView2" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%">
                     <FooterStyle BackColor="White" ForeColor="#000066" />
                     <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
                     <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
@@ -81,9 +81,12 @@
                     <SortedDescendingCellStyle BackColor="#CAC9C9" />
                     <SortedDescendingHeaderStyle BackColor="#00547E" />
                 </asp:GridView>
+                <br />
+                <div class="col-md-12 text-center">
+                    <asp:Button class="btn btn-primary pull-center" ID="Button1" runat="server" Text="Cancel Booking" Width="50%" OnClick="Button1_Click" Visible="False"/>
+                </div>
             </div>
         </div>
-        
     </form>
 </body>
 </html>
