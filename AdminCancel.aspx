@@ -93,6 +93,8 @@
                     <asp:Button class="btn btn-primary pull-center" ID="cancelBtn" runat="server" Text="Cancel Booking" Width="50%" Visible="False"/>
                 </div>
             </div>
+            <br />
+            <br />
         </div>
     </form>
 </body>
