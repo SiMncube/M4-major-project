@@ -12,6 +12,8 @@ namespace M4_major_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            GridView2.Visible = true;
+            GridView1.Visible = false;
 
         }
 
@@ -161,16 +163,12 @@ namespace M4_major_project
 
         protected void adminTextBox_TextChanged(object sender, EventArgs e)
         {
-            FullDataSet fullDs = new FullDataSet();
-            FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
-            taCustomer.FillBy(fullDs.Customer, adminTextBox.Text);
-            taCustomer.Update(fullDs.Customer);
-            GridView1.DataBind();
+        
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            colorBoxes();
+           
         }
 
         protected void nameTextBox_TextChanged(object sender, EventArgs e)
@@ -189,6 +187,12 @@ namespace M4_major_project
             idTextBox.BackColor = System.Drawing.Color.White;
             cellTextBox.BackColor = System.Drawing.Color.White;
             postalTextBox.BackColor = System.Drawing.Color.White;
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GridView2.Visible = false;
+            GridView1.Visible = true;
         }
     }
 }

@@ -4,11 +4,6 @@
     <div>
         <table style="width: 100%;">
             <tr>
-                <td class="modal-sm" style="width: 247px">&nbsp;</td>
-                <td style="width: 690px">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
                 <td style="height: 16px; width: 247px;"></td>
                 <td style="height: 16px; width: 690px;"></td>
                 <td style="height: 16px"></td>
@@ -24,12 +19,12 @@
                         <AlternatingRowStyle BackColor="White" />
                         <Columns>
                             <asp:CommandField ShowSelectButton="True" />
-                            <asp:BoundField DataField="summaryID" HeaderText="Booking Ref" InsertVisible="False" ReadOnly="True" SortExpression="summaryID" />
-                            <asp:BoundField DataField="dateIn" HeaderText="Check-In Date" SortExpression="dateIn" />
-                            <asp:BoundField DataField="dateOut" HeaderText="Check-Out Date" SortExpression="dateOut" />
-                            <asp:BoundField DataField="numberOfNights" HeaderText="Nights" SortExpression="numberOfNights" />
-                            <asp:BoundField DataField="bookingStatus" HeaderText="Status" SortExpression="bookingStatus" />
-                            <asp:BoundField DataField="amountDue" HeaderText="Amount" SortExpression="amountDue" />
+                            <asp:BoundField DataField="summaryID" HeaderText="summaryID" InsertVisible="False" ReadOnly="True" SortExpression="summaryID" />
+                            <asp:BoundField DataField="dateIn" HeaderText="dateIn" SortExpression="dateIn" />
+                            <asp:BoundField DataField="dateOut" HeaderText="dateOut" SortExpression="dateOut" />
+                            <asp:BoundField DataField="numberOfNights" HeaderText="numberOfNights" SortExpression="numberOfNights" />
+                            <asp:BoundField DataField="bookingStatus" HeaderText="bookingStatus" SortExpression="bookingStatus" />
+                            <asp:BoundField DataField="amountDue" HeaderText="amountDue" SortExpression="amountDue" />
                         </Columns>
                         <EditRowStyle BackColor="#2461BF" />
                         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -167,7 +162,7 @@
                 <td style="width: 474px">&nbsp;</td>
                 <td class="modal-sm" style="width: 302px">
                     <div class="form-group">
-                        <asp:Button ID="saveBookingButton" class="btn btn-primary" runat="server" Text="Save Booking" Width="300px" OnClick="saveBookingButton_Click" />
+                        <asp:Button ID="saveBookingButton" class="btn btn-primary" runat="server" Text="Modify Booking" Width="300px" OnClick="saveBookingButton_Click" />
                     </div>
                 </td>
                 <td>&nbsp;</td>
