@@ -23,7 +23,7 @@ namespace M4_major_project
             FullDataSet fullDs = new FullDataSet();
             FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
             taCustomer.Fill(fullDs.Customer);
-            if(signUIsValid())
+            if(isValid())
             {
                 CurrentRegistration.setEmail(capFirst(emailTextBox.Text));
                 CurrentRegistration.setName(capFirst(nameTextBox.Text));
@@ -36,7 +36,7 @@ namespace M4_major_project
                 CurrentRegistration.setCity(capFirst(cityTextBox.Text));
                 CurrentRegistration.setPostalCode(postalTextBox.Text);
                 CurrentRegistration.setOtpString(htmlOTP(randomOTP()));
-                Email.sendEmail("Thecottagegroup7@gmail.com", htmlOTP(randomOTP()),emailTextBox.Text);
+                Email.sendEmail(emailTextBox.Text,"ConfirmEmailTextBox OTP to register", htmlOTP(randomOTP()));
                 Response.Redirect("/RegisterOTP");
             }
 
@@ -44,10 +44,6 @@ namespace M4_major_project
         private string capFirst(string s)
         {
             return (s[0] + "").ToUpper() + s.Substring(1).ToLower();
-        }
-        private bool signUIsValid()
-        {
-            return true;
         }
         private string htmlOTP(string temp)
         {
