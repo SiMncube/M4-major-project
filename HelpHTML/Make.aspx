@@ -13,6 +13,9 @@
         background: #008cba;
         color: #FFF;
     }
+    .auto-style1 {
+        height: 40px;
+    }
 </style>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -34,12 +37,23 @@
     <div style="width: 100%; height: auto;">
         <div style="float: left; width: 50%;">
             <h2>1. Select Check-In and Check-Out Dates</h2>
+
         </div>
         <div style="float: left; width: 50%">
             <h2>2. Pick the number of rooms from our available</h2>
         </div>
     </div>
         </div>
+            <div>&nbsp</div>
+    <div style="width: 100%; height: auto;">
+        <div style="float: left; width: 50%;">
+            <h2>3.</h2>
+        </div>
+        <div style="float: left; width: 50%">
+            <h2>4.</h2>
+        </div>
+    </div>
+       
     </form>
 </body>
 </html>
