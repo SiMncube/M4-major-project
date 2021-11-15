@@ -113,6 +113,11 @@ namespace M4_major_project
                 }
                 else
                 {
+                    //These are vital for the functions defined for modify booking
+                    this.paymentTa.Fill(fullDs.Payment);
+                    this.bookingSummaryTa.Fill(this.fullDs.BookingSummary);
+                    this.bookedRoomTa.Fill(this.fullDs.BookedRoom);
+
                     completeModifyBooking(Email.amountDue);  //this is the update booking for modified booking
                     Email.bookingStatus = "Complete";  //added by Sihle
                     Email.sendInvoice();
@@ -219,7 +224,7 @@ namespace M4_major_project
 
             UpdateOldBookingStatusToModified(int.Parse(OldBookingSummaryID));
             ProcessModifiedBookingRefund();    //adds a negative payment record == oldBookingAmountDue 
-            paymentTa.Insert(newBookingSummaryID, "EFT", DateTime.Today, callNewBookingAmoundDue);
+            paymentTa.Insert(newBookingSummaryID, "Credit card", DateTime.Today, callNewBookingAmoundDue);
             UpdateNewBookingStatusToComplete();
 
 
@@ -229,8 +234,6 @@ namespace M4_major_project
             this.bookingSummaryTa.Update(this.fullDs.BookingSummary);
             this.bookedRoomTa.Update(this.fullDs.BookedRoom);
             this.bookedRoomTa.Fill(this.fullDs.BookedRoom);
-
-            
 
         }
 
