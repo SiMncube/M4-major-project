@@ -256,6 +256,9 @@ namespace M4_major_project
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking has been successfully Modified" + "A Refund of: " + Math.Abs(finalAmountDue) +" Will be processed" + "');", true);
                 completeModifyBooking(newBookingAmountDueString);
+                Email.bookingStatus = "Complete";  //added by Sihle
+                Email.sendInvoice();
+                Response.Redirect("/Invoice");
             }
             else if (finalAmountDue > 0)  //The customer has to add more money then, hence they should go to payment page
             {
@@ -266,6 +269,9 @@ namespace M4_major_project
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking has been successfully Modified" + "');", true);
                 completeModifyBooking(newBookingAmountDueString);
+                Email.bookingStatus = "Complete";  //added by Sihle
+                Email.sendInvoice();
+                Response.Redirect("/Invoice");
             }
         }
 
