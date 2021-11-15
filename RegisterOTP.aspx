@@ -124,24 +124,5 @@
             </div>
         </div>   
     </form>
-    <div class="modal">
-            <div class="modal-dialog" role="document" id="otpModal" runat="server">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Registration Confirmation</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true"></span>
-                        </button>
-                    </div>
-                    <div class="modal-body" id="modalBody">
-                        <p>Dear customer you have successfully registered</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Ok</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 </body>
-
-</html>
+/html>
