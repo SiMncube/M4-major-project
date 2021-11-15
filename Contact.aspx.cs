@@ -20,6 +20,11 @@ namespace M4_major_project
             {
                 Email.sendEmail(emailTextBox.Text, subject.Items[subject.SelectedIndex].Text, EmailBody(),nameTextBox.Text);
                 Email.sendEmail(emailTextBox.Text, subject.Items[subject.SelectedIndex].Text, Email_body());
+                modalBody.InnerHtml = "<p>You query has been sent to the support team</p>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+                emailTextBox.Text = "";
+                nameTextBox.Text = "";
+                messageTextBox.Text = "";
             }
             catch(Exception ex)
             {

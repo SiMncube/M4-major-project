@@ -3,6 +3,11 @@
     <link rel="stylesheet" href="https://bootswatch.com/3/yeti/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function showModal() {
+            $("#myModal").modal('show');
+        }
+    </script>
     <style>
         .jumbotron {
             background: #008cba;
@@ -75,7 +80,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <asp:Button class="btn btn-primary pull-right" id="btnContactUs" runat="server" Text="Send Message" OnClick="btnContactUs_Click" data-toggle="modal" data-target="#myModal" />
+                                <asp:Button class="btn btn-primary pull-right" id="btnContactUs" runat="server" Text="Send Message" OnClick="btnContactUs_Click"/>
                             </div>
                         </div>
                     </form>
@@ -109,7 +114,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Confirmation</h4>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" id="modalBody" runat="server">
                     <p>You query has been sent to the support team</p>
                 </div>
                 <div class="modal-footer">
