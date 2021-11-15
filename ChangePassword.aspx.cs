@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
+using System.Windows;
 
 namespace M4_major_project
 {
@@ -12,7 +13,7 @@ namespace M4_major_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -28,11 +29,17 @@ namespace M4_major_project
                     {
                         fullDs.Customer[i].password = confirmTextBox.Text;
                         taCustomer.Update(fullDs);
-                        Response.Write("<script language='javascript'>window.alert('Password successfully reset');window.location='Default.aspx';</script>");
+                        modalBody.InnerHtml = "<p>Your password is successfully reset. Redirecting you to our homepage....</p>";
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+                        //Window.location.href = "Default.aspx";
                         break;
                     }
                 }
             }
+        }
+        protected void CloseBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Default");
         }
         private bool inputValid()
         {
