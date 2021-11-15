@@ -30,20 +30,20 @@
                     <img src="Images/bath.jpg" alt="New york" style="width: 100%;">
                 </div>
 
-                <div class="item active">
-                    <img src="Images/foxcroft.jpg" style="width: 100%;" />
+                <div class="item">
+                    <img src="Images/ga.jpg" style="width: 100%;" />
                 </div>
 
                 <div class="item">
                     <img src="Images/starlings-cafe.jpg" alt="Chicago" style="width: 100%;">
                 </div>
 
-                <div class="item">
+                <div class="item active">
                     <img src="Images/suite.jpg" alt="New york" style="width: 100%;">
                 </div>
 
                 <div class="item">
-                    <img src="Images/ga.jpg" alt="New york" style="width: 100%;">
+                    <img src="Images/foxcroft.jpg" alt="New york" style="width: 100%;">
                 </div>
 
                 <div class="item">

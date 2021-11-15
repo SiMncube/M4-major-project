@@ -114,6 +114,7 @@ namespace M4_major_project
                 else
                 {
                     completeModifyBooking(Email.amountDue);  //this is the update booking for modified booking
+                    Email.bookingStatus = "Complete";  //added by Sihle
                     Email.sendInvoice();
                     Response.Redirect("/Invoice");
                 }
@@ -208,17 +209,19 @@ namespace M4_major_project
         FullDataSetTableAdapters.BookedRoomTableAdapter bookedRoomTa = new FullDataSetTableAdapters.BookedRoomTableAdapter();
         FullDataSetTableAdapters.PaymentTableAdapter paymentTa = new FullDataSetTableAdapters.PaymentTableAdapter();
 
-
-        //modify booking special attributes
-        string OldBookingSummaryID = Email.oldBookingID;
-        int newBookingSummaryID = currentBooking.getSummaryID();
-
         private void completeModifyBooking(string callNewBookingAmoundDue)
         {
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking has been successfully Modified" + "');", true);
+
+            //modify booking special attributes
+            string OldBookingSummaryID = Email.oldBookingID;
+            int newBookingSummaryID = currentBooking.getSummaryID();
+
             UpdateOldBookingStatusToModified(int.Parse(OldBookingSummaryID));
             ProcessModifiedBookingRefund();    //adds a negative payment record == oldBookingAmountDue 
             paymentTa.Insert(newBookingSummaryID, "EFT", DateTime.Today, callNewBookingAmoundDue);
             UpdateNewBookingStatusToComplete();
+
 
             this.paymentTa.Update(fullDs.Payment);
             this.paymentTa.Fill(fullDs.Payment);
@@ -227,12 +230,15 @@ namespace M4_major_project
             this.bookedRoomTa.Update(this.fullDs.BookedRoom);
             this.bookedRoomTa.Fill(this.fullDs.BookedRoom);
 
-            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking has been successfully Modified" + "');", true);
+            
 
         }
 
         private void ProcessModifiedBookingRefund() //100% refund will be used to make the new booking
         {
+            //modify booking special attributes
+            string OldBookingSummaryID = Email.oldBookingID;
+
             for (int i = 0; i < fullDs.Payment.Rows.Count; i++)
             {
                 if (fullDs.Payment[i].summaryID.ToString() == OldBookingSummaryID)
@@ -261,6 +267,9 @@ namespace M4_major_project
 
         private void UpdateNewBookingStatusToComplete()
         {
+            //modify booking special attributes
+            int newBookingSummaryID = currentBooking.getSummaryID();
+
             for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
             {
                 if (fullDs.BookingSummary[i].summaryID == newBookingSummaryID)

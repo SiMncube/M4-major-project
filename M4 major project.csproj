@@ -178,6 +178,7 @@
       <DependentUpon>FullDataSet.xsd</DependentUpon>
     </Content>
     <Content Include="Help.aspx" />
+    <Content Include="HelpHTML\MakeBookingHelp.html" />
     <Content Include="Images\001df72d-e0e2-456c-87ba-314760081f2b.jpg" />
     <Content Include="Images\13120f2b-9dce-4c9b-8168-010e6a7ff8b4.jpg" />
     <Content Include="Images\3a236330-bcaa-4814-a059-3bd37c3101a4.jpg" />
