@@ -9,6 +9,7 @@
             $("#myModal").modal('show');
         }
     </script>
+    <br />
     <div class="form-gap"></div>
     <div class="container">
         <div class="row">
@@ -18,8 +19,9 @@
                         <div class="text-center">
                             <h3><i class="fa fa-lock fa-4x"></i></h3>
                             <h3>OTP COnfirmation</h3>
+                            <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/icons8-password-64.png" />
+                            <br />
                             <p>Please confirm OTP.</p>
-                            <asp:Image ID="Image1" runat="server" />
                             <div class="panel-body">
                                 <form id="register-form" role="form" autocomplete="off" class="form" method="post">
                                     <div class="form-group">
