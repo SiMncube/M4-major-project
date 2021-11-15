@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RegisterOTP.aspx.cs" Inherits="M4_major_project.RegisterOTP" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-     <link rel="stylesheet" href="https://bootswatch.com/3/yeti/bootstrap.css">
+    <link rel="stylesheet" href="https://bootswatch.com/3/yeti/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!---The script for the modal ting---->
@@ -21,17 +21,15 @@
                             <h3>OTP COnfirmation</h3>
                             <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/icons8-password-64.png" />
                             <br />
-                            <p>Please confirm OTP.</p>
+                            <p>Please confirm OTP to register</p>
                             <div class="panel-body">
                                 <form id="register-form" role="form" autocomplete="off" class="form" method="post">
                                     <div class="form-group">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
-                                            <asp:TextBox ID="otpTextbox" runat="server" placeholder="Enter OTP" class="form-control" type="email" Width="93%"></asp:TextBox>
-                                        </div>
+                                        <asp:Label ID="Label1" CssClass="pull-left" runat="server" Text="Enter One Time Pin"></asp:Label>
+                                        <asp:TextBox ID="otpTextBox" runat="server" class="form-control" placeholder="Enter OTP"></asp:TextBox>
                                     </div>
                                     <div class="form-group" width="100%">
-                                        <asp:Button ID="confirmBtn" class="btn btn-lg btn-primary btn-block" value="Confirm" runat="server" Text="Confirm" Width="100%" />
+                                        <asp:Button ID="confirmBtn" class="btn btn-lg btn-primary btn-block" value="Confirm" runat="server" Text="Confirm" Width="100%" OnClick="confirmBtn_Click" />
                                     </div>
                                     <input type="hidden" class="hide" name="token" id="token" value="">
                                 </form>
