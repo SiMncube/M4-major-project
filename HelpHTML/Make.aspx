@@ -32,11 +32,11 @@
     </div>
     <div></div>
     <div style="width: 100%; height: auto;">
-        <div style="float: left; width: 35%;">
-            <b>1st GUI element goes here </b>
+        <div style="float: left; width: 50%;">
+            <h2>1. Select Check-In and Check-Out Dates</h2>
         </div>
-        <div style="float: left; width: 60%">
-            <b>2nd GUI element goes here </b>
+        <div style="float: left; width: 50%">
+            <h2>2. Pick the number of rooms from our available</h2>
         </div>
     </div>
         </div>
