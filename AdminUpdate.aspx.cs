@@ -196,7 +196,7 @@ namespace M4_major_project
 
         protected void nameTextBox_TextChanged(object sender, EventArgs e)
         {
-            nameTextBox.BackColor = System.Drawing.Color.White;
+            nameTextBox.BackColor = System.Drawing.Color.White;     
         }
 
         protected void surnameTextBox_TextChanged(object sender, EventArgs e)

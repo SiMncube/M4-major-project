@@ -11,17 +11,8 @@ namespace M4_major_project
 {
 
 
-    public partial class OTP
+    public partial class RegisterOTP
     {
-
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
         /// Image1 control.
@@ -33,22 +24,13 @@ namespace M4_major_project
         protected global::System.Web.UI.WebControls.Image Image1;
 
         /// <summary>
-        /// Label1 control.
+        /// otpTextbox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-
-        /// <summary>
-        /// otbTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox otbTextBox;
+        protected global::System.Web.UI.WebControls.TextBox otpTextbox;
 
         /// <summary>
         /// confirmBtn control.
@@ -60,21 +42,12 @@ namespace M4_major_project
         protected global::System.Web.UI.WebControls.Button confirmBtn;
 
         /// <summary>
-        /// Label2 control.
+        /// modalBody control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-
-        /// <summary>
-        /// resendHPL control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink resendHPL;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl modalBody;
     }
 }

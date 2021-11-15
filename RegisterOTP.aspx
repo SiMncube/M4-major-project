@@ -1,128 +1,58 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegisterOTP.aspx.cs" Inherits="M4_major_project.OTP" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-            
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RegisterOTP.aspx.cs" Inherits="M4_major_project.RegisterOTP" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+     <link rel="stylesheet" href="https://bootswatch.com/3/yeti/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         function showModal() {
-            $("#otpModal").modal('show');
+            $("#myModal").modal('show');
         }
-
-        $(function () {
-            $("#btnShow").click(function () {
-                showModal();
-            });
-        });
     </script>
-    <style type="text/css">
-        .auto-style1 {
-            height: 677px;
-            width: 1350px;
-        }
-
-        .auto-style2 {
-            width: 367px;
-            position: fixed;
-            left: 517px;
-            top: 204px;
-            height: 337px;
-        }
-
-        .auto-style3 {
-            margin-left: 142px;
-            margin-top: 21px;
-        }
-
-        .auto-style4 {
-            width: 316px;
-            margin-left: 19px;
-        }
-
-        .auto-style5 {
-            width: 164px;
-            position: fixed;
-            left: 627px;
-            top: 315px;
-            height: 31px;
-            right: 317px;
-        }
-
-        .auto-style6 {
-            width: 331px;
-            position: fixed;
-            left: 541px;
-            top: 370px;
-        }
-
-        .auto-style7 {
-            position: fixed;
-            left: 626px;
-            top: 426px;
-        }
-
-        .auto-style8 {
-            position: fixed;
-            left: 640px;
-            top: 472px;
-            width: 97px;
-        }
-
-        .auto-style9 {
-            position: fixed;
-            left: 600px;
-            top: 521px;
-            width: 261px;
-            height: 13px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div style="background-image: url('https://localhost:44301/Images/WhatsApp Image 2021-09-05 at 19.21.54.jpeg')" class="auto-style1">
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <div class="auto-style2" style="border: thick solid #000000; background-color: #FFFFFF">
-                <asp:Image ID="Image1" runat="server" CssClass="auto-style3" Height="74px" ImageAlign="AbsMiddle" ImageUrl="~/Images/png-clipart-login-computer-icons-avatar-icon-monochrome-black.png" Width="85px" />
-                <br />
-                <h1 class="auto-style5">Enter Code</h1>
-                <br />
-                <div class="auto-style4">
-                </div>
-                <br />
-                <br />
-                <br />
-                <div class="auto-style6">
-                    <asp:Label ID="Label1" runat="server" Text="We have sent you an email with 6 digit verification code (OTP) on" ForeColor="#333333"></asp:Label></div>
-                <br />
-                <br />
-                <div class="auto-style7">
-                    <asp:TextBox ID="otbTextBox" runat="server" Height="27px" ToolTip="6 digit OTP" Width="138px"></asp:TextBox>
-                </div>
-                <div class="auto-style8">
-                    <asp:Button ID="confirmBtn" runat="server" BackColor="#0099FF" ForeColor="White" Height="32px" Text="Confirm" Width="116px" OnClick="ConfirmOTPbt_Click" />
-                </div>
-                <div class="auto-style9">
-                    <asp:Label ID="Label2" runat="server" ForeColor="#666666" Text="Did not receive the code?"></asp:Label> &nbsp;<asp:HyperLink ID="resendHPL" runat="server" ForeColor="#0099FF">Resend</asp:HyperLink>
+    <div class="form-gap"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-center">
+                            <h3><i class="fa fa-lock fa-4x"></i></h3>
+                            <h3>OTP COnfirmation</h3>
+                            <p>Please confirm OTP.</p>
+                            <asp:Image ID="Image1" runat="server" />
+                            <div class="panel-body">
+                                <form id="register-form" role="form" autocomplete="off" class="form" method="post">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
+                                            <asp:TextBox ID="otpTextbox" runat="server" placeholder="Enter OTP" class="form-control" type="email" Width="93%"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" width="100%">
+                                        <asp:Button ID="confirmBtn" class="btn btn-lg btn-primary btn-block" value="Confirm" runat="server" Text="Confirm" Width="100%" />
+                                    </div>
+                                    <input type="hidden" class="hide" name="token" id="token" value="">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>   
-    </form>
-</body>
-/html>
+        </div>
+    </div>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Confirmation</h4>
+                </div>
+                <div class="modal-body" id="modalBody" runat="server">
+                    <p>You query has been sent to the support team</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Content>

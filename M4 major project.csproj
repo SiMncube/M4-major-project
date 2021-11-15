@@ -212,8 +212,8 @@
     <Content Include="mangerStyle.css" />
     <Content Include="ModifyBooking.aspx" />
     <Content Include="MakeBooking.aspx" />
-    <Content Include="RegisterOTP.aspx" />
     <Content Include="Payment.aspx" />
+    <Content Include="RegisterOTP.aspx" />
     <Content Include="ViewBooking.aspx" />
     <Content Include="WebForm3.aspx" />
     <Content Include="TestingWebForm.aspx" />
@@ -392,13 +392,6 @@
     <Compile Include="Invoice.aspx.designer.cs">
       <DependentUpon>Invoice.aspx</DependentUpon>
     </Compile>
-    <Compile Include="RegisterOTP.aspx.cs">
-      <DependentUpon>RegisterOTP.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="RegisterOTP.aspx.designer.cs">
-      <DependentUpon>RegisterOTP.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Payment.aspx.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -499,6 +492,13 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterOTP.aspx.cs">
+      <DependentUpon>RegisterOTP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterOTP.aspx.designer.cs">
+      <DependentUpon>RegisterOTP.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
