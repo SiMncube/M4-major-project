@@ -168,7 +168,7 @@
                                 <div class="feature-content">
                                     <h3>Booking</h3>
                                     <p>
-                                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/HelpHTML/MakeBookingHelp.html">Making a booking</asp:HyperLink>
+                                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/HelpHTML/Make.aspx">Need assistant with making a booking through the website?</asp:HyperLink>
                                     </p>
                                     <p>
                                         <asp:HyperLink ID="HyperLink3" runat="server">Canceling a booking</asp:HyperLink>
