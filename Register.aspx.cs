@@ -20,17 +20,6 @@ namespace M4_major_project
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            check = 1;
-            if (Register.check == 1)
-            {
-                HtmlAnchor btn1 = (HtmlAnchor)FindControl("panel");
-                btn1.Visible = false;
-            }
-            if (signUIsValid())
-            {
-                string temp = randomOTP();
-                Email.sendEmail(emailTextBox.Text, "Sign up OTP confirmation", htmlOTP(temp));
-            }
             FullDataSet fullDs = new FullDataSet();
             FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
             taCustomer.Fill(fullDs.Customer);
@@ -47,9 +36,8 @@ namespace M4_major_project
                 CurrentRegistration.setCity(capFirst(cityTextBox.Text));
                 CurrentRegistration.setPostalCode(postalTextBox.Text);
                 CurrentRegistration.setOtpString(htmlOTP(randomOTP()));
-                //taCustomer.Insert(capFirst(emailTextBox.Text), capFirst(nameTextBox.Text), capFirst(surnameTextBox.Text), idTextBox.Text, cellTextBox.Text, passwordTextBox.Text, capFirst(streetTextBox.Text), capFirst(surbubNameTextBox.Text), capFirst(cityTextBox.Text), postalTextBox.Text);
-                //Response.Write("<script language='javascript'>window.alert('You have successfully registered');window.location='Default.aspx';</script>");
-                Response.Redirect("/OTP");
+                Email.sendEmail("Thecottagegroup7@gmail.com", htmlOTP(randomOTP()),emailTextBox.Text);
+                Response.Redirect("/RegisterOTP");
             }
 
         }
