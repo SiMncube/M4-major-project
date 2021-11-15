@@ -12,6 +12,11 @@ namespace M4_major_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        protected void btnContactUs_Click(object sender, EventArgs e)
+        {
 
         }
 
@@ -164,6 +169,8 @@ namespace M4_major_project
                 GridView1.DataBind();
                 adminTextBox.Text = "";
                 colorBoxes();
+                modalBody.InnerHtml = "<p>The customer details have been successfully updated</p>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
             }
         }
 

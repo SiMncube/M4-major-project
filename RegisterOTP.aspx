@@ -122,8 +122,9 @@
                     <asp:Label ID="Label2" runat="server" ForeColor="#666666" Text="Did not receive the code?"></asp:Label> &nbsp;<asp:HyperLink ID="resendHPL" runat="server" ForeColor="#0099FF">Resend</asp:HyperLink>
                 </div>
             </div>
-        </div>
-        <div class="modal">
+        </div>   
+    </form>
+    <div class="modal">
             <div class="modal-dialog" role="document" id="otpModal" runat="server">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -141,7 +142,6 @@
                 </div>
             </div>
         </div>
-    </form>
 </body>
 
 </html>
