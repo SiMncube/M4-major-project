@@ -149,7 +149,7 @@
             <div class="row">
                 <div class="col-md-30 col-sm-6 col-xs-12">
                     <div class="aboutus">
-                        <h2 class="aboutus-title">HELp</h2>
+                        <h2 class="aboutus-title">Help</h2>
                         <p class="aboutus-text">To answer the most asked questions by our customers</p>
                     </div>
                 </div>
@@ -168,13 +168,13 @@
                                 <div class="feature-content">
                                     <h3>Booking</h3>
                                     <p>
-                                        <asp:HyperLink ID="HyperLink2" runat="server">Making a booking</asp:HyperLink>
+                                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/HelpHTML/MakeBookingHelp.html">Making a booking</asp:HyperLink>
                                     </p>
                                     <p>
                                         <asp:HyperLink ID="HyperLink3" runat="server">Canceling a booking</asp:HyperLink>
                                     </p>
                                     <p>
-                                        <asp:HyperLink ID="HyperLink4" runat="server">Modifying a booking</asp:HyperLink>
+                                        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/HelpHTML/ModifyBookingHelp.html">Modifying a booking</asp:HyperLink>
                                     </p>
                                     <p>
                                         <asp:HyperLink ID="HyperLink5" runat="server">Don&#39;t want to register?</asp:HyperLink>

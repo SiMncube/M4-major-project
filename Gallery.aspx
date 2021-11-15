@@ -6,9 +6,30 @@
     <link rel="stylesheet" href="https://bootswatch.com/3/yeti/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+         .aboutus-title {
+            font-size: 30px;
+            letter-spacing: 0;
+            line-height: 32px;
+            margin: 0 0 39px;
+            padding: 0 0 11px;
+            position: relative;
+            text-transform: uppercase;
+            color: #000;
+        }
+           .aboutus-title::after {
+                background: #008cba none repeat scroll 0 0;
+                bottom: 0;
+                content: "";
+                height: 2px;
+                left: 0;
+                position: absolute;
+                width: 54px;
+            }
+    </style>
     <div class="container">
         <br />
-        <h2>Gallery</h2>
+        <h2 class="aboutus-title">Gallery</h2>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
             <ol class="carousel-indicators">
@@ -30,20 +51,20 @@
                     <img src="Images/bath.jpg" alt="New york" style="width: 100%;">
                 </div>
 
-                <div class="item active">
-                    <img src="Images/foxcroft.jpg" style="width: 100%;" />
+                <div class="item">
+                    <img src="Images/ga.jpg" style="width: 100%;" />
                 </div>
 
                 <div class="item">
                     <img src="Images/starlings-cafe.jpg" alt="Chicago" style="width: 100%;">
                 </div>
 
-                <div class="item">
+                <div class="item active">
                     <img src="Images/suite.jpg" alt="New york" style="width: 100%;">
                 </div>
 
                 <div class="item">
-                    <img src="Images/ga.jpg" alt="New york" style="width: 100%;">
+                    <img src="Images/foxcroft.jpg" alt="New york" style="width: 100%;">
                 </div>
 
                 <div class="item">
