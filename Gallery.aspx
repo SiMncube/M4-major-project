@@ -6,9 +6,30 @@
     <link rel="stylesheet" href="https://bootswatch.com/3/yeti/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+         .aboutus-title {
+            font-size: 30px;
+            letter-spacing: 0;
+            line-height: 32px;
+            margin: 0 0 39px;
+            padding: 0 0 11px;
+            position: relative;
+            text-transform: uppercase;
+            color: #000;
+        }
+           .aboutus-title::after {
+                background: #008cba none repeat scroll 0 0;
+                bottom: 0;
+                content: "";
+                height: 2px;
+                left: 0;
+                position: absolute;
+                width: 54px;
+            }
+    </style>
     <div class="container">
         <br />
-        <h2>Gallery</h2>
+        <h2 class="aboutus-title">Gallery</h2>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
             <ol class="carousel-indicators">
