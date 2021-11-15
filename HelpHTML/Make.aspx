@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Make.aspx.cs" Inherits="M4_major_project.HelpHTML.Make" %>
+
+<!DOCTYPE html>
 <link rel="stylesheet" href="https://bootswatch.com/3/yeti/bootstrap.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -12,13 +14,14 @@
         color: #FFF;
     }
 </style>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Make Booking</title>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
 </head>
 <body>
-    <div class="jumbotron jumbotron-sm">
+    <form id="form1" runat="server">
+        <div>
+            <div class="jumbotron jumbotron-sm">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-lg-12">
@@ -36,5 +39,7 @@
             <b>2nd GUI element goes here </b>
         </div>
     </div>
+        </div>
+    </form>
 </body>
 </html>
