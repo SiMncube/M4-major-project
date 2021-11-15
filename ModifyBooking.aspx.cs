@@ -239,25 +239,9 @@ namespace M4_major_project
             OldBookingSummaryID = GridView1.SelectedRow.Cells[1].Text;
         }
 
-        private void completeModifyBooking(string callNewBookingAmoundDue)
-        {
-            UpdateOldBookingStatusToModified(int.Parse(OldBookingSummaryID));
-            ProcessModifiedBookingRefund();    //adds a negative payment record == oldBookingAmountDue 
-            paymentTa.Insert(newBookingSummaryID, "EFT", DateTime.Today, callNewBookingAmoundDue);
-            UpdateNewBookingStatusToComplete();
-
-            //MessageBox.Show("Booking Has Been Successfully Updated", "Customer Message"); //could be changed to showing all bookind details or something like an invoice 
-            // with all necessary details including the new customer booking reference.
-            this.paymentTa.Update(fullDs.Payment);
-            this.paymentTa.Fill(fullDs.Payment);
-            this.bookingSummaryTa.Fill(this.fullDs.BookingSummary);
-            this.bookingSummaryTa.Update(this.fullDs.BookingSummary);
-            this.bookedRoomTa.Update(this.fullDs.BookedRoom);
-            this.bookedRoomTa.Fill(this.fullDs.BookedRoom);
-        }
-
         protected void saveBookingButton_Click(object sender, EventArgs e)
         {
+            OldBookingSummaryID = GridView1.SelectedRow.Cells[1].Text;
             string newBookingAmountDueString = getAmountDue(singleDDList, doubleDDList);
             decimal oldBookingAmountDue = getOldBookingAmountDue(int.Parse(OldBookingSummaryID));
             decimal newBookingAmountDue = decimal.Parse(newBookingAmountDueString.Substring(2, newBookingAmountDueString.Length - 5));
@@ -272,6 +256,9 @@ namespace M4_major_project
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking has been successfully Modified" + "A Refund of: " + Math.Abs(finalAmountDue) +" Will be processed" + "');", true);
                 completeModifyBooking(newBookingAmountDueString);
+                Email.bookingStatus = "Complete";  //added by Sihle
+                Email.sendInvoice();
+                Response.Redirect("/Invoice");
             }
             else if (finalAmountDue > 0)  //The customer has to add more money then, hence they should go to payment page
             {
@@ -282,6 +269,9 @@ namespace M4_major_project
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking has been successfully Modified" + "');", true);
                 completeModifyBooking(newBookingAmountDueString);
+                Email.bookingStatus = "Complete";  //added by Sihle
+                Email.sendInvoice();
+                Response.Redirect("/Invoice");
             }
         }
 
@@ -346,6 +336,23 @@ namespace M4_major_project
             Email.isModify = true;
             Email.oldBookingID = OldBookingSummaryID;
             Email.oldBookingAmountDue = getOldBookingAmountDue(int.Parse(OldBookingSummaryID)).ToString();
+        }
+
+        private void completeModifyBooking(string callNewBookingAmoundDue)
+        {
+            UpdateOldBookingStatusToModified(int.Parse(OldBookingSummaryID));
+            ProcessModifiedBookingRefund();    //adds a negative payment record == oldBookingAmountDue 
+            paymentTa.Insert(newBookingSummaryID, "EFT", DateTime.Today, callNewBookingAmoundDue);
+            UpdateNewBookingStatusToComplete();
+
+            //MessageBox.Show("Booking Has Been Successfully Updated", "Customer Message"); //could be changed to showing all bookind details or something like an invoice 
+            // with all necessary details including the new customer booking reference.
+            this.paymentTa.Update(fullDs.Payment);
+            this.paymentTa.Fill(fullDs.Payment);
+            this.bookingSummaryTa.Fill(this.fullDs.BookingSummary);
+            this.bookingSummaryTa.Update(this.fullDs.BookingSummary);
+            this.bookedRoomTa.Update(this.fullDs.BookedRoom);
+            this.bookedRoomTa.Fill(this.fullDs.BookedRoom);
         }
 
         private decimal getOldBookingAmountDue(int summaryID)
