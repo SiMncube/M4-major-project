@@ -3,6 +3,7 @@
      <link rel="stylesheet" href="https://bootswatch.com/3/yeti/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!---The script for the modal ting---->
     <script type="text/javascript">
         function showModal() {
             $("#myModal").modal('show');
@@ -39,6 +40,7 @@
             </div>
         </div>
     </div>
+    <!-----Modal for le shandis ye pop up---->
     <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
