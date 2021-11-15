@@ -13,7 +13,7 @@
                     <div class="panel-body">
                         <div class="text-center">
                             <h3><i class="fa fa-lock fa-4x"></i></h3>
-                            <h2 class="text-center">Forgot Password?</h2>
+                            <h3>Forgot Password</h3>
                             <p>You can reset your password here.</p>
                             <div class="panel-body">
                                 <form id="register-form" role="form" autocomplete="off" class="form" method="post">
@@ -23,8 +23,8 @@
                                             <asp:TextBox ID="emailTextbox" runat="server" placeholder="email address" class="form-control" type="email"></asp:TextBox>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <asp:Button ID="Button1" class="btn btn-lg btn-primary btn-block" value="Reset Password" runat="server" Text="Reset Password" OnClick="Button1_Click1" Width="1237px" />
+                                    <div class="form-group" width="100%">
+                                        <asp:Button ID="Button1" class="btn btn-lg btn-primary btn-block" value="Reset Password" runat="server" Text="Reset Password" OnClick="Button1_Click1" Width="100%" />
                                     </div>
                                     <input type="hidden" class="hide" name="token" id="token" value="">
                                 </form>
