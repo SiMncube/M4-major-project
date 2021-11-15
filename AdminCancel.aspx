@@ -1,15 +1,21 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdminCancel.aspx.cs" Inherits="M4_major_project.AdminCancel" %>
 
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link href="Content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://bootswatch.com/3/yeti/bootstrap.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function showModal() {
+            $("#cancelAdminModal").modal('show');
+        }
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="navbar navbar-inverse navbar-fixed-top" id="Panel" runat="server">
+            <div class="navbar navbar-inverse navbar-fixed-top" id="Panel" runat="server">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -96,6 +102,22 @@
             </div>
             <br />
             <br />
+        </div>
+        <div id="cancelAdminModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Update Confirmation</h4>
+                    </div>
+                    <div class="modal-body" id="modalBody" runat="server">
+                        <p></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </form>
 </body>

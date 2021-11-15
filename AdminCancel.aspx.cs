@@ -12,7 +12,7 @@ namespace M4_major_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -78,6 +78,8 @@ namespace M4_major_project
             {
                 if (fullDs.BookingSummary[i].summaryID == summaryID && fullDs.BookingSummary[i].bookingStatus == "Cancelled")
                 {
+                    modalBody.InnerHtml = "<p>The Booking is already cancelled</p>";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                     return true;
                 }
 
@@ -93,6 +95,8 @@ namespace M4_major_project
             {
                 if (fullDs.BookingSummary[i].summaryID == summaryID && fullDs.BookingSummary[i].bookingStatus == "inComplete")
                 {
+                    modalBody.InnerHtml = "<p>The Booking is not complete</p>";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                     return true;
                 }
             }
@@ -107,6 +111,8 @@ namespace M4_major_project
             {
                 if (fullDs.BookingSummary[i].summaryID == summaryID && fullDs.BookingSummary[i].bookingStatus == "Modified")
                 {
+                    modalBody.InnerHtml = "<p>The Booking is modified</p>";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                     return true;
                 }
             }
@@ -137,7 +143,13 @@ namespace M4_major_project
             {
                 if (fullDs.BookingSummary[i].summaryID.ToString().Equals(GridView2.Rows[0].Cells[4].Text))
                 {
-                    fullDs.BookingSummary[i].bookingStatus = "Cancelled";
+                    int summary = fullDs.BookingSummary[i].summaryID;
+                    if (!bookingIsModified(summary) && !bookingIsCanceled(summary) && !bookingIsIncomplete(summary))
+                    {
+                        fullDs.BookingSummary[i].bookingStatus = "Cancelled";
+                        modalBody.InnerHtml = "<p>The Booking is successfully cancelled</p>";
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+                    }
                     break;
                 }
             }
