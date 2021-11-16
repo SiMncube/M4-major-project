@@ -110,6 +110,10 @@ namespace M4_major_project
             int count = 0;
             if (!isAllLetters(nameTextBox.Text) || nameTextBox.Text.Length < 3)
             {
+                closeBtn.UseSubmitBehavior = true;
+                modalBody.InnerHtml = "<p>The name is invalid</p>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+                nameTextBox.ForeColor = System.Drawing.Color.White;
                 nameTextBox.BackColor = System.Drawing.Color.Red;
                 count++;
             }
@@ -151,18 +155,18 @@ namespace M4_major_project
         {
             colorBoxes();
             int count = 0;
-            /*if (!nameIsValid())
+            if (!nameIsValid())
                 count++;
-            if (!AddrressIsValid())
+            /*if (!AddrressIsValid())
                 count++;
             if (!CellNumberisValid())
                 count++;
             if (!IdIsValid())
                 count++;
             if (!PasswordIsValid())
-                count++;*/
-            if (!EmailISValid())
                 count++;
+            if (!EmailISValid())
+                count++;*/
             return count == 0;
         }
         private bool EmailISValid()
@@ -172,6 +176,10 @@ namespace M4_major_project
                 closeBtn.UseSubmitBehavior = true;
                 modalBody.InnerHtml = "<p>The email address entered do not match</p>";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+                emailTextBox.BackColor = System.Drawing.Color.White;
+                emailTextBox.BackColor = System.Drawing.Color.Red;
+                confirmEmailTextBox.ForeColor = System.Drawing.Color.White;
+                confirmEmailTextBox.BackColor = System.Drawing.Color.Red;
                 return false;
             }
             if (emailTextBox.Text != null)
@@ -179,6 +187,10 @@ namespace M4_major_project
                 EmailAddressAttribute email = new EmailAddressAttribute();
                 if (!email.IsValid(emailTextBox.Text) && emailTextBox.Text.Length > 2)
                 {
+                    emailTextBox.BackColor = System.Drawing.Color.White;
+                    emailTextBox.BackColor = System.Drawing.Color.Red;
+                    confirmEmailTextBox.ForeColor = System.Drawing.Color.White;
+                    confirmEmailTextBox.BackColor = System.Drawing.Color.Red;
                     closeBtn.UseSubmitBehavior = true;
                     modalBody.InnerHtml = "<p>The email is invalid, Please enter a valid email</p>";
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
@@ -186,6 +198,10 @@ namespace M4_major_project
                 }
                 else if (EmailIsRegistred())
                 {
+                    emailTextBox.BackColor = System.Drawing.Color.White;
+                    emailTextBox.BackColor = System.Drawing.Color.Red;
+                    confirmEmailTextBox.ForeColor = System.Drawing.Color.White;
+                    confirmEmailTextBox.BackColor = System.Drawing.Color.Red;
                     closeBtn.UseSubmitBehavior = true;
                     modalBody.InnerHtml = "<p>The email address is already registered</p>";
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
@@ -242,6 +258,12 @@ namespace M4_major_project
         protected void emailTextBox_TextChanged(object sender, EventArgs e)
         {
             emailTextBox.BackColor = System.Drawing.Color.White;
+        }
+
+        protected void nameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            nameTextBox.BackColor = System.Drawing.Color.White;
+            
         }
     }
 }

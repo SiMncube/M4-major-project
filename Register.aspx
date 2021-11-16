@@ -29,7 +29,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <asp:Label ID="Label1" runat="server" Text="Name" class="form-label mt-4"></asp:Label>
-                                <asp:TextBox ID="nameTextBox" runat="server" class="form-control" placeholder="Enter name" required=""></asp:TextBox>
+                                <asp:TextBox ID="nameTextBox" runat="server" class="form-control" placeholder="Enter name" required="" OnTextChanged="nameTextBox_TextChanged"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label3" runat="server" Text="ID Number" class="form-label mt-4"></asp:Label>
