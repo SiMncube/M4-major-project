@@ -254,7 +254,8 @@ namespace M4_major_project
 
             if (finalAmountDue < 0)   //WE issue a refund
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking has been successfully Modified" + "A Refund of: " + Math.Abs(finalAmountDue) +" Will be processed" + "');", true);
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking has been successfully Modified " + "A Refund of: " + Math.Abs(finalAmountDue) +" Will be processed" + "');", true);
+                
                 completeModifyBooking(newBookingAmountDueString);
                 Email.bookingStatus = "Complete";  //added by Sihle
                 Email.sendInvoice();
@@ -267,7 +268,8 @@ namespace M4_major_project
             }
             else  // it's a break even no excess or refund.
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking has been successfully Modified" + "');", true);
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking has been successfully Modified, No Refund" + "');", true);
+                
                 completeModifyBooking(newBookingAmountDueString);
                 Email.bookingStatus = "Complete";  //added by Sihle
                 Email.sendInvoice();

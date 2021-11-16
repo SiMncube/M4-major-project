@@ -178,6 +178,7 @@
       <DependentUpon>FullDataSet.xsd</DependentUpon>
     </Content>
     <Content Include="Help.aspx" />
+    <Content Include="HelpHTML\Make.aspx" />
     <Content Include="HelpHTML\MakeBookingHelp.html" />
     <Content Include="HelpHTML\ModifyBookingHelp.html" />
     <Content Include="Images\001df72d-e0e2-456c-87ba-314760081f2b.jpg" />
@@ -387,6 +388,13 @@
     </Compile>
     <Compile Include="Help.aspx.designer.cs">
       <DependentUpon>Help.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HelpHTML\Make.aspx.cs">
+      <DependentUpon>Make.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HelpHTML\Make.aspx.designer.cs">
+      <DependentUpon>Make.aspx</DependentUpon>
     </Compile>
     <Compile Include="Invoice.aspx.cs">
       <DependentUpon>Invoice.aspx</DependentUpon>
