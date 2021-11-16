@@ -52,7 +52,7 @@ namespace M4_major_project
         protected void Button1_Click1(object sender, EventArgs e)
         {
             if (userExist())
-                Response.Redirect("~/ChangePassword");
+                Response.Redirect("~/ResetPasswordOTP");
             else
                 Response.Write("<script language='javascript'>window.alert('You have entered an invalid email address');window.location='ForgotPassword.aspx';</script>");
         }

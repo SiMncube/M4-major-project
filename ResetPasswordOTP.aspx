@@ -8,6 +8,9 @@
         function showModal() {
             $("#myModal").modal('show');
         }
+        $('#myModal').on('hidden.bs.modal', function () {
+            window.location.href = "https://www.google.com/";
+        })
     </script>
     <style>
                 .container-fluid {
@@ -146,14 +149,14 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" href="~/Password" class="close" data-dismiss="modal" runat="server">&times;</button>
                     <h4 class="modal-title">Confirmation</h4>
                 </div>
                 <div class="modal-body" id="modalBody" runat="server">
                     <p></p>
                 </div>
                 <div class="modal-footer">
-                    <asp:Button id="closeBtn" class="btn btn-default" runat="server" Text="Close" data-dismiss="modal"/>
+                    <asp:Button ID="closeBtn" class="btn btn-default" runat="server" Text="Close" data-dismiss="modal" UseSubmitBehavior="false" OnClick="closeBtn_Click"/>
                 </div>
             </div>
         </div>
