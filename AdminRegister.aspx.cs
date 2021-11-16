@@ -12,7 +12,7 @@ namespace M4_major_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            setUser.InnerText = currentAdminName();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -197,6 +197,18 @@ namespace M4_major_project
             emailTextBox.BackColor = System.Drawing.Color.White;
             passwordTextBox.BackColor = System.Drawing.Color.White;
             confirmTextBox.BackColor = System.Drawing.Color.White;
+        }
+        private string currentAdminName()
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.StaffTableAdapter taStaff = new FullDataSetTableAdapters.StaffTableAdapter();
+            taStaff.Fill(fullDs.Staff);
+            for (int i = 0; i < fullDs.Staff.Rows.Count; i++)
+            {
+                if (fullDs.Staff[i].emailID.Equals(CurrentUser.getEmailID(), StringComparison.OrdinalIgnoreCase))
+                    return fullDs.Staff[i].surname + " " + fullDs.Staff[i].name;
+            }
+            return "";
         }
     }
 }
