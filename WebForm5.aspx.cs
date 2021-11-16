@@ -11,8 +11,8 @@ namespace M4_major_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //modalBody.InnerHtml = "<p>Hello</p>";
-            //ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+            modalBody.InnerHtml = "<p>Hello</p>";
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
         }
 
         protected void btnContactUs_Click(object sender, EventArgs e)
