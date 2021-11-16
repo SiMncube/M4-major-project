@@ -220,6 +220,7 @@
     <Content Include="MakeBooking.aspx" />
     <Content Include="Payment.aspx" />
     <Content Include="RegisterOTP.aspx" />
+    <Content Include="ResetPasswordOTP.aspx" />
     <Content Include="ViewBooking.aspx" />
     <Content Include="WebForm3.aspx" />
     <Content Include="TestingWebForm.aspx" />
@@ -512,6 +513,13 @@
     </Compile>
     <Compile Include="RegisterOTP.aspx.designer.cs">
       <DependentUpon>RegisterOTP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPasswordOTP.aspx.cs">
+      <DependentUpon>ResetPasswordOTP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPasswordOTP.aspx.designer.cs">
+      <DependentUpon>ResetPasswordOTP.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
