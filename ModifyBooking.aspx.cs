@@ -251,6 +251,10 @@ namespace M4_major_project
             int[] a = { -1, (int)finalAmountDue };
             currentBooking.setRoomIDs(a);
 
+            currentBooking.NumberSingles(singleDDList.SelectedItem.ToString());
+            currentBooking.setNumberDoubles(doubleDDList.SelectedItem.ToString());
+
+
             if (finalAmountDue < 0)   //WE issue a refund
             {
                 ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking has been successfully Modified " + "A Refund of: " + Math.Abs(finalAmountDue) +" Will be processed" + "');", true);
@@ -274,9 +278,6 @@ namespace M4_major_project
                 Email.sendInvoice();
                 Response.Redirect("/Invoice");
             }
-
-            currentBooking.NumberSingles(singleDDList.SelectedItem.ToString());
-            currentBooking.setNumberDoubles(doubleDDList.SelectedItem.ToString());
         }
 
         private void CaptureNEWBookingRecord(string callAmountDueMethod)  //this method does not capture payment records
