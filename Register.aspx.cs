@@ -150,6 +150,7 @@ namespace M4_major_project
         }
         private bool isValid()
         {
+            colorBoxes();
             int count = 0;
             if (!nameIsValid())
                 count++;

@@ -29,6 +29,7 @@ namespace M4_major_project
                     {
                         fullDs.Customer[i].password = confirmTextBox.Text;
                         taCustomer.Update(fullDs);
+                        closeBtn.UseSubmitBehavior = false;
                         modalBody.InnerHtml = "<p>Your password is successfully reset. Redirecting you to our homepage....</p>";
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                         confirmBtn.Enabled = false;
@@ -37,7 +38,7 @@ namespace M4_major_project
                 }
             }
         }
-        protected void CloseBtn_Click(object sender, EventArgs e)
+        protected void closeBtn_Click(object sender, EventArgs e)
         {
             Response.Redirect("/Default");
         }
@@ -51,12 +52,14 @@ namespace M4_major_project
         {
             if (passwordTextBox.Text != confirmTextBox.Text)
             {
-                modalBody.InnerHtml = "<p>Your Passoword's do not match please try again</p>";
+                closeBtn.UseSubmitBehavior = true;
+                modalBody.InnerHtml = "<p>Your Passoword do not match please try again</p>";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                 return false;
             }
             if (passwordTextBox.Text.Length < 8)
             {
+                closeBtn.UseSubmitBehavior = true;
                 modalBody.InnerHtml = "<p>Your password is short. Password has to be 8 or more characters</p>";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                 return false;

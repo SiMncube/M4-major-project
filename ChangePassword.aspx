@@ -8,6 +8,7 @@
             $("#myModal").modal('show');
         }
     </script>
+    <br />
     <div class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px">
         <div class="changePassword">
             <div class="container-fluid">
@@ -18,7 +19,7 @@
                             <br />
                             <asp:Label ID="Label1" runat="server" Text="New Password" class="form-label mt-4"></asp:Label>
                             <br />
-                            <asp:TextBox ID="passwordTextBox" runat="server" required="" class="form-control" placeholder="Enter new password" TextMode="Password"></asp:TextBox>
+                            <asp:TextBox ID="passwordTextBox" runat="server" required="" class="form-control" placeholder="Enter  8 or more Characters" TextMode="Password"></asp:TextBox>
                             <br />
                             <asp:Label ID="Label2" runat="server" Text="Confirm password"></asp:Label>
                             <br />
@@ -44,7 +45,7 @@
                     <p>You query has been sent to the support team</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" id="closeCtn" class="btn btn-default" data-dismiss="modal" OnClick_Click="CloseBtn_Click" runat="server">Close</button>
+                    <asp:Button ID="closeBtn" class="btn btn-default" runat="server" Text="Ok" data-dismiss="modal" UseSubmitBehavior="false" OnClick="closeBtn_Click" />
                 </div>
             </div>
         </div>
