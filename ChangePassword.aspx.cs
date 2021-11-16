@@ -25,7 +25,7 @@ namespace M4_major_project
                 taCustomer.Fill(fullDs.Customer);
                 for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
                 {
-                    if (fullDs.Customer[i].emailID.Equals(ForgotPassword.email, StringComparison.OrdinalIgnoreCase))
+                    if (fullDs.Customer[i].emailID.Equals(CurrentReset.getEmailID(), StringComparison.OrdinalIgnoreCase))
                     {
                         fullDs.Customer[i].password = confirmTextBox.Text;
                         taCustomer.Update(fullDs);
