@@ -18,14 +18,14 @@
                             <br />
                             <asp:Label ID="Label1" runat="server" Text="New Password" class="form-label mt-4"></asp:Label>
                             <br />
-                            <asp:TextBox ID="newTextBox" runat="server" required="" class="form-control" placeholder="Enter new password" TextMode="Password"></asp:TextBox>
+                            <asp:TextBox ID="passwordTextBox" runat="server" required="" class="form-control" placeholder="Enter new password" TextMode="Password"></asp:TextBox>
                             <br />
                             <asp:Label ID="Label2" runat="server" Text="Confirm password"></asp:Label>
                             <br />
                             <asp:TextBox ID="confirmTextBox" runat="server" required="" class="form-control" placeholder="Confirm password" TextMode="Password"></asp:TextBox>
                             <br />
                             <div class="col-md text-center">
-                                <asp:Button ID="Button1" runat="server" Text="Change password" OnClick="Button1_Click" class="btn btn-primary pull-center" />
+                                <asp:Button ID="confirmBtn" runat="server" Text="Change password" OnClick="Button1_Click" class="btn btn-primary pull-center" />
                             </div>
                         </div>
                     </div>

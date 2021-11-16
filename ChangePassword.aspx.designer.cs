@@ -24,13 +24,13 @@ namespace M4_major_project
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// newTextBox control.
+        /// passwordTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox newTextBox;
+        protected global::System.Web.UI.WebControls.TextBox passwordTextBox;
 
         /// <summary>
         /// Label2 control.
@@ -51,13 +51,13 @@ namespace M4_major_project
         protected global::System.Web.UI.WebControls.TextBox confirmTextBox;
 
         /// <summary>
-        /// Button1 control.
+        /// confirmBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button confirmBtn;
 
         /// <summary>
         /// modalBody control.

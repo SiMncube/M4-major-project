@@ -31,6 +31,7 @@ namespace M4_major_project
                         taCustomer.Update(fullDs);
                         modalBody.InnerHtml = "<p>Your password is successfully reset. Redirecting you to our homepage....</p>";
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+                        confirmBtn.Enabled = false;
                         break;
                     }
                 }
@@ -42,9 +43,25 @@ namespace M4_major_project
         }
         private bool inputValid()
         {
-            if (newTextBox.Text == confirmTextBox.Text)
+            if (PasswordIsValid())
                 return true;
             return false;
+        }
+        private bool PasswordIsValid()
+        {
+            if (passwordTextBox.Text != confirmTextBox.Text)
+            {
+                modalBody.InnerHtml = "<p>Your Passoword's do not match please try again</p>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+                return false;
+            }
+            if (passwordTextBox.Text.Length < 8)
+            {
+                modalBody.InnerHtml = "<p>Your password is short. Password has to be 8 or more characters</p>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+                return false;
+            }
+            return true;
         }
     }
 }
