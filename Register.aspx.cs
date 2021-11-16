@@ -129,7 +129,7 @@ namespace M4_major_project
             if (!isAllDigit(postalTextBox.Text) || postalTextBox.Text.Length != 4)
             {
                 closeBtn.UseSubmitBehavior = true;
-                modalBody.InnerHtml = "<p>The postal code entered is invalid. Postal code is 4-Digits</p>";
+                modalBody.InnerHtml = "<p>The postal code entered is invalid. Postal code should be 4-Digits long</p>";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                 postalTextBox.BackColor = System.Drawing.Color.Red;
                 postalTextBox.ForeColor = System.Drawing.Color.White;
@@ -141,7 +141,11 @@ namespace M4_major_project
         {
             if (!isAllDigit(idTextBox.Text) || idTextBox.Text.Length != 13)
             {
+                closeBtn.UseSubmitBehavior = true;
+                modalBody.InnerHtml = "<p>The ID number entered is invalid. ID number should be 13-Digits long</p>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                 idTextBox.BackColor = System.Drawing.Color.Red;
+                idTextBox.ForeColor = System.Drawing.Color.White;
                 return false;
             }
             return true;
@@ -150,7 +154,11 @@ namespace M4_major_project
         {
             if (!isAllDigit(cellTextBox.Text) || cellTextBox.Text.Length != 10)
             {
+                closeBtn.UseSubmitBehavior = true;
+                modalBody.InnerHtml = "<p>The cell number entered is invalid. Cell number is 10-Digits long</p>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                 cellTextBox.BackColor = System.Drawing.Color.Red;
+                cellTextBox.ForeColor = System.Drawing.Color.White;
                 return false;
             }
             return true;
@@ -159,17 +167,17 @@ namespace M4_major_project
         {
             colorBoxes();
             int count = 0;
-            //if (!nameIsValid())
-               // count++;
+            /*if (!nameIsValid())
+                count++;
             if (!AddrressIsValid())
                 count++;
-            /*if (!CellNumberisValid())
+            if (!CellNumberisValid())
                 count++;
             if (!IdIsValid())
-                count++;
+                count++;*/
             if (!PasswordIsValid())
                 count++;
-            if (!EmailISValid())
+            /*if (!EmailISValid())
                 count++;*/
             return count == 0;
         }
@@ -231,14 +239,24 @@ namespace M4_major_project
         {
             if (passwordTextBox.Text != confirmTextBox.Text)
             {
+                closeBtn.UseSubmitBehavior = true;
+                modalBody.InnerHtml = "<p>The password entered do not match, Please try again</p>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                 passwordTextBox.BackColor = System.Drawing.Color.Red;
                 confirmTextBox.BackColor = System.Drawing.Color.Red;
+                passwordTextBox.ForeColor = System.Drawing.Color.White;
+                confirmTextBox.ForeColor = System.Drawing.Color.White;
                 return false;
             }
             if (passwordTextBox.Text.Length < 8)
             {
+                closeBtn.UseSubmitBehavior = true;
+                modalBody.InnerHtml = "<p>The password is too short. The password should have 8 or more characters</p>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                 passwordTextBox.BackColor = System.Drawing.Color.Red;
                 confirmTextBox.BackColor = System.Drawing.Color.Red;
+                passwordTextBox.ForeColor = System.Drawing.Color.White;
+                confirmTextBox.ForeColor = System.Drawing.Color.White;
                 return false;
             }
             return true;
