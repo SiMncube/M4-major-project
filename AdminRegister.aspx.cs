@@ -17,7 +17,7 @@ namespace M4_major_project
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
+            colorBoxes();
             FullDataSet fullDs = new FullDataSet();
             FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
             taCustomer.Fill(fullDs.Customer);
