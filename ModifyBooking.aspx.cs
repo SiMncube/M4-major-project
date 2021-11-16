@@ -250,7 +250,10 @@ namespace M4_major_project
             CaptureNEWBookingRecord(newBookingAmountDueString);      //not this record is incomplete untill the admin confirms the receipt of payment      
             int[] a = { -1, (int)finalAmountDue };
             currentBooking.setRoomIDs(a);
-           
+
+            currentBooking.NumberSingles(singleDDList.SelectedItem.ToString());
+            currentBooking.setNumberDoubles(doubleDDList.SelectedItem.ToString());
+
 
             if (finalAmountDue < 0)   //WE issue a refund
             {
