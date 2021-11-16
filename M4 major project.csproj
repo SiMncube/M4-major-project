@@ -385,6 +385,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="CurrentRegisteration.cs" />
+    <Compile Include="CurrentReset.cs" />
     <Compile Include="Help.aspx.cs">
       <DependentUpon>Help.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
