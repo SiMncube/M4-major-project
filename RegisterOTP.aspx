@@ -8,6 +8,12 @@
         function showModal() {
             $("#myModal").modal('show');
         }
+        function redirect() {
+            $("#closeBtn").click();
+            $('#myModal').on('hidden.bs.modal', function (e) {
+                window.location = '<%= ResolveUrl("/Default") %>';
+            });
+        }
     </script>
     <br />
     <div class="form-gap"></div>
@@ -52,7 +58,7 @@
                     <p>You query has been sent to the support team</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <asp:Button id="closeBtn" class="btn btn-default" runat="server" Text="Close" data-dismiss="modal" OnClick="closeBtn_Click"/>
                 </div>
             </div>
         </div>

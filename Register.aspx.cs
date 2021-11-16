@@ -25,6 +25,13 @@ namespace M4_major_project
             taCustomer.Fill(fullDs.Customer);
             if(isValid())
             {
+                string rand = randomOTP();
+                string temp = "";
+                for(int i = 0; i < rand.Length;i++)
+                {
+                    if (rand[i] != ' ')
+                        temp += rand[i];
+                }
                 CurrentRegistration.setEmail(capFirst(emailTextBox.Text));
                 CurrentRegistration.setName(capFirst(nameTextBox.Text));
                 CurrentRegistration.setSurname(capFirst(surnameTextBox.Text));
@@ -35,8 +42,8 @@ namespace M4_major_project
                 CurrentRegistration.setSuburb(capFirst(surbubNameTextBox.Text));
                 CurrentRegistration.setCity(capFirst(cityTextBox.Text));
                 CurrentRegistration.setPostalCode(postalTextBox.Text);
-                CurrentRegistration.setOtpString(htmlOTP(randomOTP()));
-                Email.sendEmail(emailTextBox.Text, "Sign up OTP confirmation", htmlOTP(randomOTP()));
+                CurrentRegistration.setOtpString(temp);
+                Email.sendEmail(emailTextBox.Text, "Sign up OTP confirmation", htmlOTP(rand));
                 Response.Redirect("/RegisterOTP");
             }
 
@@ -64,7 +71,7 @@ namespace M4_major_project
             otp = temp;
             string random = null;
             for (int i = 0; i < 6; i++)
-                random += temp[i] + "-";
+                random += temp[i] + " ";
 
             return random.Substring(0, 11);
         }
