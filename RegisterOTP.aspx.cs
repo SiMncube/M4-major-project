@@ -9,13 +9,9 @@ namespace M4_major_project
 {
     public partial class RegisterOTP : System.Web.UI.Page
     {
-        Timer timer = new Timer();
         protected void Page_Load(object sender, EventArgs e)
         {
-            closeBtn.UseSubmitBehavior = false;
-            modalBody.InnerHtml = "<p>You have successfully registered, You can now make bookings.<br/>We are redirecting You to our home page</p>";
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
-            confirmBtn.Enabled = false;
+
         }
         protected void confirmBtn_Click(object sender, EventArgs e)
         {

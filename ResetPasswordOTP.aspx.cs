@@ -21,7 +21,15 @@ namespace M4_major_project
         {
             if(CurrentReset.getOtpString().Equals(otpTextBox.Text))
             {
-                
+                closeBtn.UseSubmitBehavior = false;
+                modalBody.InnerHtml = "<p>OTP is confirmed.<br/>We are redirecting You to change your password</p>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+            }
+            else
+            {
+                closeBtn.UseSubmitBehavior = true;
+                modalBody.InnerHtml = "<p>OTP entered is incorrect, please try again</p>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
             }
         }
         protected void closeBtn_Click(object sender, EventArgs e)
