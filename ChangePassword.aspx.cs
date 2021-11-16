@@ -31,7 +31,6 @@ namespace M4_major_project
                         taCustomer.Update(fullDs);
                         modalBody.InnerHtml = "<p>Your password is successfully reset. Redirecting you to our homepage....</p>";
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
-                        //Window.location.href = "Default.aspx";
                         break;
                     }
                 }

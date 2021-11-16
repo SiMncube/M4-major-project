@@ -38,7 +38,7 @@ namespace M4_major_project
                 {
                     CurrentReset.setEmailID(fullDs.Customer[i].emailID);
                     firstName = fullDs.Customer[i].name;
-                    Email.sendEmail(CurrentUser.getEmailID(),"Reset password OTP confirmation",htmlOTP(rand));
+                    Email.sendEmail(CurrentReset.getEmailID(),"Reset password OTP confirmation",htmlOTP(rand));
                     return true;
                 }
             }
