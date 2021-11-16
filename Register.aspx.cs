@@ -44,7 +44,9 @@ namespace M4_major_project
                 CurrentRegistration.setPostalCode(postalTextBox.Text);
                 CurrentRegistration.setOtpString(temp);
                 Email.sendEmail(emailTextBox.Text, "Sign up OTP confirmation", htmlOTP(rand));
-                Response.Redirect("/RegisterOTP");
+                closeBtn.UseSubmitBehavior = false;
+                modalBody.InnerHtml = "<p>You registration is succesfull<br/>An email with an OTP has been sent, Please confirm the OTP to start making bookings</p>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
             }
 
         }
@@ -167,18 +169,24 @@ namespace M4_major_project
         {
             colorBoxes();
             int count = 0;
-            /*if (!nameIsValid())
+            if (!nameIsValid())
                 count++;
             if (!AddrressIsValid())
                 count++;
             if (!CellNumberisValid())
                 count++;
             if (!IdIsValid())
-                count++;*/
+                count++;
             if (!PasswordIsValid())
                 count++;
-            /*if (!EmailISValid())
-                count++;*/
+            if (!EmailISValid())
+                count++;
+            if (count > 1)
+            {
+                closeBtn.UseSubmitBehavior = true;
+                modalBody.InnerHtml = "<p>The details provided are not valid please try again</p>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+            }
             return count == 0;
         }
         private bool EmailISValid()
@@ -210,7 +218,7 @@ namespace M4_major_project
                 }
                 else if (EmailIsRegistred())
                 {
-                    emailTextBox.BackColor = System.Drawing.Color.White;
+                    emailTextBox.ForeColor = System.Drawing.Color.White;
                     emailTextBox.BackColor = System.Drawing.Color.Red;
                     confirmEmailTextBox.ForeColor = System.Drawing.Color.White;
                     confirmEmailTextBox.BackColor = System.Drawing.Color.Red;
