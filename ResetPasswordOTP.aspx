@@ -119,16 +119,16 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <h4>"Thank you for a truly amazing stay! Your hospitality is quite outstanding"<br>
-                    <span style="font-style: normal;">Siya Kolisi, Rugby Legend, Comment Box</span></h4>
+                <h4>"Do not use personal information"<br>
+                    <span style="font-style: normal;">Elon Musk,Tesla CEO</span></h4>
             </div>
             <div class="item">
-                <h4>"One word... WOW!!"<br>
-                    <span style="font-style: normal;">John, Salesman, Facebook</span></h4>
+                <h4>"Create longer passwords, the longer the better"<br>
+                    <span style="font-style: normal;">John Tapp, Hacker</span></h4>
             </div>
             <div class="item">
-                <h4>"Everything was great, staff was very helpful and we were extremely happy"<br>
-                    <span style="font-style: normal;">Harry Kane, Footballer, Twitter</span></h4>
+                <h4>"Use different passwords on different accounts"<br>
+                    <span style="font-style: normal;">Zlatan Ibrahimavic, Security expert</span></h4>
             </div>
         </div>
         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
