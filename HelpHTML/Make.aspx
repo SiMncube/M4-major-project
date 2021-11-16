@@ -37,10 +37,13 @@
     <div style="width: 100%; height: auto;">
         <div style="float: left; width: 50%;">
             <h2>1. Select Check-In and Check-Out Dates</h2>
-
+            <Br />
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Screenshot (381).jpg" />
         </div>
         <div style="float: left; width: 50%">
             <h2>2. Pick the number of rooms from our available</h2>
+            <Br />
+            <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/Screenshot (379).png" />
         </div>
     </div>
         </div>
