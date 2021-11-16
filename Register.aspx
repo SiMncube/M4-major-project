@@ -45,7 +45,7 @@
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label9" runat="server" Text="Email" class="form-label mt-4"></asp:Label>
-                                <asp:TextBox ID="emailTextBox" runat="server" class="form-control" placeholder="Enter email" required=""></asp:TextBox>
+                                <asp:TextBox ID="emailTextBox" runat="server" class="form-control" placeholder="Enter email" required="" OnTextChanged="emailTextBox_TextChanged"></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label10" runat="server" Text="Password" class="form-label mt-4"></asp:Label>
@@ -99,7 +99,7 @@
                     <p>You query has been sent to the support team</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <asp:Button ID="closeBtn" class="btn btn-default" runat="server" Text="Close" data-dismiss="modal" UseSubmitBehavior="false" OnClick="closeBtn_Click"/>
                 </div>
             </div>
         </div>

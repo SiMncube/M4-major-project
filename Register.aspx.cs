@@ -151,7 +151,7 @@ namespace M4_major_project
         {
             colorBoxes();
             int count = 0;
-            if (!nameIsValid())
+            /*if (!nameIsValid())
                 count++;
             if (!AddrressIsValid())
                 count++;
@@ -160,32 +160,39 @@ namespace M4_major_project
             if (!IdIsValid())
                 count++;
             if (!PasswordIsValid())
+                count++;*/
+            if (!EmailISValid())
                 count++;
             return count == 0;
         }
         private bool EmailISValid()
         {
-            if(!emailTextBox.Text.Equals(confirmTextBox.Text))
+            if(!emailTextBox.Text.Equals(confirmEmailTextBox.Text))
             {
-                emailTextBox.BackColor = System.Drawing.Color.Red;
-                confirmTextBox.BackColor = System.Drawing.Color.Red;
+                closeBtn.UseSubmitBehavior = true;
+                modalBody.InnerHtml = "<p>The email address entered do not match</p>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+                return false;
             }
             if (emailTextBox.Text != null)
             {
                 EmailAddressAttribute email = new EmailAddressAttribute();
-                if (!email.IsValid(emailTextBox.Text))
+                if (!email.IsValid(emailTextBox.Text) && emailTextBox.Text.Length > 2)
                 {
-                    emailTextBox.BackColor = System.Drawing.Color.Red;
+                    closeBtn.UseSubmitBehavior = true;
+                    modalBody.InnerHtml = "<p>The email is invalid, Please enter a valid email</p>";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                     return false;
                 }
-                if (EmailIsRegistred())
+                else if (EmailIsRegistred())
                 {
-                    emailTextBox.BackColor = System.Drawing.Color.Red;
+                    closeBtn.UseSubmitBehavior = true;
+                    modalBody.InnerHtml = "<p>The email address is already registered</p>";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                     return false;
                 }
                 return true;
             }
-            emailTextBox.BackColor = System.Drawing.Color.Red;
             return false;
         }
         private bool EmailIsRegistred()
@@ -226,6 +233,15 @@ namespace M4_major_project
             emailTextBox.BackColor = System.Drawing.Color.White;
             passwordTextBox.BackColor = System.Drawing.Color.White;
             confirmTextBox.BackColor = System.Drawing.Color.White;
+        }
+        protected void closeBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/RegisterOTP");
+        }
+
+        protected void emailTextBox_TextChanged(object sender, EventArgs e)
+        {
+            emailTextBox.BackColor = System.Drawing.Color.White;
         }
     }
 }
