@@ -51,7 +51,7 @@
                 <td style="height: 16px"></td>
             </tr>
             <tr>
-                <td style="width: 474px; height: 66px;"></td>
+                <td style="width: 474px; height: 66px;">&nbsp;</td>
                 <td class="modal-sm" style="width: 302px; height: 66px;">
                     <div class="form-group">
                         <label for="singleDDList">Single Rooms:</label>
