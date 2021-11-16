@@ -128,7 +128,11 @@ namespace M4_major_project
         {
             if (!isAllDigit(postalTextBox.Text) || postalTextBox.Text.Length != 4)
             {
+                closeBtn.UseSubmitBehavior = true;
+                modalBody.InnerHtml = "<p>The postal code entered is invalid. Postal code is 4-Digits</p>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                 postalTextBox.BackColor = System.Drawing.Color.Red;
+                postalTextBox.ForeColor = System.Drawing.Color.White;
                 return false;
             }
             return true;
@@ -155,11 +159,11 @@ namespace M4_major_project
         {
             colorBoxes();
             int count = 0;
-            if (!nameIsValid())
+            //if (!nameIsValid())
+               // count++;
+            if (!AddrressIsValid())
                 count++;
-            /*if (!AddrressIsValid())
-                count++;
-            if (!CellNumberisValid())
+            /*if (!CellNumberisValid())
                 count++;
             if (!IdIsValid())
                 count++;
