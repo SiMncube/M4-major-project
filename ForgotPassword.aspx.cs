@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -19,6 +20,33 @@ namespace M4_major_project
         {
             
         }
+        private bool EmailISValid()
+        {
+            if (emailTextBox.Text != null)
+            {
+                EmailAddressAttribute email = new EmailAddressAttribute();
+                if (!email.IsValid(emailTextBox.Text) && emailTextBox.Text.Length > 2)
+                {
+                    emailTextBox.BackColor = System.Drawing.Color.White;
+                    emailTextBox.BackColor = System.Drawing.Color.Red;
+                    closeBtn.UseSubmitBehavior = true;
+                    modalBody.InnerHtml = "<p>The email is invalid, Please enter a valid email</p>";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+                    return false;
+                }
+                else if (!userExist())
+                {
+                    emailTextBox.ForeColor = System.Drawing.Color.White;
+                    emailTextBox.BackColor = System.Drawing.Color.Red;
+                    closeBtn.UseSubmitBehavior = true;
+                    modalBody.InnerHtml = "<p>The email address is not registered</p>";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+                    return false;
+                }
+                return true;
+            }
+            return false;
+        }
         private bool userExist()
         {
             FullDataSet fullDs = new FullDataSet();
@@ -34,11 +62,11 @@ namespace M4_major_project
             CurrentReset.setOtpString(temp);
             for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
             {
-                if (fullDs.Customer[i].emailID.Equals(emailTextbox.Text, StringComparison.OrdinalIgnoreCase))
+                if (fullDs.Customer[i].emailID.Equals(emailTextBox.Text, StringComparison.OrdinalIgnoreCase))
                 {
                     CurrentReset.setEmailID(fullDs.Customer[i].emailID);
                     firstName = fullDs.Customer[i].name;
-                    Email.sendEmail(CurrentReset.getEmailID(),"Reset password OTP confirmation",htmlOTP(rand));
+                    Email.sendEmail(CurrentReset.getEmailID(), "Reset password OTP confirmation", htmlOTP(rand));
                     return true;
                 }
             }
@@ -51,10 +79,13 @@ namespace M4_major_project
 
         protected void Button1_Click1(object sender, EventArgs e)
         {
-            if (userExist())
-                Response.Redirect("~/ResetPasswordOTP");
-            else
-                Response.Write("<script language='javascript'>window.alert('You have entered an invalid email address');window.location='ForgotPassword.aspx';</script>");
+            if (EmailISValid())
+            {
+                closeBtn.UseSubmitBehavior = false;
+                modalBody.InnerHtml = "<p>Your password is successfully reset<br/>An OTP has been sent to you email, Please confirm the OTP to change your password</p>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+            }
+                
         }
         private string htmlOTP(string temp)
         {
@@ -76,6 +107,10 @@ namespace M4_major_project
             for (int i = 0; i < 6; i++)
                 random += temp[i] + " ";
             return random.Substring(0, 11);
+        }
+        protected void closeBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/ResetPasswordOTP");
         }
     }
 }
