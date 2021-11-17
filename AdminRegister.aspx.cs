@@ -27,7 +27,7 @@ namespace M4_major_project
                 string temp = generatePassword();
                 Email.sendEmail(emailTextBox.Text,"Welcome to the Cottage BnB",htmlWelcome(temp));
                 taCustomer.Insert(capFirst(emailTextBox.Text), capFirst(nameTextBox.Text), capFirst(surnameTextBox.Text), idTextBox.Text, cellTextBox.Text, temp, capFirst(streetTextBox.Text), capFirst(surbubNameTextBox.Text), capFirst(cityTextBox.Text), postalTextBox.Text);
-                Response.Write("<script language='javascript'>window.alert('You have successfully registered');window.location='Default.aspx';</script>");
+                Response.Write("<script language='javascript'>window.alert('You have successfully registered');window.location='AdminRegister.aspx';</script>");
             }
         }
         private bool signUIsValid()
