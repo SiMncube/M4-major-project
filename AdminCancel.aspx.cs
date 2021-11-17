@@ -73,6 +73,9 @@ namespace M4_major_project
                 if (fullDs.BookingSummary[i].summaryID == summaryID)
                 {
                     fullDs.BookingSummary[i].bookingStatus = "Cancelled";
+                    modalBody.InnerHtml = "<p>The Booking is successfully cancelled</p>";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+                    fullDs.BookingSummary[i].bookingStatus = "Cancelled";
                     bookingSummaryTa.Update(fullDs.BookingSummary);
                     bookingSummaryTa.Fill(fullDs.BookingSummary);
                     bookingInnerTa.Fill(fullDs.BookingInner);
@@ -150,31 +153,33 @@ namespace M4_major_project
             FullDataSet fullDs = new FullDataSet();
             FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
             bookingSummaryTa.Fill(fullDs.BookingSummary);
-            for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
+            if(!bookingIsCanceled(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)) && !bookingIsIncomplete(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)) && !bookingIsModified(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)))
             {
-                if (fullDs.BookingSummary[i].summaryID.ToString().Equals(GridView2.Rows[0].Cells[4].Text))
-                {
-                    int summary = fullDs.BookingSummary[i].summaryID;
-                    if (!bookingIsModified(summary) && !bookingIsCanceled(summary) && !bookingIsIncomplete(summary))
-                    {
-                        fullDs.BookingSummary[i].bookingStatus = "Cancelled";
-                        modalBody.InnerHtml = "<p>The Booking is successfully cancelled</p>";
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
-                    }
-                    break;
-                }
+                cancelBooking(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text));
+                bookingSummaryTa.Update(fullDs.BookingSummary);
+                FullDataSetTableAdapters.BookingInnerTableAdapter taBookingInner = new FullDataSetTableAdapters.BookingInnerTableAdapter();
+                taBookingInner.FillBy(fullDs.BookingInner, adminTextBox.Text.Trim());
+                DataTable dt = new DataTable();
+                dt = taBookingInner.GetDataBy(adminTextBox.Text);
+                GridView1.DataSource = dt;
+                GridView1.DataBind();
+                bookingText.Visible = false;
+                cancelBtn.Visible = false;
+                GridView1.SelectedIndex = -1;
+                GridView2.DataBind();
             }
-            bookingSummaryTa.Update(fullDs.BookingSummary);
-            FullDataSetTableAdapters.BookingInnerTableAdapter taBookingInner = new FullDataSetTableAdapters.BookingInnerTableAdapter();
-            taBookingInner.FillBy(fullDs.BookingInner, adminTextBox.Text.Trim());
-            DataTable dt = new DataTable();
-            dt = taBookingInner.GetDataBy(adminTextBox.Text);
-            GridView1.DataSource = dt;
-            GridView1.DataBind();
-            bookingText.Visible = false;
-            cancelBtn.Visible = false;
-            GridView1.SelectedIndex = -1;
-            GridView2.DataBind();
+        }
+        private string currentCustEmail()
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.CustomerTableAdapter taCustomer = new FullDataSetTableAdapters.CustomerTableAdapter();
+            taCustomer.Fill(fullDs.Customer);
+            for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
+            {
+                if (fullDs.Customer[i].emailID.Equals(GridView2.Rows[0].Cells[0].Text, StringComparison.OrdinalIgnoreCase))
+                    return fullDs.Customer[i].emailID;
+            }
+            return "";
         }
     }
 }
