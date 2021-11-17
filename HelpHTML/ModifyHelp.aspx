@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Make.aspx.cs" Inherits="M4_major_project.HelpHTML.Make" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ModifyHelp.aspx.cs" Inherits="M4_major_project.HelpHTML.ModifyHelp" %>
 
 <!DOCTYPE html>
 <link rel="stylesheet" href="https://bootswatch.com/3/yeti/bootstrap.css">
@@ -23,49 +23,44 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
+ <form id="form2" runat="server">
             <div class="jumbotron jumbotron-sm">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-lg-12">
-                    <h1 class="h1">How To Make A Booking</h1>
+                    <h1 class="h1">How To change booking dates</h1>
                 </div>
             </div>
         </div>
     </div>
-    <div></div>
-    
-        <div id="Content" style="margin: 0 auto; text-align:center">
+  <div>&nbsp</div>
+     <div id="Content" style="margin: 0 auto; text-align:center">
             <div style="float: left; width: 100%;" >
-            <h2>1. Select Check-In and Check-Out Dates</h2>
+            <h2>1. Select booking you want to change from active booking</h2>
+            <h3>1.1 Select new Check-In and Check-Out Dates</h3>
             <Br />
-            <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Screenshot (381).jpg" />
-        </div>  
-            <div>&nbsp</div>
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Screenshot (401).png" />
+        </div>
+   <div>&nbsp</div>
             <br />
             <div style="float: left; width: 100%;" >
             <h2>2. Select the number of rooms from our available</h2>
-            <Br />
-            <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/Screenshot (388).png" />
-        </div>
-            <div>&nbsp</div>
-            <br />
-            <div style="float: left; width: 100%;" >
-            <h2>3. Click "Save" to confirm the booking</h2>
+            <h3>2.1 Click "Modify Booking" to confirm</h3>
             <h5> IMPORTANT: Amount due should appear in the box</h5>
             <Br />
-            <asp:Image ID="Image3" runat="server" ImageUrl="~/Images/Screenshot (387).png" />
+            <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/Screenshot (393).png" />
         </div>
             <div>&nbsp</div>
             <br />
             <div style="float: left; width: 100%;" >
-            <h2>4. Enter payment details</h2>
-            <h5>4.1 "Proceed Payment" once all details have been captured correctly</h5>
+            <h2>3. Enter payment details</h2>
+            <h4>3.1 "Proceed Payment" once all details have been captured correctly</h4>
             <Br />
             <asp:Image ID="Image4" runat="server" ImageUrl="~/Images/Untitled.png" />
         </div>
-   <br />
-     </div>  
+
+
+        </div>
     </form>
 </body>
 </html>
