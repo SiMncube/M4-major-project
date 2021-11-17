@@ -117,7 +117,7 @@ namespace M4_major_project
                 if (fullDs.BookingSummary[i].summaryID == summaryID && fullDs.BookingSummary[i].bookingStatus == "Modified")
                 {
                     closeBtn.UseSubmitBehavior = true;
-                    modalBody.InnerHtml = "<p>The Booking is modified</p>";
+                    modalBody.InnerHtml = "<p>The Booking is modified, a new Booking ref has been sent for this booking please use the booking ref to cancel the booking</p>";
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                     return true;
                 }
