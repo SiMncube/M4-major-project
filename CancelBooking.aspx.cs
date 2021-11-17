@@ -12,12 +12,12 @@ namespace M4_major_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            CurrentUser.setEmailID("kgaugelo.m@yahoo.com");
             FullDataSet fullDs = new FullDataSet();
             FullDataSetTableAdapters.BookingInnerTableAdapter taBookingInner = new FullDataSetTableAdapters.BookingInnerTableAdapter();
-            taBookingInner.FillBy(fullDs.BookingInner, "kgaugelo.m@yahoo.com");
+            taBookingInner.FillBy(fullDs.BookingInner, CurrentUser.getEmailID());
             DataTable dt = new DataTable();
-            //dt = taBookingInner.GetDataBy(CurrentUser.getEmailID());
-            dt = taBookingInner.GetDataBy("kgaugelo.m@yahoo.com");
+            dt = taBookingInner.GetDataBy(CurrentUser.getEmailID());
             GridView1.DataSource = dt;
             GridView1.DataBind();
         }
@@ -45,7 +45,7 @@ namespace M4_major_project
         {
             FullDataSet fullDs = new FullDataSet();
             FullDataSetTableAdapters.BookingInnerTableAdapter taBookingInner = new FullDataSetTableAdapters.BookingInnerTableAdapter();
-            taBookingInner.FillBy(fullDs.BookingInner, "kgaugelo.m@yahoo.com");
+            taBookingInner.FillBy(fullDs.BookingInner, CurrentUser.getEmailID());
             for(int i = 0; i < fullDs.BookingInner.Rows.Count;i++)
             {
                 if (fullDs.BookingInner[i].Booking_Ref.ToString() == bookingRefTextBox.Text)
@@ -62,7 +62,7 @@ namespace M4_major_project
         {
             FullDataSet fullDs = new FullDataSet();
             FullDataSetTableAdapters.BookingInnerTableAdapter taBookingInner = new FullDataSetTableAdapters.BookingInnerTableAdapter();
-            taBookingInner.FillBy(fullDs.BookingInner, "kgaugelo.m@yahoo.com");
+            taBookingInner.FillBy(fullDs.BookingInner, CurrentUser.getEmailID());
             DataTable dt = new DataTable();
             dt = taBookingInner.GetDataBy(GridView1.SelectedRow.Cells[5].Text);
             GridView2.DataSource = dt;
@@ -147,9 +147,9 @@ namespace M4_major_project
             }
             bookingSummaryTa.Update(fullDs.BookingSummary);
             FullDataSetTableAdapters.BookingInnerTableAdapter taBookingInner = new FullDataSetTableAdapters.BookingInnerTableAdapter();
-            taBookingInner.FillBy(fullDs.BookingInner, "kgaugelo.m@yahoo.com");
+            taBookingInner.FillBy(fullDs.BookingInner, CurrentUser.getEmailID());
             DataTable dt = new DataTable();
-            dt = taBookingInner.GetDataBy("kgaugelo.m@yahoo.com");
+            dt = taBookingInner.GetDataBy(CurrentUser.getEmailID());
             GridView1.DataSource = dt;
             GridView1.DataBind();
             bookingText.Visible = false;
