@@ -61,17 +61,15 @@
             </asp:GridView>
             <br />
         </div>
-    </div>
         <div id="bookingText"  runat="server" visible="false">
             <br />
             <div  class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px">
                 <div class="text-center" height: 55px">
-                    <h1 style="color: #008cba; margin: auto">Cancel The following Booking</h1>
+                    <h1 style="color: #008cba; margin: auto">Booking Details</h1>
                 </div>
             </div>
             <br />
-            <div class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px">
-                <asp:GridView ID="GridView2" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%">
+                <asp:GridView ID="GridView2" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%" Height="125px">
                     <FooterStyle BackColor="White" ForeColor="#000066" />
                     <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
                     <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
@@ -84,12 +82,12 @@
                 </asp:GridView>
                 <br />
                 <div class="col-md-12 text-center">
-                    <asp:Button class="btn btn-primary pull-center" ID="cancelBtn" runat="server" Text="Cancel Booking" Width="50%" Visible="False" OnClick="cancelBtn_Click"/>
+                    <asp:Button class="btn btn-primary pull-center" ID="cancelBtn" runat="server" Text="Done" Width="100%" Visible="False" OnClick="cancelBtn_Click"/>
                 </div>
-            </div>
             <br />
             <br />
         </div>
+    </div>       
         <div id="cancelAdminModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
