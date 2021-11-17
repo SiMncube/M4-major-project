@@ -174,7 +174,7 @@
                                         <asp:HyperLink ID="HyperLink3" runat="server">Canceling a booking</asp:HyperLink>
                                     </p>
                                     <p>
-                                        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/HelpHTML/ModifyBookingHelp.html">Modifying a booking</asp:HyperLink>
+                                        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/HelpHTML/ModifyHelp.aspx">Modifying a booking</asp:HyperLink>
                                     </p>
                                     <p>
                                         <asp:HyperLink ID="HyperLink5" runat="server">Don&#39;t want to register?</asp:HyperLink>
