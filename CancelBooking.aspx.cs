@@ -140,6 +140,9 @@ namespace M4_major_project
                         currentBooking.setCanceled(true);
                         closeBtn.UseSubmitBehavior = false;
                         fullDs.BookingSummary[i].bookingStatus = "Cancelled";
+
+                        SendCanceledBookingInvoice(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)); //added by Sihle for sending invoice of the canceled booking
+
                         modalBody.InnerHtml = "<p>The Booking is successfully cancelled<br/>A confirmation emain hase been sent to you email address<br/>Redirecting you to our invoice page</p>";
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                         //Email.sendInvoice();
@@ -158,6 +161,48 @@ namespace M4_major_project
             cancelBtn.Visible = false;
             GridView1.SelectedIndex = -1;
             GridView2.DataBind();
+        }
+
+        private void SendCanceledBookingInvoice(int canceledBookingID) //method for sending invoice of a cancelled booking
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            bookingSummaryTa.Fill(fullDs.BookingSummary);
+
+            //These initailizes the invoice fields before being sent to the customer
+            Email.bookingID = canceledBookingID.ToString();
+            for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
+            {
+                if (fullDs.BookingSummary[i].summaryID == canceledBookingID)
+                {
+                    Email.customerEmail = fullDs.BookingSummary[i].emailID;
+                    Email.bookingStatus = fullDs.BookingSummary[i].bookingStatus;
+                    Email.bookingMethod = fullDs.BookingSummary[i].bookingMethod;
+                    Email.dateIn = fullDs.BookingSummary[i].dateIn.ToString("dd/MM/yyyy") + " 12:00 PM";
+                    Email.dateOut = fullDs.BookingSummary[i].dateOut.ToString("dd/MM/yyyy") + " 12:00 PM";
+                    Email.numberOfNights = fullDs.BookingSummary[i].numberOfNights.ToString();
+                    Email.amountDue = fullDs.BookingSummary[i].amountDue;
+                    Email.excessOrefund = decimal.Parse(calculateAmountDue(fullDs.BookingSummary[i].amountDue));
+                }
+            }
+            for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
+            {
+                if (fullDs.Customer[i].emailID.ToLower().Equals(Email.customerEmail.ToLower()))
+                {
+                    Email.customerName = fullDs.Customer[i].name;
+                    Email.customerSurname = fullDs.Customer[i].surname;
+                    Email.customerIdNumber = fullDs.Customer[i].idNumber;
+                }
+            }
+            Email.isCancel = true;
+            Email.sendInvoice();
+        }
+
+        private string calculateAmountDue(string s)
+        {
+            s = s.Substring(2, s.Length - 5);
+            double due = double.Parse(s) * 0.5;
+            return due + "";
         }
     }
 }
