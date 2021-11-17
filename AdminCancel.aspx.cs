@@ -73,7 +73,7 @@ namespace M4_major_project
                 if (fullDs.BookingSummary[i].summaryID == summaryID)
                 {
                     fullDs.BookingSummary[i].bookingStatus = "Cancelled";
-                    modalBody.InnerHtml = "<p>The Booking is successfully cancelled</p>";
+                    modalBody.InnerHtml = "<p>The Booking is successfully cancelled<br/> An invoice has been sent to the customer via Email</p>";
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                     fullDs.BookingSummary[i].bookingStatus = "Cancelled";
                     bookingSummaryTa.Update(fullDs.BookingSummary);
