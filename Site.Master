@@ -47,7 +47,7 @@
                         <li><a runat="server" id="Login1" visible="true" href="~/Login"><b>Login</b></a></li>
                         <li><a runat="server" id="Register1" visible="true" href="~/Register"><b>Register</b></a></li>
                         <li><a runat="server" id="Username1" visible="false" href="~/Default"><b id="setUser" runat="server"></b></a></li>
-                        <li><a runat="server" id="Logoff1" visible="false" href="~/Default" onclick="logOff_click()" ><b>Log off</b></a></li>
+                        <li><a runat="server" id="Logoff1" visible="false" href="~/LogOff" onclick="logOff_click()" ><b>Log off</b></a></li>
                     </ul>
                 </div>
             </div>

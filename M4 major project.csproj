@@ -226,6 +226,7 @@
     <Content Include="Images\WhatsApp Image 2021-09-05 at 19.21.54.jpeg" />
     <Content Include="Invoice.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="LogOff.aspx" />
     <Content Include="Manager.aspx" />
     <Content Include="mangerStyle.css" />
     <Content Include="ModifyBooking.aspx" />
@@ -438,6 +439,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogOff.aspx.cs">
+      <DependentUpon>LogOff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogOff.aspx.designer.cs">
+      <DependentUpon>LogOff.aspx</DependentUpon>
     </Compile>
     <Compile Include="Payment.aspx.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
