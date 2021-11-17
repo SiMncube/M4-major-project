@@ -36,7 +36,7 @@ namespace M4_major_project
             if (isValid())
             {
                 string temp = generatePassword();
-                Email.sendEmail(emailTextBox.Text,"Welcome to the Cottage BnB",htmlWelcome(temp));
+                //Email.sendEmail(emailTextBox.Text,"Welcome to the Cottage BnB",htmlWelcome(temp));
                 taCustomer.Insert(capFirst(emailTextBox.Text), capFirst(nameTextBox.Text), capFirst(surnameTextBox.Text), idTextBox.Text, cellTextBox.Text, temp, capFirst(streetTextBox.Text), capFirst(surbubNameTextBox.Text), capFirst(cityTextBox.Text), postalTextBox.Text);
                 modalBody.InnerHtml = "<p>The Customer has been registered<br/>A confirmation email has been sent vie email to the customer";
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
