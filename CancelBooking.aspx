@@ -47,6 +47,12 @@
             <br />
             <br />
             <br />
+            <div  class="center" style="margin: auto; width: 100%; border: 0px solid #FFFF00; padding: 0px">
+                <div class="text-center" height: 55px">
+                    <h2 style="color: #008cba; margin: auto">Select a booking to get the booking details</h2>
+                </div>
+            </div>
+            <br />
             <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
             <asp:GridView AutoGenerateSelectButton="true" ID="GridView1" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%" Height="187px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                 <FooterStyle BackColor="White" ForeColor="#000066" />
