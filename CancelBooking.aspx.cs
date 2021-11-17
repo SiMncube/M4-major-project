@@ -12,6 +12,7 @@ namespace M4_major_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            CurrentUser.setEmailID("saw@yahoo.com");
             FullDataSet fullDs = new FullDataSet();
             FullDataSetTableAdapters.BookingInnerTableAdapter taBookingInner = new FullDataSetTableAdapters.BookingInnerTableAdapter();
             taBookingInner.FillBy(fullDs.BookingInner, CurrentUser.getEmailID());
@@ -140,25 +141,42 @@ namespace M4_major_project
             }
             return false;
         }
+        private void processRefund(string summaryID)
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.PaymentTableAdapter taPayment = new FullDataSetTableAdapters.PaymentTableAdapter();
+            taPayment.Fill(fullDs.Payment);
+            for (int i = 0; i < fullDs.Payment.Rows.Count; i++)
+            {
+                if (fullDs.Tables["Payment"].Rows[i]["summaryID"].ToString() == summaryID)
+                {
+                    string newAmount = calculateAmountDue(fullDs.Payment[i].amountDue.ToString());
+                    string typeOfPayment = fullDs.Payment[i].typeOfPayment.ToString();
+                    taPayment.Insert(Convert.ToInt32(summaryID), typeOfPayment, DateTime.Today, "-R " + newAmount + ".00");
+                    taPayment.Fill(fullDs.Payment);
+                    break;
+                }
+            }
+        }
         protected void cancelBtn_Click(object sender, EventArgs e)
         {
             FullDataSet fullDs = new FullDataSet();
             FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
             bookingSummaryTa.Fill(fullDs.BookingSummary);
-            for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
+            string temp = GridView2.Rows[0].Cells[4].Text;
+            for (int i = fullDs.BookingSummary.Rows.Count - 1; i >= 0; i--)
             {
                 if (fullDs.BookingSummary[i].summaryID.ToString().Equals(GridView2.Rows[0].Cells[4].Text))
                 {
                     int summary = fullDs.BookingSummary[i].summaryID;
-                    if (!bookingIsModified(summary) && !bookingIsCanceled(summary) && !bookingIsIncomplete(summary) && !bookingPaased(summary))
+                    if (!bookingIsModified(summary) && !bookingIsCanceled(summary) && !bookingIsIncomplete(summary))
                     {
                         currentBooking.setSummaryID(fullDs.BookingSummary[i].summaryID);
                         currentBooking.setCanceled(true);
                         closeBtn.UseSubmitBehavior = false;
                         fullDs.BookingSummary[i].bookingStatus = "Cancelled";
-
-                        SendCanceledBookingInvoice(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)); //added by Sihle for sending invoice of the canceled booking
-
+                        processRefund(summary.ToString());
+                        //SendCanceledBookingInvoice(Convert.ToInt32(GridView2.Rows[0].Cells[5].Text)); //added by Sihle for sending invoice of the canceled booking
                         modalBody.InnerHtml = "<p>The Booking is successfully cancelled<br/>A confirmation email has been sent to you email address.";
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                     }
