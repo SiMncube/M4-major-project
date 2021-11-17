@@ -21,6 +21,8 @@ namespace M4_major_project
                                     "<strong> Order Date:</strong><br>" +
                                     DateTime.Now.ToString() + "</br >" +
                                     "</address> ";
+            if(currentBooking.isCanceled())
+                tot.InnerHtml = "<strong>Total Refund</strong>";
             updateText();
             numberDoubles.InnerText = currentBooking.getNumberDoubles();
             totalDoubles.InnerText = "R"+(Convert.ToInt32(currentBooking.getNumberDoubles()) * 800)+".00";

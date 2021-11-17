@@ -13,6 +13,7 @@ namespace M4_major_project
         private static int[] roomIDs;
         private static string numberSingles;
         private static string numberDoubles;
+        private static bool Canceled = false;
         public static int getSummaryID()
         {
             return summaryID;
@@ -44,6 +45,14 @@ namespace M4_major_project
         public static string getNumberDoubles()
         {
             return numberDoubles;
+        }
+        public static void setCanceled(bool t)
+        {
+            Canceled = true;
+        }
+        public static bool isCanceled()
+        {
+            return Canceled;
         }
     }
 }

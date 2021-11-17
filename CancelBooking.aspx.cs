@@ -137,10 +137,13 @@ namespace M4_major_project
                     int summary = fullDs.BookingSummary[i].summaryID;
                     if (!bookingIsModified(summary) && !bookingIsCanceled(summary) && !bookingIsIncomplete(summary))
                     {
+                        currentBooking.setSummaryID(fullDs.BookingSummary[i].summaryID);
+                        currentBooking.setCanceled(true);
                         closeBtn.UseSubmitBehavior = false;
                         fullDs.BookingSummary[i].bookingStatus = "Cancelled";
                         modalBody.InnerHtml = "<p>The Booking is successfully cancelled<br/>A confirmation emain hase been sent to you email address<br/>Redirecting you to our invoice page</p>";
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+                        //Email.sendInvoice();
                     }
                     break;
                 }

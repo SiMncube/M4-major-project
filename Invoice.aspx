@@ -94,7 +94,7 @@
                                     <tr>
                                         <td class="thick-line"></td>
                                         <td class="thick-line"></td>
-                                        <td class="thick-line text-center"><strong>Total</strong></td>
+                                        <td class="thick-line text-center" id="tot" runat="server"><strong>Total</strong></td>
                                         <td class="thick-line text-right" id="totalBookings" runat="server">R1 250.00</td>
                                     </tr>
                                 </tbody>

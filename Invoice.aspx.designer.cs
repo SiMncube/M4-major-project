@@ -69,6 +69,15 @@ namespace M4_major_project
         protected global::System.Web.UI.HtmlControls.HtmlTableCell totalDoubles;
 
         /// <summary>
+        /// tot control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableCell tot;
+
+        /// <summary>
         /// totalBookings control.
         /// </summary>
         /// <remarks>
