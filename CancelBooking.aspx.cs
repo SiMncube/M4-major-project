@@ -54,7 +54,7 @@ namespace M4_major_project
         }
         protected void closeBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Invoice");
+            //Response.Redirect("/Invoice");
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -145,7 +145,6 @@ namespace M4_major_project
 
                         modalBody.InnerHtml = "<p>The Booking is successfully cancelled<br/>A confirmation emain hase been sent to you email address<br/>Redirecting you to our invoice page</p>";
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
-                        //Email.sendInvoice();
                     }
                     break;
                 }
@@ -167,7 +166,9 @@ namespace M4_major_project
         {
             FullDataSet fullDs = new FullDataSet();
             FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            FullDataSetTableAdapters.CustomerTableAdapter customerTa = new FullDataSetTableAdapters.CustomerTableAdapter();
             bookingSummaryTa.Fill(fullDs.BookingSummary);
+            customerTa.Fill(fullDs.Customer);
 
             //These initailizes the invoice fields before being sent to the customer
             Email.bookingID = canceledBookingID.ToString();

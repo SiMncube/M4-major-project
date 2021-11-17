@@ -177,7 +177,9 @@ namespace M4_major_project
         {
             FullDataSet fullDs = new FullDataSet();
             FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            FullDataSetTableAdapters.CustomerTableAdapter customerTa = new FullDataSetTableAdapters.CustomerTableAdapter();
             bookingSummaryTa.Fill(fullDs.BookingSummary);
+            customerTa.Fill(fullDs.Customer);
 
             //These initailizes the invoice fields before being sent to the customer
             Email.bookingID = canceledBookingID.ToString();
