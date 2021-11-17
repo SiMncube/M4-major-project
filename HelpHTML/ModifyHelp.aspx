@@ -24,7 +24,6 @@
 </head>
 <body>
  <form id="form2" runat="server">
-        <div>
             <div class="jumbotron jumbotron-sm">
         <div class="container">
             <div class="row">
@@ -40,6 +39,23 @@
             <h2>1. Select new Check-In and Check-Out Dates</h2>
             <Br />
             <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Screenshot (394).png" />
+        </div>
+   <div>&nbsp</div>
+            <br />
+            <div style="float: left; width: 100%;" >
+            <h2>2. Select the number of rooms from our available</h2>
+            <h3>Click "Modify Booking" to confirm</h3>
+            <h5> IMPORTANT: Amount due should appear in the box</h5>
+            <Br />
+            <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/Screenshot (393).png" />
+        </div>
+            <div>&nbsp</div>
+            <br />
+            <div style="float: left; width: 100%;" >
+            <h2>3. Enter payment details</h2>
+            <h5> "Proceed Payment" once all details have been captured correctly</h5>
+            <Br />
+            <asp:Image ID="Image4" runat="server" ImageUrl="~/Images/Untitled.png" />
         </div>
 
 
