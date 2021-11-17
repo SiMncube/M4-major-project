@@ -100,7 +100,7 @@ namespace M4_major_project
                 if (fullDs.BookingSummary[i].summaryID == summaryID && fullDs.BookingSummary[i].bookingStatus == "inComplete")
                 {
                     closeBtn.UseSubmitBehavior = true;
-                    modalBody.InnerHtml = "<p>The Booking is not complete</p>";
+                    modalBody.InnerHtml = "<p>The Booking is not complete therefore can not be cancelled</p>";
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                     return true;
                 }
@@ -117,7 +117,7 @@ namespace M4_major_project
                 if (fullDs.BookingSummary[i].summaryID == summaryID && fullDs.BookingSummary[i].bookingStatus == "Modified")
                 {
                     closeBtn.UseSubmitBehavior = true;
-                    modalBody.InnerHtml = "<p>The Booking is modified, a new Booking ref has been sent for this booking please use the booking ref to cancel the booking</p>";
+                    modalBody.InnerHtml = "<p>The Booking is modified(Can not be cancelled), a new Booking ref has been sent for this booking please use the booking ref to cancel the booking</p>";
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                     return true;
                 }
@@ -143,7 +143,7 @@ namespace M4_major_project
 
                         SendCanceledBookingInvoice(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)); //added by Sihle for sending invoice of the canceled booking
 
-                        modalBody.InnerHtml = "<p>The Booking is successfully cancelled<br/>A confirmation emain hase been sent to you email address<br/>Redirecting you to our invoice page</p>";
+                        modalBody.InnerHtml = "<p>The Booking is successfully cancelled<br/>A confirmation email has been sent to you email address.";
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                     }
                     break;
