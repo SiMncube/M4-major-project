@@ -52,6 +52,23 @@ namespace M4_major_project
             }
             return false;
         }
+        private bool bookingPaased(int summaryID)
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            bookingSummaryTa.Fill(fullDs.BookingSummary);
+            for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
+            {
+                if (fullDs.BookingSummary[i].summaryID == summaryID && fullDs.BookingSummary[i].dateIn.Date < DateTime.Today.Date)
+                {
+                    closeBtn.UseSubmitBehavior = true;
+                    modalBody.InnerHtml = "<p>The Booking has already passed</p>";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+                    return true;
+                }
+            }
+            return true;
+        }
         protected void closeBtn_Click(object sender, EventArgs e)
         {
             //Response.Redirect("/Invoice");
@@ -86,7 +103,6 @@ namespace M4_major_project
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                     return true;
                 }
-
             }
             return false;
         }
@@ -134,7 +150,7 @@ namespace M4_major_project
                 if (fullDs.BookingSummary[i].summaryID.ToString().Equals(GridView2.Rows[0].Cells[4].Text))
                 {
                     int summary = fullDs.BookingSummary[i].summaryID;
-                    if (!bookingIsModified(summary) && !bookingIsCanceled(summary) && !bookingIsIncomplete(summary))
+                    if (!bookingIsModified(summary) && !bookingIsCanceled(summary) && !bookingIsIncomplete(summary) && !bookingPaased(summary))
                     {
                         currentBooking.setSummaryID(fullDs.BookingSummary[i].summaryID);
                         currentBooking.setCanceled(true);

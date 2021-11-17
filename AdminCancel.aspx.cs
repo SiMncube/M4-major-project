@@ -83,6 +83,22 @@ namespace M4_major_project
                 }
             }
         }
+        private bool bookingPaased(int summaryID)
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            bookingSummaryTa.Fill(fullDs.BookingSummary);
+            for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
+            {
+                if (fullDs.BookingSummary[i].summaryID == summaryID && fullDs.BookingSummary[i].dateIn.Date < DateTime.Today.Date)
+                {
+                    modalBody.InnerHtml = "<p>The Booking has already passed</p>";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+                    return true;
+                }
+            }
+            return true;
+        }
         private bool bookingIsCanceled(int summaryID)
         {
             FullDataSet fullDs = new FullDataSet();
@@ -152,7 +168,7 @@ namespace M4_major_project
             FullDataSet fullDs = new FullDataSet();
             FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
             bookingSummaryTa.Fill(fullDs.BookingSummary);
-            if(!bookingIsCanceled(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)) && !bookingIsIncomplete(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)) && !bookingIsModified(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)))
+            if(!bookingIsCanceled(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)) && !bookingIsIncomplete(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)) && !bookingIsModified(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)) && !bookingPaased(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)))
             {
                 cancelBooking(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text));
                 
