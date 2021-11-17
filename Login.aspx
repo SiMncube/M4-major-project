@@ -37,7 +37,7 @@
                                         <asp:TextBox ID="passwordTextBox" runat="server" class="form-control" placeholder="Enter password" TextMode="Password"></asp:TextBox>
                                     </div>
                                     <div class="form-group" width="100%">
-                                        <asp:Button ID="confirmBtn" class="btn btn-lg btn-primary btn-block" value="Confirm" runat="server" Text="Confirm" Width="100%" OnClick="confirmBtn_Click" />
+                                        <asp:Button ID="confirmBtn" class="btn btn-lg btn-primary btn-block" value="Confirm" runat="server" Text="Login" Width="100%" OnClick="confirmBtn_Click" />
                                     </div>
                                     <div class="form-group">
                                         <div class="signup_link">

@@ -1,186 +1,136 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CancelBooking.aspx.cs" Inherits="M4_major_project.CancelBooking" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <link rel="stylesheet" href="https://bootswatch.com/3/yeti/bootstrap.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function showModal() {
+            $("#cancelAdminModal").modal('show');
+        }
+    </script>
+
+            <div class="navbar navbar-inverse navbar-fixed-top" id="Panel" runat="server">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/Admin">The Cottage</a>
+                </div>
+                <div class="navbar-collapse collapse" staticselectedstyle-verticalpadding="10px">
+                    <ul class="nav navbar-nav" runat="server">
+                        <li><a runat="server" href="~/Admin"><b>Make Bookings</b></a></li>
+                        <li><a runat="server" href="~/AdminViewBooking"><b>View Bookings</b></a></li>
+                        <li><a runat="server" href="~/AdminModify"><b>Modify Bookings</b></a></li>
+                        <li><a runat="server" href="~/AdminRegister"><b>Register Customer</b></a></li>
+                        <li><a runat="server" href="~/AdminUpdate"><b>Update Customer Details</b></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a runat="server" id="Username1" href="~/Admin"><b id="setUser" runat="server">Admin1</b></a></li>
+                        <li><a runat="server" id="Logoff1" href="~/Default" onclick="logOff_click()"><b>Log off</b></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br />
     <div>
-        <table style="width: 100%;">
-            <tr>
-                <td style="width: 422px">&nbsp;</td>
-                <td style="width: 249px">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td style="width: 422px">&nbsp;</td>
-                <td style="width: 249px">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td style="width: 422px">&nbsp;</td>
-                <td style="width: 249px">
-                    <asp:TextBox ID="TextBox3" runat="server" Width="188px"></asp:TextBox>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td style="width: 422px">
-                    &nbsp;</td>
-                <td style="width: 249px">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td style="width: 422px">
-                    <asp:TextBox ID="TextBox1" runat="server" Width="195px"></asp:TextBox>
-                    <asp:TextBox ID="TextBox2" runat="server" Width="203px"></asp:TextBox>
-                </td>
-                <td style="width: 249px">
-                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Cancel Booking" Width="201px" />
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td style="width: 422px">&nbsp;</td>
-                <td style="width: 249px">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td style="width: 422px">
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="summaryID" DataSourceID="cancelGrid" ForeColor="#333333" GridLines="None" Height="161px" Width="494px">
-                        <AlternatingRowStyle BackColor="White" />
-                        <Columns>
-                            <asp:BoundField DataField="summaryID" HeaderText="summaryID" InsertVisible="False" ReadOnly="True" SortExpression="summaryID" />
-                            <asp:BoundField DataField="emailID" HeaderText="emailID" SortExpression="emailID" />
-                            <asp:BoundField DataField="dateIn" HeaderText="dateIn" SortExpression="dateIn" />
-                            <asp:BoundField DataField="dateOut" HeaderText="dateOut" SortExpression="dateOut" />
-                            <asp:BoundField DataField="numberOfNights" HeaderText="numberOfNights" SortExpression="numberOfNights" />
-                            <asp:BoundField DataField="bookingMethod" HeaderText="bookingMethod" SortExpression="bookingMethod" />
-                            <asp:BoundField DataField="bookingStatus" HeaderText="bookingStatus" SortExpression="bookingStatus" />
-                            <asp:BoundField DataField="amountDue" HeaderText="amountDue" SortExpression="amountDue" />
-                        </Columns>
-                        <EditRowStyle BackColor="#2461BF" />
-                        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                        <RowStyle BackColor="#EFF3FB" />
-                        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                        <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                        <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                        <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                        <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                    </asp:GridView>
-                    <asp:SqlDataSource ID="cancelGrid" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:group7ConnectionString %>" DeleteCommand="DELETE FROM [BookingSummary] WHERE [summaryID] = @original_summaryID AND [emailID] = @original_emailID AND [dateIn] = @original_dateIn AND [dateOut] = @original_dateOut AND [numberOfNights] = @original_numberOfNights AND (([bookingMethod] = @original_bookingMethod) OR ([bookingMethod] IS NULL AND @original_bookingMethod IS NULL)) AND (([bookingStatus] = @original_bookingStatus) OR ([bookingStatus] IS NULL AND @original_bookingStatus IS NULL)) AND [amountDue] = @original_amountDue" InsertCommand="INSERT INTO [BookingSummary] ([emailID], [dateIn], [dateOut], [numberOfNights], [bookingMethod], [bookingStatus], [amountDue]) VALUES (@emailID, @dateIn, @dateOut, @numberOfNights, @bookingMethod, @bookingStatus, @amountDue)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [BookingSummary] WHERE (([dateIn] &gt;= @dateIn) AND ([emailID] = @emailID)) ORDER BY [summaryID] DESC" UpdateCommand="UPDATE [BookingSummary] SET [emailID] = @emailID, [dateIn] = @dateIn, [dateOut] = @dateOut, [numberOfNights] = @numberOfNights, [bookingMethod] = @bookingMethod, [bookingStatus] = @bookingStatus, [amountDue] = @amountDue WHERE [summaryID] = @original_summaryID AND [emailID] = @original_emailID AND [dateIn] = @original_dateIn AND [dateOut] = @original_dateOut AND [numberOfNights] = @original_numberOfNights AND (([bookingMethod] = @original_bookingMethod) OR ([bookingMethod] IS NULL AND @original_bookingMethod IS NULL)) AND (([bookingStatus] = @original_bookingStatus) OR ([bookingStatus] IS NULL AND @original_bookingStatus IS NULL)) AND [amountDue] = @original_amountDue">
-                        <DeleteParameters>
-                            <asp:Parameter Name="original_summaryID" Type="Int32" />
-                            <asp:Parameter Name="original_emailID" Type="String" />
-                            <asp:Parameter DbType="Date" Name="original_dateIn" />
-                            <asp:Parameter DbType="Date" Name="original_dateOut" />
-                            <asp:Parameter Name="original_numberOfNights" Type="Int32" />
-                            <asp:Parameter Name="original_bookingMethod" Type="String" />
-                            <asp:Parameter Name="original_bookingStatus" Type="String" />
-                            <asp:Parameter Name="original_amountDue" Type="String" />
-                        </DeleteParameters>
-                        <InsertParameters>
-                            <asp:Parameter Name="emailID" Type="String" />
-                            <asp:Parameter DbType="Date" Name="dateIn" />
-                            <asp:Parameter DbType="Date" Name="dateOut" />
-                            <asp:Parameter Name="numberOfNights" Type="Int32" />
-                            <asp:Parameter Name="bookingMethod" Type="String" />
-                            <asp:Parameter Name="bookingStatus" Type="String" />
-                            <asp:Parameter Name="amountDue" Type="String" />
-                        </InsertParameters>
-                        <SelectParameters>
-                            <asp:ControlParameter ControlID="TextBox2" DbType="Date" Name="dateIn" PropertyName="Text" />
-                            <asp:ControlParameter ControlID="TextBox1" Name="emailID" PropertyName="Text" Type="String" />
-                        </SelectParameters>
-                        <UpdateParameters>
-                            <asp:Parameter Name="emailID" Type="String" />
-                            <asp:Parameter DbType="Date" Name="dateIn" />
-                            <asp:Parameter DbType="Date" Name="dateOut" />
-                            <asp:Parameter Name="numberOfNights" Type="Int32" />
-                            <asp:Parameter Name="bookingMethod" Type="String" />
-                            <asp:Parameter Name="bookingStatus" Type="String" />
-                            <asp:Parameter Name="amountDue" Type="String" />
-                            <asp:Parameter Name="original_summaryID" Type="Int32" />
-                            <asp:Parameter Name="original_emailID" Type="String" />
-                            <asp:Parameter DbType="Date" Name="original_dateIn" />
-                            <asp:Parameter DbType="Date" Name="original_dateOut" />
-                            <asp:Parameter Name="original_numberOfNights" Type="Int32" />
-                            <asp:Parameter Name="original_bookingMethod" Type="String" />
-                            <asp:Parameter Name="original_bookingStatus" Type="String" />
-                            <asp:Parameter Name="original_amountDue" Type="String" />
-                        </UpdateParameters>
-                    </asp:SqlDataSource>
-                </td>
-                <td style="width: 249px">
-                    <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="summaryID" DataSourceID="cancelDetail" ForeColor="#333333" GridLines="None" Height="50px" Width="125px">
-                        <AlternatingRowStyle BackColor="White" />
-                        <CommandRowStyle BackColor="#D1DDF1" Font-Bold="True" />
-                        <EditRowStyle BackColor="#2461BF" />
-                        <FieldHeaderStyle BackColor="#DEE8F5" Font-Bold="True" />
-                        <Fields>
-                            <asp:BoundField DataField="summaryID" HeaderText="summaryID" InsertVisible="False" ReadOnly="True" SortExpression="summaryID" />
-                            <asp:BoundField DataField="emailID" HeaderText="emailID" SortExpression="emailID" />
-                            <asp:BoundField DataField="dateIn" HeaderText="dateIn" SortExpression="dateIn" />
-                            <asp:BoundField DataField="dateOut" HeaderText="dateOut" SortExpression="dateOut" />
-                            <asp:BoundField DataField="numberOfNights" HeaderText="numberOfNights" SortExpression="numberOfNights" />
-                            <asp:BoundField DataField="bookingMethod" HeaderText="bookingMethod" SortExpression="bookingMethod" />
-                            <asp:BoundField DataField="bookingStatus" HeaderText="bookingStatus" SortExpression="bookingStatus" />
-                            <asp:BoundField DataField="amountDue" HeaderText="amountDue" SortExpression="amountDue" />
-                        </Fields>
-                        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                        <RowStyle BackColor="#EFF3FB" />
-                    </asp:DetailsView>
-                    <asp:SqlDataSource ID="cancelDetail" runat="server" ConnectionString="<%$ ConnectionStrings:group7ConnectionString %>" SelectCommand="SELECT * FROM [BookingSummary] WHERE ([summaryID] = @summaryID2)" ConflictDetection="CompareAllValues" DeleteCommand="DELETE FROM [BookingSummary] WHERE [summaryID] = @original_summaryID AND [emailID] = @original_emailID AND [dateIn] = @original_dateIn AND [dateOut] = @original_dateOut AND [numberOfNights] = @original_numberOfNights AND (([bookingMethod] = @original_bookingMethod) OR ([bookingMethod] IS NULL AND @original_bookingMethod IS NULL)) AND (([bookingStatus] = @original_bookingStatus) OR ([bookingStatus] IS NULL AND @original_bookingStatus IS NULL)) AND [amountDue] = @original_amountDue" InsertCommand="INSERT INTO [BookingSummary] ([emailID], [dateIn], [dateOut], [numberOfNights], [bookingMethod], [bookingStatus], [amountDue]) VALUES (@emailID, @dateIn, @dateOut, @numberOfNights, @bookingMethod, @bookingStatus, @amountDue)" OldValuesParameterFormatString="original_{0}" UpdateCommand="UPDATE [BookingSummary] SET [emailID] = @emailID, [dateIn] = @dateIn, [dateOut] = @dateOut, [numberOfNights] = @numberOfNights, [bookingMethod] = @bookingMethod, [bookingStatus] = @bookingStatus, [amountDue] = @amountDue WHERE [summaryID] = @original_summaryID AND [emailID] = @original_emailID AND [dateIn] = @original_dateIn AND [dateOut] = @original_dateOut AND [numberOfNights] = @original_numberOfNights AND (([bookingMethod] = @original_bookingMethod) OR ([bookingMethod] IS NULL AND @original_bookingMethod IS NULL)) AND (([bookingStatus] = @original_bookingStatus) OR ([bookingStatus] IS NULL AND @original_bookingStatus IS NULL)) AND [amountDue] = @original_amountDue">
-                        <DeleteParameters>
-                            <asp:Parameter Name="original_summaryID" Type="Int32" />
-                            <asp:Parameter Name="original_emailID" Type="String" />
-                            <asp:Parameter DbType="Date" Name="original_dateIn" />
-                            <asp:Parameter DbType="Date" Name="original_dateOut" />
-                            <asp:Parameter Name="original_numberOfNights" Type="Int32" />
-                            <asp:Parameter Name="original_bookingMethod" Type="String" />
-                            <asp:Parameter Name="original_bookingStatus" Type="String" />
-                            <asp:Parameter Name="original_amountDue" Type="String" />
-                        </DeleteParameters>
-                        <InsertParameters>
-                            <asp:Parameter Name="emailID" Type="String" />
-                            <asp:Parameter DbType="Date" Name="dateIn" />
-                            <asp:Parameter DbType="Date" Name="dateOut" />
-                            <asp:Parameter Name="numberOfNights" Type="Int32" />
-                            <asp:Parameter Name="bookingMethod" Type="String" />
-                            <asp:Parameter Name="bookingStatus" Type="String" />
-                            <asp:Parameter Name="amountDue" Type="String" />
-                        </InsertParameters>
-                        <SelectParameters>
-                            <asp:ControlParameter ControlID="TextBox3" Name="summaryID2" PropertyName="Text" Type="Int32" />
-                        </SelectParameters>
-                        <UpdateParameters>
-                            <asp:Parameter Name="emailID" Type="String" />
-                            <asp:Parameter DbType="Date" Name="dateIn" />
-                            <asp:Parameter DbType="Date" Name="dateOut" />
-                            <asp:Parameter Name="numberOfNights" Type="Int32" />
-                            <asp:Parameter Name="bookingMethod" Type="String" />
-                            <asp:Parameter Name="bookingStatus" Type="String" />
-                            <asp:Parameter Name="amountDue" Type="String" />
-                            <asp:Parameter Name="original_summaryID" Type="Int32" />
-                            <asp:Parameter Name="original_emailID" Type="String" />
-                            <asp:Parameter DbType="Date" Name="original_dateIn" />
-                            <asp:Parameter DbType="Date" Name="original_dateOut" />
-                            <asp:Parameter Name="original_numberOfNights" Type="Int32" />
-                            <asp:Parameter Name="original_bookingMethod" Type="String" />
-                            <asp:Parameter Name="original_bookingStatus" Type="String" />
-                            <asp:Parameter Name="original_amountDue" Type="String" />
-                        </UpdateParameters>
-                    </asp:SqlDataSource>
-                </td>
-                <td>
-                    <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Confirm Cancel" />
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 422px">&nbsp;</td>
-                <td style="width: 249px">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-        </table>
+        <div>
+            <div class="text-center" style="background-color: #008cba; height: 55px">
+                <h1 style="color: white; margin: auto">Cancel Booking</h1>
+            </div>
+        </div>
+        <br />
+        <div>
+            <div class="form-gap">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-md-offset-4">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="text-center">
+                                        <h3><i class="fa fa-lock fa-4x"></i></h3>
+                                        <h3>Cancel A booking</h3>
+                                        <div class="panel-body">
+                                            <form id="register-form" role="form" autocomplete="off" class="form" method="post">
+                                                <div class="form-group">
+                                                        <asp:TextBox ID="bookingRefTextBox" runat="server" placeholder="Enter Booking Ref" class="form-control" Width="100%"></asp:TextBox>
+                                                </div>
+                                                <div class="form-group" width="100%">
+                                                    <asp:Button ID="Button1" class="btn btn-lg btn-primary btn-block" value="Reset Password" runat="server" Text="Search" Width="100%" OnClick="Button1_Click" />
+                                                </div>
+                                                <input type="hidden" class="hide" name="token" id="token" value="">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+            <asp:GridView AutoGenerateSelectButton="true" ID="GridView1" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%" Height="187px">
+                <FooterStyle BackColor="White" ForeColor="#000066" />
+                <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                <RowStyle ForeColor="#000066" />
+                <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                <SortedAscendingHeaderStyle BackColor="#007DBB" />
+                <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                <SortedDescendingHeaderStyle BackColor="#00547E" />
+            </asp:GridView>
+            <br />
+        </div>
     </div>
+        <div id="bookingText"  runat="server" visible="false">
+            <br />
+            <div  class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px">
+                <div class="text-center" height: 55px">
+                    <h1 style="color: #008cba; margin: auto">Cancel The following Booking</h1>
+                </div>
+            </div>
+            <br />
+            <div class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px">
+                <asp:GridView ID="GridView2" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%">
+                    <FooterStyle BackColor="White" ForeColor="#000066" />
+                    <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                    <RowStyle ForeColor="#000066" />
+                    <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#007DBB" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#00547E" />
+                </asp:GridView>
+                <br />
+                <div class="col-md-12 text-center">
+                    <asp:Button class="btn btn-primary pull-center" ID="cancelBtn" runat="server" Text="Cancel Booking" Width="50%" Visible="False"/>
+                </div>
+            </div>
+            <br />
+            <br />
+        </div>
+        <div id="cancelAdminModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Update Confirmation</h4>
+                    </div>
+                    <div class="modal-body" id="modalBody" runat="server">
+                        <p></p>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button ID="closeBtn" class="btn btn-default" runat="server" Text="Close" data-dismiss="modal" UseSubmitBehavior="false" OnClick="closeBtn_Click"/>
+                    </div>
+                </div>
+            </div>
+        </div>
 </asp:Content>

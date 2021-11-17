@@ -15,7 +15,7 @@
             });
         });
     </script>
-    <div class="form-gap"></div>
+    <div class="form-gap">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
@@ -45,6 +45,7 @@
             </div>
         </div>
     </div>
+        </div>
     <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">

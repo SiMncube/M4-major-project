@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,41 +12,50 @@ namespace M4_major_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            TextBox1.Text = CurrentUser.getEmailID();
-            TextBox2.Text = DateTime.Today.ToString();
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingInnerTableAdapter taBookingInner = new FullDataSetTableAdapters.BookingInnerTableAdapter();
+            taBookingInner.FillBy(fullDs.BookingInner, "kgaugelo.m@yahoo.com");
+            DataTable dt = new DataTable();
+            //dt = taBookingInner.GetDataBy(CurrentUser.getEmailID());
+            dt = taBookingInner.GetDataBy("kgaugelo.m@yahoo.com");
+            GridView1.DataSource = dt;
+            GridView1.DataBind();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            //this method updates the booking status in the database.
-            FullDataSet fullDs = new FullDataSet();
-            FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
-
-            bookingSummaryTa.Fill(fullDs.BookingSummary);
-            for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
+            if(!bookiExist())
             {
-                try
-                {
-                    int tempID = int.Parse(TextBox3.Text);
-                    if (fullDs.BookingSummary[i].summaryID == tempID)
-                    {
-                        fullDs.BookingSummary[i].bookingStatus = "Cancelled";
-                        ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking " + tempID + " Successfully Cancelled" + "');", true);
-                        break;
-                    }
-                }
-                catch
-                {
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "INVALID Booking Ref:" + "');", true);
-                }
+                closeBtn.UseSubmitBehavior = true;
+                modalBody.InnerHtml = "<p>The Booking does not exist. Please check the booking ref and try again</p>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
             }
-            bookingSummaryTa.Update(fullDs.BookingSummary);
-            bookingSummaryTa.Fill(fullDs.BookingSummary);
+            else if (bookingRefTextBox.Text.Length > 0)
+            {
+                FullDataSet fullDs = new FullDataSet();
+                FullDataSetTableAdapters.BookingInnerTableAdapter taBookingInner = new FullDataSetTableAdapters.BookingInnerTableAdapter();
+                taBookingInner.FillBy(fullDs.BookingInner, bookingRefTextBox.Text);
+                DataTable dt = new DataTable();
+                dt = taBookingInner.GetDataBy(bookingRefTextBox.Text);
+                GridView1.DataSource = dt;
+                GridView1.DataBind();
+            }
+        }
+        private bool bookiExist()
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingInnerTableAdapter taBookingInner = new FullDataSetTableAdapters.BookingInnerTableAdapter();
+            taBookingInner.FillBy(fullDs.BookingInner, "kgaugelo.m@yahoo.com");
+            for(int i = 0; i < fullDs.BookingInner.Rows.Count;i++)
+            {
+                if (fullDs.BookingInner[i].Booking_Ref.ToString() == bookingRefTextBox.Text)
+                    return true;
+            }
+            return false;
+        }
+        protected void closeBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Payment");
         }
     }
 }
