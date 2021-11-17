@@ -227,10 +227,17 @@ namespace M4_major_project
 
         protected void saveBookingButton_Click(object sender, EventArgs e)
         {
-            updateBookingSummary(getAmountDue(singleDDList, doubleDDList));
-            currentBooking.NumberSingles(singleDDList.SelectedItem.ToString());
-            currentBooking.setNumberDoubles(doubleDDList.SelectedItem.ToString());
-            Response.Redirect("/Payment");
+            try
+            {
+                updateBookingSummary(getAmountDue(singleDDList, doubleDDList));
+                currentBooking.NumberSingles(singleDDList.SelectedItem.ToString());
+                currentBooking.setNumberDoubles(doubleDDList.SelectedItem.ToString());
+                Response.Redirect("/Payment");
+            }
+            catch
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Invalid Selection, Please Make a Selection" + "');", true);
+            }
         }
 
         private void updateBookingSummary(string callAmountDueMethod)
