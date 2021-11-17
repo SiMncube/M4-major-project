@@ -50,6 +50,14 @@
             <Br />
             <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/Screenshot (411).png" />
         </div>
+            <div>&nbsp</div>
+             <br />
+            <div style="float: left; width: 100%;" >
+            <h2>3. Enter new details</h2>
+            <h5>3.1. Click "Save" to confirm update</h5>
+            <Br />
+            <asp:Image ID="Image3" runat="server" ImageUrl="~/Images/Screenshot (412).png" />
+        </div>
             </div> 
         </div>
     </form>
