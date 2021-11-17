@@ -214,6 +214,7 @@
     <Content Include="Images\suite.jpg" />
     <Content Include="Images\WhatsApp Image 2021-09-05 at 19.21.54.jpeg" />
     <Content Include="Invoice.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="Manager.aspx" />
     <Content Include="mangerStyle.css" />
     <Content Include="ModifyBooking.aspx" />
@@ -250,7 +251,6 @@
     <Content Include="Images\Screenshot %28183%29.png" />
     <Content Include="Images\unnamed.jpg" />
     <Content Include="Images\WhatsApp Image 2021-08-25 at 11.57.29.jpeg" />
-    <Content Include="Login.aspx" />
     <Content Include="loginStyle.css" />
     <Content Include="MasterStyle.css" />
     <Content Include="MonthAndYearReport.aspx" />
@@ -407,6 +407,13 @@
     <Compile Include="Invoice.aspx.designer.cs">
       <DependentUpon>Invoice.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Payment.aspx.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -464,13 +471,6 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Manager.aspx.cs">
       <DependentUpon>Manager.aspx</DependentUpon>

@@ -89,7 +89,7 @@
                     <div class="panel-body">
                         <div class="text-center">
                             <h3><i class="fa fa-lock fa-4x"></i></h3>
-                            <h3>OTP COnfirmation</h3>
+                            <h3>OTP Confirmation</h3>
                             <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/icons8-password-64.png" />
                             <br />
                             <br />

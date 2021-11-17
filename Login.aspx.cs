@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data.SqlClient;
 using System.Linq;
-using System.Security.Claims;
 using System.Web;
-using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
@@ -17,29 +13,26 @@ namespace M4_major_project
         public static int check = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-          
-        }
 
+        }
         [Obsolete]
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void confirmBtn_Click(object sender, EventArgs e)
         {
             if (customerLoginValid())
             {
-                ViewState["CurrentUserEmail"] = TextBox1.Text;
-                CurrentUser.setEmailID(TextBox1.Text);
+                CurrentUser.setEmailID(emailTextBox.Text);
                 Response.Redirect("/Default");
             }
-            else if(adminPaaswordCorrect())
+            else if (adminLoginValid())
             {
-                ViewState["CurrentUserEmail"] = TextBox1.Text;
-                CurrentUser.setEmailID(TextBox1.Text);
+                CurrentUser.setEmailID(emailTextBox.Text);
                 Response.Redirect("/Admin");
             }
             else
             {
-                Label3.Visible = true;
-                string script = "<script language='javascript'>window.alert('You have entered an invalid email address');window.location='ForgotPassword.aspx';</script>";
-                RegisterStartupScript("Button1_ClickScript", script);
+                closeBtn.UseSubmitBehavior = true;
+                modalBody.InnerHtml = "<p>Login details are incorrect. Please try again</p>";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
             }
         }
         private bool userNameIsCorrect()
@@ -50,7 +43,7 @@ namespace M4_major_project
             HtmlAnchor btn1 = (HtmlAnchor)FindControl("setUser");
             for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
             {
-                if (fullDs.Customer[i].emailID.Equals(TextBox1.Text, StringComparison.OrdinalIgnoreCase))
+                if (fullDs.Customer[i].emailID.Equals(emailTextBox.Text, StringComparison.OrdinalIgnoreCase))
                     return true;
             }
             return false;
@@ -62,7 +55,7 @@ namespace M4_major_project
             taStaff.Fill(fullDs.Staff);
             for (int i = 0; i < fullDs.Staff.Rows.Count; i++)
             {
-                if (fullDs.Staff[i].emailID.Equals(TextBox1.Text, StringComparison.OrdinalIgnoreCase))
+                if (fullDs.Staff[i].emailID.Equals(emailTextBox.Text, StringComparison.OrdinalIgnoreCase))
                     return true;
             }
             return false;
@@ -74,7 +67,7 @@ namespace M4_major_project
             taStaff.Fill(fullDs.Staff);
             for (int i = 0; i < fullDs.Staff.Rows.Count; i++)
             {
-                if (fullDs.Staff[i].password == TextBox2.Text && fullDs.Staff[i].emailID.Equals(TextBox1.Text, StringComparison.OrdinalIgnoreCase))
+                if (fullDs.Staff[i].password == passwordTextBox.Text && fullDs.Staff[i].emailID.Equals(emailTextBox.Text, StringComparison.OrdinalIgnoreCase))
                 {
                     return true;
                 }
@@ -92,7 +85,7 @@ namespace M4_major_project
             taCustomer.Fill(fullDs.Customer);
             for (int i = 0; i < fullDs.Customer.Rows.Count; i++)
             {
-                if (fullDs.Customer[i].password == TextBox2.Text && fullDs.Customer[i].emailID.Equals(TextBox1.Text, StringComparison.OrdinalIgnoreCase))
+                if (fullDs.Customer[i].password == passwordTextBox.Text && fullDs.Customer[i].emailID.Equals(emailTextBox.Text, StringComparison.OrdinalIgnoreCase))
                 {
                     check = 1;
                     return true;
@@ -109,20 +102,14 @@ namespace M4_major_project
         {
             Response.Redirect("Register");
         }
+        protected void closeBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/ResetPasswordOTP");
+        }
 
-        protected void LinkButton2_Click(object sender, EventArgs e)
+        protected void resetPasswordBtn_Click(object sender, EventArgs e)
         {
             Response.Redirect("ForgotPassword");
-        }
-
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-            Label3.Visible = false;
-        }
-
-        protected void TextBox2_TextChanged(object sender, EventArgs e)
-        {
-            Label3.Visible= false;
         }
     }
 }
