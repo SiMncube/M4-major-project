@@ -60,7 +60,7 @@
             <br />
             <div style="float: left; width: 100%;" >
             <h2>4. Enter payment details</h2>
-            <h5> "Proceed Payment" once all details have been captured correctly</h5>
+            <h5>4.1 "Proceed Payment" once all details have been captured correctly</h5>
             <Br />
             <asp:Image ID="Image4" runat="server" ImageUrl="~/Images/Untitled.png" />
         </div>
