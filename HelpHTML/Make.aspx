@@ -43,12 +43,29 @@
             <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Screenshot (381).jpg" />
         </div>  
             <div>&nbsp</div>
+            <br />
             <div style="float: left; width: 100%;" >
             <h2>2. Select the number of rooms from our available</h2>
             <Br />
-            <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/Screenshot (379).png" />
+            <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/Screenshot (388).png" />
         </div>
-   
+            <div>&nbsp</div>
+            <br />
+            <div style="float: left; width: 100%;" >
+            <h2>3. Click "Save" to confirm the booking</h2>
+            <h5> IMPORTANT: Amount due should appear in the box</h5>
+            <Br />
+            <asp:Image ID="Image3" runat="server" ImageUrl="~/Images/Screenshot (387).png" />
+        </div>
+            <div>&nbsp</div>
+            <br />
+            <div style="float: left; width: 100%;" >
+            <h2>4. Enter payment details</h2>
+            <h5> "Proceed Payment" once all details have been captured correctly</h5>
+            <Br />
+            <asp:Image ID="Image4" runat="server" ImageUrl="~/Images/Untitled.png" />
+        </div>
+   <br />
      </div>  
     </form>
 </body>

@@ -207,10 +207,13 @@
     <Content Include="Images\mass.jpg" />
     <Content Include="Images\Screenshot %28379%29.png" />
     <Content Include="Images\Screenshot %28381%29.jpg" />
+    <Content Include="Images\Screenshot %28387%29.png" />
+    <Content Include="Images\Screenshot %28388%29.png" />
     <Content Include="Images\single.jpg" />
     <Content Include="Images\starlings-cafe.jpg" />
     <Content Include="Images\SterlingsGarden.jpg" />
     <Content Include="Images\suite.jpg" />
+    <Content Include="Images\Untitled.png" />
     <Content Include="Images\WhatsApp Image 2021-09-05 at 19.21.54.jpeg" />
     <Content Include="Invoice.aspx" />
     <Content Include="Login.aspx" />
