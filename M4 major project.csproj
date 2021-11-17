@@ -177,6 +177,7 @@
       <DependentUpon>FullDataSet.xsd</DependentUpon>
     </Content>
     <Content Include="Help.aspx" />
+    <Content Include="HelpHTML\CancelHelp.aspx" />
     <Content Include="HelpHTML\Make.aspx" />
     <Content Include="HelpHTML\MakeBookingHelp.html" />
     <Content Include="HelpHTML\ModifyBookingHelp.html" />
@@ -391,6 +392,13 @@
     </Compile>
     <Compile Include="Help.aspx.designer.cs">
       <DependentUpon>Help.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HelpHTML\CancelHelp.aspx.cs">
+      <DependentUpon>CancelHelp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HelpHTML\CancelHelp.aspx.designer.cs">
+      <DependentUpon>CancelHelp.aspx</DependentUpon>
     </Compile>
     <Compile Include="HelpHTML\Make.aspx.cs">
       <DependentUpon>Make.aspx</DependentUpon>
