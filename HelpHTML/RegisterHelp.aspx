@@ -45,6 +45,12 @@
             <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Screenshot (403).png" />
         </div>  
             <div>&nbsp</div>
+             <br />
+            <div style="float: left; width: 100%;" >
+            <h2>2. Enter OTP from your email address to confirm registration</h2>
+            <Br />
+            <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/Screenshot (405).png" />
+        </div>
            </div>
         </div>
 
