@@ -16,6 +16,7 @@
     .auto-style1 {
         height: 40px;
     }
+
 </style>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -34,29 +35,21 @@
         </div>
     </div>
     <div></div>
-    <div style="width: 100%; height: auto;">
-        <div style="float: left; width: 50%;">
+    
+        <div id="Content" style="margin: 0 auto; text-align:center">
+            <div style="float: left; width: 100%;" >
             <h2>1. Select Check-In and Check-Out Dates</h2>
             <Br />
             <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Screenshot (381).jpg" />
-        </div>
-        <div style="float: left; width: 50%">
-            <h2>2. Pick the number of rooms from our available</h2>
+        </div>  
+            <div>&nbsp</div>
+            <div style="float: left; width: 100%;" >
+            <h2>2. Select the number of rooms from our available</h2>
             <Br />
             <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/Screenshot (379).png" />
         </div>
-    </div>
-        </div>
-            <div>&nbsp</div>
-    <div style="width: 100%; height: auto;">
-        <div style="float: left; width: 50%;">
-            <h2>3.</h2>
-        </div>
-        <div style="float: left; width: 50%">
-            <h2>4.</h2>
-        </div>
-    </div>
-       
+   
+     </div>  
     </form>
 </body>
 </html>
