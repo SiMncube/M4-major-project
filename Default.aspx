@@ -36,7 +36,7 @@
         .panel-heading {
             color: #fff !important;
             background-color: #008cba !important;
-            padding: 25px;
+            padding: 5px;
             border-bottom: 1px solid transparent;
             border-top-left-radius: 0px;
             border-top-right-radius: 0px;
@@ -49,7 +49,7 @@
         }
 
             .panel-footer h3 {
-                font-size: 32px;
+                font-size: 10px;
             }
 
             .panel-footer h4 {
@@ -58,7 +58,7 @@
             }
 
             .panel-footer .btn {
-                margin: 15px 0;
+                margin: 5px 0;
                 background-color: #008cba;
                 color: #fff;
             }
@@ -168,43 +168,44 @@
     </div>
     <div class="container-fluid">
         <div class="text-center" >
-            <h2>Our prices per night</h2>
             <h4>Sign in to start making bookings</h4>
         </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="panel panel-default text-center">
-                    <div class="panel-heading">
-                        <h1>Double Room</h1>
-                    </div>
-                    <div class="panel-body">
-                        <p><strong>1</strong> King size bed</p>
-                        <p><strong>1</strong> Tv screen</p>
-                        <p><strong>Yes</strong> Free wifi</p>
-                        <p><strong>Yes</strong> Food service</p>
-                    </div>
-                    <div class="panel-footer">
-                        <h3>R800</h3>
-                        <h4>Per night</h4>
-                        <asp:Button class="btn btn-lg" ID="Button1" runat="server" Text="Sign in" OnClick="Button1_Click" />
+        <div class="center" style="margin: auto; width: 60%; border: 0px solid #FFFF00; padding: 0px">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="panel panel-default text-center">
+                        <div class="panel-heading">
+                            <h1>Double Room</h1>
+                        </div>
+                        <div class="panel-body">
+                            <p><strong>1</strong> King size bed</p>
+                            <p><strong>1</strong> Tv screen</p>
+                            <p><strong>Yes</strong> Free wifi</p>
+                            <p><strong>Yes</strong> Food service</p>
+                        </div>
+                        <div class="panel-footer">
+                            <h3>R800</h3>
+                            <h4>Per night</h4>
+                            <asp:Button class="btn btn-lg" ID="Button1" runat="server" Text="Sign in" OnClick="Button1_Click" />
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="panel panel-default text-center">
-                    <div class="panel-heading">
-                        <h1>Single Room</h1>
-                    </div>
-                    <div class="panel-body">
-                        <p><strong>1</strong> Double bed</p>
-                        <p><strong>1</strong> Tv screen</p>
-                        <p><strong>No</strong> Free wifi</p>
-                        <p><strong>No</strong> Food service</p>
-                    </div>
-                    <div class="panel-footer">
-                        <h3>R450</h3>
-                        <h4>Per night</h4>
-                        <asp:Button class="btn btn-lg" ID="Button2" runat="server" Text="Sign in" OnClick="Button2_Click" />
+                <div class="col-sm-6">
+                    <div class="panel panel-default text-center">
+                        <div class="panel-heading">
+                            <h1>Single Room</h1>
+                        </div>
+                        <div class="panel-body">
+                            <p><strong>1</strong> Double bed</p>
+                            <p><strong>1</strong> Tv screen</p>
+                            <p><strong>No</strong> Free wifi</p>
+                            <p><strong>No</strong> Food service</p>
+                        </div>
+                        <div class="panel-footer">
+                            <h3>R450</h3>
+                            <h4>Per night</h4>
+                            <asp:Button class="btn btn-lg" ID="Button2" runat="server" Text="Sign in" OnClick="Button2_Click" />
+                        </div>
                     </div>
                 </div>
             </div>
