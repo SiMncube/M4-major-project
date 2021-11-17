@@ -193,7 +193,7 @@
                                         <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/HelpHTML/RegisterHelp.aspx">How to create an account</asp:HyperLink>
                                     </h5>
                                     <h5>
-                                        <asp:HyperLink ID="HyperLink6" runat="server">Updating your info?</asp:HyperLink>
+                                        <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/HelpHTML/UpdateHelp.aspx">Updating your info?</asp:HyperLink>
                                     </h5>
                                 </div>
                             </div>

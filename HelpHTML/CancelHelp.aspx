@@ -38,8 +38,22 @@
         <div id="Content" style="margin: 0 auto; text-align:center">
             <div style="float: left; width: 100%;" >
             <h2>1. Enter Booking reference</h2>
+            <h3>1.1. Click "Search" to confirm</h3>
             <Br />
-            <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Screenshot (398).png" />
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Screenshot (417).png" />
+        </div>  
+            <div>&nbsp</div>
+            <div style="float: left; width: 100%;" >
+            <h2>2. Select the booking you want to cancel</h2>
+            <Br />
+            <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/Screenshot (418).png" />
+        </div>  
+            <div>&nbsp</div>
+            <div style="float: left; width: 100%;" >
+            <h2>3. Click "Done" to cancel</h2>
+            <h5>IMPORTANT: Make sure correcting booking appears</h5>
+            <Br />
+            <asp:Image ID="Image3" runat="server" ImageUrl="~/Images/Screenshot (419).png" />
         </div>  
             <div>&nbsp</div>
            </div>
