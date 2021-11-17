@@ -12,9 +12,20 @@ namespace M4_major_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            setUser.InnerText = currentAdminName();
         }
-
+        private string currentAdminName()
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.StaffTableAdapter taStaff = new FullDataSetTableAdapters.StaffTableAdapter();
+            taStaff.Fill(fullDs.Staff);
+            for (int i = 0; i < fullDs.Staff.Rows.Count; i++)
+            {
+                if (fullDs.Staff[i].emailID.Equals(CurrentUser.getEmailID(), StringComparison.OrdinalIgnoreCase))
+                    return fullDs.Staff[i].surname + " " + fullDs.Staff[i].name;
+            }
+            return "";
+        }
         protected void Button2_Click(object sender, EventArgs e)
         {
             if (adminTextBox.Text.Length > 0)
