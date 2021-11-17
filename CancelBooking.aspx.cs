@@ -12,7 +12,6 @@ namespace M4_major_project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CurrentUser.setEmailID("saw@yahoo.com");
             FullDataSet fullDs = new FullDataSet();
             FullDataSetTableAdapters.BookingInnerTableAdapter taBookingInner = new FullDataSetTableAdapters.BookingInnerTableAdapter();
             taBookingInner.FillBy(fullDs.BookingInner, CurrentUser.getEmailID());
