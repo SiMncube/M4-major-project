@@ -182,6 +182,7 @@
     <Content Include="HelpHTML\MakeBookingHelp.html" />
     <Content Include="HelpHTML\ModifyBookingHelp.html" />
     <Content Include="HelpHTML\ModifyHelp.aspx" />
+    <Content Include="HelpHTML\RegisterHelp.aspx" />
     <Content Include="Images\001df72d-e0e2-456c-87ba-314760081f2b.jpg" />
     <Content Include="Images\13120f2b-9dce-4c9b-8168-010e6a7ff8b4.jpg" />
     <Content Include="Images\3a236330-bcaa-4814-a059-3bd37c3101a4.jpg" />
@@ -215,6 +216,8 @@
     <Content Include="Images\Screenshot %28394%29.png" />
     <Content Include="Images\Screenshot %28398%29.png" />
     <Content Include="Images\Screenshot %28401%29.png" />
+    <Content Include="Images\Screenshot %28403%29.png" />
+    <Content Include="Images\Screenshot %28405%29.png" />
     <Content Include="Images\single.jpg" />
     <Content Include="Images\starlings-cafe.jpg" />
     <Content Include="Images\SterlingsGarden.jpg" />
@@ -414,6 +417,13 @@
     </Compile>
     <Compile Include="HelpHTML\ModifyHelp.aspx.designer.cs">
       <DependentUpon>ModifyHelp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HelpHTML\RegisterHelp.aspx.cs">
+      <DependentUpon>RegisterHelp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HelpHTML\RegisterHelp.aspx.designer.cs">
+      <DependentUpon>RegisterHelp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Invoice.aspx.cs">
       <DependentUpon>Invoice.aspx</DependentUpon>
