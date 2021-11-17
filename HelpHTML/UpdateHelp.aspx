@@ -30,7 +30,7 @@
                <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-lg-12">
-                    <h1 class="h1">How To Update Your Details</h1>
+                    <h1 class="h1">How To Update Customer Details</h1>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
     <div></div>
         <div id="Content" style="margin: 0 auto; text-align:center">
             <div style="float: left; width: 100%;" >
-            <h2>1. Enter Personal Details</h2>
+            <h2>1. Search for Customer</h2>
             <Br />
             <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Screenshot (403).png" />
         </div>  
