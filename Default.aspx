@@ -141,7 +141,7 @@
         <p>Safe . Dependable . Affordable </p>
     </div>
         <div class="container-fluid text-center bg-grey">
-        <h4>Some of the things on offer</h4>
+        <h4 style="color:grey"><strong>Some of the things on offer</strong></h4>
         <div class="row text-center">
             <div class="col-sm-4">
                 <div class="thumbnail">
