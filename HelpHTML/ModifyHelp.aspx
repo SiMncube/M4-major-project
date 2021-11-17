@@ -36,7 +36,8 @@
   <div>&nbsp</div>
      <div id="Content" style="margin: 0 auto; text-align:center">
             <div style="float: left; width: 100%;" >
-            <h2>1. Select new Check-In and Check-Out Dates</h2>
+            <h2>1. Select booking you want to change from active booking</h2>
+            <h3>Select new Check-In and Check-Out Dates</h3>
             <Br />
             <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Screenshot (394).png" />
         </div>
