@@ -43,6 +43,13 @@
             <Br />
             <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Screenshot (410).png" />
         </div>  
+            <div>&nbsp</div>
+             <br />
+            <div style="float: left; width: 100%;" >
+            <h2>2. Select customer details that you want to update</h2>
+            <Br />
+            <asp:Image ID="Image2" runat="server" ImageUrl="~/Images/Screenshot (411).png" />
+        </div>
             </div> 
         </div>
     </form>
