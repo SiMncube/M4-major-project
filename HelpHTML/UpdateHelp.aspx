@@ -38,9 +38,10 @@
     <div></div>
         <div id="Content" style="margin: 0 auto; text-align:center">
             <div style="float: left; width: 100%;" >
-            <h2>1. Search for Customer</h2>
+            <h2>1. Type in name, surname, ID number, or email address</h2>
+            <h3>1.1. Click "Search" to search for customer</h3>
             <Br />
-            <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Screenshot (403).png" />
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Screenshot (410).png" />
         </div>  
             </div> 
         </div>
