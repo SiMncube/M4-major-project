@@ -241,42 +241,49 @@ namespace M4_major_project
 
         protected void saveBookingButton_Click(object sender, EventArgs e)
         {
-            OldBookingSummaryID = GridView1.SelectedRow.Cells[1].Text;
-            string newBookingAmountDueString = getAmountDue(singleDDList, doubleDDList);
-            decimal oldBookingAmountDue = getOldBookingAmountDue(int.Parse(OldBookingSummaryID));
-            decimal newBookingAmountDue = decimal.Parse(newBookingAmountDueString.Substring(2, newBookingAmountDueString.Length - 5));
-            decimal finalAmountDue = newBookingAmountDue - oldBookingAmountDue;
-            Email.excessOrefund = finalAmountDue;
-            CaptureNEWBookingRecord(newBookingAmountDueString);      //not this record is incomplete untill the admin confirms the receipt of payment      
-            int[] a = { -1, (int)finalAmountDue };
-            currentBooking.setRoomIDs(a);
-
-            currentBooking.NumberSingles(singleDDList.SelectedItem.ToString());
-            currentBooking.setNumberDoubles(doubleDDList.SelectedItem.ToString());
-
-
-            if (finalAmountDue < 0)   //WE issue a refund
+            try
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking has been successfully Modified " + "A Refund of: " + Math.Abs(finalAmountDue) +" Will be processed" + "');", true);
-                
-                completeModifyBooking(newBookingAmountDueString);
-                Email.bookingStatus = "Complete";  //added by Sihle
-                Email.sendInvoice();
-                Response.Redirect("/Invoice");
+                OldBookingSummaryID = GridView1.SelectedRow.Cells[1].Text;
+                string newBookingAmountDueString = getAmountDue(singleDDList, doubleDDList);
+                decimal oldBookingAmountDue = getOldBookingAmountDue(int.Parse(OldBookingSummaryID));
+                decimal newBookingAmountDue = decimal.Parse(newBookingAmountDueString.Substring(2, newBookingAmountDueString.Length - 5));
+                decimal finalAmountDue = newBookingAmountDue - oldBookingAmountDue;
+                Email.excessOrefund = finalAmountDue;
+                CaptureNEWBookingRecord(newBookingAmountDueString);      //not this record is incomplete untill the admin confirms the receipt of payment      
+                int[] a = { -1, (int)finalAmountDue };
+                currentBooking.setRoomIDs(a);
+
+                currentBooking.NumberSingles(singleDDList.SelectedItem.ToString());
+                currentBooking.setNumberDoubles(doubleDDList.SelectedItem.ToString());
+
+
+                if (finalAmountDue < 0)   //WE issue a refund
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking has been successfully Modified " + "A Refund of: " + Math.Abs(finalAmountDue) + " Will be processed" + "');", true);
+
+                    completeModifyBooking(newBookingAmountDueString);
+                    Email.bookingStatus = "Complete";  //added by Sihle
+                    Email.sendInvoice();
+                    Response.Redirect("/Invoice");
+                }
+                else if (finalAmountDue > 0)  //The customer has to add more money then, hence they should go to payment page
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Proced to checkout to pay the excess of:" + finalAmountDue + "');", true);
+                    Response.Redirect("/Payment");
+                }
+                else  // it's a break even no excess or refund.
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking has been successfully Modified, No Refund" + "');", true);
+
+                    completeModifyBooking(newBookingAmountDueString);
+                    Email.bookingStatus = "Complete";  //added by Sihle
+                    Email.sendInvoice();
+                    Response.Redirect("/Invoice");
+                }
             }
-            else if (finalAmountDue > 0)  //The customer has to add more money then, hence they should go to payment page
+            catch
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Proced to checkout to pay the excess of:" + finalAmountDue +"');", true);
-                Response.Redirect("/Payment");
-            }
-            else  // it's a break even no excess or refund.
-            {
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Booking has been successfully Modified, No Refund" + "');", true);
-                
-                completeModifyBooking(newBookingAmountDueString);
-                Email.bookingStatus = "Complete";  //added by Sihle
-                Email.sendInvoice();
-                Response.Redirect("/Invoice");
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + "Invalid Selection, Please Make a Selection" + "');", true);
             }
         }
 
