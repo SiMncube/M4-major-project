@@ -53,9 +53,9 @@ namespace M4_major_project
             for (int i = 0; i < fullDs.Payment.Rows.Count; i++)
             {
                 if (fullDs.Payment[i].summaryID == summaryID)
-                {
-                    string newAmount = calculateAmountDue(fullDs.Payment[i].amountDue.ToString());
-                    paymentTa.Insert(summaryID, "-R " + newAmount + ".00", DateTime.Today, fullDs.Payment[i].typeOfPayment);
+                { 
+                    string newAmount = calculateAmountDue(fullDs.Payment[i].amountDue.ToString());  //this is the construct that had a problem
+                    paymentTa.Insert(summaryID, fullDs.Payment[i].typeOfPayment, DateTime.Today, "-R " + newAmount + ".00");
                     paymentTa.Fill(fullDs.Payment);
                     break;
                 }
