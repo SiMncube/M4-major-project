@@ -96,7 +96,6 @@ namespace M4_major_project
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                     return true;
                 }
-
             }
             return false;
         }

@@ -33,7 +33,7 @@
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label3" runat="server" Text="ID Number" class="form-label mt-4"></asp:Label>
-                                <asp:TextBox ID="idTextBox" runat="server" class="form-control" placeholder="Enter Id Number" required=""></asp:TextBox>
+                                <asp:TextBox ID="idTextBox" runat="server" class="form-control" placeholder="Enter ID Number" required=""></asp:TextBox>
                             </div>
                             <div class="form-group">
                                 <asp:Label ID="Label4" runat="server" Text="Street name" class="form-label mt-4"></asp:Label>
