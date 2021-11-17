@@ -151,7 +151,7 @@ namespace M4_major_project
                 if (fullDs.Tables["Payment"].Rows[i]["summaryID"].ToString() == summaryID)
                 {
                     string newAmount = calculateAmountDue(fullDs.Payment[i].amountDue.ToString());
-                    string typeOfPayment = fullDs.Payment[i].typeOfPayment.ToString();
+                    string typeOfPayment = "Refund";
                     taPayment.Insert(Convert.ToInt32(summaryID), typeOfPayment, DateTime.Today, "-R " + newAmount + ".00");
                     taPayment.Fill(fullDs.Payment);
                     break;
@@ -175,10 +175,10 @@ namespace M4_major_project
                         currentBooking.setCanceled(true);
                         closeBtn.UseSubmitBehavior = false;
                         fullDs.BookingSummary[i].bookingStatus = "Cancelled";
-                        processRefund(summary.ToString());
-                        //SendCanceledBookingInvoice(Convert.ToInt32(GridView2.Rows[0].Cells[5].Text)); //added by Sihle for sending invoice of the canceled booking
+                        //SendCanceledBookingInvoice(summary); //added by Sihle for sending invoice of the canceled booking
                         modalBody.InnerHtml = "<p>The Booking is successfully cancelled<br/>A confirmation email has been sent to you email address.";
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+                        processRefund(summary.ToString());
                     }
                     break;
                 }
