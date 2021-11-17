@@ -88,7 +88,7 @@
                 </asp:GridView>
                 <br />
                 <div class="col-md-12 text-center">
-                    <asp:Button class="btn btn-primary pull-center" ID="cancelBtn" runat="server" Text="Done" Width="100%" Visible="False" OnClick="cancelBtn_Click"/>
+                    <asp:Button class="btn btn-primary pull-center" ID="cancelBtn" runat="server" Text="Cancel Booking" Width="100%" Visible="False" OnClick="cancelBtn_Click"/>
                 </div>
             <br />
             <br />
