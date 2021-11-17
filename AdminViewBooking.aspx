@@ -51,7 +51,7 @@
                     <asp:TextBox ID="adminTextBox" runat="server" class="form-control" placeholder="Enter Email, Name, Surnamel,Cell Number, ID or Booking Ref" Width="100%"></asp:TextBox>
                 </div>
                 <div class="col-md-12 text-center">
-                    <asp:Button class="btn btn-primary pull-center" ID="Button2" runat="server" Text="Search" Width="50%" OnClick="Button2_Click" />
+                    <asp:Button class="btn btn-primary pull-center" ID="searchBtn" runat="server" Text="Search" Width="50%" OnClick="Button2_Click" />
                 </div>
                 <br />
                 <br />
