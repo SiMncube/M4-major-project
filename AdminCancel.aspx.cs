@@ -55,7 +55,7 @@ namespace M4_major_project
                 if (fullDs.Payment[i].summaryID == summaryID)
                 { 
                     string newAmount = calculateAmountDue(fullDs.Payment[i].amountDue.ToString());  //this is the construct that had a problem
-                    paymentTa.Insert(summaryID, fullDs.Payment[i].typeOfPayment, DateTime.Today, "-R " + newAmount + ".00");
+                    paymentTa.Insert(summaryID, "Refund", DateTime.Today, "-R " + newAmount + ".00");
                     paymentTa.Fill(fullDs.Payment);
                     break;
                 }
@@ -168,11 +168,11 @@ namespace M4_major_project
             FullDataSet fullDs = new FullDataSet();
             FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
             bookingSummaryTa.Fill(fullDs.BookingSummary);
-            if(!bookingIsCanceled(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)) && !bookingIsIncomplete(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)) && !bookingIsModified(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)) && !bookingPaased(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)))
+            if(!bookingIsCanceled(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)) && !bookingIsIncomplete(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)) && !bookingIsModified(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)))
             {
                 cancelBooking(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text));
                 
-                SendCanceledBookingInvoice(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)); //added by Sihle for sending invoice of the canceled booking
+                //SendCanceledBookingInvoice(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)); //added by Sihle for sending invoice of the canceled booking
 
                 bookingSummaryTa.Update(fullDs.BookingSummary);
                 FullDataSetTableAdapters.BookingInnerTableAdapter taBookingInner = new FullDataSetTableAdapters.BookingInnerTableAdapter();
@@ -185,7 +185,6 @@ namespace M4_major_project
                 cancelBtn.Visible = false;
                 GridView1.SelectedIndex = -1;
                 GridView2.DataBind();
-
             }
         }
 
