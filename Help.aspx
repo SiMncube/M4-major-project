@@ -177,7 +177,7 @@
                                         <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/HelpHTML/ModifyHelp.aspx">Modifying a booking</asp:HyperLink>
                                     </h5>
                                     <h5>
-                                        <asp:HyperLink ID="HyperLink5" runat="server">Don&#39;t want to register?</asp:HyperLink>
+                                        <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Contact.aspx">Don&#39;t want to register?</asp:HyperLink> click to send us an email or call for service
                                     </h5>
                                 </div>
                             </div>
