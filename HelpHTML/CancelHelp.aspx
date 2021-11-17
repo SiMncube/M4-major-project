@@ -35,8 +35,14 @@
         </div>
     </div>
     <div></div>
-
-
+        <div id="Content" style="margin: 0 auto; text-align:center">
+            <div style="float: left; width: 100%;" >
+            <h2>1. Enter Booking reference</h2>
+            <Br />
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Screenshot (398).png" />
+        </div>  
+            <div>&nbsp</div>
+           </div>
         </div>
     </form>
 </body>
