@@ -56,7 +56,6 @@ namespace M4_major_project
                 { 
                     string newAmount = calculateAmountDue(fullDs.Payment[i].amountDue.ToString());  //this is the construct that had a problem
                     paymentTa.Insert(summaryID, fullDs.Payment[i].typeOfPayment, DateTime.Today, "-R " + newAmount + ".00");
-                    paymentTa.Update(fullDs.Payment);
                     paymentTa.Fill(fullDs.Payment);
                     break;
                 }
