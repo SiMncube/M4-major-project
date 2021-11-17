@@ -39,6 +39,7 @@ namespace M4_major_project
             if (GridView1.SelectedIndex > -1)
             {
                 bookingText.Visible = true;
+                cancelBtn.Visible = true;
             }
         }
 
@@ -52,9 +53,17 @@ namespace M4_major_project
                 DataTable dt = new DataTable();
                 dt = taBookingInner.GetDataBy(adminTextBox.Text);
                 GridView1.DataSource = dt;
+                GridView1.SelectedIndex = -1;
                 GridView1.DataBind();
-                bookingText.Visible = false;
             }
+        }
+
+        protected void cancelBtn_Click(object sender, EventArgs e)
+        {
+            bookingText.Visible = false;
+            cancelBtn.Visible = false;
+            GridView1.SelectedIndex = -1;
+            GridView2.DataBind();
         }
     }
 }

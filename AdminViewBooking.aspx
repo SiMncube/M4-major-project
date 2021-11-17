@@ -93,9 +93,12 @@
                 <br />
                 <div class="col-md-12 text-center">
                 </div>
+                <div class="col-md-12 text-center">
+                    <asp:Button class="btn btn-primary pull-center" ID="cancelBtn" runat="server" Text="Done" Width="50%" Visible="False" OnClick="cancelBtn_Click"/>
+                </div>
+            <br />
             </div>
-            <br />
-            <br />
+            <br />             
         </div>
         <div id="cancelAdminModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
