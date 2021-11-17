@@ -55,7 +55,107 @@ namespace M4_major_project
         }
         protected void closeBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Payment");
+            Response.Redirect("/Invoice");
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingInnerTableAdapter taBookingInner = new FullDataSetTableAdapters.BookingInnerTableAdapter();
+            taBookingInner.FillBy(fullDs.BookingInner, "kgaugelo.m@yahoo.com");
+            DataTable dt = new DataTable();
+            dt = taBookingInner.GetDataBy(GridView1.SelectedRow.Cells[5].Text);
+            GridView2.DataSource = dt;
+            GridView2.DataBind();
+            if (GridView1.SelectedIndex > -1)
+            {
+                bookingText.Visible = true;
+                cancelBtn.Visible = true;
+            }
+        }
+        private bool bookingIsCanceled(int summaryID)
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            bookingSummaryTa.Fill(fullDs.BookingSummary);
+            for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
+            {
+                if (fullDs.BookingSummary[i].summaryID == summaryID && fullDs.BookingSummary[i].bookingStatus == "Cancelled")
+                {
+                    closeBtn.UseSubmitBehavior = true;
+                    modalBody.InnerHtml = "<p>The Booking is already cancelled</p>";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+                    return true;
+                }
+
+            }
+            return false;
+        }
+        private bool bookingIsIncomplete(int summaryID)
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            bookingSummaryTa.Fill(fullDs.BookingSummary);
+            for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
+            {
+                if (fullDs.BookingSummary[i].summaryID == summaryID && fullDs.BookingSummary[i].bookingStatus == "inComplete")
+                {
+                    closeBtn.UseSubmitBehavior = true;
+                    modalBody.InnerHtml = "<p>The Booking is not complete</p>";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+                    return true;
+                }
+            }
+            return false;
+        }
+        private bool bookingIsModified(int summaryID)
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            bookingSummaryTa.Fill(fullDs.BookingSummary);
+            for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
+            {
+                if (fullDs.BookingSummary[i].summaryID == summaryID && fullDs.BookingSummary[i].bookingStatus == "Modified")
+                {
+                    closeBtn.UseSubmitBehavior = true;
+                    modalBody.InnerHtml = "<p>The Booking is modified</p>";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+                    return true;
+                }
+            }
+            return false;
+        }
+        protected void cancelBtn_Click(object sender, EventArgs e)
+        {
+            FullDataSet fullDs = new FullDataSet();
+            FullDataSetTableAdapters.BookingSummaryTableAdapter bookingSummaryTa = new FullDataSetTableAdapters.BookingSummaryTableAdapter();
+            bookingSummaryTa.Fill(fullDs.BookingSummary);
+            for (int i = 0; i < fullDs.BookingSummary.Rows.Count; i++)
+            {
+                if (fullDs.BookingSummary[i].summaryID.ToString().Equals(GridView2.Rows[0].Cells[4].Text))
+                {
+                    int summary = fullDs.BookingSummary[i].summaryID;
+                    if (!bookingIsModified(summary) && !bookingIsCanceled(summary) && !bookingIsIncomplete(summary))
+                    {
+                        closeBtn.UseSubmitBehavior = false;
+                        fullDs.BookingSummary[i].bookingStatus = "Cancelled";
+                        modalBody.InnerHtml = "<p>The Booking is successfully cancelled<br/>A confirmation emain hase been sent to you email address<br/>Redirecting you to our invoice page</p>";
+                        ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
+                    }
+                    break;
+                }
+            }
+            bookingSummaryTa.Update(fullDs.BookingSummary);
+            FullDataSetTableAdapters.BookingInnerTableAdapter taBookingInner = new FullDataSetTableAdapters.BookingInnerTableAdapter();
+            taBookingInner.FillBy(fullDs.BookingInner, "kgaugelo.m@yahoo.com");
+            DataTable dt = new DataTable();
+            dt = taBookingInner.GetDataBy("kgaugelo.m@yahoo.com");
+            GridView1.DataSource = dt;
+            GridView1.DataBind();
+            bookingText.Visible = false;
+            cancelBtn.Visible = false;
+            GridView1.SelectedIndex = -1;
+            GridView2.DataBind();
         }
     }
 }

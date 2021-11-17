@@ -75,7 +75,7 @@
             <br />
             <br />
             <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
-            <asp:GridView AutoGenerateSelectButton="true" ID="GridView1" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%" Height="187px">
+            <asp:GridView AutoGenerateSelectButton="true" ID="GridView1" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%" Height="187px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                 <FooterStyle BackColor="White" ForeColor="#000066" />
                 <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
                 <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
@@ -111,7 +111,7 @@
                 </asp:GridView>
                 <br />
                 <div class="col-md-12 text-center">
-                    <asp:Button class="btn btn-primary pull-center" ID="cancelBtn" runat="server" Text="Cancel Booking" Width="50%" Visible="False"/>
+                    <asp:Button class="btn btn-primary pull-center" ID="cancelBtn" runat="server" Text="Cancel Booking" Width="50%" Visible="False" OnClick="cancelBtn_Click"/>
                 </div>
             </div>
             <br />
@@ -133,4 +133,6 @@
                 </div>
             </div>
         </div>
+    <br />
+    <br />
 </asp:Content>
