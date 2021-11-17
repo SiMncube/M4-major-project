@@ -171,7 +171,7 @@
                                         <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/HelpHTML/Make.aspx">Need assistant with making a booking through the website?</asp:HyperLink>
                                     </h5>
                                     <h5>
-                                        <asp:HyperLink ID="HyperLink3" runat="server">Canceling a booking</asp:HyperLink>
+                                        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/HelpHTML/CancelHelp.aspx">Canceling a booking</asp:HyperLink>
                                     </h5>
                                     <h5>
                                         <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/HelpHTML/ModifyHelp.aspx">Modifying a booking</asp:HyperLink>
@@ -190,7 +190,7 @@
                                 <div class="feature-content">
                                     <h3>Registering</h3>
                                     <h5>
-                                        <asp:HyperLink ID="HyperLink1" runat="server">How to create an account</asp:HyperLink>
+                                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/HelpHTML/RegisterHelp.aspx">How to create an account</asp:HyperLink>
                                     </h5>
                                     <h5>
                                         <asp:HyperLink ID="HyperLink6" runat="server">Updating your info?</asp:HyperLink>
