@@ -1,5 +1,5 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="M4_major_project._Default" %>
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LogOff.aspx.cs" Inherits="M4_major_project.LogOff" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="defaultStyle.css" />
@@ -140,32 +140,6 @@
         <h1>The Cottage BnB</h1>
         <p>Safe . Dependable . Affordable </p>
     </div>
-        <div class="container-fluid text-center bg-grey">
-        <h4>Some of the things on offer</h4>
-        <div class="row text-center">
-            <div class="col-sm-4">
-                <div class="thumbnail">
-                    <img src="Images/AB.jpg" alt="Paris" width="400" height="300">
-                    <p><strong>Breakfast table</strong></p>
-                    <p>Brerakfast area</p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="thumbnail">
-                    <img src="Images/LB.jpg" alt="New York" width="400" height="300">
-                    <p><strong>Luxury bed</strong></p>
-                    <p>Sleep like a baby</p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="thumbnail">
-                    <img src="Images/G.jpg" alt="San Francisco" width="400" height="300">
-                    <p><strong>Nice Gym area</strong></p>
-                    <p>Yes, we have a gym</p>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="container-fluid">
         <div class="text-center" >
             <h2>Our prices per night</h2>
@@ -206,6 +180,34 @@
                         <h4>Per night</h4>
                         <asp:Button class="btn btn-lg" ID="Button2" runat="server" Text="Sign in" OnClick="Button2_Click" />
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-center bg-grey">
+        <h2>The cottage</h2>
+        <br>
+        <h4>Some of the things on offer</h4>
+        <div class="row text-center">
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="Images/AB.jpg" alt="Paris" width="400" height="300">
+                    <p><strong>Breakfast table</strong></p>
+                    <p>Brerakfast area</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="Images/LB.jpg" alt="New York" width="400" height="300">
+                    <p><strong>Luxury bed</strong></p>
+                    <p>Sleep like a baby</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <img src="Images/G.jpg" alt="San Francisco" width="400" height="300">
+                    <p><strong>Nice Gym area</strong></p>
+                    <p>Yes, we have a gym</p>
                 </div>
             </div>
         </div>
