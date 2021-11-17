@@ -155,6 +155,9 @@ namespace M4_major_project
             if(!bookingIsCanceled(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)) && !bookingIsIncomplete(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)) && !bookingIsModified(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)))
             {
                 cancelBooking(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text));
+                
+                SendCanceledBookingInvoice(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)); //added by Sihle for sending invoice of the canceled booking
+
                 bookingSummaryTa.Update(fullDs.BookingSummary);
                 FullDataSetTableAdapters.BookingInnerTableAdapter taBookingInner = new FullDataSetTableAdapters.BookingInnerTableAdapter();
                 taBookingInner.FillBy(fullDs.BookingInner, adminTextBox.Text.Trim());
@@ -167,7 +170,6 @@ namespace M4_major_project
                 GridView1.SelectedIndex = -1;
                 GridView2.DataBind();
 
-                SendCanceledBookingInvoice(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)); //added by Sihle for sending invoice of the canceled booking
             }
         }
 
