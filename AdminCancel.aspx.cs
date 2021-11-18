@@ -172,7 +172,7 @@ namespace M4_major_project
             {
                 cancelBooking(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text));
                 
-                //SendCanceledBookingInvoice(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)); //added by Sihle for sending invoice of the canceled booking
+                SendCanceledBookingInvoice(Convert.ToInt32(GridView2.Rows[0].Cells[4].Text)); //added by Sihle for sending invoice of the canceled booking
 
                 bookingSummaryTa.Update(fullDs.BookingSummary);
                 FullDataSetTableAdapters.BookingInnerTableAdapter taBookingInner = new FullDataSetTableAdapters.BookingInnerTableAdapter();

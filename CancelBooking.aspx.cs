@@ -174,7 +174,7 @@ namespace M4_major_project
                         currentBooking.setCanceled(true);
                         closeBtn.UseSubmitBehavior = false;
                         fullDs.BookingSummary[i].bookingStatus = "Cancelled";
-                        //SendCanceledBookingInvoice(summary); //added by Sihle for sending invoice of the canceled booking
+                        SendCanceledBookingInvoice(summary); //added by Sihle for sending invoice of the canceled booking
                         modalBody.InnerHtml = "<p>The Booking is successfully cancelled<br/>A confirmation email has been sent to you email address.";
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "showModal();", true);
                         processRefund(summary.ToString());
