@@ -159,9 +159,9 @@
             </div>
             <div class="col-sm-4">
                 <div class="thumbnail">
-                    <img src="Images/G.jpg" alt="San Francisco" width="400" height="300">
-                    <p><strong>Nice Gym area</strong></p>
-                    <p>Yes, we have a gym</p>
+                    <img src="Images/BoatsSmall.jpeg" alt="San Francisco" width="400" height="300">
+                    <p><strong>Great Tourist Attractions</strong></p>
+                    <p>Visit Durban</p>
                 </div>
             </div>
         </div>
