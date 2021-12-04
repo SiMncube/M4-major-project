@@ -36,7 +36,6 @@ namespace M4_major_project
         string OldBookingSummaryID;
         int newBookingSummaryID;
 
-
         public void Page_Load(object sender, EventArgs e)
         {
             TextBox1.Text = CurrentUser.getEmailID();
